@@ -1,33 +1,8 @@
-/**
- * Header
- */
-.wrapper-nav {
-  background: #fff;
-  clear: both;
-  margin: 15px 0 30px;
-}
-.wrapper-nav > div:first-child {
-  padding-right: 0;
-  text-align: center;
+:root {
+  --menu-background: linear-gradient(90deg, #6cab2b 0%, #5e9a29 100%);
 }
 
-.site-logo {
-  height: 120px;
-  display: block;
-  font-size: 0;
-  text-align: center;
-}
-.site-logo:before {
-  content: "";
-  display: inline-block;
-  height: 120px;
-  margin-right: -1%;
-  vertical-align: middle;
-  width: 1%;
-}
-.site-logo img {
-  display: inline-block;
-  max-height: 100px;
-  max-width: 99%;
-  vertical-align: middle;
+header {
+  position: relative;
+  width: 100%;
 }

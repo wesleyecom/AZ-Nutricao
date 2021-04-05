@@ -1,0 +1,113 @@
+header {
+    height: 150px;
+    overflow: hidden;
+
+    div.cima, ul.categorias, #logo-d {
+        display: none;
+    }
+
+    div.meio {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: var(--menu-background);
+
+        display: flex;
+        flex-direction: column;
+
+        div.barra_busca {
+            position: relative;
+            width: 100%;
+            height: 54%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            order: 2;
+
+            form {
+                position: relative;
+                width: 91%;
+                height: 50px;
+
+                display: flex;
+                align-items: center;
+
+                input {
+                    position: relative;
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 15px;
+                    border: 0;
+                    border-radius: 3px;
+                }
+
+                button {
+                    display: none;
+                }
+            }
+        }
+
+        div.itens_mobile {
+            position: relative;
+            width: 100%;
+            height: 45%;
+
+            order: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            div.icones {
+                position: relative;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                margin-right: 20px;
+    
+                order: 3;
+    
+                i, .conta {
+                    display: none;
+                }
+    
+                div.carrinho {
+                    svg {
+                        display: block;
+                    }
+                }
+            }
+    
+            div.carrinho {
+                background-color: transparent;
+    
+                svg {
+                    width: 30px;
+                    fill: #fff;
+                }
+            }
+    
+            i.fa-bars {
+                color: #fff;
+                font-size: 2.5em;
+                margin-left: 20px;
+    
+                order: 1;
+            }
+    
+            a#logo-m {
+                display: block;
+                height: 35px;
+    
+                order: 2;
+    
+                img {
+                    position: relative;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
