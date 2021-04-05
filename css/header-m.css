@@ -1,87 +1,62 @@
 header {
-  height: 150px;
-  overflow: hidden;
+  height: 145px;
+  background: var(--menu-background);
 }
-header div.cima, header ul.categorias, header #logo-d {
+header #logo-d, header div.cima {
   display: none;
 }
-header div.meio {
+header div.baixo {
   position: relative;
   width: 100%;
   height: 100%;
-  background: var(--menu-background);
-  display: flex;
-  flex-direction: column;
-}
-header div.meio div.barra_busca {
-  position: relative;
-  width: 100%;
-  height: 54%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  order: 2;
-}
-header div.meio div.barra_busca form {
-  position: relative;
-  width: 91%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-}
-header div.meio div.barra_busca form input {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 15px;
-  border: 0;
-  border-radius: 3px;
-}
-header div.meio div.barra_busca form button {
-  display: none;
-}
-header div.meio div.itens_mobile {
-  position: relative;
-  width: 100%;
-  height: 45%;
-  order: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
-header div.meio div.itens_mobile div.icones {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-  order: 3;
-}
-header div.meio div.itens_mobile div.icones i, header div.meio div.itens_mobile div.icones .conta {
-  display: none;
-}
-header div.meio div.itens_mobile div.icones div.carrinho svg {
-  display: block;
-}
-header div.meio div.itens_mobile div.carrinho {
-  background-color: transparent;
-}
-header div.meio div.itens_mobile div.carrinho svg {
-  width: 30px;
-  fill: #fff;
-}
-header div.meio div.itens_mobile i.fa-bars {
-  color: #fff;
-  font-size: 2.5em;
-  margin-left: 20px;
+header div.baixo #svg_hamburger {
   order: 1;
 }
-header div.meio div.itens_mobile a#logo-m {
-  display: block;
-  height: 35px;
+header div.baixo #logo-m {
   order: 2;
+  width: 85px;
 }
-header div.meio div.itens_mobile a#logo-m img {
+header div.baixo div.action {
+  order: 3;
+  background-color: transparent;
+}
+header div.baixo div.action div.conta {
+  display: none;
+}
+header div.baixo div.action div.carrinho {
+  background-color: transparent;
+}
+header div.baixo svg#svg_hamburger {
+  margin-left: 15px;
+}
+header div.baixo svg#svg_carrinho {
+  width: 35px;
+  height: 35px;
+  fill: #fff;
+  margin-right: 15px;
+}
+header div.baixo form.barra_busca {
+  order: 4;
   position: relative;
-  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header div.baixo form.barra_busca input {
+  position: relative;
+  width: 93%;
+  height: 40px;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+header div.baixo form.barra_busca button {
+  display: none;
 }

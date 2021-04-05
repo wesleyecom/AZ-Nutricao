@@ -1,112 +1,76 @@
 header {
-    height: 150px;
-    overflow: hidden;
+    height: 145px;
+    background: var(--menu-background);
 
-    div.cima, ul.categorias, #logo-d {
+    #logo-d, div.cima {
         display: none;
     }
 
-    div.meio {
+    div.baixo {
         position: relative;
         width: 100%;
         height: 100%;
-        background: var(--menu-background);
-
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
 
-        div.barra_busca {
+        #svg_hamburger {
+            order: 1;
+        }
+
+        #logo-m {
+            order: 2;
+            width: 85px;
+        }
+
+        div.action {
+            order: 3;
+            background-color: transparent;
+
+            div.conta {
+                display: none;
+            }
+
+            div.carrinho {
+                background-color: transparent;
+            }
+        }
+
+        svg {
+            &#svg_hamburger {
+                margin-left: 15px;
+            }
+
+            &#svg_carrinho {
+                width: 35px;
+                height: 35px;
+                fill: #fff;
+                margin-right: 15px;
+            }
+        }
+
+        form.barra_busca {
+            order: 4;
             position: relative;
             width: 100%;
-            height: 54%;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            order: 2;
-
-            form {
+            input {
                 position: relative;
-                width: 91%;
-                height: 50px;
-
-                display: flex;
-                align-items: center;
-
-                input {
-                    position: relative;
-                    width: 100%;
-                    box-sizing: border-box;
-                    padding: 15px;
-                    border: 0;
-                    border-radius: 3px;
-                }
-
-                button {
-                    display: none;
-                }
+                width: 93%;
+                height: 40px;
+                border: 0;
+                border-radius: 4px;
+                box-sizing: border-box;
+                padding-left: 15px;
             }
-        }
 
-        div.itens_mobile {
-            position: relative;
-            width: 100%;
-            height: 45%;
-
-            order: 1;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            
-            div.icones {
-                position: relative;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                margin-right: 20px;
-    
-                order: 3;
-    
-                i, .conta {
-                    display: none;
-                }
-    
-                div.carrinho {
-                    svg {
-                        display: block;
-                    }
-                }
-            }
-    
-            div.carrinho {
-                background-color: transparent;
-    
-                svg {
-                    width: 30px;
-                    fill: #fff;
-                }
-            }
-    
-            i.fa-bars {
-                color: #fff;
-                font-size: 2.5em;
-                margin-left: 20px;
-    
-                order: 1;
-            }
-    
-            a#logo-m {
-                display: block;
-                height: 35px;
-    
-                order: 2;
-    
-                img {
-                    position: relative;
-                    height: 100%;
-                }
+            button {
+                display: none;
             }
         }
     }
