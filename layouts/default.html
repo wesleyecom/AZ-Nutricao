@@ -34,9 +34,13 @@
 
     <div class="application">
 
+        {% if pages.current != 'login' %}
+            {% element 'snippets/tray_login' %}
+        {% endif %}
+
         {% element 'header' %}
 
-        <main class="site-main container">
+        <main class="site-main">
             <section class="page-content">
                 {{ content_for_layout }}
             </section>
@@ -61,6 +65,9 @@
     <!-- theme scripts-->
     <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
 
+    <!-- jQuery -->
+    <script src="{{ asset('js/modules/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/modules/local/menu/menu.js') }}"></script>
 </body>
 </html>
 {% endspaceless %}

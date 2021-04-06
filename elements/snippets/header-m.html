@@ -1,0 +1,51 @@
+<div class="header-m" id="header-m">
+    <div class="ct_header-m">
+        <button id="toggle_menu-m">
+            X
+        </button>
+
+        <div class="conta">
+            <a href="#" class="tray-hide" data-logged-user="false" id="login-button">
+                Login
+            </a>
+
+            <a href="#" class="tray-hide" data-logged-user="true">
+                Minha conta
+            </a>
+
+            <div class="divisor"></div>
+
+            <a href="#" class="tray-hide" data-logged-user="false">
+                Cadastro
+            </a>
+
+            <a href="#" class="tray-hide" data-logged-user="true">
+                Sair
+            </a>
+        </div>
+
+        <ul class="categorias" id="categorias_header-m">
+            {% for category in categories %}
+            {% if category.children %}
+            <li class="father">
+                <a href="{{ category.link }}">{{ category.name }}</a>
+                
+                <button>
+                    +
+                </button>
+
+                <div class="children">
+                    {% for child in category.children %}
+                    <a href="{{ child.link }}" class="link_child">{{ child.name }}</a>
+                    {% endfor %}
+                </div>
+            </li>
+            {% else %}
+            <li>
+                <a href="{{ category.link }}">{{ category.name }}</a>
+            {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

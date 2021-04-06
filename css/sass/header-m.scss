@@ -2,6 +2,154 @@ header {
     height: 145px;
     background: var(--menu-background);
 
+    // Menu hamburger
+    .header-m {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000ab;
+        opacity: 0;
+        transition: 0.1s all ease-in-out;
+        z-index: -1;
+
+        &.open {
+            z-index: 1;
+            opacity: 1;
+        }
+
+        &.open > div.ct_header-m {
+            transform: translateX(0);
+        }
+
+        div.ct_header-m {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100vh;
+            background: var(--menu-background);
+            transform: translateX(calc(-50vw - 45px));
+            transition: 0.3s all ease-in-out;
+            z-index: 10;
+
+            button#toggle_menu-m {
+                position: absolute;
+                top: 0;
+                right: -45px;
+                width: 45px;
+                height: 45px;
+                background-color: green;
+                border: 0;
+                border-radius: 0 0 4px 0;
+                font-family: 'Nunito Sans';
+                font-weight: 900;
+                color: #fff;
+                transition: 0.3s all ease-in-out;
+
+                &:hover {
+                    background-color: #004e00;
+                }
+            }
+
+            div.conta {
+                position: absolute;
+                right: 0;
+                width: 65%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                box-sizing: border-box;
+                padding: 30px;
+
+                a {
+                    color: #fff;
+                    font-family: 'Nunito Sans';
+                    font-weight: 500;
+                    font-size: 1.5em;
+                }
+
+                div.divisor {
+                    position: relative;
+                    width: 2px;
+                    height: 15px;
+                    background-color: #fff;
+                }
+            }
+
+            ul.categorias {
+                position: relative;
+                width: 100%;
+                height: 80%;
+                margin-top: 85px;
+                box-sizing: border-box;
+                padding-left: 30px;
+
+                li {
+                    position: relative;
+                    width: 90%;
+                    height: 44px;
+                    box-sizing: border-box;
+                    padding-right: 18px;
+                    border-bottom: 1px solid #80b14f;
+
+                    &:first-child {
+                        border-top: 1px solid #80b14f;
+                        height: 45px;
+                    }
+
+                    a {
+                        position: relative;
+                        width: calc(100% - 26px);
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        color: #fff;
+                        font-family: 'Nunito Sans';
+                        font-weight: 700;
+                        font-size: 1.5em;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                    }
+
+                    button {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background: #6dad2d;
+                        border: 0;
+                        width: 43px;
+                        height: 43px;
+                        font-family: "NUNITO SANS";
+                        color: #fff;
+                        transition: 0.3s all ease-in-out;
+                    }
+
+                    div.children {
+                        position: absolute;
+                        top: 44px;
+                        background-color: green;
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        box-sizing: border-box;
+                        padding-left: 20px;
+                        border-radius: 0 0 5px 5px;
+                        z-index: 10000;
+
+                        a.link_child {
+                            padding: 18px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     #logo-d, div.cima {
         display: none;
     }
@@ -17,6 +165,43 @@ header {
 
         #svg_hamburger {
             order: 1;
+            cursor: pointer;
+
+            #cima {
+                transition: 0.2s all ease-in;
+                animation: growUp 1s;
+            }
+
+            #baixo {
+                transition: 0.2s all ease-in;
+                animation: growDown 1s;
+            }
+
+            &:hover {
+                #baixo {
+                    width: 31px;
+                }
+            }
+        }
+
+        @keyframes growDown {
+            from {
+                width: 1px;
+            }
+            
+            to {
+                width: 20px;
+            }
+        }
+
+        @keyframes growUp {
+            from {
+                width: 1px;
+            }
+            
+            to {
+                width: 31px;
+            }
         }
 
         #logo-m {
@@ -67,10 +252,91 @@ header {
                 border-radius: 4px;
                 box-sizing: border-box;
                 padding-left: 15px;
+
+                &:focus::placeholder {
+                    transition: 0.2s all ease-in;
+                    color: rgb(161, 161, 161);
+                }
+            }
+
+            &:after {
+                position: absolute;
+                right: 3.5%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: "fontawesome";
+                font-size: 1.5em;
+                color: #757575;
+                content: "\f002";
             }
 
             button {
                 display: none;
+            }
+
+            div.suggestion {
+                box-shadow: none;
+                margin-top: 17px;
+                height: calc(100vh - 145px);
+                overflow-y: auto;
+
+                div.suggestion-words {
+                    strong.suggestion-title {
+                        display: none;
+                    }
+
+                    span {
+                        margin: 0;
+                        border-bottom: 1px solid #e4e4e4;
+                        padding: 15px;
+                        font-family: 'Nunito Sans';
+                        font-weight: 800;
+                    }
+                }
+
+                div.suggestion-products {
+                    strong.suggestion-title {
+                        border: 0;
+                        padding: 0 0 0 15px;
+                        font-family: 'Nunito Sans';
+                        font-weight: 700;
+                    }
+
+                    div.suggestion-product {
+                        a {
+                            div.suggestion-img {
+                                border: 0;
+
+                                img {
+                                    border: 0;
+                                }
+                            }
+
+                            div.suggestion-desc {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                justify-content: center;
+
+                                span {
+                                    &.titlep {
+                                        font-family: 'Nunito Sans';
+                                        font-weight: 800;
+                                    }
+
+                                    &.idp {
+                                        display: block;
+                                        font-family: 'Nunito Sans';
+                                        line-height: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

@@ -3,6 +3,8 @@
 <link rel="stylesheet" href="{{ asset('css/header-m.css') }}" media="(max-width: 768px)">
 
 <header>
+    {% element 'snippets/header-m' %}
+
     {% if not utils.is_mobile %}
     <img src="{{ asset('img/svg/medmix_selo.svg') }}" id="logo-d" alt="Logo">
     {% endif %}
@@ -119,9 +121,10 @@
             </div>
         </div>
 
-        <form action="" class="barra_busca">
-            <input type="text" name="" placeholder="O que você procura?">
+        <form class="barra_busca" data-search="suggestion">
+            <input type="text" placeholder="O que você procura?" data-input="suggestion">
             <button>></button>
         </form>
     </div>
 </header>
+

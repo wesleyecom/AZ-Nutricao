@@ -2,6 +2,6 @@ body, .application, .site-main {
   background-color: #FAF9F7;
 }
 
-body, .application, .site-main {
-  background-color: #FAF9F7;
+section.page-content {
+  padding: 0;
 }
