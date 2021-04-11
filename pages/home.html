@@ -1,3 +1,231 @@
-<link rel="stylesheet" href="{{ asset('css/home-m.css') }}" media="(max-width: 768px)">
+<link rel="stylesheet" href="{{ asset('css/home-m.css') }}" media="(max-width: 1024px)">
 
 {% element 'snippets/hero' %}
+
+<div class="aviso_desconto">
+    <span>
+        <strong>
+            3% de desconto
+        </strong>
+
+        em 1x no cartão de crédito, ou
+
+        <strong>
+            5% de desconto
+        </strong>
+        
+        à vista no dinheiro ou PIX
+    </span>
+</div>
+
+{% element 'snippets/banner_info' %}
+
+{% element 'snippets/categorias' %}
+
+<div class="vitrine">
+    <h3>Destaques</h3>
+
+    <div class="splide ct_vitrine" id="vitrine_destaques">
+        {% set products = Products({
+            'limit': 8,
+            'order': {'quantity_sold': 'desc'},
+            'categories': [1]
+        }) %}
+        
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for product in products %}
+                    <li class="card_produto splide__slide" itemid="{{ product.id }}">
+                        <a href="">
+                            <div class="foto_produto">
+                                {% set images = product.images %}
+                                <img src="{{ images[0].full }}" alt="Foto produto">
+                            </div>
+
+                            <div class="info_produto">
+                                <span class="nome_produto">
+                                    {{ product.name }}
+                                </span>
+
+                                <span class="preco_produto">
+                                    R$ {{ product.price|currency }}
+                                </span>
+                            </div>
+                        </a>
+
+                        <div class="add_carrinho">
+                            <div class="qtd">
+                                <button>-</button>
+                                <input type="text" name="" id="" min="1" value="1">
+                                <button>+</button>
+                            </div>
+
+                            <button class="btn_add_carrinho">Adicionar ao carrinho</button>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="banner banner_nestle">
+    <div class="ct_banner">
+        <picture>
+            <!-- <source srcset="{{ asset('img/banner/banner_impact_1-lg.jpg') }}" alt="Slide 1" media="(min-width: 769px)"> -->
+            <!-- <source srcset="{{ asset('img/banner/banner_impact_1-md.jpg') }}" alt="Slide 1" media="(min-width: 426px)"> -->
+            <img class="lazy" data-src="{{ asset('img/banner/banner_nestle_1-sm.png') }}" alt="Slide 1">
+        </picture>
+    </div>
+</div>
+
+<div class="vitrine">
+    <h3>Nestlé</h3>
+
+    <div class="splide ct_vitrine" id="vitrine_nestle">
+        {% set products = Products({
+            'limit': 8,
+            'order': {'quantity_sold': 'desc'},
+            'categories': [1]
+        }) %}
+        
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for product in products %}
+                    <li class="card_produto splide__slide" itemid="{{ product.id }}">
+                        <a href="">
+                            <div class="foto_produto">
+                                {% set images = product.images %}
+                                <img src="{{ images[0].full }}" alt="Foto produto">
+                            </div>
+
+                            <div class="info_produto">
+                                <span class="nome_produto">
+                                    {{ product.name }}
+                                </span>
+
+                                <span class="preco_produto">
+                                    R$ {{ product.price|currency }}
+                                </span>
+                            </div>
+                        </a>
+
+                        <div class="add_carrinho">
+                            <div class="qtd">
+                                <button>-</button>
+                                <input type="text" name="" id="" min="1" value="1">
+                                <button>+</button>
+                            </div>
+
+                            <button class="btn_add_carrinho">Adicionar ao carrinho</button>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="banner banner_thickenup">
+    <div class="ct_banner">
+        <picture>
+            <!-- <source srcset="{{ asset('img/banner/banner_impact_1-lg.jpg') }}" alt="Slide 1" media="(min-width: 769px)"> -->
+            <!-- <source srcset="{{ asset('img/banner/banner_impact_1-md.jpg') }}" alt="Slide 1" media="(min-width: 426px)"> -->
+            <img class="lazy" data-src="{{ asset('img/banner/banner_thickenup_1-sm.png') }}" alt="Slide 1">
+        </picture>
+    </div>
+</div>
+
+<div class="vitrine">
+    <h3>Danone</h3>
+
+    <div class="splide ct_vitrine" id="vitrine_danone">
+        {% set products = Products({
+            'limit': 8,
+            'order': {'quantity_sold': 'desc'},
+            'categories': [61]
+        }) %}
+        
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for product in products %}
+                    <li class="card_produto splide__slide" itemid="{{ product.id }}">
+                        <a href="">
+                            <div class="foto_produto">
+                                {% set images = product.images %}
+                                <img src="{{ images[0].full }}" alt="Foto produto">
+                            </div>
+
+                            <div class="info_produto">
+                                <span class="nome_produto">
+                                    {{ product.name }}
+                                </span>
+
+                                <span class="preco_produto">
+                                    R$ {{ product.price|currency }}
+                                </span>
+                            </div>
+                        </a>
+
+                        <div class="add_carrinho">
+                            <div class="qtd">
+                                <button>-</button>
+                                <input type="text" name="" id="" min="1" value="1">
+                                <button>+</button>
+                            </div>
+
+                            <button class="btn_add_carrinho">Adicionar ao carrinho</button>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="vitrine">
+    <h3>Prodiet</h3>
+
+    <div class="splide ct_vitrine" id="vitrine_prodiet">
+        {% set products = Products({
+            'limit': 8,
+            'order': {'quantity_sold': 'desc'},
+            'categories': [25]
+        }) %}
+        
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for product in products %}
+                    <li class="card_produto splide__slide" itemid="{{ product.id }}">
+                        <a href="">
+                            <div class="foto_produto">
+                                {% set images = product.images %}
+                                <img src="{{ images[0].full }}" alt="Foto produto">
+                            </div>
+
+                            <div class="info_produto">
+                                <span class="nome_produto">
+                                    {{ product.name }}
+                                </span>
+
+                                <span class="preco_produto">
+                                    R$ {{ product.price|currency }}
+                                </span>
+                            </div>
+                        </a>
+
+                        <div class="add_carrinho">
+                            <div class="qtd">
+                                <button>-</button>
+                                <input type="text" name="" id="" min="1" value="1">
+                                <button>+</button>
+                            </div>
+
+                            <button class="btn_add_carrinho">Adicionar ao carrinho</button>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

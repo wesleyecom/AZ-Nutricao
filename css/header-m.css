@@ -1,4 +1,3 @@
-@charset "UTF-8";
 header {
   height: 145px;
   background: var(--menu-background);
@@ -7,7 +6,7 @@ header .header-m {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: #000000ab;
   opacity: 0;
@@ -25,7 +24,7 @@ header .header-m div.ct_header-m {
   position: fixed;
   top: 0;
   left: 0;
-  width: 70%;
+  width: 83%;
   height: 100vh;
   background: var(--menu-background);
   transform: translateX(calc(-50vw - 45px));
@@ -221,19 +220,6 @@ header div.baixo form.barra_busca input:focus::placeholder {
   transition: 0.2s all ease-in;
   color: #a1a1a1;
 }
-header div.baixo form.barra_busca:after {
-  position: absolute;
-  right: 3.5%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "fontawesome";
-  font-size: 1.5em;
-  color: #757575;
-  content: "";
-}
 header div.baixo form.barra_busca button {
   display: none;
 }
@@ -271,6 +257,9 @@ header div.baixo form.barra_busca div.suggestion div.suggestion-products div.sug
   align-items: flex-start;
   justify-content: center;
 }
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc span {
+  line-height: 20px;
+}
 header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc span.titlep {
   font-family: "Nunito Sans";
   font-weight: 800;
@@ -279,4 +268,10 @@ header div.baixo form.barra_busca div.suggestion div.suggestion-products div.sug
   display: block;
   font-family: "Nunito Sans";
   line-height: 20px;
+}
+header div.baixo form.barra_busca svg {
+  fill: #464646;
+  width: 15px;
+  position: absolute;
+  right: 6%;
 }

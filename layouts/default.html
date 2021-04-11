@@ -11,17 +11,21 @@
     {{ tray.meta }}
 
     <!-- tray styles -->
-    {{ tray.styles }}
+    <!-- {{ tray.styles }} -->
+    <!-- <link rel="stylesheet" href="{{ asset('css/tray_styles.css') }}" media="none" onload="if(media!='all')media='all'"> -->
+
+    <!-- <link type="text/css" rel="stylesheet" href="//images.tcdn.com.br/commerce/assets/store/css/dist/cart_preview.min.css?b6f219a5ca365aed26d6409ce09ed9961617978485" media="all">
+    <link type="text/css" rel="stylesheet" href="//images.tcdn.com.br/commerce/assets/store/css/dist/bootstrap-modal.min.css?b6f219a5ca365aed26d6409ce09ed9961617978485" media="all">
+    <link type="text/css" rel="stylesheet" href="//images.tcdn.com.br/commerce/assets/store/css/dist/suggestion.min.css?b6f219a5ca365aed26d6409ce09ed9961617978485" media="all"> -->
 
     <!-- theme styles -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css">
+    <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css"> -->
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/all.css') }}">
-
-    <!-- FontAwesome -->
-    <script src="https://kit.fontawesome.com/69953e7adf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ asset('js/modules/splide/dist/css/splide.min.css') }}">
 
     <!-- tray analytics -->
     {{ tray.analytics }}
@@ -32,12 +36,11 @@
 <body>
     {{ googleTagManager.top(pages.current, tagManagerData) }}
 
+    <!-- {% if pages.current != 'login' %}
+        {% element 'snippets/tray_login' %}
+    {% endif %} -->
+
     <div class="application">
-
-        {% if pages.current != 'login' %}
-            {% element 'snippets/tray_login' %}
-        {% endif %}
-
         {% element 'header' %}
 
         <main class="site-main">
@@ -50,24 +53,147 @@
     </div>
 
     <!-- tray -->
-    {% element 'snippets/modal' %}
+    <!-- {% element 'snippets/modal' %} -->
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}
-    {{ tray.scripts }}
+
+    <!-- Tray scripts -->
+    <!-- {{ tray.scripts }} -->
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/jquery.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <!-- <script src="{{ asset('js/modules/jquery/dist/jquery.js') }}"></script> -->
+    <!-- <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/bannerjs.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/vue.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/document-register-element.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/trayLogin.umd.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script> -->
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/cookie.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/partner.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/autocomplete.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/cache_control.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/bootstrap.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+
     {{
             html.script({
                 '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
                 '1' : tray.paths.js ~ 'init.js?' ~ utils.assets_version
             })
     }}
+
     {% element 'snippets/pageview' %}
     {{ store.chat }}
 
-    <!-- theme scripts-->
-    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
-
-    <!-- jQuery -->
-    <script src="{{ asset('js/modules/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('js/modules/local/menu/menu.js') }}"></script>
+
+    {% if pages.current == 'home' or pages.current == 'product' %}
+        <!-- Splide.js -->
+        <script src="{{ asset('js/modules/splide/dist/js/splide.min.js') }}"></script>
+        
+        {% if pages.current == 'home' %}
+            <!-- Splide Slides -->
+            <script>
+                function chamaVitrines(item_id) {
+                    new Splide( item_id, {
+                        type   : 'loop',
+                        arrows : false,
+                        autoplay: true,
+                        interval: 2500,
+                        lazyLoad: 'nearby',
+                        perPage: 4,
+
+                        gap: 11,
+
+                        padding: {
+                            right: '2rem',
+                            left: '2px'
+                        },
+
+                        breakpoints: {
+                            '768': {
+                                type: 'loop',
+                                perPage: 3,
+                            },
+
+                            '550': {
+                                perPage: 2,
+
+                                gap: 8,
+
+                                padding: {
+                                    right: '1.5rem',
+                                    left: '2px'
+                                },
+                            },
+
+                            '360': {
+                                perPage: 1,
+
+                                gap: 15,
+
+                                padding: {
+                                    right: '5rem',
+                                    left: '2px'
+                                },
+                            },
+                        }
+                    } ).mount();
+                }
+
+                jQuery('.ct_vitrine').each(function() {
+                    chamaVitrines("#"+this.id);
+                });
+
+                // Categorias
+                new Splide( '#secao_categorias', {
+                    type   : 'loop',
+                    arrows : false,
+                    autoplay: true,
+                    interval: 2000,
+                    lazyLoad: 'nearby',
+                    perPage: 2,
+                    padding: {
+                        right: '5rem',
+                        left : '4.8vw',
+                    },
+
+                    breakpoints: {
+                        '630': {
+                            perPage: 1,
+                        }
+                    }
+                } ).mount();
+
+                // Banner info
+                new Splide( '#banner_info', {
+                    type: 'loop',
+                    arrows : false,
+                    pagination: false,
+                    lazyLoad: 'nearby',
+                    perPage: 4,
+                    autoplay: true,
+                    interval: 2500,
+
+                    breakpoints: {
+                        '768': {
+                            type: 'loop',
+                            perPage: 3,
+                        },
+
+                        '425': {
+                            perPage: 2,
+                        },
+
+                        '280': {
+                            perPage: 1,
+                        },
+                    }
+                } ).mount();
+            </script>  
+        {% endif %}
+    {% endif %}
+
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
+
+    <script>
+        var lazyLoadInstance = new LazyLoad();
+    </script>
 </body>
 </html>
 {% endspaceless %}

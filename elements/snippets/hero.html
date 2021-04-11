@@ -1,3 +1,7 @@
 <section class="hero">
-    <img src="{{ asset('img/banner/banner_impact_1-m.jpg') }}" alt="Slide 1">
+    <picture>
+        <source srcset="{{ asset('img/banner/banner_impact_1-lg.jpg') }}" alt="Slide 1" media="(min-width: 769px)">
+        <source srcset="{{ asset('img/banner/banner_impact_1-md.jpg') }}" alt="Slide 1" media="(min-width: 426px)">
+        <img src="{{ asset('img/banner/banner_impact_1-425.jpg') }}" alt="Slide 1">
+    </picture>
 </section>
