@@ -24,8 +24,8 @@ p {
     margin: 0;
 }
 
-p, a, span {
-    color: #313131;
+p, a, span, h2 {
+    color: #333333;
 }
 
 h3 {
@@ -40,6 +40,30 @@ section.page-content {
     display:none!important
 }
 
+#secao_produto > div.ct_avaliacoes_produto > div.hreview-comentarios > div.ranking > span.rating {
+    display: block;
+    max-width: 100px;
+    height: 15px;
+    background: url("../img/png/ranking.png");
+    margin-bottom: 15px;
+
+    &.star1 {
+        background-position-x: -80px;
+    }
+
+    &.star2 {
+        background-position-x: -60px;
+    }
+
+    &.star3 {
+        background-position-x: -40px;
+    }
+
+    &.star4 {
+        background-position-x: -20px;
+    }
+}
+
 // Splide settings
 ul.splide__pagination {
     li {
@@ -48,6 +72,148 @@ ul.splide__pagination {
 
             &.is-active {
                 background: #4c4c4c;
+            }
+        }
+    }
+}
+
+li.card_produto {
+    height: 380px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 0px #00000030;
+    overflow: hidden;
+
+    a {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: #2c2c2c;
+
+        div.foto_produto {
+            position: relative;
+            width: 100%;
+            height: 40%;
+            box-sizing: border-box;
+            padding-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                position: relative;
+                height: 100%;
+                object-fit: contain;                                
+            }
+        }
+
+        div.info_produto {
+            position: relative;
+            width: 100%;
+            height: 52%;
+            box-sizing: border-box;
+            padding: 30px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            span.nome_produto {
+                position: relative;
+                height: 32%;
+                overflow: hidden;
+
+                color: #273033;
+                font-family: 'Nunito';
+                font-weight: 900;
+                font-size: 1.5em;
+                line-height: 20px;
+                
+            }
+
+            span.preco_produto {
+                font-family: 'Nunito';
+                font-weight: 900;
+                font-size: 2.5em;
+                color: #535769;
+            }
+        }
+    }
+
+    div.add_carrinho {
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        bottom: 0;
+        box-shadow: 0 -5px 8px 0px #b1b1b110;
+
+        display: flex;
+        flex-direction: column;
+
+        div.qtd {
+            position: relative;
+            width: 100%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            button {
+                background: transparent;
+                border: 0;
+                color: #6b6b6b;
+                font-family: 'Nunito';
+                font-size: 3em;
+                outline: none;
+                cursor: pointer;
+                transition: 0.3s all ease-in-out;
+
+                &:first-child {
+                    letter-spacing: -8px;
+                }
+
+                &:hover {
+                    color: #414141;
+                }
+            }
+
+            input {
+                position: relative;
+                width: 40%;
+                height: 65%;
+                border: 0;
+                text-align: center;
+                font-family: 'Nunito';
+                font-size: 2em;
+                color: #424242;
+                outline: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.3s all ease-in-out;
+
+                &:hover {
+                    background-color: rgb(211, 211, 211);
+                }
+            }
+        }
+
+        button.btn_add_carrinho {
+            position: relative;
+            width: 100%;
+            height: 50%;
+            background-color: #2db53e;
+            border: 0;
+            color: #fff;
+            font-family: 'Nunito';
+            font-weight: 800;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s all ease-in-out;
+
+            &:hover {
+                background-color: #29d03e;
             }
         }
     }

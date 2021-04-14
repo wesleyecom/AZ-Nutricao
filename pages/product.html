@@ -1,1 +1,92 @@
-PRODUCT
+<link rel="stylesheet" href="{{ asset('css/product-m.css') }}">
+
+<section id="secao_produto" itemscope itemtype="http://schema.org/Product">
+    <div class="ct_galeria_produto">
+        <div class="splide galeria_produto" id="galeria_produto">
+            {% set images = product.images %}
+            
+            <div class="splide__track">
+                <ul class="splide__list" id="ul-lightgallery">
+                    {% for image in images %}
+                        <li class="splide__slide" data-src="{{ image.full }}">
+                            <img src="{{ image.full }}" alt="Foto produto">
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    
+        <div id="thumbnail_galeria_produto" class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    {% for image in images %}
+                        <li class="splide__slide">
+                            <img src="{{ image.large }}" alt="Thumbnail produto">
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="info_produto">
+        <h2 class="titulo_produto">
+            {{ product.name }}
+        </h2>
+
+        <div class="avaliacao_produto">
+            {% element 'snippets/rating' {"ranking": product.ranking } %}
+            {% element 'product/rating' %}
+        </div>
+
+        <span class="preco_produto">
+            R$ {{ product.price|currency }}
+        </span>
+
+        <span class="parcelamento_produto">
+            {{ product.payment }}
+        </span>
+
+        <span class="formas_pagamento_produto">
+            <strong>R$ {{ product.price|currency }}</strong> no boleto bancário ou pix.
+        </span>
+
+        <button>Adicionar ao carrinho</button>
+    </div>
+
+    <div class="descricao_produto">
+        {{ product.description }}
+    </div>
+
+    {% set ranking = product.ranking %}
+
+    {% if ranking %}
+        <div class="ct_avaliacoes_produto">
+            <h3>Avaliação do produto</h3>
+
+            <div class="ct_nota_produto">
+                {% if not ranking.count == 0 %}
+                    <span class="nota_produto">
+                        {{ ranking.rating }}.0
+                    </span>
+
+                    <div class="ct_stars">
+                        {% element 'snippets/rating' {"ranking": product.ranking } %}
+    
+                        {% if ranking.count == 1 %}
+                            {{ ranking.count }} cliente avaliou.
+                        {% else %}
+                            {{ ranking.count }} clientes avaliaram.
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <div class="ct_sem_nota">
+                        Nenhuma avaliação.
+                    </div>
+                {% endif %}
+            </div>
+
+            {% element 'product/comments' %}
+        </div>
+    {% endif %}
+</section>

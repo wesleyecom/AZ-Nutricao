@@ -1,0 +1,28 @@
+<li class="card_produto splide__slide" itemid="{{ product.id }}">
+    <a href="{{ product.link }}">
+        <div class="foto_produto">
+            {% set images = product.images %}
+            <img src="{{ images[0].full }}" alt="Foto produto">
+        </div>
+
+        <div class="info_produto">
+            <span class="nome_produto">
+                {{ product.name }}
+            </span>
+
+            <span class="preco_produto">
+                R$ {{ product.price|currency }}
+            </span>
+        </div>
+    </a>
+
+    <div class="add_carrinho">
+        <div class="qtd">
+            <button>-</button>
+            <input type="text" name="" id="" min="1" value="1">
+            <button>+</button>
+        </div>
+
+        <button class="btn_add_carrinho">Adicionar ao carrinho</button>
+    </div>
+</li>

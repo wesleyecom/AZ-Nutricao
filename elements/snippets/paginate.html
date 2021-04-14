@@ -1,9 +1,9 @@
-<div class="row">
-    <div class="col-sm-6 search-counter">
-        {{ paginate.counter('Encontramos {:count} produto(s) em {:pages} p&aacute;gina(s)') }}
+<div class="paginacao">
+    <div class="contador_paginacao">
+        {{ paginate.counter('Encontramos <strong>{:count} produtos</strong>') }}
     </div>
     
-    <div class="col-sm-6 paginate-links">
+    <div class="links_paginacao">
     {% if paginate.params.pageCount > 1 %}
         {{ paginate.first('<<', {'class': 'page-first page-link'}) }}
      

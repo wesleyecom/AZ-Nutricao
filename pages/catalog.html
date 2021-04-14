@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="{{ asset('css/catalog-m.css') }}" media="(max-width: 768px)">
+
+<div class="header_catalog">
+    <h2>
+        {{ category.name }}
+    </h2>
+</div>
+
+{% if products|length > 0 %}
+    {% element 'snippets/paginate' %}
+
+    <div class="catalog_products">
+        <div class="ct_showcase_products" itemscope itemtype="https://schema.org/SomeProducts">
+            <ul itemscope itemtype="https://schema.org/SomeProducts">
+                {% for product in products %}
+                    {% element 'snippets/product_card' {"product": product} %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    {% element 'snippets/paginate' %}
+{% else %}
+    SEM PRODUTOS
+{% endif %}

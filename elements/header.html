@@ -6,7 +6,9 @@
     {% element 'snippets/header-m' %}
 
     {% if not utils.is_mobile %}
-    <img src="{{ asset('img/svg/medmix_selo.svg') }}" id="logo-d" alt="Logo">
+        <h1 id="logo-d">
+            <img src="{{ asset('img/svg/medmix_selo.svg') }}" alt="Logo NutriMedmix">
+        </h1>
     {% endif %}
 
     <div class="cima">
@@ -37,7 +39,11 @@
             </g>
         </svg>        
 
-        <img src="{{ asset('img/svg/medmix_branco-m.svg') }}" alt="Logo" id="logo-m">
+        <h1>
+            <a href="{{ links.home }}">
+                <img src="{{ asset('img/svg/medmix_branco-m.svg') }}" alt="Logo NutriMedmix" id="logo-m">
+            </a>
+        </h1>
 
         <div class="action">
             <div class="conta">

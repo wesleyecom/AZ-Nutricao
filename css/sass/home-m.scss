@@ -22,7 +22,7 @@ div.aviso_desconto {
         background: linear-gradient(0deg, #ececec, white);
         box-sizing: border-box;
         padding: 15px;
-        font-family: "Nunito Sans";
+        font-family: "Nunito";
         font-weight: 800;
         font-size: 1.5em;
         line-height: 20px;
@@ -58,7 +58,7 @@ div.banner_info {
                         font-size: 1.5em;
 
                         p {
-                            font-family: 'Nunito Sans';
+                            font-family: 'Nunito';
 
                             &:first-child {
                                 font-weight: 900;
@@ -117,7 +117,7 @@ div.secao_categorias {
                     box-sizing: border-box;
                     padding: 0 8%;
 
-                    font-family: 'Nunito Sans';
+                    font-family: 'Nunito';
                     font-size: 2rem;
 
                     span {
@@ -142,7 +142,7 @@ div.secao_categorias {
                     justify-content: space-between;
 
                     button {
-                        font-family: 'Nunito Sans';
+                        font-family: 'Nunito';
                         font-weight: 500;
                         font-size: .68em;
                         text-transform: uppercase;
@@ -206,7 +206,7 @@ div.vitrine {
     h3 {
         position: relative;
         width: 100%;
-        font-family: 'Nunito Sans';
+        font-family: 'Nunito';
         font-weight: 900;
         font-size: 1.5em;
         text-transform: uppercase;
@@ -220,148 +220,6 @@ div.vitrine {
         div.splide__track {
             padding-top: 8px;
             padding-bottom: 8px;
-
-            ul.splide__list {
-                li.card_produto {
-                    height: 380px;
-                    background-color: #fff;
-                    border-radius: 5px;
-                    box-shadow: 0 0 4px 0px #00000030;
-                    overflow: hidden;
-
-                    a {
-                        display: block;
-                        position: relative;
-                        width: 100%;
-                        height: 100%;
-                        text-decoration: none;
-                        color: #2c2c2c;
-
-                        div.foto_produto {
-                            position: relative;
-                            width: 100%;
-                            height: 40%;
-                            box-sizing: border-box;
-                            padding-top: 15px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-
-                            img {
-                                position: relative;
-                                height: 100%;
-                                object-fit: contain;                                
-                            }
-                        }
-
-                        div.info_produto {
-                            position: relative;
-                            width: 100%;
-                            height: 52%;
-                            box-sizing: border-box;
-                            padding: 30px 15px;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: flex-start;
-
-                            span.nome_produto {
-                                position: relative;
-                                height: 32%;
-                                overflow: hidden;
-
-                                font-family: 'Nunito Sans';
-                                font-weight: 900;
-                                font-size: 1.5em;
-                                line-height: 20px;
-                            }
-
-                            span.preco_produto {
-                                font-family: 'Nunito Sans';
-                                font-weight: 900;
-                                font-size: 2.5em;
-                                color: #535769;
-                            }
-                        }
-                    }
-
-                    div.add_carrinho {
-                        position: absolute;
-                        width: 100%;
-                        height: 100px;
-                        bottom: 0;
-                        box-shadow: 0 -5px 8px 0px #b1b1b110;
-
-                        display: flex;
-                        flex-direction: column;
-
-                        div.qtd {
-                            position: relative;
-                            width: 100%;
-                            height: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-evenly;
-
-                            button {
-                                background: transparent;
-                                border: 0;
-                                color: #6b6b6b;
-                                font-family: 'Nunito Sans';
-                                font-size: 3em;
-                                outline: none;
-                                cursor: pointer;
-                                transition: 0.3s all ease-in-out;
-
-                                &:first-child {
-                                    letter-spacing: -8px;
-                                }
-
-                                &:hover {
-                                    color: #414141;
-                                }
-                            }
-
-                            input {
-                                position: relative;
-                                width: 40%;
-                                height: 65%;
-                                border: 0;
-                                text-align: center;
-                                font-family: 'Nunito Sans';
-                                font-size: 2em;
-                                color: #424242;
-                                outline: none;
-                                border-radius: 5px;
-                                cursor: pointer;
-                                transition: 0.3s all ease-in-out;
-
-                                &:hover {
-                                    background-color: rgb(211, 211, 211);
-                                }
-                            }
-                        }
-
-                        button.btn_add_carrinho {
-                            position: relative;
-                            width: 100%;
-                            height: 50%;
-                            background-color: #2db53e;
-                            border: 0;
-                            color: #fff;
-                            font-family: 'Nunito Sans';
-                            font-weight: 800;
-                            font-size: 1.2em;
-                            text-transform: uppercase;
-                            cursor: pointer;
-                            transition: 0.3s all ease-in-out;
-
-                            &:hover {
-                                background-color: #29d03e;
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 }
@@ -389,7 +247,7 @@ div.banner {
 
     &.banner_nestle {
         div.ct_banner {
-            background: linear-gradient(180deg, #399cb7, #10abd2);
+            background: linear-gradient(180deg, #78c0df, #367ca2);
 
             img {
                 margin-bottom: -4px;

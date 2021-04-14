@@ -36,7 +36,25 @@
 
                 <div class="children">
                     {% for child in category.children %}
-                    <a href="{{ child.link }}" class="link_child">{{ child.name }}</a>
+                        {% if child.children %}
+                            <div class="ct_child">
+                                <a href="{{ child.link }}" class="link_child">{{ child.name }}</a>
+
+                                <button>
+                                    +
+                                </button>
+
+                                <div class="children_child">
+                                    {% for child_children in child.children %}
+                                        <a href="{{ child_children.link }}" class="link_child_children">{{ child_children.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="ct_child">
+                                <a href="{{ child.link }}" class="link_child">{{ child.name }}</a>
+                            </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </li>

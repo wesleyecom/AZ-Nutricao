@@ -1,0 +1,95 @@
+div.header_catalog {
+    position: relative;
+    width: 100%;
+    height: calc(70px + 10vw);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #fff;
+    z-index: 10;
+
+    h2 {
+        font-family: 'Nunito';
+        font-weight: 900;
+        font-size: 2em;
+    }
+}
+
+div.catalog_products {
+    div.ct_showcase_products {
+        margin: 3vw 0;
+        box-sizing: border-box;
+        padding: 0 3vw;
+        
+        ul {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+
+            li {
+                position: relative;
+                width: 48%;
+                min-width: 170px;
+                margin-bottom: 4vw;
+
+                &:nth-child(odd) {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 580px) and (max-width: 768px) {
+    div.catalog_products {
+        div.ct_showcase_products {
+            ul {
+                justify-content: space-evenly;
+                
+                li {
+                    margin-right: 0!important;
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 372px) {
+    div.catalog_products {
+        div.ct_showcase_products {
+            margin: 15vw 0;
+
+            ul {
+                justify-content: center;
+                
+                li {
+                    margin-right: 10px;
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
+
+div.paginacao {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #ececec;
+    box-shadow: 0 2px 18px #8e8e8e40;
+    z-index: 1;
+
+    div.contador_paginacao {
+        font-family: 'Nunito';
+        font-weight: 600;
+        font-size: 1.2em;
+        text-transform: uppercase;
+    }
+}

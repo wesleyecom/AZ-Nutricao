@@ -23,9 +23,13 @@
     <!-- <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css"> -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/all.css') }}">
     <link rel="stylesheet" href="{{ asset('js/modules/splide/dist/css/splide.min.css') }}">
+
+    {% if pages.current == 'product' %}
+        <link rel="stylesheet" href="{{ asset('js/modules/lightgallery/dist/css/lightgallery.min.css') }}">
+    {% endif %}
 
     <!-- tray analytics -->
     {{ tray.analytics }}
@@ -81,6 +85,14 @@
     {{ store.chat }}
 
     <script src="{{ asset('js/modules/local/menu/menu.js') }}"></script>
+    <script src="{{ asset('js/modules/local/carrinho/carrinho.js') }}"></script>
+    
+    <!-- Lazy Load -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
+
+    <script>
+        var lazyLoadInstance = new LazyLoad();
+    </script>
 
     {% if pages.current == 'home' or pages.current == 'product' %}
         <!-- Splide.js -->
@@ -185,15 +197,49 @@
                         },
                     }
                 } ).mount();
-            </script>  
+            </script>
+        {% else %}
+            <!-- Call lightgallery js -->
+            <script src="{{ asset('js/modules/lightgallery/dist/js/lightgallery.min.js') }}"></script>
+            <script src="{{ asset('js/modules/lightgallery/dist/js/lg-thumbnail.min.js') }}"></script>
+
+            <script>
+                // Lightgallery
+                lightGallery(document.getElementById('ul-lightgallery')); 
+                
+                // Galeria do produto selecionado
+                // Thumbnails
+                var thumbnails = new Splide( '#thumbnail_galeria_produto', {
+                    fixedWidth : '25vw',
+                    height     : '18vw',
+                    gap        : 10,
+                    rewind     : true,
+                    // cover      : true,
+                    pagination : false,
+                    isNavigation: true,
+                    focus       : 'center',
+                } ).mount();
+                
+                var galeriaProduto = new Splide( '#galeria_produto', {
+                    type   : 'loop',
+                    arrows : false,
+                    pagination: false,
+                    autoplay: false,
+                    interval: 2000,
+                    lazyLoad: 'nearby',
+                    gap: 10,
+                    padding: {
+                        right: '5rem',
+		                left : '5rem'
+                    }
+                } );
+
+                galeriaProduto.sync( thumbnails ).mount();
+            </script>
         {% endif %}
     {% endif %}
 
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
-
-    <script>
-        var lazyLoadInstance = new LazyLoad();
-    </script>
+    <!-- <script type="text/javascript" src="{{ asset('js/theme.min.js') }}"></script> -->
 </body>
 </html>
 {% endspaceless %}

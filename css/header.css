@@ -1,0 +1,8 @@
+:root {
+  --menu-background: linear-gradient(90deg, #6cab2b 0%, #5e9a29 100%);
+}
+
+header {
+  position: relative;
+  width: 100%;
+}
