@@ -160,18 +160,20 @@ li.card_produto {
             justify-content: space-evenly;
 
             button {
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 background: transparent;
                 border: 0;
                 color: #6b6b6b;
                 font-family: 'Nunito';
                 font-size: 3em;
+                overflow: hidden;
                 outline: none;
                 cursor: pointer;
                 transition: 0.3s all ease-in-out;
-
-                &:first-child {
-                    letter-spacing: -8px;
-                }
 
                 &:hover {
                     color: #414141;

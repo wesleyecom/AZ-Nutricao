@@ -223,6 +223,23 @@ header {
         justify-content: space-between;
         flex-wrap: wrap;
 
+        span.counter_cart {
+            position: absolute;
+            right: 10px;
+            margin-top: -2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            background-color: #fff;
+            font-family: 'Nunito';
+            font-weight: 800;
+            box-sizing: border-box;
+            padding-top: 1px;
+        }
+
         #svg_hamburger {
             order: 1;
             cursor: pointer;

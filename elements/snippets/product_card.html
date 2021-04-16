@@ -18,11 +18,11 @@
 
     <div class="add_carrinho">
         <div class="qtd">
-            <button>-</button>
-            <input type="text" name="" id="" min="1" value="1">
-            <button>+</button>
+            <button class="btn_minus">-</button>
+            <input type="text" value="1" minlength="1">
+            <button class="btn_plus">+</button>
         </div>
 
-        <button class="btn_add_carrinho">Adicionar ao carrinho</button>
+        <button class="btn_add_carrinho" onclick="addCart({{ product.id }}, {{ product.price }}, jQuery(this).siblings('div.qtd').children('input').val())">Adicionar ao carrinho</button>
     </div>
 </li>

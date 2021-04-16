@@ -140,17 +140,20 @@ li.card_produto div.add_carrinho div.qtd {
   justify-content: space-evenly;
 }
 li.card_produto div.add_carrinho div.qtd button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   border: 0;
   color: #6b6b6b;
   font-family: "Nunito";
   font-size: 3em;
+  overflow: hidden;
   outline: none;
   cursor: pointer;
   transition: 0.3s all ease-in-out;
-}
-li.card_produto div.add_carrinho div.qtd button:first-child {
-  letter-spacing: -8px;
 }
 li.card_produto div.add_carrinho div.qtd button:hover {
   color: #414141;

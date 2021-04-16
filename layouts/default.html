@@ -40,12 +40,13 @@
 <body>
     {{ googleTagManager.top(pages.current, tagManagerData) }}
 
-    <!-- {% if pages.current != 'login' %}
+    {% if pages.current != 'login' %}
         {% element 'snippets/tray_login' %}
-    {% endif %} -->
+    {% endif %}
 
     <div class="application">
         {% element 'header' %}
+        {% element 'snippets/cart' %}
 
         <main class="site-main">
             <section class="page-content">
@@ -64,10 +65,10 @@
     <!-- {{ tray.scripts }} -->
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/jquery.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <!-- <script src="{{ asset('js/modules/jquery/dist/jquery.js') }}"></script> -->
-    <!-- <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/bannerjs.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <!-- <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/bannerjs.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script> -->
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/vue.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/document-register-element.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
-    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/trayLogin.umd.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script> -->
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/trayLogin.umd.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/cookie.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/partner.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/autocomplete.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
@@ -85,10 +86,13 @@
     {{ store.chat }}
 
     <script src="{{ asset('js/modules/local/menu/menu.js') }}"></script>
-    <script src="{{ asset('js/modules/local/carrinho/carrinho.js') }}"></script>
     
     <!-- Lazy Load -->
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
+
+    <!-- Swiped JS -->
+    <script src="{{ asset('js/modules/swiped/dist/swiped.min.js') }}"></script>
+    <script src="{{ asset('js/modules/local/carrinho/carrinho.js') }}"></script>
 
     <script>
         var lazyLoadInstance = new LazyLoad();
