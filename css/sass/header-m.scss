@@ -321,8 +321,11 @@ header {
             width: 100%;
 
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+
+            z-index: 1;
 
             input {
                 position: relative;
@@ -332,6 +335,7 @@ header {
                 border-radius: 4px;
                 box-sizing: border-box;
                 padding-left: 15px;
+                outline: none;
 
                 &:focus::placeholder {
                     transition: 0.2s all ease-in;
@@ -344,64 +348,112 @@ header {
             }
 
             div.suggestion {
-                box-shadow: none;
-                margin-top: 17px;
+                position: absolute;
+                width: 100%;
                 height: calc(100vh - 145px);
-                overflow-y: auto;
+                top: 50px;
+                box-sizing: border-box;
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                background-color: #fff;
+                overflow: hidden;
+                
+                &.is-hidden {
+                    display: none;
+                }
+
+                div.suggestion-words, div.suggestion-products {
+                    position: relative;
+                    width: 100%;
+
+                    .suggestion-title {
+                        color: #333333;
+                        font-family: 'Nunito';
+                        font-size: 1.8em;
+                        font-weight: 900;
+                        margin-bottom: 5px;
+                    }
+                }
 
                 div.suggestion-words {
-                    strong.suggestion-title {
-                        display: none;
-                    }
+                    display: flex;
+                    flex-direction: column;
 
                     span {
-                        margin: 0;
-                        border-bottom: 1px solid #e4e4e4;
-                        padding: 15px;
+                        position: relative;
+                        width: 100%;
+                        box-sizing: border-box;
+                        padding: 10px 0;
+                        color: #333333;
                         font-family: 'Nunito';
-                        font-weight: 800;
+                        font-size: 1.5em;
+                        font-weight: 600;
+                        text-transform: capitalize;
+                        border-bottom: 1px solid #b1b1b1;
                     }
                 }
 
                 div.suggestion-products {
-                    strong.suggestion-title {
-                        border: 0;
-                        padding: 0 0 0 15px;
-                        font-family: 'Nunito';
-                        font-weight: 700;
-                    }
+                    margin-top: 15px;
 
                     div.suggestion-product {
+                        position: relative;
+                        width: 100%;
+                        border-radius: 5px;
+
                         a {
+                            position: relative;
+                            width: 100%;
+                            display: flex;
+
                             div.suggestion-img {
-                                border: 0;
+                                position: relative;
+                                width: 80px;
+                                height: 80px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                box-sizing: border-box;
+                                padding: 5px;
 
                                 img {
-                                    border: 0;
+                                    position: relative;
+                                    height: 100%;
+                                    object-fit: contain;
+                                    border-radius: 8px;
                                 }
                             }
 
                             div.suggestion-desc {
+                                position: relative;
+                                width: 100%;
                                 display: flex;
                                 flex-direction: column;
-                                align-items: flex-start;
-                                justify-content: center;
+                                box-sizing: border-box;
+                                padding: 15px;
 
                                 span {
-                                    line-height: 20px;
-                                    
+                                    font-family: 'Nunito';
+
                                     &.titlep {
-                                        font-family: 'Nunito';
+                                        font-size: 1.2em;
                                         font-weight: 800;
                                     }
 
                                     &.idp {
-                                        display: block;
-                                        font-family: 'Nunito';
-                                        line-height: 20px;
+                                        font-size: 1.2em;
+                                        font-weight: 600;
+                                        margin-top: 5px;
                                     }
                                 }
                             }
+                        }
+
+                        &:nth-child(even) {
+                            background-color: #e2e2e2;
                         }
                     }
                 }
@@ -413,6 +465,10 @@ header {
                 position: absolute;
                 right: 6%;
             }
+        }
+
+        ul#categoriasMenu {
+            display: none;
         }
     }
 }

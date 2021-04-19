@@ -69,3 +69,8 @@ botaoToggleSubcategoria_2MR.on('click', function(e) {
         jQuery(e.target).parent().find('div.children_child').slideDown("fast", "swing");
     }
 });
+
+// Suggestion search
+jQuery('header > div.baixo > form > input[type=text]').on('focusout', function() {
+    jQuery(this).val('');
+});

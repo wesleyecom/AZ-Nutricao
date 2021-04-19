@@ -1,0 +1,56 @@
+div.header_catalog {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #fff;
+    z-index: 10;
+
+    h2 {
+        font-family: 'Nunito';
+        font-weight: 900;
+        font-size: 2em;
+    }
+}
+
+div.paginacao {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #ececec;
+    box-shadow: 0 2px 18px #8e8e8e40;
+    z-index: 1;
+
+    div.contador_paginacao {
+        font-family: 'Nunito';
+        font-weight: 600;
+        font-size: 1.2em;
+        text-transform: uppercase;
+    }
+}
+
+div.catalog_products {
+    div.ct_showcase_products {
+        margin: 3vw 0;
+        box-sizing: border-box;
+        padding: 0 3vw;
+        
+        ul {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+
+            li {
+                position: relative;
+                min-width: 170px;
+            }
+        }
+    }
+}

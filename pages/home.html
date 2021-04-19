@@ -1,4 +1,6 @@
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
 <link rel="stylesheet" href="{{ asset('css/home-m.css') }}" media="(max-width: 1024px)">
+<link rel="stylesheet" href="{{ asset('css/home-md.css') }}" media="(min-width: 1025px)">
 
 {% element 'snippets/hero' %}
 
@@ -45,7 +47,8 @@
 <div class="banner banner_nestle">
     <div class="ct_banner">
         <picture>
-            <!-- <source srcset="{{ asset('img/banner/banner_impact_1-lg.jpg') }}" alt="Slide 1" media="(min-width: 769px)"> -->
+            <source class="lazy" data-srcset="{{ asset('img/banner/banner_nestle_1-xl.png') }}" alt="Slide 1" media="(min-width: 1024px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/nestle_health_science_1-lg.png') }}" alt="Slide 1" media="(min-width: 769px)">
             <source class="lazy" data-srcset="{{ asset('img/banner/nestle_health_science_1-md.png') }}" alt="Slide 1" media="(min-width: 426px)">
             <img class="lazy" data-src="{{ asset('img/banner/banner_nestle_1-sm.png') }}" alt="Slide 1">
         </picture>
@@ -75,7 +78,8 @@
 <div class="banner banner_thickenup">
     <div class="ct_banner">
         <picture>
-            <!-- <source srcset="{{ asset('img/banner/banner_impact_1-lg.jpg') }}" alt="Slide 1" media="(min-width: 769px)"> -->
+            <source class="lazy" data-srcset="{{ asset('img/banner/banner_thickenup_1-xl.png') }}" alt="Slide 1" media="(min-width: 1024px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/thickenup-lg.png') }}" alt="Slide 1" media="(min-width: 769px)">
             <source class="lazy" data-srcset="{{ asset('img/banner/thickenup-md.png') }}" alt="Slide 1" media="(min-width: 426px)">
             <img class="lazy" data-src="{{ asset('img/banner/banner_thickenup_1-sm.png') }}" alt="Slide 1">
         </picture>

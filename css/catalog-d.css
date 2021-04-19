@@ -1,0 +1,24 @@
+div.header_catalog {
+  height: 8vw;
+  padding: 15px 0 15px 5vw;
+}
+
+div.paginacao {
+  padding: 15px 0 15px 5vw;
+}
+
+div.catalog_products div.ct_showcase_products {
+  padding: 0 2vw;
+}
+div.catalog_products div.ct_showcase_products ul {
+  justify-content: flex-start;
+}
+div.catalog_products div.ct_showcase_products ul li {
+  width: 17%;
+  min-width: none;
+  margin-bottom: 2vw;
+  margin-left: 2.3vw;
+}
+div.catalog_products div.ct_showcase_products ul li:last-child {
+  margin-right: auto;
+}

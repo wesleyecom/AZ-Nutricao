@@ -11,6 +11,10 @@ body, .application, .site-main {
   box-sizing: border-box;
 }
 
+#isMobile {
+  display: none;
+}
+
 ul {
   list-style: none;
 }
@@ -169,7 +173,6 @@ li.card_produto div.add_carrinho div.qtd input {
   color: #424242;
   outline: none;
   border-radius: 5px;
-  cursor: pointer;
   transition: 0.3s all ease-in-out;
 }
 li.card_produto div.add_carrinho div.qtd input:hover {

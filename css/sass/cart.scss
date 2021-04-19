@@ -1,71 +1,221 @@
-.cart{
-    color: #3d4445;
-    display: block;
-    
-    &:active,
-    &:link,
-    &:hover{
-        color: #3d4445;
-        text-decoration: none;
+div.cart {
+    position: fixed;
+    height: 100vh;
+    box-sizing: border-box;
+    top: 0;
+    background-color: #fff;
+
+    opacity: 0;
+
+    transition: 0.3s all ease-in-out;
+    z-index: 100000;
+
+    &.open {
+        opacity: 1;
     }
-    
-    @media screen and (max-width: $sm){
-        padding: 10px 0;
-    }
-    
-    &:hover{
-        color: #3d4445;
-        text-decoration: none;
-    }
-    
-    .cart-icon{
-        background: #a2a2a2;
-        height: 55px;
-        padding: 16px 0;
-        text-align: center;
-        width: 43px;
-        
-        @media screen and (max-width: $sm){
-            background: #a2a2a2;
-            height: 55px;
-            padding: 15px 0;
-            width: 100%;
-            
-            svg{
-                height: 25px;
-                width: 25px;
+
+    div.header_cart {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 4px #c5c5c5;
+        z-index: 1;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        span {
+            font-family: 'Nunito';
+            font-weight: 900;
+            font-size: 2em;
+            margin-left: 30px;
+        }
+
+        button#limparCarrinho {
+            position: absolute;
+            right: 15px;
+            background-color: #4e4e4e;
+            border: 0;
+            color: #fff;
+            font-family: 'Nunito';
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            box-sizing: border-box;
+            padding: 10px 15px;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            transition: 0.3s all ease-in-out;
+
+            &:hover {
+                background-color: #292929;
             }
         }
     }
+
+    ul#listaProdutos {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-height: 78%;
+        padding: 0;
+        margin: 0;
+        overflow-y: auto;
+
+        span.emptyCart {
+            position: relative;
+            width: 100%;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.5;
+
+            svg {
+                position: relative;
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        li {
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+
+            div.backdrop {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                box-sizing: border-box;
+                padding-right: 30px;
+                color: #fff;
+                font-family: 'Nunito';
+                font-size: 2em;
+                font-weight: 900;
+                background: linear-gradient(90deg, #580303, #b10000);
+            }
+
+            div.ct_produto {
+                position: relative;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 15px;
+                display: flex;
+                background-color: #fff;
+                box-shadow: 0 0 3px #c7c7c7;
+
+                a {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    z-index: 10;
+                }
+
+                div.foto_produto {
+                    position: relative;
+                    width: 80px;
+                    height: 80px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #fff;
+                    border-radius: 5px 0 0 5px;
     
-    .cart-info{
-        background: #fff;
-        border: 1px solid #e2e2e2;
-        border-left: none;
-        height: 55px;
-        overflow: hidden;
-        padding: 5px 0 4px 15px;
+                    img {
+                        position: relative;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                div.esquerda {
+                    position: relative;
+                    width: 65%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    span {
+                        font-family: 'NUNITO';
+
+                        &.nome_produto {
+                            font-family: 'NUNITO';
+                            font-weight: 800;
+                            font-size: 1.5em;
+                            margin-top: 5px;
+                        }
+
+                        &.preco_produto {
+                            font-family: 'Nunito';
+                            font-weight: 900;
+                            color: #267944;
+                            font-size: 1.5em;
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+
+                div.direita {
+                    position: relative;
+                    display: flex;
+                    align-items: flex-end;
+                    margin-left: 15px;
+
+                    span.quantidade_produto {
+                        font-family: 'Nunito';
+                        font-size: 1.2em;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
         
-        b{
-            display: block;
-            color: #4b8cdc;
-            border-bottom: 1px solid #4b8cdc;
-            padding-left: 15px;
-            @include typo(1.7rem, 700, $font, 2.2rem);
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 15px;
         }
     }
-    
-    .cart-amount{
-        @include typo(1.4rem, 400, $font, 2.2rem);
-        padding-right: 0;
-    }
-    
-    .cart-total{
-        @include typo(1.4rem, 400, $font, 2.2rem);
-        padding: 0;
-    }
-}
 
-.wrapp-cart{
-    padding-left: 0;
+    div.total_carrinho {
+        position: absolute;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        color: #333333;
+        font-family: 'Nunito';
+        font-weight: 800;
+        font-size: 2em;
+        text-transform: uppercase;
+
+        background-color: #fff;
+        box-shadow: 0px 0px 8px 3px #cacaca;
+
+        bottom: 0;
+        left: 0;
+    }
 }

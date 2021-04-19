@@ -44,6 +44,9 @@
         {% element 'snippets/tray_login' %}
     {% endif %}
 
+    <!-- Check if is mobile -->
+    <div id="isMobile" data-is-mobile="{{ utils.is_mobile ? 'true' : 'false' }}"></div>
+
     <div class="application">
         {% element 'header' %}
         {% element 'snippets/cart' %}
@@ -112,19 +115,24 @@
                         autoplay: true,
                         interval: 2500,
                         lazyLoad: 'nearby',
-                        perPage: 4,
+                        perPage: 5,
 
                         gap: 11,
 
                         padding: {
                             right: '2rem',
-                            left: '2px'
+                            left: '2rem'
                         },
 
                         breakpoints: {
-                            '768': {
+                            '1023': {
                                 type: 'loop',
                                 perPage: 3,
+
+                                padding: {
+                                    right: '2rem',
+                                    left: '2px'
+                                },
                             },
 
                             '550': {
@@ -163,13 +171,22 @@
                     autoplay: true,
                     interval: 2000,
                     lazyLoad: 'nearby',
-                    perPage: 2,
+                    perPage: 3,
                     padding: {
-                        right: '5rem',
-                        left : '4.8vw',
+                        right: '5vw',
+                        left : '5vw',
                     },
 
                     breakpoints: {
+                        '1023': {
+                            perPage: 2,
+
+                            padding: {
+                                right: '5rem',
+                                left : '4.8vw',
+                            },
+                        },
+
                         '630': {
                             perPage: 1,
                         }
@@ -178,7 +195,6 @@
 
                 // Banner info
                 new Splide( '#banner_info', {
-                    type: 'loop',
                     arrows : false,
                     pagination: false,
                     lazyLoad: 'nearby',
@@ -187,16 +203,21 @@
                     interval: 2500,
 
                     breakpoints: {
+                        '1024': {
+                            perPage: 4,
+                        },
                         '768': {
                             type: 'loop',
                             perPage: 3,
                         },
 
                         '425': {
+                            type: 'loop',
                             perPage: 2,
                         },
 
                         '280': {
+                            type: 'loop',
                             perPage: 1,
                         },
                     }
@@ -214,14 +235,26 @@
                 // Galeria do produto selecionado
                 // Thumbnails
                 var thumbnails = new Splide( '#thumbnail_galeria_produto', {
-                    fixedWidth : '25vw',
-                    height     : '18vw',
-                    gap        : 10,
+                    fixedWidth : '80px',
+                    height     : '80px',
+                    gap        : 5,
                     rewind     : true,
-                    // cover      : true,
+                    cover      : true,
                     pagination : false,
-                    isNavigation: true,
                     focus       : 'center',
+                    isNavigation: true,
+                    breakpoints: {
+                        '1': {
+                            fixedWidth : '25vw',
+                            height     : '18vw',
+                            gap        : 10,
+                            rewind     : true,
+                            cover      : true,
+                            pagination : false,
+                            isNavigation: true,
+                            focus       : 'center',
+                        }
+                    }
                 } ).mount();
                 
                 var galeriaProduto = new Splide( '#galeria_produto', {
@@ -232,9 +265,23 @@
                     interval: 2000,
                     lazyLoad: 'nearby',
                     gap: 10,
-                    padding: {
-                        right: '5rem',
-		                left : '5rem'
+
+                    breakpoints: {
+                        '769': {
+                            gap: 0,
+                            perPage: 1,
+                            padding: {
+                                right: '0',
+                                left : '0'
+                            },
+                        },
+
+                        '460': {
+                            padding: {
+                                right: '5rem',
+                                left : '5rem'
+                            },
+                        },
                     }
                 } );
 
