@@ -98,21 +98,21 @@
                 </svg>
 
                 <div class="links_conta">
-                    <a href="#" class="tray-hide" data-logged-user="false">
+                    <a href="#" class="tray-hide" data-logged-user="false" id="login-button-d">
                         Login
                     </a>
 
-                    <a href="#" class="tray-hide" data-logged-user="true">
+                    <a href="{{ links.account }}" class="tray-hide" data-logged-user="true">
                         Minha conta
                     </a>
 
                     <div class="divisor"></div>
 
-                    <a href="#" class="tray-hide" data-logged-user="false">
+                    <a href="{{ links.register }}" class="tray-hide" data-logged-user="false">
                         Cadastro
                     </a>
 
-                    <a href="#" class="tray-hide" data-logged-user="true">
+                    <a href="{{ links.logout }}" class="tray-hide" data-logged-user="true">
                         Sair
                     </a>
                 </div>
@@ -147,34 +147,71 @@
             </svg>
         </form>
 
-        <ul id="categoriasMenu">
-            {% set categories = Categories() %}
-            {% for category in categories if category.id != 49 and category.id != 51 %}
-                <li {% if category.children %} class="parent" {%endif%}>
-                    <a href="{{ category.link }}">
-                        {{ category.name }}
-                    </a>
+        {% if not utils.is_mobile %}
+            <ul id="categoriasMenu">
+                {% set categories = Categories() %}
+                {% for category in categories if category.id != 49 and category.id != 51 %}
+                    <li {% if category.children %} class="parent" {%endif%}>
+                        <a href="{{ category.link }}">
+                            {{ category.name }}
+                        </a>
 
-                    {% if category.children %}
-                    <svg version="1.1" 
-                         x="0px"
-                         y="0px"
-                         width="451.847px"
-                         height="451.847px"
-                         viewBox="0 0 451.847 451.847"
-                         style="enable-background:new 0 0 451.847 451.847;"
-                         xml:space="preserve"
-                    >
-                        <g>
-                            <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
-                                c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
-                                c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
-                        </g>
-                    </svg>
-                    {% endif %}
-                </li>
-            {% endfor %} 
-        </ul>
+                        {% if category.children %}
+                        <svg version="1.1" 
+                            x="0px"
+                            y="0px"
+                            width="12px"
+                            height="12px"
+                            viewBox="0 0 451.847 451.847"
+                            style="enable-background:new 0 0 451.847 451.847;"
+                            xml:space="preserve"
+                            fill="#fff"
+                        >
+                            <g>
+                                <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+                                    c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
+                                    c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
+                            </g>
+                        </svg>
+                        
+                            {% if category.id == 103 %}
+                                <div class="ct_children ct_marcas">
+                                    <ul class="marcas">
+                                        {% for child in category.children %}
+                                            <li class="marca">
+                                                <a href="{{ child.link }}">
+                                                    <img class="lazy" data-src="{{ asset('img/marcas/logo/header/'~child.name~'.jpg') }}" alt="{{ child.name }}">
+                                                </a>
+                                            </li>
+
+                                            {% for submarca in child.children %}
+                                                <li class="marca">
+                                                    <a href="{{ submarca.link }}">
+                                                        <img class="lazy" data-src="{{ asset('img/marcas/logo/header/'~submarca.name~'.jpg') }}" alt="{{ submarca.name }}">
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% else %}
+                                <div class="ct_children ct_links">
+                                    <ul>
+                                        {% for child in category.children %}
+                                            <li class="marca">
+                                                <a href="{{ child.link }}">
+                                                    {{ child.name }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </li>
+                {% endfor %} 
+            </ul>
+        {% endif %}
     </div>
 </header>
 

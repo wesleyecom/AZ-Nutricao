@@ -7,9 +7,13 @@ header div#header-m {
 header h1#logo-d {
   position: absolute;
   top: 0;
-  left: 10vw;
+  left: 14vw;
   margin: 0;
   z-index: 1;
+}
+header h1#logo-d a img {
+  position: relative;
+  width: 85%;
 }
 header div.cima {
   position: relative;
@@ -75,7 +79,7 @@ header div.baixo h1, header div.baixo svg#svg_hamburger {
 header div.baixo form.barra_busca {
   order: 1;
   position: relative;
-  width: 50%;
+  width: 51%;
   height: 34%;
   display: flex;
   align-items: center;
@@ -94,6 +98,11 @@ header div.baixo form.barra_busca input {
   font-size: 1.5em;
   outline: none;
 }
+header div.baixo form.barra_busca input::placeholder {
+  font-family: "Nunito";
+  font-weight: 700;
+  color: #585858;
+}
 header div.baixo form.barra_busca button {
   position: absolute;
   top: 0;
@@ -106,6 +115,15 @@ header div.baixo form.barra_busca button {
   background: transparent;
   cursor: pointer;
   outline: none;
+}
+header div.baixo form.barra_busca div.suggestion {
+  width: 84%;
+  height: auto;
+  max-height: calc(95vh - 170px);
+  box-shadow: 0px 5px 5px 0px #0003;
+  top: 45px;
+  border-radius: 0 0 5px 5px;
+  z-index: 1;
 }
 header div.baixo form.barra_busca svg {
   display: none;
@@ -182,7 +200,7 @@ header div.baixo ul#categoriasMenu {
   order: 3;
   position: absolute;
   bottom: 0;
-  width: 75%;
+  width: 75.5%;
   height: 35%;
   display: flex;
   align-items: center;
@@ -211,6 +229,7 @@ header div.baixo ul#categoriasMenu li a {
 }
 header div.baixo ul#categoriasMenu li:hover {
   background-color: #fff;
+  position: unset;
 }
 header div.baixo ul#categoriasMenu li:hover a {
   color: #629f29;
@@ -219,12 +238,82 @@ header div.baixo ul#categoriasMenu li:hover svg {
   fill: #629f29 !important;
 }
 header div.baixo ul#categoriasMenu li.parent svg {
-  width: 12px;
-  height: 12px;
-  fill: #fff;
   margin-left: 10px;
   margin-top: 2px;
   transition: 0.3s all ease-in-out;
+}
+header div.baixo ul#categoriasMenu li.parent:hover > div.ct_children {
+  display: flex;
+}
+header div.baixo ul#categoriasMenu li div.ct_children {
+  display: none;
+  position: absolute;
+  top: 48px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 0 2px 2px #0000001f;
+  border-radius: 3px;
+  display: none;
+  z-index: 100;
+}
+header div.baixo ul#categoriasMenu li div.ct_children.ct_links {
+  width: auto;
+  padding: 15px 0;
+}
+header div.baixo ul#categoriasMenu li div.ct_children.ct_links ul li {
+  padding-right: 65px;
+  border-radius: 0;
+}
+header div.baixo ul#categoriasMenu li div.ct_children.ct_links ul li:hover {
+  background-color: #dbdbdb;
+}
+header div.baixo ul#categoriasMenu li div.ct_children.ct_marcas {
+  width: 90%;
+  left: -8%;
+  padding: 30px;
+}
+header div.baixo ul#categoriasMenu li div.ct_children.ct_marcas ul.marcas {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  cursor: auto;
+}
+header div.baixo ul#categoriasMenu li div.ct_children.ct_marcas ul.marcas li {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 2px;
+  margin: 0;
+  display: block;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+header div.baixo ul#categoriasMenu li div.ct_children.ct_marcas ul.marcas li a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+header div.baixo ul#categoriasMenu li div.ct_children.ct_marcas ul.marcas li a img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+header div.baixo ul#categoriasMenu li div.ct_children.ct_marcas ul.marcas li:hover {
+  background-color: #d8d8d8;
+}
+header div.baixo ul#categoriasMenu li div.ct_children.ct_marcas ul.marcas li:last-child {
+  margin-right: auto;
+}
+header div.baixo ul#categoriasMenu li div.ct_children:hover {
+  display: flex;
 }
 
 @media (max-width: 1172px) {

@@ -266,6 +266,95 @@ section#secao_produto {
                     background-color: #b7b7b7;
                 }
             }
+
+            form {
+                label {
+                    color: #373737;
+                    font-family: Nunito;
+                    font-weight: 600;
+                    display: flex;
+                    flex-direction: column;
+                    align-content: flex-start;
+
+                    input {
+                        margin-top: 5px;
+                        background-color: #fff;
+                        border: 1px solid #c1c1c1;
+                        box-sizing: border-box;
+                        padding: 8px;
+                        border-radius: 3px;
+
+                        &#nome_coment,
+                        &#email_coment{
+                            opacity: 0.7;
+                            background-color: #e1e1e1;
+                        }
+                    }
+
+                    textarea {
+                        border-radius: 3px;
+                        border: 1px solid #c1c1c1;
+                        font-family: "Nunito";
+                        color: #4f4f4f;
+                    }
+
+                    &:nth-child(6) {
+                        flex-direction: row-reverse;
+                        justify-content: flex-end;
+                        align-items: center;
+
+                        input {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+                h5 {
+                    font-family: Nunito;
+                    color: #4f4f4f;
+                    font-size: 1.2em;
+                    font-weight: 800;
+                }
+
+                div.rateBlock {
+                    margin-top: -15px;
+
+                    ul.stars {
+                        position: relative;
+                        display: flex;
+
+                        li.starn {
+                            background: url(../img/stars-new.png?1) no-repeat center top;
+                            width: 45px;
+                            height: 38px;
+                            cursor: pointer;
+                            transition: 0.3s all ease-in-out;
+
+                            &.star-on {
+                                cursor: pointer;
+                                background: url(../img/stars-new.png?1) no-repeat center bottom;
+                                margin-top: -3px;
+                            }
+                        }
+
+                        li.nota {
+                            position: absolute;
+                            left: 8px;
+                            bottom: -25px;
+                            font-family: Nunito;
+                        }
+                    }
+                }
+
+                img#bt-submit-comments {
+                    visibility: hidden;
+                    display: none;
+                }
+
+                button.btn_enviar_comentario {
+                    margin-top: 50px;
+                }
+            }
         }
 
         div.hreview-comentarios {

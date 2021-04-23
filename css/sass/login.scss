@@ -1,0 +1,190 @@
+section.page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div.container3  {
+        margin-top: 30px;
+
+        h1 {
+            font-family: 'Nunito';
+            font-size: 2em;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #202020;
+        }
+    }
+    
+    div.container {
+        display: block;
+        max-width: 90vw;
+    
+        div.container2 {
+            position: relative;
+
+            div.Seguro {
+                display: none;
+            }
+    
+            div#CadastroAbas {
+                ul {
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                    height: 50px;
+                    background-color: #cecece;
+                    border-radius: 3px 3px 0 0;
+    
+                    li {
+                        position: relative;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+    
+                        a {
+                            color: #696969;
+                            font-family: 'Nunito';
+                            font-size: 1.3em;
+                            font-weight: 800;
+                        }
+    
+                        &.aberta {
+                            background-color: #6cab2b;
+                            
+                            a {
+                                color: #fff;
+                            }
+                        }
+    
+                        &#PessoaFisica {
+                            border-radius: 5px 0 0 0;
+                        }
+    
+                        &#PessoaJuridica {
+                            border-radius: 0 5px 0 0;
+                        }
+                    }
+                }
+            }
+    
+            form#frm2 {
+                position: relative;
+                width: 100%;
+                border-radius: 5px;
+                box-shadow: 0 0 4px #0000001f;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+    
+                div.board {
+                    position: relative;
+                    width: 100%;
+                    background-color: #fff;
+    
+                    div:first-child {
+                        display: none;
+                    }
+                    
+                    fieldset input, fieldset label input, label input {
+                        position: relative;
+                        max-width: 75vw;
+                    }
+
+                    fieldset {
+                        position: relative;
+                        max-width: 100%;
+
+                        border: 0;
+                        box-sizing: border-box;
+                        padding: 30px;
+                        font-family: 'Nunito';
+                        font-weight: 700;
+                        font-size: 1.2em;
+                        color: #5a5a5a;
+    
+                        span.obriga.red {
+                            color: #d43a3a;
+                            font-weight: 900;
+                        }
+    
+                        div#fisica, div#juridica {
+                            margin-top: 25px;
+                        }
+    
+                        label {
+                            display: block;
+                            margin-bottom: 15px;
+    
+                            input {
+                                box-sizing: border-box;
+                                padding: 12px 15px;
+                                border: 0;
+                                background-color: #ececec;
+                                border-radius: 3px;
+                                outline: none;
+                                margin-right: 15px;
+                                margin-top: 15px;
+                                transition: 0.3s all ease-in-out;
+    
+                                &:hover {
+                                    background-color: #c5c5c5;
+                                }
+    
+                                &.obriga {
+                                    border-left: 3px solid #e22020;
+                                }
+                            }
+                        }
+    
+                        p {
+                            span#seguranca_senha {
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+    
+                    &.termContainerRegister {
+                        display: flex;
+                        justify-content: center;
+                        box-sizing: border-box;
+                        padding: 0 30px 30px 30px;
+    
+                        button.botao-prosseguir-cadastro {
+                            width: 100%;
+                            border: 0;
+                            background-color: #6cab2b;
+                            box-sizing: border-box;
+                            padding: 15px;
+                            border-radius: 3px;
+                            margin-top: 30px;
+    
+                            span {
+                                color: #fff;
+                                font-family: 'Nunito';
+                                font-weight: 900;
+                                text-transform: uppercase;
+                            }
+    
+                            cursor: pointer;
+                            transition: 0.3s all ease-in-out;
+    
+                            &:hover {
+                                background-color: #7bcf27;
+                            }
+                        }
+                    }
+                }
+            }
+
+            h2 {
+                box-sizing: border-box;
+                padding-left: 5%;
+            }
+
+            input#endereco_cobranca_diferente {
+                margin-left: 5%;
+            }
+        }
+    }
+}

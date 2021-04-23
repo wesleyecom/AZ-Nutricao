@@ -6962,6 +6962,98 @@ header {
   position: relative;
   width: 100%;
 }
+header div.baixo form.barra_busca div.suggestion {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #fff;
+  overflow: hidden;
+}
+header div.baixo form.barra_busca div.suggestion.is-hidden {
+  display: none;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-words, header div.baixo form.barra_busca div.suggestion div.suggestion-products {
+  position: relative;
+  width: 100%;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-words .suggestion-title, header div.baixo form.barra_busca div.suggestion div.suggestion-products .suggestion-title {
+  color: #333333;
+  font-family: "Nunito";
+  font-size: 1.8em;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-words {
+  display: flex;
+  flex-direction: column;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-words span {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  color: #333333;
+  font-family: "Nunito";
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-bottom: 1px solid #b1b1b1;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products {
+  margin-top: 15px;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #e2e2e2;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-img {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 5px;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-img img {
+  position: relative;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 15px;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc span {
+  font-family: "Nunito";
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc span.titlep {
+  font-size: 1.2em;
+  font-weight: 800;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc span.idp {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 5px;
+}
 
 footer {
   position: relative;
@@ -8151,6 +8243,78 @@ section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente a {
 }
 section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente a:hover {
   background-color: #b7b7b7;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form label {
+  color: #373737;
+  font-family: Nunito;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form label input {
+  margin-top: 5px;
+  background-color: #fff;
+  border: 1px solid #c1c1c1;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 3px;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form label input#nome_coment, section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form label input#email_coment {
+  opacity: 0.7;
+  background-color: #e1e1e1;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form label textarea {
+  border-radius: 3px;
+  border: 1px solid #c1c1c1;
+  font-family: "Nunito";
+  color: #4f4f4f;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form label:nth-child(6) {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form label:nth-child(6) input {
+  margin-left: 10px;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form h5 {
+  font-family: Nunito;
+  color: #4f4f4f;
+  font-size: 1.2em;
+  font-weight: 800;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form div.rateBlock {
+  margin-top: -15px;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form div.rateBlock ul.stars {
+  position: relative;
+  display: flex;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form div.rateBlock ul.stars li.starn {
+  background: url(../img/stars-new.png?1) no-repeat center top;
+  width: 45px;
+  height: 38px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form div.rateBlock ul.stars li.starn.star-on {
+  cursor: pointer;
+  background: url(../img/stars-new.png?1) no-repeat center bottom;
+  margin-top: -3px;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form div.rateBlock ul.stars li.nota {
+  position: absolute;
+  left: 8px;
+  bottom: -25px;
+  font-family: Nunito;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form img#bt-submit-comments {
+  visibility: hidden;
+  display: none;
+}
+section#secao_produto div.ct_avaliacoes_produto div#comentario_cliente form button.btn_enviar_comentario {
+  margin-top: 50px;
 }
 section#secao_produto div.ct_avaliacoes_produto div.hreview-comentarios {
   display: block;

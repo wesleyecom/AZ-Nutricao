@@ -113,7 +113,8 @@ section#secao_produto {
                             justify-content: center;
 
                             img {
-                                height: 70%;
+                                max-width: 100%;
+                                max-height: 70%;
                                 border-radius: 5px;
                                 cursor: pointer;
                             }

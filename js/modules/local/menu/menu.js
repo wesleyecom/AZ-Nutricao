@@ -12,7 +12,7 @@ btnFechaMenuRetratil.on('click', function() {
 });
 
 // Login fire action
-jQuery('#login-button').click(function(event) {
+jQuery('#login-button-d, #login-button-m').click(function(event) {
     event.preventDefault();
     jQuery('tray-login').show();
 });
