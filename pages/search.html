@@ -1,1 +1,23 @@
-SEARCH
+<link rel="stylesheet" href="{{ asset('css/busca.css') }}">
+
+<div class="search_header">
+    {% if search.word %}
+        <h2>Exibindo resultados para: {{ search.word }}</h2>
+    {% endif %}
+</div>
+
+{% if products|length > 0 %}
+    {% element 'snippets/paginate' %}
+
+    <div class="catalog_products">
+        <div class="ct_showcase_products" itemscope itemtype="https://schema.org/SomeProducts">
+            <ul itemscope itemtype="https://schema.org/SomeProducts">
+                {% for product in products %}
+                    {% element 'snippets/product_card' {"product": product} %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    {% element 'snippets/paginate' %}
+{% endif %}

@@ -19,8 +19,8 @@
     <link type="text/css" rel="stylesheet" href="//images.tcdn.com.br/commerce/assets/store/css/dist/suggestion.min.css?b6f219a5ca365aed26d6409ce09ed9961617978485" media="all"> -->
 
     <!-- theme styles -->
-    <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}" type="text/css"> -->
-    <!-- <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css" -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -56,6 +56,18 @@
         <main class="site-main">
             <section class="page-content">
                 {{ content_for_layout }}
+
+                {% if pages.current == 'search' %}
+                    {% if not search.word %}
+                        <link rel="stylesheet" href="{{ asset('css/busca_avancada.css') }}">
+
+                        <div class="busca_avancada">
+                            <h1>Desculpe, não foram encontrados resultados para a sua busca.</h1>
+
+                            <a href="{{ links.home }}">Voltar</a>
+                        </div>
+                    {% endif %}
+                {% endif %}
             </section>
         </main>
 
@@ -228,7 +240,6 @@
         {% else %}
             <!-- Call lightgallery js -->
             <script src="{{ asset('js/modules/lightgallery/dist/js/lightgallery.min.js') }}"></script>
-            <script src="{{ asset('js/modules/lightgallery/dist/js/lg-thumbnail.min.js') }}"></script>
             <script src="{{ asset('js/modules/local/product_page/avaliation.js') }}"></script>
 
             <script>

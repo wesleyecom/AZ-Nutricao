@@ -13,3 +13,8 @@ jQuery('#form-comments').append(`
 jQuery('#form-comments > button.btn_enviar_comentario').on('click', function() {
     jQuery('img#bt-submit-comments').click();
 });
+
+jQuery('div#comentario_cliente > a').on('click', function(e) {
+    e.preventDefault();
+    jQuery('tray-login').show();
+});

@@ -45,6 +45,9 @@
 </div>
 
 <div class="banner banner_nestle">
+    {% set category = Categories({id: '1'}) %}
+    <a href="{{ category.link }}"></a>
+
     <div class="ct_banner">
         <picture>
             <source class="lazy" data-srcset="{{ asset('img/banner/banner_nestle_1-xl.png') }}" alt="Slide 1" media="(min-width: 1024px)">
@@ -76,6 +79,8 @@
 </div>
 
 <div class="banner banner_thickenup">
+    <a href="https://nutrimedmix.commercesuite.com.br/loja/produto.php?loja=773127&IdProd=53&iniSession=1&608341a09646c"></a>
+
     <div class="ct_banner">
         <picture>
             <source class="lazy" data-srcset="{{ asset('img/banner/banner_thickenup_1-xl.png') }}" alt="Slide 1" media="(min-width: 1024px)">

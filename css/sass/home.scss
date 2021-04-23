@@ -233,6 +233,16 @@ div.banner {
     padding: 0 18px;
     margin: 100px 0;
 
+    a {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
     div.ct_banner {
         padding: 0;
         width: 100%;

@@ -6,24 +6,3 @@ div.header_catalog {
 div.paginacao {
     padding: 15px 0 15px 5vw;
 }
-
-div.catalog_products {
-    div.ct_showcase_products {
-        padding: 0 2vw;
-
-        ul {
-            justify-content: flex-start;
-
-            li {
-                width: 17%;
-                min-width: none;
-                margin-bottom: 2vw;
-                margin-left: 2.3vw;
-
-                &:last-child {
-                    margin-right: auto;
-                }
-            }
-        }
-    }
-}

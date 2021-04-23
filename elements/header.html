@@ -133,9 +133,11 @@
             </div>
         </div>
 
-        <form class="barra_busca" data-search="suggestion">
-            <input type="text" placeholder="O que você procura?" data-input="suggestion">
-            <button>></button>
+        <form class="barra_busca" role="form" action="{{ links.search }}" method="get" data-search="suggestion">
+            <input type="hidden" name="loja" value="{{ store.id }}">
+            <input type="text" placeholder="O que você procura?" data-input="suggestion" name="palavra_busca" tabindex="1" data-tray-tst="busca_palavra" required>
+        
+            <button type="submit" tabindex="2" data-tray-tst="botao_buscar">></button>
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve">
                 <path 
