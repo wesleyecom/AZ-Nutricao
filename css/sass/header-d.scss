@@ -304,12 +304,38 @@ header {
                         padding: 15px 0;
                         
                         ul {
+                            display: flex;
+
                             li {
-                                padding-right: 65px;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                justify-content: flex-start;
+                                min-width: 300px;
+                                max-width: 300px;
                                 border-radius: 0;
-                                
-                                &:hover {
-                                    background-color: rgb(219, 219, 219);
+
+                                a.first:hover {
+                                    color: #7dc33b;
+                                }
+
+                                ul {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+
+                                    li {
+                                        padding: 0;
+
+                                        a {
+                                            color: #8c8c8c;
+                                            font-weight: 700;
+                                            margin: 10px 0;
+
+                                            &:hover {
+                                                color: #b4b4b4;
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
