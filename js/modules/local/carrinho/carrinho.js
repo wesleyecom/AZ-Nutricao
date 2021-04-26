@@ -26,7 +26,7 @@ function syncCart() {
         method: "GET",
         url: "/web_api/cart/"+dataSession
     }).done(function( response, textStatus, jqXHR ) {
-        // console.log(response);
+        console.log(response);
 
         jQuery('ul#listaProdutos').html("");
 
@@ -110,14 +110,14 @@ jQuery('#fechar_carrinho').on('click', function() {
     jQuery('body').css('overflow-y', 'auto');
 });
 
-function addCart(dataProductId, preco, qtd){
+function addCart(dataProductId, preco, qtd, variantID){
   var dataSession = jQuery("html").attr("data-session");
   qtd = parseInt(qtd);
   jQuery.ajax({
     method: "POST",
     url: "/web_api/cart/",
     contentType: "application/json; charset=utf-8",
-    data: '{"Cart":{"session_id":"'+dataSession+'","product_id":"'+dataProductId+'","quantity":'+qtd+'}}'
+    data: '{"Cart":{"session_id":"'+dataSession+'","product_id":"'+dataProductId+'","quantity":"'+qtd+'","variant_id":"'+variantID+'"}}'
   }).done(function( response, textStatus, jqXHR ) {
     // console.log(response);
 
@@ -136,6 +136,12 @@ function addCart(dataProductId, preco, qtd){
     var response = $.parseJSON( jqXHR.responseText );
     console.log(response);
   });
+
+  if (variantID != '') {
+    jQuery('ul#variacoes_card_produto').removeClass('show');
+    jQuery("a#link_card_produto").removeClass('hide');
+    jQuery("div#btn_add_carrinho").removeClass('hide');
+  }
 }
 
 function deleteProduct(productId, preco, qtd) {
@@ -234,3 +240,49 @@ jQuery('button#limparCarrinho').on('click', function() {
         </span>
     `);
 });
+
+// Variações de produtos (card produto)
+function mostraVariacao(button) {
+    var ul = jQuery(button).parent().parent().children("ul#variacoes_card_produto");
+    var a  = jQuery(button).parent().parent().children("a");
+    var btn_add_carrinho = jQuery(button).parent().parent().children("div.add_carrinho");
+
+    jQuery("ul#variacoes_card_produto").removeClass('show');
+    jQuery("a#link_card_produto").removeClass('hide');
+    jQuery("div#btn_add_carrinho").removeClass('hide');
+
+    ul.children('li').each(function() {
+        var variantId = this.id;
+        var params = {};
+        params["attrs"] = "Variant.Sku";
+
+        var li = jQuery(this);
+
+        jQuery.ajax({
+            method: "GET",
+            url: "/web_api/variants/" + variantId,
+            data: params
+        }).done(function( response, textStatus, jqXHR ) {
+            console.log(response);
+            li.html(response.Variant.Sku[0].value);
+
+        }).fail(function( jqXHR, status, errorThrown ){
+            var response = jQuery.parseJSON( jqXHR.responseText );
+            console.log(response);
+        });
+    });
+
+    ul.addClass('show');
+    a.addClass('hide');
+    btn_add_carrinho.addClass('hide');
+}
+
+function escondeVariacao(button) {
+    var ul = jQuery(button).parent();
+    var a  = jQuery(button).parent().parent().children("a");
+    var btn_add_carrinho = jQuery(button).parent().parent().children("div.add_carrinho");
+
+    ul.removeClass('show');
+    a.removeClass('hide');
+    btn_add_carrinho.removeClass('hide');
+}
