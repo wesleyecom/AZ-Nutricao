@@ -71,7 +71,11 @@
                 <strong>R$ {{ product.price|currency }}</strong> no boleto bancário ou pix.
             </span>
     
-            <button onclick="addCart({{ product.id }}, {{ product.price }}, 1)">Adicionar ao carrinho</button>
+            {% if product.has_variation %}
+                <button class="btn_add_carrinho" onclick="mostraVariacao(this)">Adicionar ao carrinho</button>
+            {% else %}
+                <button class="btn_add_carrinho" onclick="addCart({{ product.id }}, {{ product.price }}, 1, '')">Adicionar ao carrinho</button>
+            {% endif %}
         </div>
     </div>
 

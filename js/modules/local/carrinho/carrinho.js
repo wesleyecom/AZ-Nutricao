@@ -117,7 +117,7 @@ function addCart(dataProductId, preco, qtd, variantID){
     method: "POST",
     url: "/web_api/cart/",
     contentType: "application/json; charset=utf-8",
-    data: '{"Cart":{"session_id":"'+dataSession+'","product_id":"'+dataProductId+'","quantity":"'+qtd+'","variant_id":"'+variantID+'"}}'
+    data: '{"Cart":{"session_id":"'+dataSession+'","product_id":"'+dataProductId+'","quantity":"'+qtd+'","variant_id":""}}'
   }).done(function( response, textStatus, jqXHR ) {
     // console.log(response);
 
@@ -135,6 +135,7 @@ function addCart(dataProductId, preco, qtd, variantID){
   }).fail(function( jqXHR, status, errorThrown ){
     var response = $.parseJSON( jqXHR.responseText );
     console.log(response);
+    alert('lala')
   });
 
   if (variantID != '') {
