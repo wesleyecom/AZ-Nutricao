@@ -2,7 +2,7 @@
 // Checar mobile
 var isMobile = jQuery('#isMobile').data('isMobile');
 
-// Lógica dos botões dos cards de produtos  ( | comprar | + | - | )
+// L�gica dos bot�es dos cards de produtos  ( | comprar | + | - | )
 let btn_subtrair  = jQuery('.btn_minus');
 let btn_somar     = jQuery('.btn_plus');
 
@@ -18,7 +18,7 @@ btn_somar.on('click', function(e) {
     jQuery(this).siblings('input').val(val+1);
 });
 
-// Pegar informações do carrinho de compras
+// Pegar informa��es do carrinho de compras
 function syncCart() {
     var dataSession = jQuery("html").attr("data-session");
 
@@ -117,7 +117,7 @@ function addCart(dataProductId, preco, qtd, variantID){
     method: "POST",
     url: "/web_api/cart/",
     contentType: "application/json; charset=utf-8",
-    data: '{"Cart":{"session_id":"'+dataSession+'","product_id":"'+dataProductId+'","quantity":"'+qtd+'","variant_id":""}}'
+    data: '{"Cart":{"session_id":"'+dataSession+'","product_id":"'+dataProductId+'","quantity":"'+qtd+'","variant_id":"'+variantID+'"}}'
   }).done(function( response, textStatus, jqXHR ) {
     // console.log(response);
 
@@ -135,7 +135,6 @@ function addCart(dataProductId, preco, qtd, variantID){
   }).fail(function( jqXHR, status, errorThrown ){
     var response = $.parseJSON( jqXHR.responseText );
     console.log(response);
-    alert('lala')
   });
 
   if (variantID != '') {
@@ -242,7 +241,7 @@ jQuery('button#limparCarrinho').on('click', function() {
     `);
 });
 
-// Variações de produtos (card produto)
+// Varia��es de produtos (card produto)
 function mostraVariacao(button) {
     var ul = jQuery(button).parent().parent().children("ul#variacoes_card_produto");
     var a  = jQuery(button).parent().parent().children("a");

@@ -8058,8 +8058,11 @@ section#secao_produto div.cima div.info_produto div.avaliacao_produto div.rankin
 }
 section#secao_produto div.cima div.ct_comprar {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 section#secao_produto div.cima div.ct_comprar span.preco_produto {
+  order: 1;
   display: block;
   margin-top: 12px;
   font-family: "Nunito";
@@ -8067,6 +8070,7 @@ section#secao_produto div.cima div.ct_comprar span.preco_produto {
   color: #13a019;
 }
 section#secao_produto div.cima div.ct_comprar span.parcelamento_produto {
+  order: 2;
   font-family: "Nunito";
   font-weight: 700;
   display: block;
@@ -8076,13 +8080,86 @@ section#secao_produto div.cima div.ct_comprar span.parcelamento_produto span {
   color: #13a019;
 }
 section#secao_produto div.cima div.ct_comprar span.formas_pagamento_produto {
+  order: 3;
   display: block;
   margin-top: 5px;
   font-family: "Nunito";
   font-weight: 400;
   color: #484848;
 }
-section#secao_produto div.cima div.ct_comprar button {
+section#secao_produto div.cima div.ct_comprar div.qtd {
+  order: 5;
+  position: relative;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 22px;
+}
+section#secao_produto div.cima div.ct_comprar div.qtd button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  color: #6b6b6b;
+  font-family: "Nunito";
+  font-size: 3em;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+section#secao_produto div.cima div.ct_comprar div.qtd input {
+  position: relative;
+  width: 40%;
+  height: 65%;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 0;
+  text-align: center;
+  font-family: "Nunito";
+  font-size: 2em;
+  color: #424242;
+  outline: none;
+  border-radius: 5px;
+  background: transparent;
+  transition: 0.3s all ease-in-out;
+}
+section#secao_produto div.cima div.ct_comprar span.passo1 {
+  order: 4;
+  display: block;
+  margin-top: 20px;
+}
+section#secao_produto div.cima div.ct_comprar span.passo1 div#menuVars div.varTit {
+  font-family: Nunito;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+section#secao_produto div.cima div.ct_comprar span.passo1 div#menuVars div#opcoes0 select {
+  position: relative;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #e1e1e1;
+  font-family: Nunito;
+  font-weight: 900;
+  color: #8c8c8c;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='grey' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 10px;
+  cursor: pointer;
+}
+section#secao_produto div.cima div.ct_comprar button.btn_add_carrinho {
+  order: 6;
   position: relative;
   width: 100%;
   background-color: #2db53e;
@@ -8099,8 +8176,12 @@ section#secao_produto div.cima div.ct_comprar button {
   outline: none;
   margin-top: 30px;
 }
-section#secao_produto div.cima div.ct_comprar button:hover {
+section#secao_produto div.cima div.ct_comprar button.btn_add_carrinho:hover {
   background-color: #66D141;
+}
+section#secao_produto div.cima div.ct_comprar button.btn_add_carrinho:disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 section#secao_produto div.descricao_produto {
   box-sizing: border-box;

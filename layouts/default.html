@@ -242,67 +242,9 @@
         {% else %}
             <!-- Call lightgallery js -->
             <script src="{{ asset('js/modules/lightgallery/dist/js/lightgallery.min.js') }}"></script>
+            <script src="{{ asset('js/modules/local/product_page/galeriaProduto.js') }}"></script>
+            <script src="{{ asset('js/modules/local/product_page/variants_logic.js') }}"></script>
             <script src="{{ asset('js/modules/local/product_page/avaliation.js') }}"></script>
-
-            <script>
-                // Lightgallery
-                lightGallery(document.getElementById('ul-lightgallery')); 
-                
-                // Galeria do produto selecionado
-                // Thumbnails
-                var thumbnails = new Splide( '#thumbnail_galeria_produto', {
-                    fixedWidth : '80px',
-                    height     : '80px',
-                    gap        : 5,
-                    rewind     : true,
-                    cover      : true,
-                    pagination : false,
-                    focus       : 'center',
-                    isNavigation: true,
-                    breakpoints: {
-                        '1': {
-                            fixedWidth : '25vw',
-                            height     : '18vw',
-                            gap        : 10,
-                            rewind     : true,
-                            cover      : true,
-                            pagination : false,
-                            isNavigation: true,
-                            focus       : 'center',
-                        }
-                    }
-                } ).mount();
-                
-                var galeriaProduto = new Splide( '#galeria_produto', {
-                    type   : 'loop',
-                    arrows : false,
-                    pagination: false,
-                    autoplay: false,
-                    interval: 2000,
-                    lazyLoad: 'nearby',
-                    gap: 10,
-
-                    breakpoints: {
-                        '769': {
-                            gap: 0,
-                            perPage: 1,
-                            padding: {
-                                right: '0',
-                                left : '0'
-                            },
-                        },
-
-                        '460': {
-                            padding: {
-                                right: '5rem',
-                                left : '5rem'
-                            },
-                        },
-                    }
-                } );
-
-                galeriaProduto.sync( thumbnails ).mount();
-            </script>
         {% endif %}
     {% endif %}
 

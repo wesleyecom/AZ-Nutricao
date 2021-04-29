@@ -70,11 +70,18 @@
             <span class="formas_pagamento_produto">
                 <strong>R$ {{ product.price|currency }}</strong> no boleto bancário ou pix.
             </span>
+
+            <div class="qtd">
+                <button class="btn_minus">-</button>
+                <input type="text" value="1" minlength="1">
+                <button class="btn_plus">+</button>
+            </div>
     
             {% if product.has_variation %}
-                <button class="btn_add_carrinho" onclick="mostraVariacao(this)">Adicionar ao carrinho</button>
+                {{ productHelper.variants() }}
+                <button class="btn_add_carrinho" onclick="addCart({{ product.id }}, {{ product.price }}, jQuery(this).siblings('div.qtd').children('input').val(), jQuery('select#variation_first_select').val())">Adicionar ao carrinho</button>
             {% else %}
-                <button class="btn_add_carrinho" onclick="addCart({{ product.id }}, {{ product.price }}, 1, '')">Adicionar ao carrinho</button>
+                <button class="btn_add_carrinho" onclick="addCart({{ product.id }}, {{ product.price }}, jQuery(this).siblings('div.qtd').children('input').val(), '')">Adicionar ao carrinho</button>
             {% endif %}
         </div>
     </div>
