@@ -1,0 +1,184 @@
+@font-face {
+    font-family: MuseoSansRounded;
+    src: url("./fonts/MuseoSansRounded/MuseoSansRounded.otf");
+}
+
+@font-face {
+    font-family: Nexa-Light;
+    src: url("./fonts/Nexa/Nexa_Light.otf");
+}
+
+@font-face {
+    font-family: Nexa-Bold;
+    src: url("./fonts/Nexa/Nexa_Bold.otf");
+}
+
+div.hero {
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url("../img/bg_supercoffee.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    div.texto {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+
+        h2 {
+            position: relative;
+            width: 80%;
+            color: #fff;
+            font-family: MuseoSansRounded;
+            text-transform: uppercase;
+            font-size: 2.5em;
+        }
+
+        p {
+            width: 80%;
+            color: #fff;
+            font-family: Nexa-Light;
+            font-size: 1.8em;
+            line-height: 1.5em;
+
+            strong {
+                font-family: Nexa-Bold;
+            }
+        }
+    }
+
+    div#supercoffee {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        padding-bottom: 30px;
+
+        div.splide__track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            ul.splide__list {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                align-items: center;
+
+                li {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+
+                    div.card {
+                        position: relative;
+                        width: 80%;
+                        height: auto;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: center;
+
+                        a {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 1;
+                        }
+                
+                        img {
+                            height: 200px;
+                        }
+
+                        h3 {
+                            font-family: MuseoSansRounded;
+                            font-size: 2.5em;
+                            color: #fff;
+                            text-transform: uppercase;
+                
+                            span {
+                                text-transform: uppercase;
+                                color: #000;
+                            }
+
+                            &.ic {
+                                text-align: center;
+                                display: flex;
+                                flex-direction: column;
+                                
+                                span {
+                                    font-size: .8em;
+                                }
+                            }
+                        }
+                
+                        button {
+                            position: relative;
+                            width: 50px;
+                            height: 50px;
+                            box-sizing: border-box;
+                            padding: 15px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 50px;
+                            background-color: #D4A657;
+                            color: #000;
+                            font-family: MuseoSansRounded;
+                            font-size: 2em;
+                            border: 0;
+                            outline: 0;
+                            overflow: hidden;
+                            cursor: pointer;
+                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+
+
+                            transition: 0.3s all ease-in-out;
+
+                            z-index: 10;
+
+                            &:hover {
+                                background-color: #a88039;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+
+        ul.splide__pagination {
+            bottom: -5px;
+
+            li {
+                margin-right: 15px;
+
+                button {
+                    width: 50px;
+                    height: 3px;
+                    border-radius: 2px;
+                    background-color: #000;
+
+                    &.is-active {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

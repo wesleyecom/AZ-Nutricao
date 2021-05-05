@@ -108,6 +108,10 @@ section#secao_produto {
                     outline: none;
                     cursor: pointer;
                     transition: 0.3s all ease-in-out;
+
+                    &:hover {
+                        color: #3f3f3f;
+                    }
                 }
 
                 input {

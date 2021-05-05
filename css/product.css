@@ -96,6 +96,9 @@ section#secao_produto div.cima div.ct_comprar div.qtd button {
   cursor: pointer;
   transition: 0.3s all ease-in-out;
 }
+section#secao_produto div.cima div.ct_comprar div.qtd button:hover {
+  color: #3f3f3f;
+}
 section#secao_produto div.cima div.ct_comprar div.qtd input {
   position: relative;
   width: 40%;

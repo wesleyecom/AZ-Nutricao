@@ -52,6 +52,7 @@
 
     <div class="application">
         {% element 'header' %}
+
         {% element 'snippets/cart' %}
 
         <main class="site-main">
@@ -117,7 +118,7 @@
         var lazyLoadInstance = new LazyLoad();
     </script>
 
-    {% if pages.current == 'home' or pages.current == 'product' %}
+    {% if pages.current == 'home' or pages.current == 'product' or pages.current == 'catalog' %}
         <!-- Splide.js -->
         <script src="{{ asset('js/modules/splide/dist/js/splide.min.js') }}"></script>
         
@@ -239,12 +240,28 @@
                     }
                 } ).mount();
             </script>
+        {% elseif pages.current == 'catalog' and category.id == 113 %}
+            <script>
+                new Splide( '#supercoffee', {
+                        type   : 'loop',
+                        arrows : false,
+                        autoplay: true,
+                        interval: 3000,
+                        lazyLoad: 'nearby',
+                        perPage: 1
+                    }).mount();
+            </script>
         {% else %}
             <!-- Call lightgallery js -->
             <script src="{{ asset('js/modules/lightgallery/dist/js/lightgallery.min.js') }}"></script>
-            <script src="{{ asset('js/modules/local/product_page/galeriaProduto.js') }}"></script>
             <script src="{{ asset('js/modules/local/product_page/variants_logic.js') }}"></script>
             <script src="{{ asset('js/modules/local/product_page/avaliation.js') }}"></script>
+
+            {% if product.category_id == 113 %}
+                <script src="{{ asset('js/modules/local/product_page/galeriaSuperCoffee.js') }}"></script>
+            {% else %}
+                <script src="{{ asset('js/modules/local/product_page/galeriaProduto.js') }}"></script>
+            {% endif %}
         {% endif %}
     {% endif %}
 

@@ -1,0 +1,209 @@
+@font-face {
+    font-family: MuseoSansRounded;
+    src: url("./fonts/MuseoSansRounded/MuseoSansRounded.otf");
+}
+
+@font-face {
+    font-family: Nexa-Light;
+    src: url("./fonts/Nexa/Nexa_Light.otf");
+}
+
+@font-face {
+    font-family: Nexa-Bold;
+    src: url("./fonts/Nexa/Nexa_Bold.otf");
+}
+
+section#secao_produto {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: grid;
+    
+    grid-template-columns: 100%;
+    grid-template-rows: 50vh auto auto auto;
+    grid-template-areas: 
+                            "galeria"
+                            "titulo"
+                            "comprar"
+                            "sobre";
+
+    background-color: #31261D;
+
+    div#galeria_supercoffee {
+        grid-area: galeria;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        div.splide__track {
+            position: relative;
+            width: 100%;
+
+            ul.splide__list {
+                position: relative;
+                width: 100%;
+                max-height: 50vh;
+
+                li {
+                    position: relative;
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+
+        ul.splide__pagination {
+            bottom: -18px;
+
+            li {
+                button {
+                    width: 30px;
+                    height: 3px;
+                    border-radius: 5px;
+                    background-color: rgba(255, 255, 255, 0.425);
+
+                    &.is-active {
+                        background-color: #fff;
+                        transform: none;
+                    }
+                }
+            }
+        }
+    }
+
+    div.ct_comprar {
+        grid-area: comprar;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 6vw;
+        display: flex;
+        flex-direction: column;
+
+        span {
+            &.preco_produto {
+                color: #E5BC9C;
+                font-family: Nunito;
+                font-weight: 900;
+                font-size: 2.5em;
+            }
+
+            &.parcelamento_produto {
+                font-family: Nunito;
+                font-weight: 500;
+                font-size: 1.5em;
+                color: #E5BC9C;
+                margin-top: -15px;
+
+                span, strong {
+                    color: #E5BC9C;
+                }
+            }
+
+            &.formas_pagamento_produto {
+                font-family: Nunito;
+                font-weight: 500;
+                font-size: 1.5em;
+                color: #FFF;
+                margin-top: 5px;
+            }
+        }
+
+        div.qtd {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+
+            button {
+                width: 30px;
+                height: 30px;
+                padding: 0;
+                background: transparent;
+                border: 0;
+                color: #fff;
+                font-family: Poppins;
+                font-weight: 500;
+                font-size: 2.5em;
+            }
+
+            input {
+                position: relative;
+                width: 54%;
+                background: transparent;
+                border: 0;
+                text-align: center;
+                color: #fff;
+                font-family: Nunito;
+                font-weight: 600;
+                font-size: 2em;
+            }
+        }
+
+        button.btn_add_carrinho {
+            position: relative;
+            box-sizing: border-box;
+            padding: 18px 0;
+            width: 100%;
+            border: 0;
+            border-radius: 5px;
+            font-family: Nunito;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #fff;
+            background-color: #2DB53E;
+        }
+    }
+
+    div.container_titulo_produto {
+        grid-area: titulo;
+        box-sizing: border-box;
+        padding: 0 6vw;
+
+        h2.titulo_produto {
+            margin-top: 40px;
+            font-family: MuseoSansRounded;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 2.5em;
+        }
+
+        div.avaliacao_produto {
+            display: flex;
+            align-items: center;
+
+            span.ranking {
+                border-right: 1px solid #fff;
+                margin-right: 5px;
+                box-sizing: border-box;
+                padding-right: 5px;
+
+                svg {
+                    margin-right: 3px;
+                }
+            }
+
+            div.ranking {
+                color: #fff;
+                font-family: Nexa-Light;
+                font-size: 1.3em;
+
+                strong {
+                    font-family: Nexa-Bold;
+                }
+            }
+        }
+    }
+
+    div.info_produto {
+        grid-area: sobre;
+    }
+}

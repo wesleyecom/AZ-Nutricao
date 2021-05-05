@@ -1,61 +1,17 @@
-<link rel="stylesheet" href="{{ asset('css/product.css') }}">
-<link rel="stylesheet" href="{{ asset('css/product-m.css') }}" media="(max-width: 1023px)">
-<link rel="stylesheet" href="{{ asset('css/product-d.css') }}" media="(min-width: 1024px)">
+{% if product.category_id == 113 %}
+    <link rel="stylesheet" href="{{ asset('css/product_supercoffee-m.css') }}" media="(max-width: 768px)">
 
-<section id="secao_produto" itemscope itemtype="http://schema.org/Product">
-    {% if not utils.is_mobile %}
-        {% element 'snippets/breadcrumb' %}
-    {% endif %}
-
-    <div class="cima">
-        <div class="ct_galeria_produto">
-            <div class="splide galeria_produto" id="galeria_produto">
-                {% set images = product.images %}
-                
-                <div class="splide__track">
-                    <ul class="splide__list" id="ul-lightgallery">
-                        {% for image in images %}
-                            <li class="splide__slide" data-src="{{ image.full }}">
-                                <img src="{{ image.full }}" alt="Foto produto">
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+    <section id="secao_produto" itemscope itemtype="http://schema.org/Product">
+        <div class="splide galeria_produto" id="galeria_supercoffee">
+            <div class="splide__track">
+                <ul class="splide__list" id="ul-lightgallery">
+                    {% for i in 1..5 %}
+                        <li class="splide__slide" data-src="{{ asset('img/supercoffee/produtos/'~product.model~'/Banners/'~product.model~'_'~i~'.png') }}">
+                            <img src="{{ asset('img/supercoffee/produtos/'~product.model~'/Banners/'~product.model~'_'~i~'.png') }}" alt="Foto produto">
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
-        
-            <div id="thumbnail_galeria_produto" class="splide">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        {% for image in images %}
-                            <li class="splide__slide">
-                                <img src="{{ image.large }}" alt="Thumbnail produto">
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </div>
-    
-        <div class="info_produto">
-            <h2 class="titulo_produto">
-                {{ product.name }}
-            </h2>
-    
-            <span class="categoria_produto">
-                {% set categoryProduct = Categories( { "id": product.category_id } ) %}
-                {{ categoryProduct.name }}
-            </span>
-
-            <div class="avaliacao_produto">
-                {% element 'snippets/rating' {"ranking": product.ranking } %}
-                {% element 'product/rating' %}
-            </div>
-
-            {% if not utils.is_mobile %}
-                <div class="small_description">
-                    {{ product.description_small }}
-                </div>
-            {% endif %}
         </div>
 
         <div class="ct_comprar">
@@ -84,41 +40,145 @@
                 <button class="btn_add_carrinho" onclick="addCart({{ product.id }}, {{ product.price }}, jQuery(this).siblings('div.qtd').children('input').val(), '')">Adicionar ao carrinho</button>
             {% endif %}
         </div>
-    </div>
 
-    <div class="descricao_produto">
-        {{ product.description }}
-    </div>
+        <div class="container_titulo_produto">
+            <h2 class="titulo_produto">
+                {{ product.name }}
+            </h2>
 
-    {% set ranking = product.ranking %}
+            <div class="avaliacao_produto">
+                {% element 'snippets/rating' {"ranking": product.ranking } %}
+                {% element 'product/rating' %}
+            </div>
+        </div>
 
-    {% if ranking %}
-        <div class="ct_avaliacoes_produto">
-            <h3>Avaliação do produto</h3>
+        <div class="info_produto">
+            sobre o produto
+        </div>
+    </section>
+{% else %}
+    <link rel="stylesheet" href="{{ asset('css/product.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/product-m.css') }}" media="(max-width: 1023px)">
+    <link rel="stylesheet" href="{{ asset('css/product-d.css') }}" media="(min-width: 1024px)">
 
-            <div class="ct_nota_produto">
-                {% if not ranking.count == 0 %}
-                    <span class="nota_produto">
-                        {{ ranking.rating }}.0
-                    </span>
+    <section id="secao_produto" itemscope itemtype="http://schema.org/Product">
+        {% if not utils.is_mobile %}
+            {% element 'snippets/breadcrumb' %}
+        {% endif %}
 
-                    <div class="ct_stars">
-                        {% element 'snippets/rating' {"ranking": product.ranking } %}
-    
-                        {% if ranking.count == 1 %}
-                            {{ ranking.count }} cliente avaliou.
-                        {% else %}
-                            {{ ranking.count }} clientes avaliaram.
-                        {% endif %}
+        <div class="cima">
+            <div class="ct_galeria_produto">
+                <div class="splide galeria_produto" id="galeria_produto">
+                    {% set images = product.images %}
+                    
+                    <div class="splide__track">
+                        <ul class="splide__list" id="ul-lightgallery">
+                            {% for image in images %}
+                                <li class="splide__slide" data-src="{{ image.full }}">
+                                    <img src="{{ image.full }}" alt="Foto produto">
+                                </li>
+                            {% endfor %}
+                        </ul>
                     </div>
-                {% else %}
-                    <div class="ct_sem_nota">
-                        Nenhuma avaliação.
+                </div>
+            
+                <div id="thumbnail_galeria_produto" class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            {% for image in images %}
+                                <li class="splide__slide">
+                                    <img src="{{ image.large }}" alt="Thumbnail produto">
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="info_produto">
+                <h2 class="titulo_produto">
+                    {{ product.name }}
+                </h2>
+        
+                <span class="categoria_produto">
+                    {% set categoryProduct = Categories( { "id": product.category_id } ) %}
+                    {{ categoryProduct.name }}
+                </span>
+
+                <div class="avaliacao_produto">
+                    {% element 'snippets/rating' {"ranking": product.ranking } %}
+                    {% element 'product/rating' %}
+                </div>
+
+                {% if not utils.is_mobile %}
+                    <div class="small_description">
+                        {{ product.description_small }}
                     </div>
                 {% endif %}
             </div>
 
-            {% element 'product/comments' %}
+            <div class="ct_comprar">
+                <span class="preco_produto">
+                    R$ {{ product.price|currency }}
+                </span>
+        
+                <span class="parcelamento_produto">
+                    {{ product.payment }}
+                </span>
+        
+                <span class="formas_pagamento_produto">
+                    <strong>R$ {{ product.price|currency }}</strong> no boleto bancário ou pix.
+                </span>
+
+                <div class="qtd">
+                    <button class="btn_minus">-</button>
+                    <input type="text" value="1" minlength="1">
+                    <button class="btn_plus">+</button>
+                </div>
+        
+                {% if product.has_variation %}
+                    {{ productHelper.variants() }}
+                    <button class="btn_add_carrinho" onclick="addCart({{ product.id }}, {{ product.price }}, jQuery(this).siblings('div.qtd').children('input').val(), jQuery('select#variation_first_select').val())">Adicionar ao carrinho</button>
+                {% else %}
+                    <button class="btn_add_carrinho" onclick="addCart({{ product.id }}, {{ product.price }}, jQuery(this).siblings('div.qtd').children('input').val(), '')">Adicionar ao carrinho</button>
+                {% endif %}
+            </div>
         </div>
-    {% endif %}
-</section>
+
+        <div class="descricao_produto">
+            {{ product.description }}
+        </div>
+
+        {% set ranking = product.ranking %}
+
+        {% if ranking %}
+            <div class="ct_avaliacoes_produto">
+                <h3>Avaliação do produto</h3>
+
+                <div class="ct_nota_produto">
+                    {% if not ranking.count == 0 %}
+                        <span class="nota_produto">
+                            {{ ranking.rating }}.0
+                        </span>
+
+                        <div class="ct_stars">
+                            {% element 'snippets/rating' {"ranking": product.ranking } %}
+        
+                            {% if ranking.count == 1 %}
+                                {{ ranking.count }} cliente avaliou.
+                            {% else %}
+                                {{ ranking.count }} clientes avaliaram.
+                            {% endif %}
+                        </div>
+                    {% else %}
+                        <div class="ct_sem_nota">
+                            Nenhuma avaliação.
+                        </div>
+                    {% endif %}
+                </div>
+
+                {% element 'product/comments' %}
+            </div>
+        {% endif %}
+    </section>
+{% endif %}
