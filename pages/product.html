@@ -53,7 +53,39 @@
         </div>
 
         <div class="info_produto">
-            sobre o produto
+            {{ product.description }}
+
+            {% set ranking = product.ranking %}
+            
+            {% if ranking %}
+                <div class="ct_avaliacoes_produto">
+                    <h3>Avaliação do produto</h3>
+
+                    <div class="ct_nota_produto">
+                        {% if not ranking.count == 0 %}
+                            <span class="nota_produto">
+                                {{ ranking.rating }}.0
+                            </span>
+
+                            <div class="ct_stars">
+                                {% element 'snippets/rating' {"ranking": product.ranking } %}
+            
+                                {% if ranking.count == 1 %}
+                                    {{ ranking.count }} cliente avaliou.
+                                {% else %}
+                                    {{ ranking.count }} clientes avaliaram.
+                                {% endif %}
+                            </div>
+                        {% else %}
+                            <div class="ct_sem_nota">
+                                Nenhuma avaliação.
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    {% element 'product/comments' %}
+                </div>
+            {% endif %}
         </div>
     </section>
 {% else %}

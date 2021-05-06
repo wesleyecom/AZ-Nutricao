@@ -19,6 +19,7 @@ section#secao_produto {
   grid-template-rows: 50vh auto auto auto;
   grid-template-areas: "galeria" "titulo" "comprar" "sobre";
   background-color: #31261D;
+  padding-bottom: 30px;
 }
 section#secao_produto div#galeria_supercoffee {
   grid-area: galeria;
@@ -120,6 +121,41 @@ section#secao_produto div.ct_comprar div.qtd input {
   font-weight: 600;
   font-size: 2em;
 }
+section#secao_produto div.ct_comprar span.passo1 {
+  display: block;
+  margin-bottom: 25px;
+}
+section#secao_produto div.ct_comprar span.passo1 div.varTit {
+  color: #fff;
+  font-family: Nunito;
+  font-weight: 700;
+  font-size: 1.8em;
+  display: block;
+  margin-bottom: 5px;
+}
+section#secao_produto div.ct_comprar span.passo1 select {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-repeat: repeat;
+  background-image: none;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  font-family: Nunito;
+  font-weight: 900;
+  font-size: 2em;
+  box-sizing: border-box;
+  padding: 8px 0 8px 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 8px;
+}
 section#secao_produto div.ct_comprar button.btn_add_carrinho {
   position: relative;
   box-sizing: border-box;
@@ -168,4 +204,146 @@ section#secao_produto div.container_titulo_produto div.avaliacao_produto div.ran
 }
 section#secao_produto div.info_produto {
   grid-area: sobre;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 6vw;
+  color: #fff;
+  font-size: 1.5em;
+}
+section#secao_produto div.info_produto p, section#secao_produto div.info_produto span, section#secao_produto div.info_produto h2, section#secao_produto div.info_produto blockquote {
+  color: #fff;
+}
+section#secao_produto div.info_produto p {
+  font-family: Nexa-Light;
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+section#secao_produto div.info_produto h2 {
+  font-family: MuseoSansRounded;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+section#secao_produto div.info_produto ul li {
+  position: relative;
+  font-family: Nexa-Light;
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+section#secao_produto div.info_produto ul li:before {
+  content: "";
+  position: relative;
+  display: block;
+  top: 9px;
+  left: -15px;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+section#secao_produto div.info_produto blockquote {
+  position: relative;
+  display: inline-block;
+  margin: 0 15px 15px 0;
+  box-sizing: border-box;
+  padding: 5px 12px;
+  width: max-content;
+  background-color: #CFA889;
+  border-radius: 30px;
+}
+section#secao_produto div.info_produto blockquote p {
+  font-family: Nexa-Bold;
+  font-size: 0.9em;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto {
+  position: relative;
+  width: 100%;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto h3 {
+  color: #fff;
+  font-family: MuseoSansRounded;
+  font-size: 1.5em;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.ct_nota_produto {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.ct_nota_produto span.nota_produto {
+  position: relative;
+  display: block;
+  width: 40%;
+  font-family: Nexa-Light;
+  font-size: 5em;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.ct_nota_produto div.ct_stars {
+  position: relative;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  font-family: Nexa-Bold;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.ct_nota_produto div.ct_stars span.ranking {
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.ct_nota_produto div.ct_stars span.ranking svg {
+  margin-right: 4px;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto h2 {
+  font-family: Nexa-Bold;
+  font-size: 1.3em;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente {
+  position: relative;
+  width: 100%;
+  margin-bottom: 45px;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente a {
+  position: relative;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 21px 0;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #CFA889;
+  color: #000;
+  font-family: Nexa-Bold;
+  text-transform: uppercase;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 15px 5px 15px 15px;
+  border-radius: 5px;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios span.reviewer h3 {
+  color: #282828;
+  font-family: Nexa-Bold;
+  font-size: 1em;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios div.ranking {
+  font-family: Nexa-Bold;
+  color: #282828;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios div.ranking span.rating {
+  display: block;
+  max-width: 100px;
+  height: 15px;
+  background: url("../img/png/ranking.png");
+  margin-bottom: 15px;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios div.ranking span.rating.star1 {
+  background-position-x: -80px;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios div.ranking span.rating.star2 {
+  background-position-x: -60px;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios div.ranking span.rating.star3 {
+  background-position-x: -40px;
+}
+section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios div.ranking span.rating.star4 {
+  background-position-x: -20px;
 }
