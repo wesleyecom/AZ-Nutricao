@@ -19,6 +19,7 @@ section#secao_produto div#galeria_supercoffee {
 section#secao_produto div#galeria_supercoffee div.splide__track {
   position: relative;
   width: 100%;
+  height: 100%;
 }
 section#secao_produto div#galeria_supercoffee div.splide__track ul.splide__list {
   position: relative;

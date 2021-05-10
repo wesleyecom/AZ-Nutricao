@@ -207,19 +207,20 @@ header {
 
                 span.counter_cart {
                     position: absolute;
-                    width: 15px;
-                    height: 15px;
-                    top: 0;
-                    margin-left: 10px;
+                    left: 10px;
+                    margin-top: -14px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    width: 15px;
+                    height: 15px;
                     border-radius: 15px;
                     background-color: #fff;
-                    font-family: 'Nunito';
+                    font-family: "Nunito";
+                    font-weight: 800;
                     box-sizing: border-box;
-                    padding-right: 1px;
-                    cursor: pointer;
+                    padding-top: 1px;
+                    box-shadow: 0 0 4px #000000a1;
                 }
             }
 

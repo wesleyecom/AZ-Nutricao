@@ -43,8 +43,11 @@ div.banner_info div.splide__track ul.splide__list li.item div.ct_item {
   align-items: center;
   justify-content: center;
 }
-div.banner_info div.splide__track ul.splide__list li.item div.ct_item img {
+div.banner_info div.splide__track ul.splide__list li.item div.ct_item svg {
   width: 70px;
+}
+div.banner_info div.splide__track ul.splide__list li.item div.ct_item img {
+  display: none;
 }
 div.banner_info div.splide__track ul.splide__list li.item div.ct_item span {
   text-align: center;
