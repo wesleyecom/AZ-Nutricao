@@ -11,9 +11,10 @@ header h1#logo-d {
   margin: 0;
   z-index: 1;
 }
-header h1#logo-d a img {
+header h1#logo-d a svg {
   position: relative;
   width: 85%;
+  margin-top: -12px;
 }
 header div.cima {
   position: relative;

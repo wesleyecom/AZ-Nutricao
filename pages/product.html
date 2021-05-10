@@ -1,5 +1,19 @@
 {% if product.category_id == 113 %}
-    <link rel="stylesheet" href="{{ asset('css/product_supercoffee-m.css') }}" media="(max-width: 768px)">
+<link rel="stylesheet" href="{{ asset('css/product_supercoffee.css') }}">
+<link rel="stylesheet" href="{{ asset('css/product_supercoffee-m.css') }}" media="(max-width: 768px)">
+<link rel="stylesheet" href="{{ asset('css/product_supercoffee-d.css') }}" media="(min-width: 769px)">
+
+    {% if not utils.is_mobile %}
+        <div class="submenu">
+            <h2>{{ product.name }}</h2>
+
+            <button class="comprar_agora animate__animated animate__heartBeat">
+                Comprar agora
+            </button>
+        </div>
+
+        {% element 'snippets/breadcrumb' %}
+    {% endif %}
 
     <section id="secao_produto" itemscope itemtype="http://schema.org/Product">
         <div class="splide galeria_produto" id="galeria_supercoffee">
@@ -14,6 +28,14 @@
             </div>
         </div>
 
+        <div id="galeria_supercoffee-d">
+            {% for i in 1..5 %}
+                <div class="foto_produto-d" data-src="{{ asset('img/supercoffee/produtos/'~product.model~'/Banners/'~product.model~'_'~i~'-d.png') }}">
+                    <img src="{{ asset('img/supercoffee/produtos/'~product.model~'/Banners/'~product.model~'_'~i~'-d.png') }}" alt="Foto produto">
+                </div>
+            {% endfor %}
+        </div>
+
         <div class="ct_comprar">
             <span class="preco_produto">
                 R$ {{ product.price|currency }}
@@ -25,6 +47,10 @@
     
             <span class="formas_pagamento_produto">
                 <strong>R$ {{ product.price|currency }}</strong> no boleto bancário ou pix.
+            </span>
+
+            <span class="tamanho">
+                {{ product.additional_message }}
             </span>
 
             <div class="qtd">

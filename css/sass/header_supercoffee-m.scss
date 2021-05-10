@@ -11,6 +11,10 @@ header {
     align-items: center;
     justify-content: space-between;
 
+    h1#logo-d, ul.links, form {
+        display: none;
+    }
+
     // Menu hamburger
     .header-m {
         position: fixed;
@@ -256,6 +260,34 @@ header {
 
         &.cart {
             margin-right: 15px;
+        }
+    }
+
+    div.action {
+        display: flex;
+
+        div.conta {
+            display: none;
+        }
+
+        div.carrinho {
+            position: relative;
+
+            span.counter_cart {
+                display: flex;
+                width: 15px;
+                height: 15px;
+                background-color: white;
+                box-shadow: 0 0 5px #000;
+                border-radius: 15px;
+                align-items: center;
+                justify-content: center;
+                font-family: Nexa-Bold;
+                padding: 1px 1px 0 1px;
+                position: absolute;
+                top: -7px;
+                right: 9px;
+            }
         }
     }
 }

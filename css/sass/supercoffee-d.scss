@@ -1,0 +1,46 @@
+div.hero {
+    // height: auto;
+    min-height: 100vh;
+    background-image: url("../img/bg_supercoffee-d.jpg");
+
+    div.texto {
+        width: 45%;
+        
+        font-family: MuseoSansRounded;
+        text-align: center;
+        margin-top: 50px;
+
+        h2 {
+            font-size: 3em;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 2em;
+        }
+    }
+
+    div#supercoffee {
+        margin-top: 70px;
+        height: 100%;
+
+        div.splide__track {
+            ul.splide__list {
+                li {
+                    div.card {
+                        width: 95%;
+                        font-size: .9em;
+                
+                        img {
+                            height: calc(100px + 3vw);
+                        }
+
+                        h3.ic {
+                            font-size: 2.3em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

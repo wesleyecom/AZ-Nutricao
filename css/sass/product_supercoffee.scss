@@ -1,0 +1,369 @@
+section#secao_produto {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: grid;
+    background-color: #31261D;
+
+    div.ct_comprar {
+        grid-area: comprar;
+        grid-area: comprar;
+        position: relative;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        box-sizing: border-box;
+
+        span {
+            &.preco_produto {
+                color: #E5BC9C;
+                font-family: Nunito;
+                font-weight: 900;
+                font-size: 2.5em;
+            }
+
+            &.parcelamento_produto {
+                font-family: Nunito;
+                font-weight: 500;
+                font-size: 1.5em;
+                color: #E5BC9C;
+                margin-top: -15px;
+
+                span, strong {
+                    color: #E5BC9C;
+                }
+            }
+
+            &.formas_pagamento_produto {
+                font-family: Nunito;
+                font-weight: 500;
+                font-size: 1.5em;
+                color: #FFF;
+                margin-top: 5px;
+            }
+
+            &.tamanho {
+                color: #fff;
+                font-family: Nunito;
+                font-weight: 800;
+                font-size: 1.5em;
+                display: block;
+                margin: 20px 0 0 0;
+            }
+        }
+
+        div.qtd {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+
+            button {
+                width: 30px;
+                height: 30px;
+                padding: 0;
+                background: transparent;
+                border: 0;
+                color: #fff;
+                font-family: Poppins;
+                font-weight: 500;
+                font-size: 2.5em;
+                cursor: pointer;
+            }
+
+            input {
+                position: relative;
+                width: 54%;
+                background: transparent;
+                border: 0;
+                text-align: center;
+                color: #fff;
+                font-family: Nunito;
+                font-weight: 600;
+                font-size: 2em;
+            }
+        }
+
+        span.passo1 {
+            display: block;
+            margin-bottom: 25px;
+
+            div.varTit {
+                color: #fff;
+                font-family: Nunito;
+                font-weight: 700;
+                font-size: 1.8em;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            select {
+                position: relative;
+                width: 100%;
+                background: transparent;
+                    background-position-x: 0%;
+                    background-position-y: 0%;
+                    background-repeat: repeat;
+                    background-image: none;
+                border: 2px solid #fff;
+                border-radius: 5px;
+                color: #fff;
+                font-family: Nunito;
+                font-weight: 900;
+                font-size: 2em;
+                box-sizing: border-box;
+                padding: 8px 0 8px 8px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+                background-repeat: no-repeat;
+                background-position-x: 98%;
+                background-position-y: 8px;
+                cursor: pointer;
+            }
+        }
+
+        button.btn_add_carrinho {
+            position: relative;
+            box-sizing: border-box;
+            padding: 18px 0;
+            width: 100%;
+            border: 0;
+            border-radius: 5px;
+            font-family: Nunito;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #fff;
+            background-color: #2DB53E;
+            cursor: pointer;
+            transition: 0.3s all ease-in-out;
+
+            &:hover {
+                background-color: #148022;
+            }
+        }
+    }
+
+    div.container_titulo_produto {
+        grid-area: titulo;
+
+        h2.titulo_produto {
+            margin-top: 40px;
+            font-family: MuseoSansRounded;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 2.5em;
+        }
+
+        div.avaliacao_produto {
+            display: flex;
+            align-items: center;
+
+            span.ranking {
+                border-right: 1px solid #fff;
+                margin-right: 5px;
+                box-sizing: border-box;
+                padding-right: 5px;
+
+                svg {
+                    margin-right: 3px;
+                }
+            }
+
+            div.ranking {
+                color: #fff;
+                font-family: Nexa-Light;
+                font-size: 1.3em;
+
+                strong {
+                    font-family: Nexa-Bold;
+                }
+            }
+        }
+    }
+
+    div.info_produto {
+        grid-area: sobre;
+        
+        position: relative;
+        box-sizing: border-box;
+
+        color: #fff;
+        font-size: 1.5em;
+
+        p, span, h2, blockquote {
+            color: #fff;
+        }
+
+        p {
+            font-family: Nexa-Light;
+            font-size: 1.1em;
+            line-height: 1.5em;
+        }
+
+        h2 {
+            font-family: MuseoSansRounded;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        ul {
+            li {
+                position: relative;
+                font-family: Nexa-Light;
+                box-sizing: border-box;
+                padding-left: 15px;
+
+                &:before {
+                    content: "";
+                    position: relative;
+                    display: block;
+                    top: 9px;
+                    left: -15px;
+                    width: 5px;
+                    height: 5px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        blockquote {
+            position: relative;
+            display: inline-block;
+            margin: 0 15px 15px 0;
+            box-sizing: border-box;
+            padding: 5px 12px;
+            width: max-content;
+            background-color: #CFA889;
+            border-radius: 30px;
+
+            p {
+                font-family: Nexa-Bold;
+                font-size: .9em;
+            }
+        }
+
+        div.ct_avaliacoes_produto {
+            position: relative;
+            width: 100%;
+
+            h3 {
+                color: #fff;
+                font-family: MuseoSansRounded;
+                font-size: 1.5em;
+                font-weight: 500;
+                letter-spacing: 2px;
+            }
+
+            div.ct_nota_produto {
+                position: relative;
+                width: 100%;
+                display: flex;
+
+                span.nota_produto {
+                    position: relative;
+                    display: block;
+                    width: 40%;
+                    font-family: Nexa-Light;
+                    font-size: 5em;
+                }
+
+                div.ct_stars {
+                    position: relative;
+                    width: auto;
+                    display: flex;
+                    flex-direction: column;
+                    font-family: Nexa-Bold;
+
+                    span.ranking {
+                        margin-top: 8px;
+                        margin-bottom: 12px;
+
+                        svg {
+                            margin-right: 4px;
+                        }
+                    }
+                }
+            }
+
+            h2 {
+                font-family: Nexa-Bold;
+                font-size: 1.3em;
+            }
+
+            div#comentario_cliente {
+                position: relative;
+                width: 100%;
+                margin-bottom: 45px;
+
+                a {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 21px 0;
+                    text-align: center;
+                    border-radius: 5px;
+                    background-color: #CFA889;
+                    color: #000;
+                    font-family: Nexa-Bold;
+                    text-transform: uppercase;
+                }
+            }
+
+            div.hreview-comentarios {
+                background-color: #fff;
+                box-sizing: border-box;
+                padding: 15px 5px 15px 15px;
+                border-radius: 5px;
+
+                span.reviewer {
+                    h3 {
+                        color: #282828;
+                        font-family: Nexa-Bold;
+                        font-size: 1em;
+                    }
+                }
+
+                div.ranking {
+                    font-family: Nexa-Bold;
+                    color: #282828;
+
+                    span.rating {
+                        display: block;
+                        max-width: 100px;
+                        height: 15px;
+                        background: url("../img/png/ranking.png");
+                        margin-bottom: 15px;
+
+                        &.star1 {
+                            background-position-x: -80px;
+                        }
+                    
+                        &.star2 {
+                            background-position-x: -60px;
+                        }
+                    
+                        &.star3 {
+                            background-position-x: -40px;
+                        }
+                    
+                        &.star4 {
+                            background-position-x: -20px;
+                        }
+                    }
+                }
+
+                p {
+                    span.description {
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}

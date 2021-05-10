@@ -13,9 +13,10 @@ header {
             z-index: 1;
 
             a {
-                img {
+                svg {
                     position: relative;
                     width: 85%;
+                    margin-top: -12px;
                 }
             }
     }

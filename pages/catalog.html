@@ -45,50 +45,56 @@
         </div>
     {% endif %}
 {% else %}
+<link rel="stylesheet" href="{{ asset('css/supercoffee.css') }}">
     <link rel="stylesheet" href="{{ asset('css/supercoffee-m.css') }}" media="(max-width: 768px)">
+    <link rel="stylesheet" href="{{ asset('css/supercoffee-d.css') }}" media="(min-width: 769px)">
 
-        <div class="hero">
-            <div class="texto">
-                <h2>SuperCoffee</h2>
+    <div class="hero">
+        <div class="texto">
+            <h2>SuperCoffee</h2>
 
-                <p>
-                    Escolha o <strong>SuperCoffee</strong> que mais
-                    combina com a sua rotina e prepare-se para viver
-                    a sua melhor versão. 
-                </p>
-            </div>
+            <p>
+                Escolha o <strong>SuperCoffee</strong> que mais
+                combina com a sua rotina e prepare-se para viver
+                a sua melhor versão. 
+            </p>
+        </div>
 
-            <div class="splide" id="supercoffee">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        {% set products = Products({
-                            'order': id,
-                            'categories': [113]
-                        }) %}
+        <div class="splide" id="supercoffee">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    {% set products = Products({
+                        'order': id,
+                        'categories': [113]
+                    }) %}
 
-                        {% for product in products %}
-                            <li class="splide__slide" itemid="{{ product.id }}">
-                                <div class="card">
-                                    <a href="{{ product.link }}"></a>
-                                    {% set images = product.images %}
-                                    <img src="{{ images[0].full }}" alt="Supercoffee 2.0">
-                                    
-                                    {% if product.id == 83 %}
-                                        <h3><span>SuperCoffee</span> 2.0</h3>
-                                    {% elseif product.id == 85 %}
-                                        <h3 class="ic"><span>SuperCoffee Impossible</span> Chocolate</h3>
-                                    {% elseif product.id == 87 %}
-                                        <h3 class="ic"><span>SuperCoffee</span> Economic Size</h3>
-                                    {% elseif product.id == 89 %}
-                                        <h3 class="ic"><span>SuperCoffee</span> Impossible Chocolate Economic Size</h3>
-                                    {% endif %}
-                    
-                                    <button onclick="addCart({{ product.id }}, {{ product.price }}, 1, '')">+</button>
+                    {% for product in products %}
+                        <li class="splide__slide" itemid="{{ product.id }}">
+                            <div class="card">
+                                <a href="{{ product.link }}"></a>
+                                {% set images = product.images %}
+                                <img src="{{ images[0].full }}" alt="Supercoffee 2.0">
+                                
+                                {% if product.id == 83 %}
+                                    <h3><span>SuperCoffee</span> 2.0</h3>
+                                {% elseif product.id == 85 %}
+                                    <h3 class="ic"><span>SuperCoffee Impossible</span> Chocolate</h3>
+                                {% elseif product.id == 87 %}
+                                    <h3 class="ic"><span>SuperCoffee</span> Economic Size</h3>
+                                {% elseif product.id == 89 %}
+                                    <h3 class="ic"><span>SuperCoffee</span> Impossible Chocolate Economic Size</h3>
+                                {% endif %}
+
+                                <div class="tamanho">
+                                    {{ product.additional_message }}
                                 </div>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+                
+                                <button onclick="addCart({{ product.id }}, {{ product.price }}, 1, '')">+</button>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
+    </div>
 {% endif %}

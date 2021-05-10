@@ -11,6 +11,9 @@ header {
   align-items: center;
   justify-content: space-between;
 }
+header h1#logo-d, header ul.links, header form {
+  display: none;
+}
 header .header-m {
   position: fixed;
   top: 0;
@@ -220,4 +223,28 @@ header svg#svg_hamburger:hover #baixo {
 }
 header svg.cart {
   margin-right: 15px;
+}
+header div.action {
+  display: flex;
+}
+header div.action div.conta {
+  display: none;
+}
+header div.action div.carrinho {
+  position: relative;
+}
+header div.action div.carrinho span.counter_cart {
+  display: flex;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  box-shadow: 0 0 5px #000;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  font-family: Nexa-Bold;
+  padding: 1px 1px 0 1px;
+  position: absolute;
+  top: -7px;
+  right: 9px;
 }

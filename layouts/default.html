@@ -30,6 +30,9 @@
 
     {% if pages.current == 'product' %}
         <link rel="stylesheet" href="{{ asset('js/modules/lightgallery/dist/css/lightgallery.min.css') }}">
+        {% if product.category_id == 113 %}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        {% endif %}
     {% elseif pages.current == 'register' %}
         <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     {% endif %}
@@ -243,12 +246,26 @@
         {% elseif pages.current == 'catalog' and category.id == 113 %}
             <script>
                 new Splide( '#supercoffee', {
-                        type   : 'loop',
                         arrows : false,
-                        autoplay: true,
+                        autoplay: false,
                         interval: 3000,
                         lazyLoad: 'nearby',
-                        perPage: 1
+                        perPage: 4,
+                        pagination: false,
+
+                        breakpoints: {
+                            '1024': {
+                                type   : 'loop',
+                                perPage: 2,
+                                pagination: true,
+                            },
+
+                            '600': {
+                                type   : 'loop',
+                                perPage: 1,
+                                pagination: true,
+                            }
+                        }
                     }).mount();
             </script>
         {% else %}
