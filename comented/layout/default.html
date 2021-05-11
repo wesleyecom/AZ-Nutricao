@@ -2,11 +2,28 @@
 <!doctype html>
 <html data-theme="{{ settings.extension_id }}" data-store="{{ store.id }}" class="page-{{ pages.current }}">
 <head>
+    <!-- <pre>{{ dump(filter) }}</pre> -->
+    <!-- tray charset -->
     {{ html.charset() }}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- tray meta tags -->
     {{ tray.meta }}
+
+    <!-- <script async src="https://cdn.ampproject.org/v0.js"></script> -->
+
+    <!-- tray styles -->
+    <!-- {{ tray.styles }} -->
+    <!-- <link rel="stylesheet" href="{{ asset('css/tray_styles.css') }}" media="none" onload="if(media!='all')media='all'"> -->
+
+    <!-- <link type="text/css" rel="stylesheet" href="//images.tcdn.com.br/commerce/assets/store/css/dist/cart_preview.min.css?b6f219a5ca365aed26d6409ce09ed9961617978485" media="all">
+    <link type="text/css" rel="stylesheet" href="//images.tcdn.com.br/commerce/assets/store/css/dist/bootstrap-modal.min.css?b6f219a5ca365aed26d6409ce09ed9961617978485" media="all">
+    <link type="text/css" rel="stylesheet" href="//images.tcdn.com.br/commerce/assets/store/css/dist/suggestion.min.css?b6f219a5ca365aed26d6409ce09ed9961617978485" media="all"> -->
+
+    <!-- theme styles -->
+    <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css" -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -22,11 +39,12 @@
         <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     {% endif %}
 
+    <!-- tray analytics -->
     {{ tray.analytics }}
 
+    <!-- google tag manager -->
     {{ googleTagManager.header(pages.current, tagManagerData) }}
 </head>
-<body>
     {{ googleTagManager.top(pages.current, tagManagerData) }}
 
     {% if pages.current != 'login' %}
@@ -62,10 +80,15 @@
         {% element 'footer' %}
     </div>
 
+    <!-- tray -->
+    <!-- {% element 'snippets/modal' %} -->
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}
 
     <!-- Tray scripts -->
+    <!-- {{ tray.scripts }} -->
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/jquery.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <!-- <script src="{{ asset('js/modules/jquery/dist/jquery.js') }}"></script> -->
+    <!-- <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/bannerjs.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script> -->
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/vue.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/document-register-element.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/trayLogin.umd.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
@@ -104,12 +127,64 @@
         <script src="{{ asset('js/modules/splide/dist/js/splide.min.js') }}"></script>
         
         {% if pages.current == 'home' %}
-            <script src="{{ asset('js/modules/waypoints/lib/jquery.waypoints.min.js') }}"></script>
-            <script src="{{ asset('js/modules/waypoints/lib/shortcuts/inview.js') }}"></script>
-            <script src="{{ asset('js/modules/local/home/vitrine.js') }}"></script>
-
             <!-- Splide Slides -->
             <script>
+                function chamaVitrines(item_id) {
+                    new Splide( item_id, {
+                        type   : 'loop',
+                        arrows : false,
+                        autoplay: false,
+                        interval: 2500,
+                        lazyLoad: 'nearby',
+                        perPage: 5,
+
+                        gap: 11,
+
+                        padding: {
+                            right: '2rem',
+                            left: '2rem'
+                        },
+
+                        breakpoints: {
+                            '1023': {
+                                type: 'loop',
+                                perPage: 3,
+
+                                padding: {
+                                    right: '2rem',
+                                    left: '2px'
+                                },
+                            },
+
+                            '550': {
+                                perPage: 2,
+
+                                gap: 8,
+
+                                padding: {
+                                    right: '1.5rem',
+                                    left: '2px'
+                                },
+                            },
+
+                            '360': {
+                                perPage: 1,
+
+                                gap: 15,
+
+                                padding: {
+                                    right: '5rem',
+                                    left: '2px'
+                                },
+                            },
+                        }
+                    } ).mount();
+                }
+
+                jQuery('.ct_vitrine').each(function() {
+                    chamaVitrines("#"+this.id);
+                });
+
                 // Categorias
                 new Splide( '#secao_categorias', {
                     type   : 'loop',
@@ -207,6 +282,8 @@
             {% endif %}
         {% endif %}
     {% endif %}
+
+    <!-- <script type="text/javascript" src="{{ asset('js/theme.min.js') }}"></script> -->
 </body>
 </html>
 {% endspaceless %}
