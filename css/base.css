@@ -1,1 +1,69 @@
-.transition{-webkit-transition:300ms all ease 0s;-moz-transition:300ms all ease 0s;-ms-transition:300ms all ease 0s;-o-transition:300ms all ease 0s;transition:300ms all ease 0s}html,body{font-family:"Roboto",sans-serif;font-size:10px;font-weight:400;line-height:1}.application{background-attachment:fixed;background-color:#f1f1f1;background-position:center top}@media(min-width: 768px)and (max-width: 991px){.container{width:95%}}.content-split{border-color:#ccc;margin-bottom:30px;margin-top:0}.page-content{z-index:5;background-color:#fff;padding:15px}.page-content .container{padding:0;width:100%}.page-home .page-content,.page-catalog .page-content,.page-product .page-content,.page-search .page-content{background-color:transparent}.site-main{position:relative}.row-centered{text-align:center}.col-centered{display:inline-block;float:none;text-align:left;margin-right:-4px}#miniad{width:auto}
+.transition {
+  -webkit-transition: 300ms all ease 0s;
+  -moz-transition: 300ms all ease 0s;
+  -ms-transition: 300ms all ease 0s;
+  -o-transition: 300ms all ease 0s;
+  transition: 300ms all ease 0s;
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.application {
+  background-attachment: fixed;
+  background-color: #f1f1f1;
+  background-position: center top;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 95%;
+  }
+}
+
+.content-split {
+  border-color: #ccc;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.page-content {
+  z-index: 5;
+  background-color: #fff;
+  padding: 15px;
+}
+.page-content .container {
+  padding: 0;
+  width: 100%;
+}
+
+.page-home .page-content, .page-catalog .page-content, .page-product .page-content, .page-search .page-content {
+  background-color: transparent;
+}
+
+.site-main {
+  position: relative;
+}
+
+/* centered columns styles */
+.row-centered {
+  text-align: center;
+}
+
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  margin-right: -4px;
+}
+
+#miniad {
+  width: auto;
+}

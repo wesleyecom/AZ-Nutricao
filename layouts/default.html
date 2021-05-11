@@ -2,13 +2,26 @@
 <!doctype html>
 <html data-theme="{{ settings.extension_id }}" data-store="{{ store.id }}" class="page-{{ pages.current }}">
 <head>
+    <!-- <pre>{{ dump(filter) }}</pre> -->
     <!-- tray charset -->
     {{ html.charset() }}
-
-    <!-- meta tags -->
-    {{ tray.meta }}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- tray meta tags -->
+    {{ tray.meta }}
+
+    <!-- tray styles -->
+    <!-- {{ tray.styles }} -->
+    <!-- <link rel="stylesheet" href="{{ asset('css/tray_styles.css') }}" media="none" onload="if(media!='all')media='all'"> -->
+
+    <!-- <link type="text/css" rel="stylesheet" href="//images.tcdn.com.br/commerce/assets/store/css/dist/cart_preview.min.css?b6f219a5ca365aed26d6409ce09ed9961617978485" media="all">
+    <link type="text/css" rel="stylesheet" href="//images.tcdn.com.br/commerce/assets/store/css/dist/bootstrap-modal.min.css?b6f219a5ca365aed26d6409ce09ed9961617978485" media="all">
+    <link type="text/css" rel="stylesheet" href="//images.tcdn.com.br/commerce/assets/store/css/dist/suggestion.min.css?b6f219a5ca365aed26d6409ce09ed9961617978485" media="all"> -->
+
+    <!-- theme styles -->
+    <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css" -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -30,6 +43,7 @@
     <!-- google tag manager -->
     {{ googleTagManager.header(pages.current, tagManagerData) }}
 </head>
+<body>
     {{ googleTagManager.top(pages.current, tagManagerData) }}
 
     {% if pages.current != 'login' %}
@@ -66,10 +80,14 @@
     </div>
 
     <!-- tray -->
+    <!-- {% element 'snippets/modal' %} -->
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}
 
     <!-- Tray scripts -->
+    <!-- {{ tray.scripts }} -->
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/jquery.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <!-- <script src="{{ asset('js/modules/jquery/dist/jquery.js') }}"></script> -->
+    <!-- <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/bannerjs.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script> -->
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/vue.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/document-register-element.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/trayLogin.umd.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
@@ -231,7 +249,7 @@
                         arrows : false,
                         autoplay: false,
                         interval: 3000,
-                        lazyLoad: nearby,
+                        lazyLoad: 'nearby',
                         perPage: 4,
                         pagination: false,
 
@@ -263,6 +281,8 @@
             {% endif %}
         {% endif %}
     {% endif %}
+
+    <!-- <script type="text/javascript" src="{{ asset('js/theme.min.js') }}"></script> -->
 </body>
 </html>
 {% endspaceless %}

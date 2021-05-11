@@ -1,1 +1,80 @@
-section#secao_produto div.breadcrumb{display:none}section#secao_produto div.cima div.ct_galeria_produto{position:relative;width:100%;height:auto}section#secao_produto div.cima div.ct_galeria_produto div#galeria_produto{position:relative;width:100%;margin-top:30px}section#secao_produto div.cima div.ct_galeria_produto div#galeria_produto div.splide__track ul.splide__list li.splide__slide{height:clamp(55vw, 500px, 58vw);display:flex;align-items:center;justify-content:center;cursor:pointer}section#secao_produto div.cima div.ct_galeria_produto div#galeria_produto div.splide__track ul.splide__list li.splide__slide img{position:relative;height:100%;object-fit:contain;border-radius:5px}section#secao_produto div.cima div.ct_galeria_produto div#thumbnail_galeria_produto{display:flex;justify-content:center;margin-top:5vw}section#secao_produto div.cima div.ct_galeria_produto div#thumbnail_galeria_produto div.splide__track ul.splide__list li.splide__slide{display:flex;align-items:center;justify-content:center;border-radius:5px}section#secao_produto div.cima div.ct_galeria_produto div#thumbnail_galeria_produto div.splide__track ul.splide__list li.splide__slide img{position:relative;height:calc(100% - 4px);object-fit:contain;border-radius:5px}section#secao_produto div.cima div.ct_galeria_produto div#thumbnail_galeria_produto div.splide__track ul.splide__list li.splide__slide.is-active{border:2px solid #69a72a6b}section#secao_produto div.cima div.info_produto{width:100%;box-sizing:border-box;padding:15px}section#secao_produto div.cima div.info_produto h2{font-size:2em}section#secao_produto div.cima div.info_produto span.categoria_produto{margin:15px 0}section#secao_produto div.cima div.info_produto div.small_description{display:none}section#secao_produto div.cima div.ct_comprar{width:100%;box-sizing:border-box;padding:0 15px}section#secao_produto div.cima div.ct_comprar span.preco_produto{font-size:3em}section#secao_produto div.cima div.ct_comprar span.parcelamento_produto{font-size:1.8em}section#secao_produto div.cima div.ct_comprar span.formas_pagamento_produto{font-size:1.6em}section#secao_produto div.cima div.ct_comprar button{font-size:1.2em}section#secao_produto div.ct_avaliacoes_produto{padding:15px}
+section#secao_produto div.breadcrumb {
+  display: none;
+}
+section#secao_produto div.cima div.ct_galeria_produto {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+section#secao_produto div.cima div.ct_galeria_produto div#galeria_produto {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+section#secao_produto div.cima div.ct_galeria_produto div#galeria_produto div.splide__track ul.splide__list li.splide__slide {
+  height: clamp(55vw, 500px, 58vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+section#secao_produto div.cima div.ct_galeria_produto div#galeria_produto div.splide__track ul.splide__list li.splide__slide img {
+  position: relative;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+section#secao_produto div.cima div.ct_galeria_produto div#thumbnail_galeria_produto {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vw;
+}
+section#secao_produto div.cima div.ct_galeria_produto div#thumbnail_galeria_produto div.splide__track ul.splide__list li.splide__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+section#secao_produto div.cima div.ct_galeria_produto div#thumbnail_galeria_produto div.splide__track ul.splide__list li.splide__slide img {
+  position: relative;
+  height: calc(100% - 4px);
+  object-fit: contain;
+  border-radius: 5px;
+}
+section#secao_produto div.cima div.ct_galeria_produto div#thumbnail_galeria_produto div.splide__track ul.splide__list li.splide__slide.is-active {
+  border: 2px solid #69a72a6b;
+}
+section#secao_produto div.cima div.info_produto {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+section#secao_produto div.cima div.info_produto h2 {
+  font-size: 2em;
+}
+section#secao_produto div.cima div.info_produto span.categoria_produto {
+  margin: 15px 0;
+}
+section#secao_produto div.cima div.info_produto div.small_description {
+  display: none;
+}
+section#secao_produto div.cima div.ct_comprar {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+section#secao_produto div.cima div.ct_comprar span.preco_produto {
+  font-size: 3em;
+}
+section#secao_produto div.cima div.ct_comprar span.parcelamento_produto {
+  font-size: 1.8em;
+}
+section#secao_produto div.cima div.ct_comprar span.formas_pagamento_produto {
+  font-size: 1.6em;
+}
+section#secao_produto div.cima div.ct_comprar button {
+  font-size: 1.2em;
+}
+section#secao_produto div.ct_avaliacoes_produto {
+  padding: 15px;
+}

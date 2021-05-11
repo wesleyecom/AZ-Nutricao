@@ -12,12 +12,7 @@
     <a id="link_card_produto" href="{{ product.link }}">
         <div class="foto_produto">
             {% set images = product.images %}
-
-            {% if pages.current == 'home' %}
-                <img data-splide-lazy="{{ images[0].full }}" alt="Foto produto">
-            {% else %}
-                <img src="{{ images[0].full }}" alt="Foto produto">
-            {% endif %}
+            <img src="{{ images[0].full }}" alt="Foto produto">
         </div>
 
         <div class="info_produto">

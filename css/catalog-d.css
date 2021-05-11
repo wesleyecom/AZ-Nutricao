@@ -1,1 +1,8 @@
-div.header_catalog{height:8vw;padding:15px 0 15px 5vw}div.paginacao{padding:15px 0 15px 5vw}
+div.header_catalog {
+  height: 8vw;
+  padding: 15px 0 15px 5vw;
+}
+
+div.paginacao {
+  padding: 15px 0 15px 5vw;
+}

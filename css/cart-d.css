@@ -1,1 +1,9 @@
-div.cart{width:30%;overflow:hidden;right:-32%}div.cart.open{right:0;box-shadow:-15px 0px 20px 7px #0000001c}
+div.cart {
+  width: 30%;
+  overflow: hidden;
+  right: -32%;
+}
+div.cart.open {
+  right: 0;
+  box-shadow: -15px 0px 20px 7px #0000001c;
+}

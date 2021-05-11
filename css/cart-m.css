@@ -1,1 +1,7 @@
-div.cart{width:100%;transform:translateX(100%)}div.cart.open{transform:translateX(0)}
+div.cart {
+  width: 100%;
+  transform: translateX(100%);
+}
+div.cart.open {
+  transform: translateX(0);
+}

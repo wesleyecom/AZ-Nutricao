@@ -1,1 +1,100 @@
-:root{--menu-background: linear-gradient(90deg, #6cab2b 0%, #5e9a29 100%)}header{position:relative;width:100%}header div.baixo form.barra_busca div.suggestion{position:absolute;box-sizing:border-box;padding:15px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;background-color:#fff;overflow:hidden}header div.baixo form.barra_busca div.suggestion.is-hidden{display:none}header div.baixo form.barra_busca div.suggestion div.suggestion-words,header div.baixo form.barra_busca div.suggestion div.suggestion-products{position:relative;width:100%}header div.baixo form.barra_busca div.suggestion div.suggestion-words .suggestion-title,header div.baixo form.barra_busca div.suggestion div.suggestion-products .suggestion-title{color:#333;font-family:"Nunito";font-size:1.8em;font-weight:900;margin-bottom:5px}header div.baixo form.barra_busca div.suggestion div.suggestion-words{display:flex;flex-direction:column}header div.baixo form.barra_busca div.suggestion div.suggestion-words span{position:relative;width:100%;box-sizing:border-box;padding:10px 0;color:#333;font-family:"Nunito";font-size:1.5em;font-weight:600;text-transform:capitalize;border-bottom:1px solid #b1b1b1}header div.baixo form.barra_busca div.suggestion div.suggestion-products{margin-top:15px}header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product{position:relative;width:100%;margin-top:10px;border-radius:5px;background-color:#e2e2e2}header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a{position:relative;width:100%;display:flex}header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-img{position:relative;width:80px;height:80px;display:flex;align-items:center;justify-content:center;box-sizing:border-box;padding:5px}header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-img img{position:relative;height:100%;object-fit:contain;border-radius:8px}header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc{position:relative;width:100%;display:flex;flex-direction:column;box-sizing:border-box;padding:15px}header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc span{font-family:"Nunito"}header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc span.titlep{font-size:1.2em;font-weight:800}header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc span.idp{font-size:1.2em;font-weight:600;margin-top:5px}
+:root {
+  --menu-background: linear-gradient(90deg, #6cab2b 0%, #5e9a29 100%);
+}
+
+header {
+  position: relative;
+  width: 100%;
+}
+header div.baixo form.barra_busca div.suggestion {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #fff;
+  overflow: hidden;
+}
+header div.baixo form.barra_busca div.suggestion.is-hidden {
+  display: none;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-words, header div.baixo form.barra_busca div.suggestion div.suggestion-products {
+  position: relative;
+  width: 100%;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-words .suggestion-title, header div.baixo form.barra_busca div.suggestion div.suggestion-products .suggestion-title {
+  color: #333333;
+  font-family: "Nunito";
+  font-size: 1.8em;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-words {
+  display: flex;
+  flex-direction: column;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-words span {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  color: #333333;
+  font-family: "Nunito";
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-bottom: 1px solid #b1b1b1;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products {
+  margin-top: 15px;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #e2e2e2;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-img {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 5px;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-img img {
+  position: relative;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 15px;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc span {
+  font-family: "Nunito";
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc span.titlep {
+  font-size: 1.2em;
+  font-weight: 800;
+}
+header div.baixo form.barra_busca div.suggestion div.suggestion-products div.suggestion-product a div.suggestion-desc span.idp {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 5px;
+}

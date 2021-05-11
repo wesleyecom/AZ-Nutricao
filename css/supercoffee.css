@@ -1,1 +1,144 @@
-div.hero{position:relative;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;background-size:cover;background-position:center}div.hero div.texto{position:relative;display:flex;flex-direction:column}div.hero div.texto h2{color:#fff;font-family:MuseoSansRounded;text-transform:uppercase}div.hero div.texto p{color:#fff;font-family:Nexa-Light}div.hero div.texto p strong{font-family:Nexa-Bold}div.hero div#supercoffee{position:relative;width:100%;height:auto;padding-bottom:30px;margin-bottom:30px;transition:.3s all ease-in-out}div.hero div#supercoffee div.splide__track{position:relative;width:100%;height:100%}div.hero div#supercoffee div.splide__track ul.splide__list{position:relative;width:100%;height:100%}div.hero div#supercoffee div.splide__track ul.splide__list li{position:relative;width:100%;height:auto;display:flex;align-items:center}div.hero div#supercoffee div.splide__track ul.splide__list li div.card{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:15px 0;transition:.3s all ease-in-out}div.hero div#supercoffee div.splide__track ul.splide__list li div.card div.tamanho{display:flex;align-items:center;justify-content:center;color:#000;font-family:Nexa-Bold;font-size:1.2em;background-color:#fbbb36;box-sizing:border-box;padding:5px 15px;border-radius:33px;margin-bottom:20px}div.hero div#supercoffee div.splide__track ul.splide__list li div.card img{transition:.3s all ease-in-out}div.hero div#supercoffee div.splide__track ul.splide__list li div.card a{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}div.hero div#supercoffee div.splide__track ul.splide__list li div.card h3{font-family:MuseoSansRounded;font-size:2.5em;color:#fff;text-transform:uppercase}div.hero div#supercoffee div.splide__track ul.splide__list li div.card h3 span{text-transform:uppercase;color:#000}div.hero div#supercoffee div.splide__track ul.splide__list li div.card h3.ic{text-align:center;display:flex;flex-direction:column}div.hero div#supercoffee div.splide__track ul.splide__list li div.card h3.ic span{font-size:.8em}div.hero div#supercoffee div.splide__track ul.splide__list li div.card button{position:relative;width:50px;height:50px;box-sizing:border-box;padding:15px;display:flex;align-items:center;justify-content:center;border-radius:50px;background-color:#d4a657;color:#000;font-family:MuseoSansRounded;font-size:2em;border:0;outline:0;overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:rgba(0,0,0,0) !important;transition:.3s all ease-in-out;z-index:10}div.hero div#supercoffee div.splide__track ul.splide__list li div.card button:hover{background-color:#a88039}div.hero div#supercoffee ul.splide__pagination{bottom:-5px}div.hero div#supercoffee ul.splide__pagination li{margin-right:15px}div.hero div#supercoffee ul.splide__pagination li button{width:50px;height:3px;border-radius:2px;background-color:#000}div.hero div#supercoffee ul.splide__pagination li button.is-active{background-color:#fff}
+div.hero {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-size: cover;
+  background-position: center;
+}
+div.hero div.texto {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+div.hero div.texto h2 {
+  color: #fff;
+  font-family: MuseoSansRounded;
+  text-transform: uppercase;
+}
+div.hero div.texto p {
+  color: #fff;
+  font-family: Nexa-Light;
+}
+div.hero div.texto p strong {
+  font-family: Nexa-Bold;
+}
+div.hero div#supercoffee {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  transition: 0.3s all ease-in-out;
+}
+div.hero div#supercoffee div.splide__track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+div.hero div#supercoffee div.splide__track ul.splide__list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+div.hero div#supercoffee div.splide__track ul.splide__list li {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+div.hero div#supercoffee div.splide__track ul.splide__list li div.card {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  transition: 0.3s all ease-in-out;
+}
+div.hero div#supercoffee div.splide__track ul.splide__list li div.card div.tamanho {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-family: Nexa-Bold;
+  font-size: 1.2em;
+  background-color: #fbbb36;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  border-radius: 33px;
+  margin-bottom: 20px;
+}
+div.hero div#supercoffee div.splide__track ul.splide__list li div.card img {
+  transition: 0.3s all ease-in-out;
+}
+div.hero div#supercoffee div.splide__track ul.splide__list li div.card a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+div.hero div#supercoffee div.splide__track ul.splide__list li div.card h3 {
+  font-family: MuseoSansRounded;
+  font-size: 2.5em;
+  color: #fff;
+  text-transform: uppercase;
+}
+div.hero div#supercoffee div.splide__track ul.splide__list li div.card h3 span {
+  text-transform: uppercase;
+  color: #000;
+}
+div.hero div#supercoffee div.splide__track ul.splide__list li div.card h3.ic {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+div.hero div#supercoffee div.splide__track ul.splide__list li div.card h3.ic span {
+  font-size: 0.8em;
+}
+div.hero div#supercoffee div.splide__track ul.splide__list li div.card button {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: #D4A657;
+  color: #000;
+  font-family: MuseoSansRounded;
+  font-size: 2em;
+  border: 0;
+  outline: 0;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  transition: 0.3s all ease-in-out;
+  z-index: 10;
+}
+div.hero div#supercoffee div.splide__track ul.splide__list li div.card button:hover {
+  background-color: #a88039;
+}
+div.hero div#supercoffee ul.splide__pagination {
+  bottom: -5px;
+}
+div.hero div#supercoffee ul.splide__pagination li {
+  margin-right: 15px;
+}
+div.hero div#supercoffee ul.splide__pagination li button {
+  width: 50px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #000;
+}
+div.hero div#supercoffee ul.splide__pagination li button.is-active {
+  background-color: #fff;
+}
