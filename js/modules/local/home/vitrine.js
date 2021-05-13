@@ -1,7 +1,7 @@
 function chamaVitrine(item_id) {
     new Splide( item_id, {
         type   : 'loop',
-        arrows : false,
+        arrows : true,
         autoplay: false,
         interval: 2500,
         lazyLoad: 'nearby',
@@ -19,6 +19,7 @@ function chamaVitrine(item_id) {
             '1023': {
                 type: 'loop',
                 perPage: 3,
+                arrows : false,
 
                 padding: {
                     right: '2rem',
@@ -28,6 +29,7 @@ function chamaVitrine(item_id) {
 
             '550': {
                 perPage: 2,
+                arrows : false,
                 pagination: true,
 
                 gap: 8,
@@ -40,6 +42,7 @@ function chamaVitrine(item_id) {
 
             '360': {
                 perPage: 1,
+                arrows : false,
 
                 gap: 15,
 

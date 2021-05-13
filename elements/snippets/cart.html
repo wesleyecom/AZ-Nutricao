@@ -12,7 +12,7 @@
             Meu carrinho
         </span>
 
-        <button id="limparCarrinho">
+        <button id="limparCarrinho" disabled>
             Limpar
         </button>
     </div>
@@ -28,4 +28,10 @@
             <span data-cart="price" data-tray-tst="carrinho_valor">{{ cart.price }}</span>
         </div>
     </div>
+
+    <button class="finalizar" id="finalizar">
+        <a href="{{ links.cart }}">
+            Finalizar pedido
+        </a>
+    </button>
 </div>

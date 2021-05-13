@@ -2,7 +2,7 @@
 // Checar mobile
 var isMobile = jQuery('#isMobile').data('isMobile');
 
-// L�gica dos bot�es dos cards de produtos  ( | comprar | + | - | )
+// Lógica dos botões dos cards de produtos  ( | comprar | + | - | )
 let btn_subtrair  = jQuery('.btn_minus');
 let btn_somar     = jQuery('.btn_plus');
 
@@ -18,7 +18,61 @@ btn_somar.on('click', function(e) {
     jQuery(this).siblings('input').val(val+1);
 });
 
-// Pegar informa��es do carrinho de compras
+// Deletar um produto do carrinho de compras
+function deleteProduct(productId, preco, qtd, variantId) {
+    var dataSession =  jQuery("html").attr("data-session");
+    var productID = productId;
+    var variantID = variantId;
+
+    if (variantID == -1) {
+        variantID = '';
+    }
+    
+    return jQuery.ajax({
+      method: "DELETE",
+      url: "/web_api/carts/"+dataSession+"/"+productID+"/"+variantID
+    }).done(function( response, textStatus, jqXHR ) {
+        console.log(response);
+
+        var qtdCart = parseInt(jQuery("span[data-cart=amount]").html());
+
+        if (isMobile == true) {
+            qtd = parseInt(qtd.replace('Qtd: ', ''));
+            preco = preco.replace('R$ ', '');
+            preco = preco.replace(',', '.');
+        }
+        else {
+            qtd = parseInt(qtd);
+        }
+
+        jQuery("span[data-cart=amount]").html(qtdCart - (1 * qtd));
+
+        var totalCart = parseFloat(jQuery("span[data-cart=price]").html()).toFixed(2);
+
+        
+        preco = parseFloat(preco).toFixed(2);
+
+        var totalFinal = (totalCart - (preco * qtd)).toFixed(2);
+
+        if (totalFinal < 0)
+            totalFinal = '0.00';
+
+        jQuery("span[data-cart=price]").html(totalFinal);
+
+        if (totalFinal == '0.00') {
+            jQuery("#finalizar").removeClass('show');
+        }
+
+        if (isMobile == false) {
+            syncCart();
+        }
+    }).fail(function( jqXHR, status, errorThrown ){
+          var response = jQuery.parseJSON( jqXHR.responseText );
+          console.log(response);
+    });
+}
+
+// Pegar informações do carrinho de compras
 function syncCart() {
     var dataSession = jQuery("html").attr("data-session");
 
@@ -26,29 +80,40 @@ function syncCart() {
         method: "GET",
         url: "/web_api/cart/"+dataSession
     }).done(function( response, textStatus, jqXHR ) {
-        console.log(response);
-
         jQuery('ul#listaProdutos').html("");
 
         jQuery(response).each(function(index) {
-            // console.log(response[index]);
-
             var id_produto = response[index].Cart.product_id;
             var link_produto = response[index].Cart.product_url.https;
-            var foto_produto = response[index].Cart.product_image.http;
+            var foto_produto = response[index].Cart.product_image.https;
             var nome_produto = response[index].Cart.product_name;
+            var variant_id = response[index].Cart.variant_id;
+
+            if (variant_id == '0') {
+                variant_id = -1;
+            }
 
             var preco_produto = response[index].Cart.price;
-            preco_produto = preco_produto.replace('.', ',');
+            
 
             var qtd = response[index].Cart.quantity;
 
+            var botaoDeleta = '';
+
+            if (isMobile == false) {
+                botaoDeleta = `<button class="deletarProduto" onclick="deleteProduct(${id_produto}, ${preco_produto}, ${qtd}, ${variant_id})">X</button>`;
+            }
+
+            preco_produto = preco_produto.replace('.', ',');
+
             var li = `
-                        <li>
+                        <li data-variant-id="${variant_id}">
                             <div class="backdrop">
                                 X
                             </div>
                             <div class="ct_produto" id="${id_produto}">
+                                `+botaoDeleta+`
+
                                 <a href="${link_produto}">
                                 </a>
                                 <div class="foto_produto">
@@ -71,7 +136,13 @@ function syncCart() {
             jQuery('ul#listaProdutos').append(li);
         });
 
-        swipeToDelete();
+        if (jQuery("span[data-cart=amount]").html() != '0') {
+            jQuery("#finalizar").addClass('show');
+        }
+
+        if (isMobile == true) {
+            swipeToDelete();
+        }
 
     }).fail(function( jqXHR, status, errorThrown ){
         var response = jQuery.parseJSON( jqXHR.responseText );
@@ -96,6 +167,10 @@ function syncCart() {
             </span>
         `);
     });
+
+    if (jQuery("#counter_cart").text() != '0') {
+        jQuery('button#limparCarrinho').prop('disabled', false);
+    }
 
     jQuery('#carrinhoRetratil').addClass('open');
 
@@ -144,39 +219,6 @@ function addCart(dataProductId, preco, qtd, variantID){
   }
 }
 
-function deleteProduct(productId, preco, qtd) {
-    var dataSession =  jQuery("html").attr("data-session");
-    var productID = productId;
-    
-    return jQuery.ajax({
-      method: "DELETE",
-      url: "/web_api/carts/"+dataSession+"/"+productID
-    }).done(function( response, textStatus, jqXHR ) {
-        console.log(response);
-
-        var qtdCart = parseInt(jQuery("span[data-cart=amount]").html());
-        qtd = parseInt(qtd.replace('Qtd: ', ''));
-
-        jQuery("span[data-cart=amount]").html(qtdCart - (1 * qtd));
-
-        var totalCart = parseFloat(jQuery("span[data-cart=price]").html()).toFixed(2);
-
-        preco = preco.replace('R$ ', '');
-        preco = preco.replace(',', '.');
-        preco = parseFloat(preco).toFixed(2);
-
-        var totalFinal = (totalCart - (preco * qtd)).toFixed(2);
-
-        if (totalFinal < 0)
-            totalFinal = '0.00';
-
-        jQuery("span[data-cart=price]").html(totalFinal);
-    }).fail(function( jqXHR, status, errorThrown ){
-          var response = jQuery.parseJSON( jqXHR.responseText );
-          console.log(response);
-    });
-}
-
 function swipeToDelete() {
     var swipedDelete = Swiped.init({
         query: '.listaProdutos li .ct_produto',
@@ -188,8 +230,11 @@ function swipeToDelete() {
             var precoProduto = ctProduto.elem.children[2].children[1].innerText;
             var qtdProduto = ctProduto.elem.children[3].children[0].innerText;
 
-            var response = deleteProduct(this.elem.id, precoProduto, qtdProduto);
-            // console.log(jQuery(this.elem).parent());
+            var idProduto = this.elem.id;
+
+            var variantId = jQuery(li).attr('data-variant-id');
+
+            var response = deleteProduct(idProduto, precoProduto, qtdProduto, variantId);
 
             response.success(function (data) {
                 if (data.message == 'Deleted') {
@@ -210,6 +255,8 @@ function cleanCart() {
     }).done(function( response, textStatus, jqXHR ) {
         jQuery("span[data-cart=price]").html("0.00");
         jQuery("span[data-cart=amount]").html("0");
+        jQuery('button#limparCarrinho').prop('disabled', true);
+        jQuery("#finalizar").removeClass('show');
     }).fail(function( jqXHR, status, errorThrown ){
       var response = jQuery.parseJSON( jqXHR.responseText );
       console.log(response);
@@ -241,7 +288,7 @@ jQuery('button#limparCarrinho').on('click', function() {
     `);
 });
 
-// Varia��es de produtos (card produto)
+// Variações de produtos (card produto)
 function mostraVariacao(button) {
     var ul = jQuery(button).parent().parent().children("ul#variacoes_card_produto");
     var a  = jQuery(button).parent().parent().children("a");
@@ -263,7 +310,6 @@ function mostraVariacao(button) {
             url: "/web_api/variants/" + variantId,
             data: params
         }).done(function( response, textStatus, jqXHR ) {
-            console.log(response);
             li.html(response.Variant.Sku[0].value);
 
         }).fail(function( jqXHR, status, errorThrown ){

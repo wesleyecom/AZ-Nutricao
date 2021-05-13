@@ -22,7 +22,7 @@ div.vitrine {
             position: absolute;
             width: 20px;
             height: 91%;
-            background: linear-gradient(90deg, #dedede, transparent);
+            background: linear-gradient(90deg, #0000001a, transparent);
             top: 0;
             left: 0;
             z-index: 1;
@@ -33,11 +33,15 @@ div.vitrine {
             position: absolute;
             width: 20px;
             height: 91%;
-            background: linear-gradient(-90deg, #dedede, transparent);
+            background: linear-gradient(-90deg, #0000001a, transparent);
             top: 0;
             right: 0;
             z-index: 1;
             content: "";
+        }
+
+        button.splide__arrow--next {
+            right: .8em;
         }
     }
 }

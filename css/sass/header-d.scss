@@ -98,9 +98,6 @@ header {
             position: relative;
             width: 48%;
             height: 34%;
-            // display: flex;
-            // align-items: center;
-            // justify-content: flex-end;
             margin-top: -40px;
 
             input {
@@ -137,7 +134,7 @@ header {
             }
 
             div.suggestion {
-                width: 84%;
+                width: 100%;
                 height: auto;
                 max-height: calc(95vh - 170px);
                 box-shadow: 0px 5px 5px 0px #0003;
@@ -157,11 +154,6 @@ header {
             width: 36%;
             display: flex;
             margin-top: -40px;
-
-            div.carrinho {
-                position: relative;    
-                width: 20%;
-            }
 
             div.conta {
                 position: relative;
@@ -185,6 +177,10 @@ header {
                         color: #fff;
                         font-family: 'Nunito';
                         font-size: 1.3em;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
                     }
 
                     div.divisor {
@@ -197,6 +193,8 @@ header {
             }
 
             div.carrinho {
+                position: relative;    
+                width: 20%;
                 height: 35px;
                 display: flex;
                 align-items: center;
@@ -208,7 +206,7 @@ header {
                 span.counter_cart {
                     position: absolute;
                     left: 10px;
-                    margin-top: -14px;
+                    margin-top: -18px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -221,6 +219,8 @@ header {
                     box-sizing: border-box;
                     padding-top: 1px;
                     box-shadow: 0 0 4px #000000a1;
+
+                    cursor: pointer;
                 }
             }
 
@@ -243,8 +243,7 @@ header {
             padding: 0;
             margin: 0;
 
-            li {
-                position: relative;
+            li.parent, li.noChild {
                 box-sizing: border-box;
                 padding: 15px;
                 margin-bottom: 2px;
@@ -255,7 +254,7 @@ header {
                 cursor: pointer;
                 transition: 0.3s all ease-in-out;
                 
-                a {
+                a.parentLink {
                     color: #fff;
                     font-family: 'Nunito';
                     font-size: 1.5em;
@@ -263,11 +262,16 @@ header {
                     transition: 0.3s all ease-in-out;
                 }
 
+                svg {
+                    margin-left: 10px;
+                    margin-top: 2px;
+                    transition: 0.3s all ease-in-out;
+                }
+
                 &:hover {
                     background-color: #fff;
-                    position: unset;
                     
-                    a {
+                    a.parentLink {
                         color: #629f29;
                     }
 
@@ -275,128 +279,88 @@ header {
                         fill: #629f29!important;
                     }
                 }
+            }
 
-                &.parent {
-                    svg {
-                        margin-left: 10px;
-                        margin-top: 2px;
-                        transition: 0.3s all ease-in-out;
-                    }
+            li.parent {
+                position: relative;
 
-                    &:hover > div.ct_children {
+                div.subLinks {
+                    position: absolute;
+                    top: 45px;
+                    left: 0;
+                    width: 100%;
+                    max-height: 70vh;
+
+                    transition: 0.1s all ease-in-out;
+                    
+                    opacity: 0;
+                    z-index: -1;
+
+                    ul.ul_subLinks {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        
+                        box-sizing: border-box;
+                        padding: 30px;
+
                         display: flex;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        
+                        background-color: #fff;
+                        box-shadow: 0 8px 10px #00000078;
+                        border-radius: 5px;
+
+                        div.grupo_sublinks {
+                            margin-right: 5vw;
+
+                            li.sublink_parent, li.sublink_noChild {
+                                a {
+                                    transition: unset;
+                                    color: #65A32A;
+
+                                    &:hover {
+                                        color: #6cd609;
+                                    }
+                                }
+                            }
+                            
+                            &:last-child {
+                                margin-right: 0;
+                            }
+
+                            li.child2 {
+                                margin-top: 5px;
+
+                                a {
+                                    color: #595959;
+                                    font-family: Nunito;
+                                    font-size: 1.5em;
+                                    font-weight: 600;
+
+                                    &:hover {
+                                        color: #000;
+                                    }
+                                }
+                            }
+                        }
+                        
                     }
                 }
 
-                div.ct_children {
-                    display: none;
-                    position: absolute;
-                    top: 48px;
-                    box-sizing: border-box;
-
-                    background-color: #fff;
-                    box-shadow: 0 0 2px 2px #0000001f;
-                    border-radius: 3px;
-
-                    display: none;
-                    z-index: 100;
-
-                    &.ct_links {
-                        width: auto;
-                        padding: 15px 0;
-                        
-                        ul {
-                            display: flex;
-
-                            li {
-                                flex-direction: column;
-                                align-items: flex-start;
-                                justify-content: flex-start;
-                                min-width: 300px;
-                                max-width: 300px;
-                                border-radius: 0;
-
-                                a.first:hover {
-                                    color: #7dc33b;
-                                }
-
-                                ul {
-                                    display: flex;
-                                    flex-direction: column;
-                                    align-items: flex-start;
-
-                                    li {
-                                        padding: 0;
-
-                                        a {
-                                            color: #8c8c8c;
-                                            font-weight: 700;
-                                            margin: 10px 0;
-
-                                            &:hover {
-                                                color: #b4b4b4;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                &:hover {
+                    > div.subLinks {
+                        opacity: 1;
+                        z-index: 100;
                     }
+                }
 
-                    &.ct_marcas {
-                        width: 90%;
-                        left: -8%;
-                        padding: 30px;
-    
-                        ul.marcas {
-                            position: relative;
-                            width: 100%;
-                            margin: 0;
-                            padding: 0;
-                            display: flex;
-                            flex-wrap: wrap;
-                            justify-content: space-between;
-                            cursor: auto;
-    
-                            li {
-                                position: relative;
-                                width: 100px;
-                                height: 100px;
-                                box-sizing: border-box;
-                                padding: 2px;
-                                margin: 0;
-                                display: block;
-                                border-radius: 3px;
-                                cursor: pointer;
-                                transition: 0.3s all ease-in-out;
-    
-                                a {
-                                    display: block;
-                                    position: relative;
-                                    width: 100%;
-                                    height: 100%;
-    
-                                    img {
-                                        position: relative;
-                                        width: 100%;
-                                        height: 100%;
-                                        border-radius: 3px;
-                                    }
-                                }
-    
-                                &:hover {
-                                    background-color: #d8d8d8;
-                                }
-    
-                                &:last-child {
-                                    margin-right: auto;
-                                }
-                            }
-                        }
-                    }
+                &.full {
+                    position: unset;
 
-                    &:hover {
-                        display: flex;
+                    div.subLinks {
+                        width: 88%;
                     }
                 }
             }
