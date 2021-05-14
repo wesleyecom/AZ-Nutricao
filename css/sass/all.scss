@@ -175,6 +175,7 @@ li.card_produto {
 
         &.show {
             opacity: 1;
+            grid-gap: 0;
             z-index: 10;
         }
     }

@@ -47,6 +47,7 @@ header {
 
         &.cart {
             margin-right: 15px;
+            cursor: pointer;
         }
     }
 
@@ -275,6 +276,7 @@ header {
                 position: absolute;
                 top: -7px;
                 right: 9px;
+                cursor: pointer;
             }
         }
     }

@@ -313,6 +313,95 @@ section#secao_produto {
                     font-family: Nexa-Bold;
                     text-transform: uppercase;
                 }
+
+                form#form-comments {
+                    label {
+                        color: #ffffff;
+                        font-family: Nunito;
+                        font-weight: 600;
+                        display: flex;
+                        flex-direction: column;
+                        align-content: flex-start;
+
+                        input {
+                            margin-top: 5px;
+                            background-color: #fff;
+                            border: 1px solid #c1c1c1;
+                            box-sizing: border-box;
+                            padding: 8px;
+                            border-radius: 3px;
+
+                            &#email_coment {
+                                opacity: 0.7;
+                                background-color: #e1e1e1;
+                            }
+                        }
+
+                        &:nth-child(6) {
+                            display: none;
+                        }
+
+                        textarea {
+                            border-radius: 3px;
+                            border: 1px solid #c1c1c1;
+                            font-family: "Nunito";
+                            color: #4f4f4f;
+                        }
+                    }
+
+                    h5 {
+                        font-family: Nunito;
+                        color: #ffffff;
+                        font-size: 1.2em;
+                        font-weight: 800;
+                    }
+
+                    div.rateBlock {
+                        margin-top: -15px;
+
+                        ul.stars {
+                            position: relative!important;
+                            display: flex!important;
+                            list-style: none!important;
+                            padding: 0!important;
+                            margin: 0!important;
+
+                            li {
+                                &.starn {
+                                    background: url(../img/stars-new.png) no-repeat center top;
+                                    width: 45px;
+                                    height: 38px;
+                                    cursor: pointer;
+                                    transition: 0.3s all ease-in-out;
+
+                                    &.star-on {
+                                        background: url(../img/stars-new.png) no-repeat center bottom;
+                                        margin-top: -3px;
+                                    }
+                                }
+
+                                &:before {
+                                    display: none;
+                                }
+
+                                &.nota {
+                                    position: absolute;
+                                    bottom: -25px;
+                                    padding-left: 5px;
+                                }
+                            }
+                        }
+                    }
+
+                    img#bt-submit-comments {
+                        visibility: hidden;
+                        display: none;
+                    }
+
+                    button.btn_enviar_comentario {
+                        margin-top: 50px;
+                    }
+                }
             }
 
             div.hreview-comentarios {
@@ -320,6 +409,7 @@ section#secao_produto {
                 box-sizing: border-box;
                 padding: 15px 5px 15px 15px;
                 border-radius: 5px;
+                margin: 2px 0 15px 0;
 
                 span.reviewer {
                     h3 {

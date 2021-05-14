@@ -61,6 +61,7 @@ function deleteProduct(productId, preco, qtd, variantId) {
 
         if (totalFinal == '0.00') {
             jQuery("#finalizar").removeClass('show');
+            jQuery('button#limparCarrinho').prop('disabled', true);
         }
 
         if (isMobile == false) {
