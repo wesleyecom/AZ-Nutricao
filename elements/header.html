@@ -407,7 +407,7 @@
                     {% set liMmarcas = Categories( { "id": 103 } ) %}
                     {% set marcas = liMmarcas.children %}
                     
-                    <li class="parent marcas">
+                    <li class="parent full marcas">
                         <a href="{{ liMmarcas.link }}" class="parentLink">
                             {{ liMmarcas.name }}
                         </a>
@@ -428,6 +428,24 @@
                                             c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
                                     </g>
                         </svg>
+
+                        <div class="subLinks container_marcas">
+                            <ul class="ul_marcas">
+                                {% for marca in marcas %}
+                                    <li>
+                                        <a href="{{ marca.link }}"></a>
+                                        <img src="{{ asset('img/marcas/logo/header/'~marca.name~'.jpg') }}" alt="{{ marca.name }}">
+                                    </li>
+
+                                    {% for submarca in marca.children %}
+                                        <li>
+                                            <a href="{{ submarca.link }}"></a>
+                                            <img src="{{ asset('img/marcas/logo/header/'~submarca.name~'.jpg') }}" alt="{{ marca.name }}">
+                                        </li>
+                                    {% endfor %}
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </li>
 
                     {% for category in categories if category.id != 49 and category.id != 51 and category.id != 103 %}

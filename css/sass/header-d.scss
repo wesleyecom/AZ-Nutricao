@@ -296,21 +296,63 @@ header {
                     opacity: 0;
                     z-index: -1;
 
-                    ul.ul_subLinks {
+                    ul {
                         position: relative;
                         width: 100%;
                         height: 100%;
                         
                         box-sizing: border-box;
-                        padding: 30px;
-
-                        display: flex;
-                        align-items: flex-start;
-                        justify-content: flex-start;
                         
                         background-color: #fff;
                         box-shadow: 0 8px 10px #00000078;
                         border-radius: 5px;
+
+                        &.ul_subLinks {
+                            align-items: flex-start;
+                            justify-content: flex-start;
+                            display: flex;
+                            padding: 30px;
+                        }
+
+                        &.ul_marcas {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                            grid-gap: 8px;
+                            padding: 30px 28px 30px 30px;
+                            
+                            li {
+                                position: relative;
+                                width: 80px;
+                                height: 80px;
+                                border-radius: 5px;
+                                margin-bottom: 5px;
+
+                                transition: 0.1s all ease-in-out;
+
+                                overflow: hidden;
+
+                                border: 1px solid transparent;
+
+                                a {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                    z-index: 1;
+                                }
+
+                                img {
+                                    position: relative;
+                                    width: 100%;
+                                }
+
+                                &:hover {
+                                    border: 1px solid #bfbfbf;
+                                }
+                            }
+                        }
 
                         div.grupo_sublinks {
                             margin-right: 5vw;
@@ -364,23 +406,61 @@ header {
                     }
                 }
             }
+
+            li.marcas {
+
+            }
         }
     }
 }
 
-@media (max-width: 1172px) {
+@media (max-width: 1260px) {
     header {
         h1#logo-d {
-            left: 2vw;
+            left: 2.2vw;
         }
 
         div.baixo {
+            justify-content: flex-start;
+            box-sizing: border-box;
+            padding-left: 12vw;
+
+            div.action {
+                width: 30%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1170px) {
+    header {
+        height: 140px;
+
+        div.cima {
+            display: none;
+        }
+
+        div.baixo {
+            padding: 0;
+            height: 100%;
+            
             form.barra_busca {
-                width: 62.5%;
+                margin-left: 12vw;
             }
 
             ul#categoriasMenu {
-                width: 86%;
+                width: 100%;
+                
+                box-sizing: border-box;
+                padding-left: 11vw;
+
+                font-size: .85em;
+
+                background-color: #477d16;
+
+                li {
+                    margin-bottom: 0!important;
+                }
             }
         }
     }
