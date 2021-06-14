@@ -19,6 +19,8 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         {% endif %}
     {% elseif pages.current == 'register' %}
+        <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    {% elseif pages.current == 'login' %}
         <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     {% endif %}
 
@@ -74,7 +76,7 @@
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/autocomplete.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/cache_control.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/bootstrap.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
-    <script type="text/javascript" src="//images.tcdn.com.br/static_inst/integracao/v2/jivochat.js?store=773127&amp;widget_id=WDKcfrHatR?006c893c8994c54602611b06b0ef627c&amp;f3eb372b4cc00efa20a975129ab2544f1619557787" async="true"></script>
+    <!-- <script type="text/javascript" src="//images.tcdn.com.br/static_inst/integracao/v2/jivochat.js?store=773127&amp;widget_id=WDKcfrHatR?006c893c8994c54602611b06b0ef627c&amp;f3eb372b4cc00efa20a975129ab2544f1619557787" async="true"></script> -->
 
     {{
             html.script({

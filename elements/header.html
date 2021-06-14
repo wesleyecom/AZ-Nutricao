@@ -278,9 +278,13 @@
                 </span>
             </a>
 
-            <a href="#" id="btn_rastreio">
+            <a href="{{ links.orders_tracking }}" id="btn_rastreio" class="tray-hide" data-logged-user="false">
                 Rastrear pedido
             </a>
+
+            <!-- <a href="#" id="btn_rastreio_not_logged" class="tray-hide" data-logged-user="false">
+                Rastrear pedido
+            </a> -->
         </div>
 
         <div class="baixo">
@@ -431,18 +435,25 @@
 
                         <div class="subLinks container_marcas">
                             <ul class="ul_marcas">
+                                {% set arrayMarcas = [] %}
+                                
+
                                 {% for marca in marcas %}
+                                    <!-- <li>
+                                        <a href="{{ marca.link }}"></a>
+                                        <img src="{{ asset('img/marcas/logo/header/'~marca.name~'.jpg') }}" alt="{{ marca.name }}">
+                                    </li> -->
+
+                                    {% for submarca in marca.children %}
+                                        {% set arrayMarcas = arrayMarcas|merge([submarca]) %}
+                                    {% endfor %}
+                                {% endfor %}
+
+                                {% for marca in arrayMarcas|sort %}
                                     <li>
                                         <a href="{{ marca.link }}"></a>
                                         <img src="{{ asset('img/marcas/logo/header/'~marca.name~'.jpg') }}" alt="{{ marca.name }}">
                                     </li>
-
-                                    {% for submarca in marca.children %}
-                                        <li>
-                                            <a href="{{ submarca.link }}"></a>
-                                            <img src="{{ asset('img/marcas/logo/header/'~submarca.name~'.jpg') }}" alt="{{ marca.name }}">
-                                        </li>
-                                    {% endfor %}
                                 {% endfor %}
                             </ul>
                         </div>

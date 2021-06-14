@@ -74,3 +74,11 @@ botaoToggleSubcategoria_2MR.on('click', function(e) {
 jQuery('header > div.baixo > form > input[type=text]').on('focusout', function() {
     jQuery(this).val('');
 });
+
+// Order tracking button
+let btnRastreio = jQuery('#btn_rastreio_not_logged');
+
+// btnRastreio.on('click', function(event) {
+//     event.preventDefault();
+//     jQuery('tray-login').show();
+// });
