@@ -69,11 +69,7 @@ header {
                 }
             }
 
-            &:first-child {
-                margin-right: 20px;
-            }
-
-            &:nth-child(2) {
+            &:nth-child(1) {
                 margin-right: 14vw;
             }
         }
@@ -284,11 +280,11 @@ header {
             li.parent {
                 position: relative;
 
-                div.subLinks {
+                div.subLinksMarcas {
                     position: absolute;
                     top: 45px;
                     left: 0;
-                    width: 100%;
+                    width: 135%;
                     max-height: 70vh;
 
                     transition: 0.1s all ease-in-out;
@@ -306,13 +302,6 @@ header {
                         background-color: #fff;
                         box-shadow: 0 8px 10px #00000078;
                         border-radius: 5px;
-
-                        &.ul_subLinks {
-                            align-items: flex-start;
-                            justify-content: flex-start;
-                            display: flex;
-                            padding: 30px;
-                        }
 
                         &.ul_marcas {
                             display: grid;
@@ -362,41 +351,133 @@ header {
                                 }
                             }
                         }
+                    }
+                }
 
-                        div.grupo_sublinks {
-                            margin-right: 5vw;
+                div.subLinks {
+                    position: absolute;
+                    top: 45px;
+                    left: 0;
+                    max-height: 70vh;
 
-                            li.sublink_parent, li.sublink_noChild {
-                                a {
-                                    transition: unset;
-                                    color: #65A32A;
+                    transition: 0.1s all ease-in-out;
+                    
+                    opacity: 0;
+                    z-index: -1;
+
+                    ul {
+                        position: relative;
+                        width: auto;
+                        min-width: 100%;
+                        height: 100%;
+                        
+                        box-sizing: border-box;
+                        
+                        background-color: #fff;
+                        box-shadow: 0 8px 10px #00000078;
+                        border-radius: 5px;
+
+                        display: inline-block;
+
+                        transition: 0.3s all ease-in-out;
+
+                        &.ul_subLinks {
+                            align-items: flex-start;
+                            justify-content: flex-start;
+                            display: flex;
+                            flex-direction: column;
+                            padding: 30px 12px 15px 18px;
+
+                            li.child {
+                                position: relative;
+                                width: 100%;
+                                min-height: 40px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                transition: 0.3s all ease-in-out;
+
+                                &:first-child {
+                                    margin-top: -20px;
+                                }
+
+                                a.childLink, span {
+                                    color: #629f29;
+                                    font-family: 'Nunito';
+                                    font-weight: 900;
+                                }
+
+                                a.childLink {
+                                    position: relative;
+                                    width: 100%;
+                                    font-size: 1.5em;
+                                    white-space: nowrap;
 
                                     &:hover {
-                                        color: #6cd609;
+                                        color: #7ae714;
                                     }
                                 }
-                            }
-                            
-                            &:last-child {
-                                margin-right: 0;
-                            }
 
-                            li.child2 {
-                                margin-top: 5px;
+                                span {
+                                    font-size: 2.5em;
 
-                                a {
-                                    color: #595959;
-                                    font-family: Nunito;
-                                    font-size: 1.5em;
-                                    font-weight: 600;
+                                    width: 30px;
+                                    height: 30px;
+
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    border-radius: 3px;
 
                                     &:hover {
-                                        color: #000;
+                                        background-color: #e6e6e6;
                                     }
                                 }
                             }
                         }
-                        
+                    }
+
+                    &.selected {
+                        display: inline-flex;
+
+                        ul.ul_subLinks {
+                            flex-direction: row;
+                            padding: 18px 35px 15px 18px;
+                            align-items: flex-start;
+
+                            li.child {
+                                margin-top: 0;
+
+                                a.childLink, span {
+                                    color: #7ae714;
+                                }
+                            }
+
+                            div.subCategoryContainer {
+                                position: relative;
+                                width: auto;
+                                margin-left: 10px;
+                                padding-left: 15px;
+                                border-left: 1px solid #e1e1e1;
+
+                                a {
+                                    margin-bottom: 5px;
+                                    display: block;
+                                    white-space: nowrap;
+                                    font-family: Nunito;
+                                    font-size: 1.5em;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.full {
+                    div.subLinksMarcas {
+                        width: 70vw;
                     }
                 }
 
@@ -404,14 +485,6 @@ header {
                     > div.subLinks {
                         opacity: 1;
                         z-index: 100;
-                    }
-                }
-
-                &.full {
-                    position: unset;
-
-                    div.subLinks {
-                        width: 88%;
                     }
                 }
             }

@@ -1,1 +1,4 @@
-footer div.cima{flex-wrap:wrap}
+footer div.cima {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}

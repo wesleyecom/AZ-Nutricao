@@ -229,7 +229,7 @@ section#secao_produto {
 
                 position: relative;
                 display: flex;
-                justify-content: space-between;
+                // justify-content: space-between;
                 box-sizing: border-box;
                 padding: 15px;
                 border-radius: 5px;
@@ -275,6 +275,31 @@ section#secao_produto {
                         background: url("../img/svg/checkmark-green.svg");
                         background-size: contain;
                         content: "";
+                    }
+                }
+            }
+        }
+
+        table {
+            font-family: Nunito;
+            font-size: 1.3em;
+            border: 1px solid #b0b0b0;
+
+            thead {
+                tr {
+                    th {
+                        border: 0;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        text-align: center;
+                        border: 0;
+                        border-top: 1px solid #b0b0b0;
+                        padding: 10px 0;
                     }
                 }
             }

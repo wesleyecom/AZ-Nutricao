@@ -2,7 +2,7 @@
 // Checar mobile
 var isMobile = jQuery('#isMobile').data('isMobile');
 
-// LÃ³gica dos botÃµes dos cards de produtos  ( | comprar | + | - | )
+// Lógica dos botões dos cards de produtos  ( | comprar | + | - | )
 let btn_subtrair  = jQuery('.btn_minus');
 let btn_somar     = jQuery('.btn_plus');
 
@@ -73,7 +73,7 @@ function deleteProduct(productId, preco, qtd, variantId) {
     });
 }
 
-// Pegar informaÃ§Ãµes do carrinho de compras
+// Pegar informações do carrinho de compras
 function syncCart() {
     var dataSession = jQuery("html").attr("data-session");
 
@@ -289,7 +289,7 @@ jQuery('button#limparCarrinho').on('click', function() {
     `);
 });
 
-// VariaÃ§Ãµes de produtos (card produto)
+// Variações de produtos (card produto)
 function mostraVariacao(button) {
     var ul = jQuery(button).parent().parent().children("ul#variacoes_card_produto");
     var a  = jQuery(button).parent().parent().children("a");

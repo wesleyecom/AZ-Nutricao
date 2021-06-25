@@ -1,0 +1,34 @@
+section.page-content {
+  padding: 5vw;
+}
+
+section.page-content div.central-conteudo a.central-mapa {
+  display: none;
+}
+
+section.page-content div.central-conteudo div.board h1 {
+  display: block;
+  font-family: Nunito;
+  font-size: 2em;
+}
+
+section.page-content div.central-conteudo div.board table.tablePage {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+section.page-content div.central-conteudo div.board table.tablePage tbody {
+  font-family: Nunito;
+}
+
+section.page-content div.central-conteudo div.board table.tablePage tbody tr th {
+  padding: 15px 0;
+  background-color: #e8e8e8;
+}
+
+section.page-content div.central-conteudo div.board table.tablePage tbody tr td {
+  padding: 35px 0;
+  font-family: Nunito;
+  font-size: 1.2em;
+}

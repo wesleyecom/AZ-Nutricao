@@ -18,7 +18,7 @@ jQuery('#login-button-d, #login-button-m').click(function(event) {
 });
 
 // Open subcategory inside hamburger menu
-// MR - Menu Retrátil
+// MR - Menu Retratil
 let ulCategoriasMR = jQuery('#categorias_header-m');
 let botaoToggleSubcategoriaMR = jQuery('#categorias_header-m > li.father > button');
 let botaoToggleSubcategoria_2MR = jQuery('#categorias_header-m > li.father > div.children > div.ct_child > button');
@@ -29,8 +29,6 @@ subcategoriasMR.slideUp();
 subcategorias_2MR.slideUp();
 
 botaoToggleSubcategoriaMR.on('click', function(e) {
-    // jQuery(e.target).parent().find('div.children').slideToggle("fast", "swing");
-
     if(jQuery(this).hasClass('open')) {
         jQuery(this).text('+');
         jQuery(this).removeClass('open');
@@ -52,8 +50,6 @@ botaoToggleSubcategoriaMR.on('click', function(e) {
 });
 
 botaoToggleSubcategoria_2MR.on('click', function(e) {
-    // jQuery(e.target).parent().find('div.children_child').slideToggle("fast", "swing");
-
     if(jQuery(this).hasClass('open')) {
         jQuery(this).text('+');
         jQuery(this).removeClass('open');
@@ -78,7 +74,83 @@ jQuery('header > div.baixo > form > input[type=text]').on('focusout', function()
 // Order tracking button
 let btnRastreio = jQuery('#btn_rastreio_not_logged');
 
-// btnRastreio.on('click', function(event) {
-//     event.preventDefault();
-//     jQuery('tray-login').show();
-// });
+btnRastreio.on('click', function(event) {
+    event.preventDefault();
+    jQuery('tray-login').show();
+});
+
+// Expand categories (desktop version)
+function subcategoriesMenu(element) {
+    if (jQuery(element).hasClass('closed')) {
+        // Open subcategories menu
+        let clicked_button = jQuery(element);
+        let div_sublinks = jQuery(element).closest('div.subLinks');
+        let ul_sublinks = jQuery(element).closest('ul.ul_subLinks');
+        let li_clicked = jQuery(element).closest('li.child');
+        let container_subcategories = jQuery(element).closest('ul.ul_subLinks').find('div.subCategoryContainer');
+
+        // Get subcategories
+        let categoryId =  jQuery(element).attr('class');
+        categoryId = categoryId.replace('categoria_', '');
+        categoryId = categoryId.replace(' closed', '');
+
+        console.log(categoryId);
+            
+        jQuery.ajax({
+            method: "GET",
+            url: "/web_api/categories/tree/"+categoryId
+        }).done(function( response, textStatus, jqXHR ) {
+            container_subcategories.html('');
+
+            jQuery(response.Category[0].Category.children).each(function() {
+                container_subcategories.append(`
+                    <a href="${this.Category.link.https}">${this.Category.name}</a>
+                `);
+            });
+
+            // change div sublinks display
+            div_sublinks.addClass('selected');
+
+            // remove all li itens
+            ul_sublinks.children('li').each(function() {
+                jQuery(this).hide();
+            });
+
+            // Show select li again and apply css
+            li_clicked.show();
+
+            // Change button
+            clicked_button.removeClass('closed');
+            clicked_button.addClass('opened');
+            clicked_button.html('-');
+
+            container_subcategories.show();
+
+        }).fail(function( jqXHR, status, errorThrown ){
+            var response = $.parseJSON( jqXHR.responseText );
+            console.log(response);
+        });
+    }
+    else {
+        // Close subcategories menu
+        let clicked_button = jQuery(element);
+        let div_sublinks = jQuery(element).closest('div.subLinks');
+        let ul_sublinks = jQuery(element).closest('ul.ul_subLinks');
+        let container_subcategories = jQuery(element).closest('ul.ul_subLinks').find('div.subCategoryContainer');
+
+        // Change button
+        clicked_button.html('+');
+        clicked_button.addClass('closed');
+        clicked_button.removeClass('opened');
+
+        // change div sublinks display
+        div_sublinks.removeClass('selected');
+
+        // replace all li itens
+        ul_sublinks.children('li').each(function() {
+            jQuery(this).show();
+        });
+
+        container_subcategories.hide();
+    }
+}

@@ -11,7 +11,7 @@ jQuery('#form-comments').append(`
 `);
 
 jQuery('#form-comments > button.btn_enviar_comentario').on('click', function() {
-    alert("Obrigado pelo coment√°rio!");
+    alert("Obrigado pelo coment·rio!");
     location.reload();
 });
 

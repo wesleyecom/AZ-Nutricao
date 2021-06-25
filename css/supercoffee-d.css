@@ -1,31 +1,65 @@
 div.hero {
+  height: auto;
   min-height: 100vh;
   background-image: url("../img/bg_supercoffee-d.jpg");
 }
+
 div.hero div.texto {
   width: 45%;
   font-family: MuseoSansRounded;
   text-align: center;
   margin-top: 50px;
 }
+
 div.hero div.texto h2 {
   font-size: 3em;
   letter-spacing: 1px;
 }
+
 div.hero div.texto p {
   font-size: 2em;
 }
+
 div.hero div#supercoffee {
   margin-top: 70px;
-  height: 100%;
+  padding-bottom: 30px;
 }
+
 div.hero div#supercoffee div.splide__track ul.splide__list li div.card {
   width: 95%;
-  font-size: 0.9em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: .9em;
+  padding-bottom: 15px;
 }
+
+div.hero div#supercoffee div.splide__track ul.splide__list li div.card div.tamanho {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #000;
+  font-family: Nexa-Bold;
+  font-size: 1.2em;
+  background-color: #fbbb36;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px 15px;
+  border-radius: 33px;
+  margin-bottom: 20px;
+  display: none;
+}
+
 div.hero div#supercoffee div.splide__track ul.splide__list li div.card img {
   height: calc(100px + 3vw);
 }
+
 div.hero div#supercoffee div.splide__track ul.splide__list li div.card h3.ic {
   font-size: 2.3em;
 }

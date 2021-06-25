@@ -27,6 +27,118 @@ body, .application, .site-main {
     box-sizing: border-box;
 }
 
+div.whatsapp_floating {
+    position: fixed;
+    top: 82%;
+    right: 1%;
+    padding: 10px;
+    
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #00b31e;
+
+    box-shadow: 0px 0px 5px #00000042;
+
+    z-index: 10000000;
+
+    a {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            position: relative;
+            width: 35px;
+            height: 30px;
+        }
+    }
+}
+
+div#openJivo {
+    position: fixed;
+    width: 280px;
+
+    display: flex;
+    justify-content: center;
+    right: 25px;
+    bottom: 15px;
+    z-index: 10000000000;
+
+    img {
+        position: relative;
+    }
+
+    div {
+        position: absolute;
+        width: 80%;
+        left: 0;
+        top: 47%;
+        box-sizing: border-box;
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            box-sizing: border-box;
+            padding: 8px 0;
+            border-radius: 22px;
+
+            cursor: pointer;
+
+            transition: 0.3s all ease-in-out;
+
+            &:nth-child(1) {
+                width: 80%;
+                background-color: #00B31E;
+
+                &:hover {
+                    background-color: #07d82a;
+                }
+            }
+
+            &:nth-child(2) {
+                width: 57%;
+                background-color: #0088B3;
+                margin-top: 15px;
+
+                &:hover {
+                    background-color: #03a2d3;
+                }
+            }
+
+            svg {
+                margin-right: 8px;
+            }
+
+            span {
+                color: #fff;
+                font-family: Nunito;
+                font-weight: 900;
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+
+jdiv#jvlabelWrap {
+    bottom: -50px!important;
+    transition: 0.2s all ease-in-out;
+}
+
+#openJivo {
+    opacity: 0;
+}
+
 #isMobile {
     display: none;
 }

@@ -1,5 +1,5 @@
 div.hero {
-    // height: auto;
+    height: auto;
     min-height: 100vh;
     background-image: url("../img/bg_supercoffee-d.jpg");
 
@@ -22,14 +22,34 @@ div.hero {
 
     div#supercoffee {
         margin-top: 70px;
-        height: 100%;
+        padding-bottom: 30px;
+        // height: auto;
 
         div.splide__track {
             ul.splide__list {
                 li {
                     div.card {
                         width: 95%;
+                        justify-content: space-between;
                         font-size: .9em;
+                        padding-bottom: 15px;
+
+                        div.tamanho {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #000;
+                            font-family: Nexa-Bold;
+                            font-size: 1.2em;
+                            background-color: #fbbb36;
+                            box-sizing: border-box;
+                            padding: 5px 15px;
+                            border-radius: 33px;
+
+                            margin-bottom: 20px;
+
+                            display: none;
+                        }
                 
                         img {
                             height: calc(100px + 3vw);

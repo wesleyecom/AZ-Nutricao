@@ -1,1 +1,638 @@
-header{height:170px}header div#header-m{display:none}header h1#logo-d{position:absolute;top:0;left:5vw;margin:0;z-index:1}header h1#logo-d a svg{position:relative;width:85%;margin-top:-12px}header div.cima{position:relative;width:100%;height:30px;background-color:#5e9a29;display:flex;align-items:center;justify-content:flex-end}header div.cima a{color:#fff;font-family:"Nunito";display:flex;align-items:center}header div.cima a svg{width:15px;height:15px;fill:#fff;margin-right:5px}header div.cima a span{color:#fff;color:#fff;font-family:"Nunito";font-size:1.2em;font-weight:700}header div.cima a#btn_rastreio,header div.cima a#btn_rastreio_not_logged{position:absolute;height:100%;box-sizing:border-box;padding:0 20px;background-color:#3e710f;font-family:"Nunito";font-size:1em;text-transform:uppercase;transition:.3s all ease-in-out}header div.cima a#btn_rastreio:hover,header div.cima a#btn_rastreio_not_logged:hover{background-color:#315c0a}header div.cima a:first-child{margin-right:20px}header div.cima a:nth-child(2){margin-right:14vw}header div.baixo{position:relative;width:100%;height:calc(100% - 30px);background:linear-gradient(90deg, #6cab2b, #5e9a29);display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap}header div.baixo h1,header div.baixo svg#svg_hamburger{display:none}header div.baixo form.barra_busca{order:1;position:relative;width:48%;height:34%;margin-top:-40px}header div.baixo form.barra_busca input{width:100%;height:100%;border:0;border-radius:4px;box-sizing:border-box;padding-left:15px;color:#bdbdbd;font-family:"Nunito";font-size:1.5em;outline:none}header div.baixo form.barra_busca input::placeholder{font-family:"Nunito";font-weight:700;color:#585858}header div.baixo form.barra_busca button{position:absolute;top:0;right:0;width:50px;height:100%;color:#bdbdbd;font-family:"Nunito";border:0;background:transparent;cursor:pointer;outline:none}header div.baixo form.barra_busca div.suggestion{width:100%;height:auto;max-height:calc(95vh - 170px);box-shadow:0px 5px 5px 0px #0003;top:45px;border-radius:0 0 5px 5px;z-index:1}header div.baixo form.barra_busca svg{display:none}header div.baixo div.action{order:2;position:relative;width:36%;display:flex;margin-top:-40px}header div.baixo div.action div.conta{position:relative;width:60%;display:flex;align-items:center;justify-content:center}header div.baixo div.action div.conta svg{margin-right:10px}header div.baixo div.action div.conta div.links_conta{position:relative;width:50%;display:flex;align-items:center;justify-content:space-around}header div.baixo div.action div.conta div.links_conta a{color:#fff;font-family:"Nunito";font-size:1.3em}header div.baixo div.action div.conta div.links_conta a:hover{text-decoration:underline}header div.baixo div.action div.conta div.links_conta div.divisor{position:relative;width:1px;height:14px;background-color:#fff}header div.baixo div.action div.carrinho{position:relative;width:20%;height:35px;display:flex;align-items:center}header div.baixo div.action div.carrinho svg{cursor:pointer}header div.baixo div.action div.carrinho span.counter_cart{position:absolute;left:10px;margin-top:-18px;display:flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:15px;background-color:#fff;font-family:"Nunito";font-weight:800;box-sizing:border-box;padding-top:1px;box-shadow:0 0 4px #000000a1;cursor:pointer}header div.baixo div.action svg{width:20px;height:20px;fill:#fff}header div.baixo ul#categoriasMenu{order:3;position:absolute;bottom:0;width:85%;height:35%;display:flex;align-items:center;justify-content:flex-start;padding:0;margin:0}header div.baixo ul#categoriasMenu li.parent,header div.baixo ul#categoriasMenu li.noChild{box-sizing:border-box;padding:15px;margin-bottom:2px;display:flex;align-items:center;justify-content:space-around;border-radius:3px 3px 0 0;cursor:pointer;transition:.3s all ease-in-out}header div.baixo ul#categoriasMenu li.parent a.parentLink,header div.baixo ul#categoriasMenu li.noChild a.parentLink{color:#fff;font-family:"Nunito";font-size:1.5em;font-weight:900;transition:.3s all ease-in-out}header div.baixo ul#categoriasMenu li.parent svg,header div.baixo ul#categoriasMenu li.noChild svg{margin-left:10px;margin-top:2px;transition:.3s all ease-in-out}header div.baixo ul#categoriasMenu li.parent:hover,header div.baixo ul#categoriasMenu li.noChild:hover{background-color:#fff}header div.baixo ul#categoriasMenu li.parent:hover a.parentLink,header div.baixo ul#categoriasMenu li.noChild:hover a.parentLink{color:#629f29}header div.baixo ul#categoriasMenu li.parent:hover svg,header div.baixo ul#categoriasMenu li.noChild:hover svg{fill:#629f29 !important}header div.baixo ul#categoriasMenu li.parent{position:relative}header div.baixo ul#categoriasMenu li.parent div.subLinks{position:absolute;top:45px;left:0;width:100%;max-height:70vh;transition:.1s all ease-in-out;opacity:0;z-index:-1}header div.baixo ul#categoriasMenu li.parent div.subLinks ul{position:relative;width:100%;height:100%;box-sizing:border-box;background-color:#fff;box-shadow:0 8px 10px #00000078;border-radius:5px}header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks{align-items:flex-start;justify-content:flex-start;display:flex;padding:30px}header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_marcas{display:grid;grid-template-columns:repeat(auto-fill, minmax(80px, 1fr));grid-gap:8px;padding:30px 28px 30px 30px}header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_marcas li{position:relative;width:80px;height:80px;border-radius:5px;margin-bottom:5px;transition:.1s all ease-in-out;overflow:hidden;border:1px solid transparent;display:flex;align-items:center}header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_marcas li a{position:absolute;top:0;left:0;width:100%;height:100%;display:block;z-index:1}header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_marcas li img{position:relative;width:100%;font-family:Nunito;font-weight:900;text-transform:uppercase;font-size:1.2em;text-align:center}header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_marcas li:hover{border:1px solid #bfbfbf}header div.baixo ul#categoriasMenu li.parent div.subLinks ul div.grupo_sublinks{margin-right:5vw}header div.baixo ul#categoriasMenu li.parent div.subLinks ul div.grupo_sublinks li.sublink_parent a,header div.baixo ul#categoriasMenu li.parent div.subLinks ul div.grupo_sublinks li.sublink_noChild a{transition:unset;color:#65a32a}header div.baixo ul#categoriasMenu li.parent div.subLinks ul div.grupo_sublinks li.sublink_parent a:hover,header div.baixo ul#categoriasMenu li.parent div.subLinks ul div.grupo_sublinks li.sublink_noChild a:hover{color:#6cd609}header div.baixo ul#categoriasMenu li.parent div.subLinks ul div.grupo_sublinks:last-child{margin-right:0}header div.baixo ul#categoriasMenu li.parent div.subLinks ul div.grupo_sublinks li.child2{margin-top:5px}header div.baixo ul#categoriasMenu li.parent div.subLinks ul div.grupo_sublinks li.child2 a{color:#595959;font-family:Nunito;font-size:1.5em;font-weight:600}header div.baixo ul#categoriasMenu li.parent div.subLinks ul div.grupo_sublinks li.child2 a:hover{color:#000}header div.baixo ul#categoriasMenu li.parent:hover>div.subLinks{opacity:1;z-index:100}header div.baixo ul#categoriasMenu li.parent.full{position:unset}header div.baixo ul#categoriasMenu li.parent.full div.subLinks{width:88%}@media(max-width: 1260px){header h1#logo-d{left:2.2vw}header div.baixo{justify-content:flex-start;box-sizing:border-box;padding-left:12vw}header div.baixo div.action{width:30%}}@media(max-width: 1170px){header{height:140px}header div.cima{display:none}header div.baixo{padding:0;height:100%}header div.baixo form.barra_busca{margin-left:12vw}header div.baixo ul#categoriasMenu{width:100%;box-sizing:border-box;padding-left:11vw;font-size:.85em;background-color:#477d16}header div.baixo ul#categoriasMenu li{margin-bottom:0 !important}}
+header {
+  height: 170px;
+}
+
+header div#header-m {
+  display: none;
+}
+
+header h1#logo-d {
+  position: absolute;
+  top: 0;
+  left: 5vw;
+  margin: 0;
+  z-index: 1;
+}
+
+header h1#logo-d a svg {
+  position: relative;
+  width: 85%;
+  margin-top: -12px;
+}
+
+header div.cima {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: #5E9A29;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+header div.cima a {
+  color: #fff;
+  font-family: "Nunito";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header div.cima a svg {
+  width: 15px;
+  height: 15px;
+  fill: #fff;
+  margin-right: 5px;
+}
+
+header div.cima a span {
+  color: #fff;
+  color: #fff;
+  font-family: 'Nunito';
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+header div.cima a#btn_rastreio, header div.cima a#btn_rastreio_not_logged {
+  position: absolute;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 20px;
+  background-color: #3E710F;
+  font-family: 'Nunito';
+  font-size: 1em;
+  text-transform: uppercase;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+header div.cima a#btn_rastreio:hover, header div.cima a#btn_rastreio_not_logged:hover {
+  background-color: #315c0a;
+}
+
+header div.cima a:nth-child(1) {
+  margin-right: 14vw;
+}
+
+header div.baixo {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 30px);
+  background: -webkit-gradient(linear, left top, right top, from(#6cab2b), to(#5e9a29));
+  background: linear-gradient(90deg, #6cab2b, #5e9a29);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+header div.baixo h1, header div.baixo svg#svg_hamburger {
+  display: none;
+}
+
+header div.baixo form.barra_busca {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  position: relative;
+  width: 48%;
+  height: 34%;
+  margin-top: -40px;
+}
+
+header div.baixo form.barra_busca input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 15px;
+  color: #BDBDBD;
+  font-family: 'Nunito';
+  font-size: 1.5em;
+  outline: none;
+}
+
+header div.baixo form.barra_busca input::-webkit-input-placeholder {
+  font-family: 'Nunito';
+  font-weight: 700;
+  color: #585858;
+}
+
+header div.baixo form.barra_busca input:-ms-input-placeholder {
+  font-family: 'Nunito';
+  font-weight: 700;
+  color: #585858;
+}
+
+header div.baixo form.barra_busca input::-ms-input-placeholder {
+  font-family: 'Nunito';
+  font-weight: 700;
+  color: #585858;
+}
+
+header div.baixo form.barra_busca input::placeholder {
+  font-family: 'Nunito';
+  font-weight: 700;
+  color: #585858;
+}
+
+header div.baixo form.barra_busca button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  color: #bdbdbd;
+  font-family: 'Nunito';
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+header div.baixo form.barra_busca div.suggestion {
+  width: 100%;
+  height: auto;
+  max-height: calc(95vh - 170px);
+  -webkit-box-shadow: 0px 5px 5px 0px #0003;
+          box-shadow: 0px 5px 5px 0px #0003;
+  top: 45px;
+  border-radius: 0 0 5px 5px;
+  z-index: 1;
+}
+
+header div.baixo form.barra_busca svg {
+  display: none;
+}
+
+header div.baixo div.action {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  position: relative;
+  width: 36%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -40px;
+}
+
+header div.baixo div.action div.conta {
+  position: relative;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header div.baixo div.action div.conta svg {
+  margin-right: 10px;
+}
+
+header div.baixo div.action div.conta div.links_conta {
+  position: relative;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+header div.baixo div.action div.conta div.links_conta a {
+  color: #fff;
+  font-family: 'Nunito';
+  font-size: 1.3em;
+}
+
+header div.baixo div.action div.conta div.links_conta a:hover {
+  text-decoration: underline;
+}
+
+header div.baixo div.action div.conta div.links_conta div.divisor {
+  position: relative;
+  width: 1px;
+  height: 14px;
+  background-color: #fff;
+}
+
+header div.baixo div.action div.carrinho {
+  position: relative;
+  width: 20%;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header div.baixo div.action div.carrinho svg {
+  cursor: pointer;
+}
+
+header div.baixo div.action div.carrinho span.counter_cart {
+  position: absolute;
+  left: 10px;
+  margin-top: -18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #fff;
+  font-family: "Nunito";
+  font-weight: 800;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 1px;
+  -webkit-box-shadow: 0 0 4px #000000a1;
+          box-shadow: 0 0 4px #000000a1;
+  cursor: pointer;
+}
+
+header div.baixo div.action svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+
+header div.baixo ul#categoriasMenu {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  position: absolute;
+  bottom: 0;
+  width: 85%;
+  height: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+header div.baixo ul#categoriasMenu li.parent, header div.baixo ul#categoriasMenu li.noChild {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 15px;
+  margin-bottom: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 3px 3px 0 0;
+  cursor: pointer;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+header div.baixo ul#categoriasMenu li.parent a.parentLink, header div.baixo ul#categoriasMenu li.noChild a.parentLink {
+  color: #fff;
+  font-family: 'Nunito';
+  font-size: 1.5em;
+  font-weight: 900;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+header div.baixo ul#categoriasMenu li.parent svg, header div.baixo ul#categoriasMenu li.noChild svg {
+  margin-left: 10px;
+  margin-top: 2px;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+header div.baixo ul#categoriasMenu li.parent:hover, header div.baixo ul#categoriasMenu li.noChild:hover {
+  background-color: #fff;
+}
+
+header div.baixo ul#categoriasMenu li.parent:hover a.parentLink, header div.baixo ul#categoriasMenu li.noChild:hover a.parentLink {
+  color: #629f29;
+}
+
+header div.baixo ul#categoriasMenu li.parent:hover svg, header div.baixo ul#categoriasMenu li.noChild:hover svg {
+  fill: #629f29 !important;
+}
+
+header div.baixo ul#categoriasMenu li.parent {
+  position: relative;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 135%;
+  max-height: 70vh;
+  -webkit-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
+  opacity: 0;
+  z-index: -1;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  -webkit-box-shadow: 0 8px 10px #00000078;
+          box-shadow: 0 8px 10px #00000078;
+  border-radius: 5px;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(80px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  grid-gap: 8px;
+  padding: 30px 28px 30px 30px;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas li {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  -webkit-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
+  overflow: hidden;
+  border: 1px solid transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas li a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas li img {
+  position: relative;
+  width: 100%;
+  font-family: Nunito;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas li:hover {
+  border: 1px solid #bfbfbf;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  max-height: 70vh;
+  -webkit-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
+  opacity: 0;
+  z-index: -1;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks ul {
+  position: relative;
+  width: auto;
+  min-width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  -webkit-box-shadow: 0 8px 10px #00000078;
+          box-shadow: 0 8px 10px #00000078;
+  border-radius: 5px;
+  display: inline-block;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px 12px 15px 18px;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.child {
+  position: relative;
+  width: 100%;
+  min-height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.child:first-child {
+  margin-top: -20px;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.child a.childLink, header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.child span {
+  color: #629f29;
+  font-family: 'Nunito';
+  font-weight: 900;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.child a.childLink {
+  position: relative;
+  width: 100%;
+  font-size: 1.5em;
+  white-space: nowrap;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.child a.childLink:hover {
+  color: #7ae714;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.child span {
+  font-size: 2.5em;
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 3px;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.child span:hover {
+  background-color: #e6e6e6;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks.selected {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 18px 35px 15px 18px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks li.child {
+  margin-top: 0;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks li.child a.childLink, header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks li.child span {
+  color: #7ae714;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks div.subCategoryContainer {
+  position: relative;
+  width: auto;
+  margin-left: 10px;
+  padding-left: 15px;
+  border-left: 1px solid #e1e1e1;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks div.subCategoryContainer a {
+  margin-bottom: 5px;
+  display: block;
+  white-space: nowrap;
+  font-family: Nunito;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+header div.baixo ul#categoriasMenu li.parent.full div.subLinksMarcas {
+  width: 70vw;
+}
+
+header div.baixo ul#categoriasMenu li.parent:hover > div.subLinks {
+  opacity: 1;
+  z-index: 100;
+}
+
+@media (max-width: 1260px) {
+  header h1#logo-d {
+    left: 2.2vw;
+  }
+  header div.baixo {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding-left: 12vw;
+  }
+  header div.baixo div.action {
+    width: 30%;
+  }
+}
+
+@media (max-width: 1170px) {
+  header {
+    height: 140px;
+  }
+  header div.cima {
+    display: none;
+  }
+  header div.baixo {
+    padding: 0;
+    height: 100%;
+  }
+  header div.baixo form.barra_busca {
+    margin-left: 12vw;
+  }
+  header div.baixo ul#categoriasMenu {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding-left: 11vw;
+    font-size: .85em;
+    background-color: #477d16;
+  }
+  header div.baixo ul#categoriasMenu li {
+    margin-bottom: 0 !important;
+  }
+}

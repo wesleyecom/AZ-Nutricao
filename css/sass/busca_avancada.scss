@@ -6,7 +6,7 @@ div.busca_avancada {
     position: relative;
     width: 100%;
     box-sizing: border-box;
-    padding: 5vw;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,13 +16,13 @@ div.busca_avancada {
     font-family: 'Nunito';
 
     h1 {
-        font-size: 2em;
+        font-size: 1.5em;
         font-weight: 800;
+        text-transform: uppercase;
         text-align: center;
         position: relative;
         box-sizing: border-box;
-        line-height: 25px;
-        margin: 30px 0;
+        width: 30%;
     }
 
     a {
@@ -31,15 +31,9 @@ div.busca_avancada {
         font-weight: 800;
         text-transform: uppercase;
         display: block;
-        padding: 15px 20%;
+        padding: 15px 10%;
         border: 1px solid #fff;
         border-radius: 50px;
-        transition: 0.3s all ease-in-out;
-        margin-bottom: 25px;
-
-        &:hover {
-            color: #3e7112;
-            background-color: #fff;
-        }
+        margin-top: 30px;
     }
 }

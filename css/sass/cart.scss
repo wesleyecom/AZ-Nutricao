@@ -219,10 +219,6 @@ div.cart {
                     }
                 }
             }
-
-            &:last-child {
-                margin-bottom: 58px;
-            }
         }
         
         &::-webkit-scrollbar {
@@ -253,7 +249,7 @@ div.cart {
         text-transform: uppercase;
 
         background-color: #fff;
-        box-shadow: 0px -8px 18px 5px #cacaca5e;
+        box-shadow: 0px 0px 8px 3px #cacaca;
 
         bottom: 55px;
         left: 0;
@@ -271,6 +267,11 @@ div.cart {
         border: 0;
         background-color: #58aa0c;
 
+        color: #fff;
+        font-family: Nunito;
+        text-transform: uppercase;
+        font-weight: 800;
+
         transition: 0.3s ease-in-out;
 
         cursor: pointer;
@@ -283,13 +284,6 @@ div.cart {
 
         &.show {
             display: block;
-        }
-
-        a {
-            color: #fff;
-            font-family: Nunito;
-            text-transform: uppercase;
-            font-weight: 800;
         }
     }
 }

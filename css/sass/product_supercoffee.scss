@@ -366,28 +366,26 @@ section#secao_produto {
                             padding: 0!important;
                             margin: 0!important;
 
-                            li {
-                                &.starn {
-                                    background: url(../img/stars-new.png) no-repeat center top;
-                                    width: 45px;
-                                    height: 38px;
-                                    cursor: pointer;
-                                    transition: 0.3s all ease-in-out;
-
-                                    &.star-on {
-                                        background: url(../img/stars-new.png) no-repeat center bottom;
-                                        margin-top: -3px;
-                                    }
-                                }
+                            li.starn {
+                                background: url(../img/stars-new.png) no-repeat center top;
+                                width: 45px;
+                                height: 38px;
+                                cursor: pointer;
+                                transition: 0.3s all ease-in-out;
 
                                 &:before {
                                     display: none;
                                 }
 
+                                &.star-on {
+                                    cursor: pointer;
+                                    background: url(../img/stars-new.png) no-repeat center bottom;
+                                    margin-top: -3px;
+                                }
+
                                 &.nota {
                                     position: absolute;
                                     bottom: -25px;
-                                    padding-left: 5px;
                                 }
                             }
                         }
@@ -409,7 +407,6 @@ section#secao_produto {
                 box-sizing: border-box;
                 padding: 15px 5px 15px 15px;
                 border-radius: 5px;
-                margin: 2px 0 15px 0;
 
                 span.reviewer {
                     h3 {
