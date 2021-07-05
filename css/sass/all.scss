@@ -242,6 +242,7 @@ li.card_produto {
         }
 
         li {
+            width: 100%;
             text-align: center;
             box-sizing: border-box;
             padding: 15px;
@@ -419,7 +420,7 @@ li.card_produto {
             position: relative;
             width: 100%;
             height: 50%;
-            background-color: #2db53e;
+            background-color: #434f59;
             border: 0;
             color: #fff;
             font-family: 'Nunito';
@@ -430,7 +431,7 @@ li.card_produto {
             transition: 0.3s all ease-in-out;
 
             &:hover {
-                background-color: #29d03e;
+                background-color: #647583;
             }
         }
 

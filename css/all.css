@@ -269,6 +269,7 @@ li.card_produto ul#variacoes_card_produto strong {
 }
 
 li.card_produto ul#variacoes_card_produto li {
+  width: 100%;
   text-align: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -483,7 +484,7 @@ li.card_produto div.add_carrinho button.btn_add_carrinho {
   position: relative;
   width: 100%;
   height: 50%;
-  background-color: #2db53e;
+  background-color: #434f59;
   border: 0;
   color: #fff;
   font-family: 'Nunito';
@@ -496,7 +497,7 @@ li.card_produto div.add_carrinho button.btn_add_carrinho {
 }
 
 li.card_produto div.add_carrinho button.btn_add_carrinho:hover {
-  background-color: #29d03e;
+  background-color: #647583;
 }
 
 li.card_produto div.add_carrinho.hide {

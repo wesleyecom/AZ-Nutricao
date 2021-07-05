@@ -154,3 +154,23 @@ function subcategoriesMenu(element) {
         container_subcategories.hide();
     }
 }
+
+function leaveCategoryMenu(element) {
+    if (jQuery(element).hasClass("selected")) {
+        let div_sublinks = jQuery(element);
+        let ul_sublinks = jQuery(element).children('ul.ul_subLinks');
+        let container_subcategories = ul_sublinks.children('div.subCategoryContainer');
+
+        div_sublinks.removeClass("selected");
+
+        ul_sublinks.children('li').each(function() {
+            jQuery(this).show();
+
+            jQuery(this).children('span').html("+");
+            jQuery(this).children('span').removeClass("opened");
+            jQuery(this).children('span').addClass("closed");
+        });
+
+        container_subcategories.hide();
+    }
+}

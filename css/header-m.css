@@ -1,5 +1,5 @@
 header {
-  height: 145px;
+  height: 150px;
   background: var(--menu-background);
 }
 
@@ -32,7 +32,7 @@ header .header-m div.ct_header-m {
   left: 0;
   width: 83%;
   height: 100vh;
-  background: var(--menu-background);
+  background-color: #4C5A64;
   -webkit-transform: translateX(calc(-50vw - 45px));
           transform: translateX(calc(-50vw - 45px));
   -webkit-transition: 0.3s all ease-in-out;
@@ -46,7 +46,7 @@ header .header-m div.ct_header-m button#toggle_menu-m {
   right: -45px;
   width: 45px;
   height: 45px;
-  background-color: green;
+  background-color: #6a7984;
   border: 0;
   border-radius: 0 0 4px 0;
   font-family: 'Nunito';
@@ -102,6 +102,7 @@ header .header-m div.ct_header-m ul.categorias {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-left: 30px;
+  overflow-y: auto;
 }
 
 header .header-m div.ct_header-m ul.categorias li {
@@ -111,11 +112,11 @@ header .header-m div.ct_header-m ul.categorias li {
   height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-bottom: 1px solid #80b14f;
+  border-bottom: 1px solid #6a7984;
 }
 
 header .header-m div.ct_header-m ul.categorias li:first-child {
-  border-top: 1px solid #80b14f;
+  border-top: 1px solid #6a7984;
 }
 
 header .header-m div.ct_header-m ul.categorias li a {
@@ -141,7 +142,7 @@ header .header-m div.ct_header-m ul.categorias li button {
   position: absolute;
   top: 0;
   right: 0;
-  background: #6dad2d;
+  background: #778691;
   border: 0;
   width: 43px;
   height: 43px;
@@ -154,12 +155,12 @@ header .header-m div.ct_header-m ul.categorias li button {
 }
 
 header .header-m div.ct_header-m ul.categorias li button.open {
-  background-color: #53881f;
+  background-color: #99abb9;
 }
 
 header .header-m div.ct_header-m ul.categorias li div.children {
   position: relative;
-  background-color: #53881f;
+  background-color: #2e3c46;
   width: 100%;
   height: auto;
   display: -webkit-box;
@@ -192,7 +193,7 @@ header .header-m div.ct_header-m ul.categorias li div.children div.ct_child {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid #437313;
+  border-bottom: 1px solid #27333c;
 }
 
 header .header-m div.ct_header-m ul.categorias li div.children div.ct_child a.link_child {
@@ -204,11 +205,11 @@ header .header-m div.ct_header-m ul.categorias li div.children div.ct_child a.li
 }
 
 header .header-m div.ct_header-m ul.categorias li div.children div.ct_child button {
-  background-color: #4e7d1f;
+  background-color: #41505b;
 }
 
 header .header-m div.ct_header-m ul.categorias li div.children div.ct_child button.open {
-  background-color: #426d17;
+  background-color: #1e282f;
 }
 
 header .header-m div.ct_header-m ul.categorias li div.children div.ct_child div.children_child {
@@ -221,14 +222,14 @@ header .header-m div.ct_header-m ul.categorias li div.children div.ct_child div.
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #426d17;
+  background-color: #1e282f;
 }
 
 header .header-m div.ct_header-m ul.categorias li div.children div.ct_child div.children_child a {
   width: 100%;
   min-height: 58px;
   font-size: 1.3em;
-  border-bottom: 1px solid #3a6114;
+  border-bottom: 1px solid #131c22;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0 15px;
@@ -236,7 +237,7 @@ header .header-m div.ct_header-m ul.categorias li div.children div.ct_child div.
   transition: 0.1s all ease-in-out;
 }
 
-header h1#logo-d, header div.cima {
+header h1#logo-d {
   display: none;
 }
 
@@ -410,7 +411,7 @@ header div.baixo form.barra_busca input {
   position: relative;
   width: 93%;
   height: 40px;
-  border: 0;
+  border: 1px solid #000;
   border-radius: 4px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

@@ -5,10 +5,11 @@ div.header_catalog {
     align-items: center;
     box-sizing: border-box;
     padding: 30px 4em;
-    background-color: #fff;
+    background-color: #4c5a64;
     z-index: 10;
 
     h2 {
+        color: #fff;
         font-family: 'Nunito';
         font-weight: 900;
         font-size: 2em;
@@ -18,9 +19,14 @@ div.header_catalog {
 div.paginacao {
     position: relative;
     width: 100%;
+    
+    display: flex;
+    align-items: center;
+
     box-sizing: border-box;
     padding: 15px 4em;
-    background-color: #ececec;
+    background-color: #3b4955;
+    color: #fff;
     box-shadow: 0 2px 18px #8e8e8e40;
     z-index: 1;
 
@@ -29,6 +35,63 @@ div.paginacao {
         font-weight: 600;
         font-size: 1.2em;
         text-transform: uppercase;
+    }
+
+    span {
+        color: #fff;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    div.links_paginacao {
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        margin-left: 30px;
+
+        span {
+            position: relative;
+
+            width: 25px;
+            height: 25px;
+
+            margin-right: 15px;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #2b3844;
+            
+            border-radius: 5px;
+            font-family: Nunito;
+            font-weight: 800;
+
+            &.page-current  {
+                background-color: #4c5a64;
+            }
+
+            a {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                color: #fff;
+            }
+
+            &.page-next, &.page-last {
+                background-color: transparent;
+
+                a {
+                    position: relative;
+                }
+            }
+        }
     }
 }
 

@@ -1,10 +1,11 @@
 :root {
-    --menu-background: linear-gradient(90deg, #6cab2b 0%, #5e9a29 100%);
+    --menu-background: #fff;
 }
 
 header {
     position: relative;
     width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 
     div.baixo {
         form.barra_busca {

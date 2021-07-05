@@ -3,8 +3,8 @@ section.hero {
     width: 100%;
     overflow: hidden;
 
-    img {
-        width: 100%;
+    div.texto_hero {
+        display: none;
     }
 }
 
@@ -13,12 +13,11 @@ div.aviso_desconto {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: -35px;
+    margin-top: -22px;
     
     span {
         position: relative;
         background-color: #fff;
-        background: linear-gradient(0deg, #ececec, white);
         box-sizing: border-box;
         padding: 15px;
         font-family: "Nunito";

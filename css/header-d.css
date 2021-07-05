@@ -1,5 +1,5 @@
 header {
-  height: 170px;
+  height: 186px;
 }
 
 header div#header-m {
@@ -8,88 +8,21 @@ header div#header-m {
 
 header h1#logo-d {
   position: absolute;
-  top: 0;
-  left: 5vw;
+  top: 42px;
+  left: 8vw;
   margin: 0;
   z-index: 1;
 }
 
 header h1#logo-d a svg {
   position: relative;
-  width: 85%;
-  margin-top: -12px;
-}
-
-header div.cima {
-  position: relative;
-  width: 100%;
-  height: 30px;
-  background-color: #5E9A29;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-header div.cima a {
-  color: #fff;
-  font-family: "Nunito";
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-header div.cima a svg {
-  width: 15px;
-  height: 15px;
-  fill: #fff;
-  margin-right: 5px;
-}
-
-header div.cima a span {
-  color: #fff;
-  color: #fff;
-  font-family: 'Nunito';
-  font-size: 1.2em;
-  font-weight: 700;
-}
-
-header div.cima a#btn_rastreio, header div.cima a#btn_rastreio_not_logged {
-  position: absolute;
-  height: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0 20px;
-  background-color: #3E710F;
-  font-family: 'Nunito';
-  font-size: 1em;
-  text-transform: uppercase;
-  -webkit-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-}
-
-header div.cima a#btn_rastreio:hover, header div.cima a#btn_rastreio_not_logged:hover {
-  background-color: #315c0a;
-}
-
-header div.cima a:nth-child(1) {
-  margin-right: 14vw;
 }
 
 header div.baixo {
   position: relative;
   width: 100%;
-  height: calc(100% - 30px);
-  background: -webkit-gradient(linear, left top, right top, from(#6cab2b), to(#5e9a29));
-  background: linear-gradient(90deg, #6cab2b, #5e9a29);
+  height: 100%;
+  background: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,14 +46,14 @@ header div.baixo form.barra_busca {
           order: 1;
   position: relative;
   width: 48%;
-  height: 34%;
-  margin-top: -40px;
+  height: 26%;
+  margin-top: -45px;
 }
 
 header div.baixo form.barra_busca input {
   width: 100%;
   height: 100%;
-  border: 0;
+  border: 1px solid #383838;
   border-radius: 4px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -133,26 +66,26 @@ header div.baixo form.barra_busca input {
 
 header div.baixo form.barra_busca input::-webkit-input-placeholder {
   font-family: 'Nunito';
-  font-weight: 700;
-  color: #585858;
+  font-weight: 500;
+  color: #3b3b3b;
 }
 
 header div.baixo form.barra_busca input:-ms-input-placeholder {
   font-family: 'Nunito';
-  font-weight: 700;
-  color: #585858;
+  font-weight: 500;
+  color: #3b3b3b;
 }
 
 header div.baixo form.barra_busca input::-ms-input-placeholder {
   font-family: 'Nunito';
-  font-weight: 700;
-  color: #585858;
+  font-weight: 500;
+  color: #3b3b3b;
 }
 
 header div.baixo form.barra_busca input::placeholder {
   font-family: 'Nunito';
-  font-weight: 700;
-  color: #585858;
+  font-weight: 500;
+  color: #3b3b3b;
 }
 
 header div.baixo form.barra_busca button {
@@ -161,7 +94,7 @@ header div.baixo form.barra_busca button {
   right: 0;
   width: 50px;
   height: 100%;
-  color: #bdbdbd;
+  color: #3b3b3b;
   font-family: 'Nunito';
   border: 0;
   background: transparent;
@@ -189,11 +122,11 @@ header div.baixo div.action {
       -ms-flex-order: 2;
           order: 2;
   position: relative;
-  width: 36%;
+  width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: -40px;
+  margin-top: -45px;
 }
 
 header div.baixo div.action div.conta {
@@ -228,7 +161,7 @@ header div.baixo div.action div.conta div.links_conta {
 }
 
 header div.baixo div.action div.conta div.links_conta a {
-  color: #fff;
+  color: #383838;
   font-family: 'Nunito';
   font-size: 1.3em;
 }
@@ -241,7 +174,7 @@ header div.baixo div.action div.conta div.links_conta div.divisor {
   position: relative;
   width: 1px;
   height: 14px;
-  background-color: #fff;
+  background-color: #383838;
 }
 
 header div.baixo div.action div.carrinho {
@@ -290,7 +223,7 @@ header div.baixo div.action div.carrinho span.counter_cart {
 header div.baixo div.action svg {
   width: 20px;
   height: 20px;
-  fill: #fff;
+  fill: #383838;
 }
 
 header div.baixo ul#categoriasMenu {
@@ -298,8 +231,9 @@ header div.baixo ul#categoriasMenu {
       -ms-flex-order: 3;
           order: 3;
   position: absolute;
+  left: 7.8vw;
   bottom: 0;
-  width: 85%;
+  width: 82%;
   height: 35%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -307,9 +241,9 @@ header div.baixo ul#categoriasMenu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0;
   margin: 0;
 }
@@ -334,9 +268,9 @@ header div.baixo ul#categoriasMenu li.parent, header div.baixo ul#categoriasMenu
 }
 
 header div.baixo ul#categoriasMenu li.parent a.parentLink, header div.baixo ul#categoriasMenu li.noChild a.parentLink {
-  color: #fff;
+  color: #383838;
   font-family: 'Nunito';
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: 900;
   -webkit-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out;
@@ -354,11 +288,11 @@ header div.baixo ul#categoriasMenu li.parent:hover, header div.baixo ul#categori
 }
 
 header div.baixo ul#categoriasMenu li.parent:hover a.parentLink, header div.baixo ul#categoriasMenu li.noChild:hover a.parentLink {
-  color: #629f29;
+  color: #000;
 }
 
 header div.baixo ul#categoriasMenu li.parent:hover svg, header div.baixo ul#categoriasMenu li.noChild:hover svg {
-  fill: #629f29 !important;
+  fill: #000 !important;
 }
 
 header div.baixo ul#categoriasMenu li.parent {
@@ -369,7 +303,7 @@ header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas {
   position: absolute;
   top: 45px;
   left: 0;
-  width: 135%;
+  width: 70vw;
   max-height: 70vh;
   -webkit-transition: 0.1s all ease-in-out;
   transition: 0.1s all ease-in-out;
@@ -445,6 +379,7 @@ header div.baixo ul#categoriasMenu li.parent div.subLinks {
   top: 45px;
   left: 0;
   max-height: 70vh;
+  min-width: 100%;
   -webkit-transition: 0.1s all ease-in-out;
   transition: 0.1s all ease-in-out;
   opacity: 0;
@@ -506,7 +441,7 @@ header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.chil
 }
 
 header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.child a.childLink, header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.child span {
-  color: #629f29;
+  color: #4d4d4d;
   font-family: 'Nunito';
   font-weight: 900;
 }
@@ -519,12 +454,12 @@ header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.chil
 }
 
 header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.child a.childLink:hover {
-  color: #7ae714;
+  color: #000;
 }
 
 header div.baixo ul#categoriasMenu li.parent div.subLinks ul.ul_subLinks li.child span {
   font-size: 2.5em;
-  width: 30px;
+  width: 40px;
   height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -561,16 +496,24 @@ header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLink
 
 header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks li.child {
   margin-top: 0;
+  background-color: #e6e6e6;
+  padding-left: 18px;
+  margin-left: -18px;
 }
 
-header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks li.child a.childLink, header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks li.child span {
-  color: #7ae714;
+header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks li.child a.childLink {
+  color: #000000;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks li.child span {
+  color: #000000;
+  background-color: #ccc;
+  margin-right: 10px;
 }
 
 header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks div.subCategoryContainer {
   position: relative;
   width: auto;
-  margin-left: 10px;
   padding-left: 15px;
   border-left: 1px solid #e1e1e1;
 }
@@ -579,60 +522,27 @@ header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLink
   margin-bottom: 5px;
   display: block;
   white-space: nowrap;
+  color: #4d4d4d;
   font-family: Nunito;
   font-size: 1.5em;
   font-weight: 700;
 }
 
-header div.baixo ul#categoriasMenu li.parent.full div.subLinksMarcas {
-  width: 70vw;
+header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLinks div.subCategoryContainer a:hover {
+  color: #000;
 }
 
-header div.baixo ul#categoriasMenu li.parent:hover > div.subLinks {
+header div.baixo ul#categoriasMenu li.parent:hover > div.subLinks, header div.baixo ul#categoriasMenu li.parent:hover > div.subLinksMarcas {
   opacity: 1;
   z-index: 100;
 }
 
-@media (max-width: 1260px) {
-  header h1#logo-d {
-    left: 2.2vw;
-  }
-  header div.baixo {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding-left: 12vw;
-  }
-  header div.baixo div.action {
-    width: 30%;
-  }
-}
-
-@media (max-width: 1170px) {
-  header {
-    height: 140px;
-  }
-  header div.cima {
-    display: none;
-  }
-  header div.baixo {
-    padding: 0;
-    height: 100%;
-  }
-  header div.baixo form.barra_busca {
-    margin-left: 12vw;
-  }
+@media (max-width: 1200px) {
   header div.baixo ul#categoriasMenu {
-    width: 100%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding-left: 11vw;
-    font-size: .85em;
-    background-color: #477d16;
+    left: 2vw;
+    width: 96%;
   }
-  header div.baixo ul#categoriasMenu li {
-    margin-bottom: 0 !important;
+  header div.baixo ul#categoriasMenu li.parent a.parentLink {
+    font-size: 1.5em;
   }
 }

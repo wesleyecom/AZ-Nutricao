@@ -8,13 +8,9 @@ div.catalog_products {
             justify-content: center;
 
             li {
-                width: 17%;
+                // width: 17%;
 
                 margin-right: 2vw;
-
-                &:last-child {
-                    // margin-right: 39vw!important;
-                }
             }
         }
     }
