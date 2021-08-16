@@ -4,7 +4,7 @@ footer {
     height: auto;
 
     box-sizing: border-box;
-    padding: 30px;
+    padding: 2.2vw;
 
     background-color: #4C5A64;
 
@@ -61,6 +61,10 @@ footer {
                     svg {
                         width: 20px;
                     }
+                }
+
+                &:hover {
+                    text-decoration: underline;
                 }
             }
 

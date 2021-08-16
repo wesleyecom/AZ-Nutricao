@@ -1,65 +1,67 @@
-<div class="secao_categorias splide" id="secao_categorias">
-	<div class="splide__track">
-		<ul class="splide__list">
-            <li class="categoria dieta_enteral splide__slide">
-                {% set categoryTray = Categories( { "id": 67 } ) %}
-                {% set products = Products({'categories': [67]}) %}
-
-                <a href="{{ categoryTray.link }}"></a>
-
-                <div class="cima">
-                    <span>
-                        Dieta enteral
-                    </span>
-                </div>
-                <div class="baixo">
-                    <span>
-                        {{ products|length }} produtos
-                    </span>
-
-                    <img src="{{ asset('img/home/sessao_categorias/dieta_enteral.png') }}" alt="Dieta enteral">
-                </div>
-            </li>
-
-            <li class="categoria suplemento_alimentar splide__slide">
-                {% set categoryTray = Categories( { "id": 95 } ) %}
-                {% set products = Products({'categories': [95]}) %}
-
-                <a href="{{ categoryTray.link }}"></a>
-
-                <div class="cima">
-                    <span>
-                        Suplemento alimentar
-                    </span>
-                </div>
-                <div class="baixo">
-                    <span>
-                        {{ products|length }} produtos
-                    </span>
-
-                    <img src="{{ asset('img/home/sessao_categorias/suplementacao_alimentar.png') }}" alt="SuplementaÃ§Ã£o alimentar">
-                </div>
-            </li>
-
-            <li class="categoria infantil splide__slide">
-                {% set categoryTray = Categories( { "id": 65 } ) %}
-                {% set products = Products({'categories': [65]}) %}
-
-                <a href="{{ categoryTray.link }}"></a>
-
-                <div class="cima">
-                    <span>
-                        Infantil
-                    </span>
-                </div>
-                <div class="baixo">
-                    <span>
-                        {{ products|length }} produtos
-                    </span>
-
-                    <img src="{{ asset('img/home/sessao_categorias/infantil.png') }}" alt="Infantil">
-                </div>
-            </li>
-		</ul>
-	</div>
+<div class="ct_secao_categorias">
+    <div class="secao_categorias splide" id="secao_categorias">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="categoria dieta_enteral splide__slide">
+                    {% set categoryTray = Categories( { "id": 67 } ) %}
+                    {% set products = Products({'categories': [67]}) %}
+    
+                    <a href="{{ categoryTray.link }}"></a>
+    
+                    <div class="cima">
+                        <span>
+                            Dieta enteral
+                        </span>
+                    </div>
+                    <div class="baixo">
+                        <span>
+                            {{ products|length }} produtos
+                        </span>
+    
+                        <img src="{{ asset('img/home/sessao_categorias/dieta_enteral.png') }}" alt="Dieta enteral">
+                    </div>
+                </li>
+    
+                <li class="categoria suplemento_alimentar splide__slide">
+                    {% set categoryTray = Categories( { "id": 95 } ) %}
+                    {% set products = Products({'categories': [95]}) %}
+    
+                    <a href="{{ categoryTray.link }}"></a>
+    
+                    <div class="cima">
+                        <span>
+                            Suplemento alimentar
+                        </span>
+                    </div>
+                    <div class="baixo">
+                        <span>
+                            {{ products|length }} produtos
+                        </span>
+    
+                        <img src="{{ asset('img/home/sessao_categorias/suplementacao_alimentar.png') }}" alt="Suplementação alimentar">
+                    </div>
+                </li>
+    
+                <li class="categoria infantil splide__slide">
+                    {% set categoryTray = Categories( { "id": 65 } ) %}
+                    {% set products = Products({'categories': [65]}) %}
+    
+                    <a href="{{ categoryTray.link }}"></a>
+    
+                    <div class="cima">
+                        <span>
+                            Infantil
+                        </span>
+                    </div>
+                    <div class="baixo">
+                        <span>
+                            {{ products|length }} produtos
+                        </span>
+    
+                        <img src="{{ asset('img/home/sessao_categorias/infantil.png') }}" alt="Infantil">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>

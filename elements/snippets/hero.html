@@ -1,36 +1,114 @@
 <section class="hero">
-    <picture>
-        <source srcset="{{ asset('img/banner/impact_lg.png') }}" alt="Slide 1" media="(min-width: 1025px)">
-        <source srcset="{{ asset('img/banner/banner_impact_3_md.jpg') }}" alt="Slide 1" media="(min-width: 601px) and (max-width: 1024px)">
-        <source srcset="{{ asset('img/banner/banner_impact_3_smd.jpg') }}" alt="Slide 1" media="(min-width: 426px) and (max-width: 600px)">
-        <source srcset="{{ asset('img/banner/banner_impact_3_sm.jpg') }}" alt="Slide 1" media="(max-width: 425px)">
-        
-        <img src="{{ asset('img/banner/banner_impact_1-425.jpg') }}" alt="Slide 1">
-    </picture>
+    <div class="splide" id="slide_hero">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide hero_prodiet">
+                    <picture>
+                        <source srcset="{{ asset('img/banner/hero/trophic/trophic_3_1440x500.jpg') }}" alt="Slide 1" media="(min-width: 1025px)">
+                        <source srcset="{{ asset('img/banner/hero/trophic/trophic_3_1024x500.jpg') }}" alt="Slide 1" media="(min-width: 601px) and (max-width: 1024px)">
+                        <source srcset="{{ asset('img/banner/hero/trophic/trophic_3_600x500.jpg') }}" alt="Slide 1" media="(min-width: 426px) and (max-width: 600px)">
+                        <source srcset="{{ asset('img/banner/hero/trophic/trophic_3_425x745.jpg') }}" alt="Slide 1" media="(max-width: 425px)">
+                        
+                        <img src="{{ asset('img/banner/hero/trophihc/trophic_1_425x500.jpg') }}" alt="Slide 1">
+                    </picture>
 
-    {% if not utils.is_mobile %}
-        <div class="texto_hero">
-            <h2>Impact!</h2>
+                    <div class="texto">
+                        <h3>Trophic</h3>
 
-            <p>
-                desenvolvido especialmente para
-                fortalecer o sistema imunolÃ³gico e
-                auxiliar na cicatrizaÃ§Ã£o.
-            </p>
+                        <span>
+                            O essencial para uma nutrição saudável e completa!
+                        </span>
 
-            <div class="preco">
-                <div class="cima">
-                    de <span>R$ 15,00</span> por:
-                </div>
+                        <span>
+                            Mix exclusivo de <strong>proteínas</strong> de
+                            <strong>baixo teor de gordura</strong> saturada.
+                        </span>
 
-                <div class="baixo">
-                    <span>R$ 14,25</span> em uma vez no cartÃ£o
-                </div>
-            </div>
+                        <a href="{{ links.home }}trophic" class="cta_banner">
+                            <span>
+                                Confira
+                            </span>
+    
+                            <svg width="20" height="13" viewBox="0 0 15 8" fill="none">
+                                <path d="M1.00012 3.5C0.72398 3.5 0.500122 3.72386 0.500122 4C0.500122 4.27614 0.72398 4.5 1.00012 4.5V3.5ZM14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM1.00012 4.5H14V3.5H1.00012V4.5Z" fill="#ffffff"/>
+                            </svg>
+                        </a>
+                    </div>
+                </li>
 
-            <a href="#">
-                Compre agora
-            </a>
+                <li class="splide__slide hero_covid">
+                    <picture>
+                        <source srcset="{{ asset('img/banner/hero/covid/banner_covid_2-1440x500.jpg') }}" alt="Slide 2" media="(min-width: 1025px)">
+                        <source srcset="{{ asset('img/banner/hero/covid/banner_covid_2-1024x500.jpg') }}" alt="Slide 1" media="(min-width: 601px) and (max-width: 1024px)">
+                        <source srcset="{{ asset('img/banner/hero/covid/banner_covid_2-600x500.jpg') }}" alt="Slide 1" media="(min-width: 426px) and (max-width: 600px)">
+                        <source srcset="{{ asset('img/banner/hero/covid/banner_covid_2-425x500.jpg') }}" alt="Slide 1" media="(max-width: 425px)">
+                        
+                        <img src="{{ asset('img/banner/hero/covid/banner_covid_1_425x500.jpg') }}" alt="Slide 1">
+                    </picture>
+
+                    <div class="texto">
+                        <span>Suplementação</span>
+                        <span>Em tempos de</span>
+
+                        <h3>Covid-19</h3>
+
+                        <a href="{{ links.home }}suplementacao" class="cta_banner">
+                            <span>
+                                Confira
+                            </span>
+    
+                            <svg width="20" height="13" viewBox="0 0 15 8" fill="none">
+                                <path d="M1.00012 3.5C0.72398 3.5 0.500122 3.72386 0.500122 4C0.500122 4.27614 0.72398 4.5 1.00012 4.5V3.5ZM14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM1.00012 4.5H14V3.5H1.00012V4.5Z" fill="#ffffff"/>
+                            </svg>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="splide__slide hero_body_protein">
+                    <picture>
+                        <source srcset="{{ asset('img/banner/hero/equaliv/body_protein/banner_body_protein_1_1440x500.jpg') }}" alt="Slide 2" media="(min-width: 1025px)">
+                        <source srcset="{{ asset('img/banner/hero/equaliv/body_protein/banner_body_protein_1_1024x500.jpg') }}" alt="Slide 1" media="(min-width: 601px) and (max-width: 1024px)">
+                        <source srcset="{{ asset('img/banner/hero/equaliv/body_protein/banner_body_protein_1_600x500.jpg') }}" alt="Slide 1" media="(min-width: 426px) and (max-width: 600px)">
+                        <source srcset="{{ asset('img/banner/hero/equaliv/body_protein/banner_body_protein_1_414x746.jpg') }}" alt="Slide 1" media="(max-width: 425px)">
+                        
+                        <img src="{{ asset('img/banner/hero/equaliv/body_protein/banner_body_protein_1_414x746.jpg') }}" alt="Slide 1">
+                    </picture>
+
+                    <div class="texto">
+                        <h3>Body Protein</h3>
+                        <span>Proteína isolada</span>
+
+                        <span>Para a evolução da sua performance,</span>
+                        <span>comece mudando sua proteína de todo dia.</span>
+
+                        <a href="{{ links.home }}body_protein" class="cta_banner">
+                            <span>
+                                Confira
+                            </span>
+    
+                            <svg width="20" height="13" viewBox="0 0 15 8" fill="none">
+                                <path d="M1.00012 3.5C0.72398 3.5 0.500122 3.72386 0.500122 4C0.500122 4.27614 0.72398 4.5 1.00012 4.5V3.5ZM14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM1.00012 4.5H14V3.5H1.00012V4.5Z" fill="#ffffff"/>
+                            </svg>
+                        </a>
+                    </div>
+                </li>
+            </ul>
         </div>
-    {% endif %}
+    </div>
+
+    <div class="aviso_desconto">
+        <span>
+            <strong>
+                3% de desconto
+            </strong>
+    
+            em 1x no cartão de crédito, ou
+    
+            <strong>
+                5% de desconto
+            </strong>
+            
+            à vista no dinheiro ou PIX
+        </span>
+    </div>
 </section>

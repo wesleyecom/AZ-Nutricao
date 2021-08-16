@@ -1,20 +1,27 @@
 header {
     height: 186px;
 
-    div#header-m {
-        display: none;
-    }
-
     h1#logo-d {
             position: absolute;
             top: 42px;
             left: 8vw;
             margin: 0;
+
+            display: block;
+
             z-index: 1;
 
             a {
                 svg {
                     position: relative;
+
+                    &.logotipo {
+                        display: block;
+                    }
+
+                    &.logo_slogan {
+                        display: none;
+                    }
                 }
             }
     }
@@ -31,6 +38,26 @@ header {
 
         h1, svg#svg_hamburger {
             display: none;
+        }
+
+        #svg_hamburger {
+            cursor: pointer;
+
+            #cima {
+                transition: 0.2s all ease-in;
+                animation: growUp 1s;
+            }
+
+            #baixo {
+                transition: 0.2s all ease-in;
+                animation: growDown 1s;
+            }
+
+            &:hover {
+                #baixo {
+                    width: 31px;
+                }
+            }
         }
 
         form.barra_busca {
@@ -60,17 +87,7 @@ header {
             }
 
             button {
-                position: absolute;
-                top: 0;
                 right: 0;
-                width: 50px;
-                height: 100%;
-                color: rgb(59, 59, 59);
-                font-family: 'Nunito';
-                border: 0;
-                background: transparent;
-                cursor: pointer;
-                outline: none;
             }
 
             div.suggestion {
@@ -81,10 +98,6 @@ header {
                 top: 45px;
                 border-radius: 0 0 5px 5px;
                 z-index: 1;
-            }
-
-            svg {
-                display: none;
             }
         }
 
@@ -174,9 +187,9 @@ header {
         ul#categoriasMenu {
             order: 3;
             position: absolute;
-            left: 7.8vw;
+            left: 7.5vw;
             bottom: 0;
-            width: 82%;
+            width: 88%;
             height: 35%;
             display: flex;
             align-items: center;
@@ -196,7 +209,7 @@ header {
                 transition: 0.3s all ease-in-out;
                 
                 a.parentLink {
-                    color: #383838;
+                    color: #575757;
                     font-family: 'Nunito';
                     font-size: 1.6em;
                     font-weight: 900;
@@ -252,7 +265,92 @@ header {
                             display: grid;
                             grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
                             grid-gap: 8px;
-                            padding: 30px 28px 30px 30px;
+                            padding: 60px 28px 30px 30px;
+
+                            ul.filtro {
+                                top: 12px;
+                                width: 100%;
+                                height: auto;
+                                flex-direction: row;
+                                position: absolute;
+                                left: 0;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                padding: 10px;
+                                box-shadow: none;
+                                border-bottom: 1px solid #d5d5d5;
+                                border-radius: 0;
+
+                                span {
+                                    position: relative;
+                                    height: 20px;
+
+                                    display: flex;
+                                    align-items: center;
+
+                                    font-family: Nunito;
+                                    font-weight: 900;
+                                    color: #848484;
+
+                                    margin-right: 8px;
+
+                                    transition: 0.1s all ease-in-out;
+
+                                    &.divisor {
+                                        height: 21px;
+                                        width: 1px;
+                                        background-color: #d5d5d5;
+
+                                        margin: 0 15px;
+
+                                        &:hover {
+                                            color: #848484;
+                                        }
+                                    }
+                                }
+
+                                li {
+                                    width: 20px;
+                                    height: 20px;
+                                    justify-content: center;
+                                    margin: 0;
+                                    padding: 0;
+                                    font-family: Nunito;
+                                    font-weight: 900;
+                                    color: #848484;
+                                    border: 0 !important;
+
+                                    &.marcaPai {
+                                        width: auto;
+                                        text-transform: uppercase;
+                                        margin-right: 35px;
+
+                                        a {
+                                            position: relative;
+                                            height: auto;
+                                            width: auto;
+                                            color: #898989;
+
+                                            &:hover {
+                                                color: #1a1a1a;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                span, li {
+                                    &:hover {
+                                        border: 0;
+                                        color: #1a1a1a;
+                                    }
+
+                                    &.selected {
+                                        color: #000;
+                                        transform: scale(1.1);
+                                    }
+                                }
+                            }
                             
                             li {
                                 position: relative;
@@ -269,6 +367,7 @@ header {
 
                                 display: flex;
                                 align-items: center;
+                                justify-content: center;
 
                                 a {
                                     position: absolute;
@@ -282,7 +381,7 @@ header {
 
                                 img {
                                     position: relative;
-                                    width: 100%;
+                                    width: 90%;
 
                                     font-family: Nunito;
                                     font-weight: 900;
@@ -293,6 +392,30 @@ header {
 
                                 &:hover {
                                     border: 1px solid #bfbfbf;
+                                }
+                            }
+
+                            div#semMarca {
+                                display: none;
+                                width: 300px;
+
+                                span {
+                                    display: block;
+
+                                    font-family: 'Nunito';
+                                    font-size: 1.5em;
+                                    font-weight: 900;
+                                    text-transform: uppercase;
+                                    color: #a3a3a3;
+                                    margin: 0;
+                                    padding: 0;
+                                    
+                                    margin-left: 15px;
+                                    margin-top: 17px;
+                                }
+
+                                &.show {
+                                    display: block;
                                 }
                             }
                         }
@@ -439,6 +562,275 @@ header {
                         opacity: 1;
                         z-index: 100;
                     }
+                }
+            }
+        }
+    }
+
+    &.mini {
+        svg#svg_hamburger {
+            display: block!important;
+            height: 15px;
+            cursor: pointer;
+        }
+
+        ul#categoriasMenu {
+            display: none!important;
+        }
+
+        h1#logo-d {
+            position: relative;
+            top: inherit;
+            left: inherit;
+            margin-top: -5px;
+
+            a {
+                svg.logotipo {
+                    display: none;
+                }
+
+                svg.logo_slogan {
+                    display: block;
+                }
+            }
+        }
+
+        div.baixo {
+            justify-content: space-around;
+
+            div.action {
+                width: 22%;
+                margin-top: 0;
+
+                div.conta {
+                    width: 80%;
+                }
+
+                div.carrinho {
+                    width: auto;
+                }
+            }
+
+            form.barra_busca {
+                width: 38%;
+                height: 42px;
+                margin-top: 0;
+
+                input[type=text] {
+                    border-color: #8e8e8e;
+                }
+            }
+        }
+    }
+
+    // Menu hamburger
+    .header-m {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #000000ab;
+        opacity: 0;
+        transition: 0.1s all ease-in-out;
+
+        pointer-events: none;
+
+        z-index: -1;
+
+        &.open {
+            z-index: 100;
+            opacity: 1;
+
+            pointer-events: all;
+        }
+
+        &.open > div.ct_header-m {
+            transform: translateX(0);
+        }
+
+        div.ct_header-m {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 22vw;
+            height: 100vh;
+            background-color: #fff;
+            transform: translateX(calc(-50vw - 45px));
+            transition: 0.3s all ease-in-out;
+            z-index: 10;
+
+            button#toggle_menu-m {
+                position: absolute;
+                top: 0;
+                right: -45px;
+                width: 45px;
+                height: 45px;
+                background-color: #2b2b2b;
+                border: 0;
+                border-radius: 0 0 4px 0;
+                font-family: 'Nunito';
+                font-weight: 900;
+                color: #fff;
+                outline: none;
+                cursor: pointer;
+                transition: 0.3s all ease-in-out;
+
+                &:hover {
+                    background-color: #000000;
+                }
+            }
+
+            div.conta {
+                position: absolute;
+                right: 0;
+                width: 65%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                box-sizing: border-box;
+                padding: 30px;
+
+                a {
+                    color: #404040;
+                    font-family: 'Nunito';
+                    font-weight: 500;
+                    font-size: 1.5em;
+                }
+
+                div.divisor {
+                    position: relative;
+                    width: 2px;
+                    height: 15px;
+                    background-color: #9d9d9d;
+                }
+            }
+
+            ul.categorias {
+                position: relative;
+                width: 100%;
+                height: 80%;
+                margin-top: 85px;
+                box-sizing: border-box;
+                overflow-y: auto;
+
+                li {
+                    position: relative;
+                    width: 100%;
+                    min-height: 44px;
+                    height: auto;
+                    box-sizing: border-box;
+                    padding-left: 6%;
+                    border-bottom: 1px solid #ddd;
+
+                    &:first-child {
+                        border-top: 1px solid #ddd;
+                        // height: 45px;
+                    }
+
+                    a {
+                        position: relative;
+                        width: calc(100% - 43px);
+                        min-height: 43px;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        color: #666;
+                        font-family: 'Nunito';
+                        font-weight: 700;
+                        font-size: 1.5em;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                    }
+
+                    button {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background: transparent;
+                        border: 0;
+                        width: 43px;
+                        height: 43px;
+                        font-family: "Nunito";
+                        color: #1e1e1e;
+                        outline: none;
+                        cursor: pointer;
+                        transition: 0.1s all ease-in-out;
+
+                        &.open {
+                            background-color: transparent;
+                        }
+                    }
+
+                    div.children {
+                        position: relative;
+                        background-color: transparent;
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        box-sizing: border-box;
+                        z-index: 10000;
+
+                        div.ct_child {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            border-bottom: 1px solid #ddd;
+
+                            a.link_child {
+                                width: 100%;
+                                min-height: 43px;
+                                box-sizing: border-box;
+                                padding-left: 15px;
+                            }
+
+                            button {
+                                background-color: transparent;
+
+                                &.open {
+                                    background-color: transparent;
+                                }
+                            }
+
+                            div.children_child {
+                                position: relative;
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                background-color: transparent;
+
+                                a {
+                                    width: 100%;
+                                    min-height: 58px;
+                                    font-size: 1.3em;
+                                    border-bottom: 1px solid #ddd;
+                                    box-sizing: border-box;
+                                    padding: 0 15px;
+                                    transition: 0.1s all ease-in-out;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                &::-webkit-scrollbar {
+                    width: 3px;
+                }
+                
+                &::-webkit-scrollbar-track {
+                    background: #f1f1f1; 
+                    background: transparent;
+                }
+                
+                &::-webkit-scrollbar-thumb {
+                    background: #a1bf83;
+                    border-radius: 15px;
                 }
             }
         }

@@ -4,7 +4,7 @@ footer {
   height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 30px;
+  padding: 2.2vw;
   background-color: #4C5A64;
 }
 
@@ -80,6 +80,10 @@ footer div.cima div.coluna a.whatsapp {
 
 footer div.cima div.coluna a.whatsapp svg {
   width: 20px;
+}
+
+footer div.cima div.coluna a:hover {
+  text-decoration: underline;
 }
 
 footer div.cima div.coluna span {

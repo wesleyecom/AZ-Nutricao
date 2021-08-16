@@ -267,7 +267,6 @@ div.cart {
         border: 0;
         background-color: #58aa0c;
 
-        color: #fff;
         font-family: Nunito;
         text-transform: uppercase;
         font-weight: 800;
@@ -277,6 +276,10 @@ div.cart {
         cursor: pointer;
 
         display: none;
+
+        a {
+            color: #fff;
+        }
 
         &:hover {
             background-color: #6bce0e;

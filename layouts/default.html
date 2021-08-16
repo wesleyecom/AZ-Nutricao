@@ -3,9 +3,12 @@
 <html data-theme="{{ settings.extension_id }}" data-store="{{ store.id }}" class="page-{{ pages.current }}">
 <head>
     {{ html.charset() }}
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Tray meta -->
+    
     {{ tray.meta }}
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,6 +32,9 @@
     {{ tray.analytics }}
 
     {{ googleTagManager.header(pages.current, tagManagerData) }}
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/jquery.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
 </head>
 <body>
     {{ googleTagManager.top(pages.current, tagManagerData) }}
@@ -41,7 +47,10 @@
     <div id="isMobile" data-is-mobile="{{ utils.is_mobile ? 'true' : 'false' }}"></div>
 
     <!-- JivoChat SVG -->
-    <!-- <div id="openJivo">
+    {% if not utils.is_mobile %}
+    <div id="openJivo">
+        <button id="btnEscondeChat" class="hidden">Fale conosco</button>
+
         <img src="{{ asset('img/home/atendente_jivochat.svg') }}" alt="Atendente MedMix">
 
         <div>
@@ -63,7 +72,8 @@
                 <span>Chat</span>
             </a>
         </div>
-    </div> -->
+    </div>
+    {% endif %}
 
     <div class="application">
         {% element 'header' %}
@@ -79,7 +89,7 @@
                         <link rel="stylesheet" href="{{ asset('css/busca_avancada.css') }}">
 
                         <div class="busca_avancada">
-                            <h1>Desculpe, não foram encontrados resultados para a sua busca.</h1>
+                            <h1>Desculpe, n�o foram encontrados resultados para a sua busca.</h1>
 
                             <a href="{{ links.home }}">Voltar</a>
                         </div>
@@ -88,13 +98,36 @@
             </section>
         </main>
 
+        <div class="tags">
+            <h3>
+                Mais buscados
+            </h3>
+
+            <div class="taglinks">
+                <div class="coluna">
+                
+                {% for tag in tags %}
+                    <a href="{{ tag.url }}">{{ tag.word }}</a>
+                    
+                    {% if loop.last %}
+                        </div>
+                    {% elseif loop.index is divisible by(5) %}
+                        </div>
+
+                        <div class="coluna">
+                    {% endif %}
+                {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
         {% element 'footer' %}
     </div>
 
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}
 
     <!-- Tray scripts -->
-    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/jquery.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/vue.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/document-register-element.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/trayLogin.umd.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
@@ -105,25 +138,46 @@
     <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/bootstrap.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
     <script type="text/javascript" src="//images.tcdn.com.br/static_inst/integracao/v2/jivochat.js?store=773127&amp;widget_id=WDKcfrHatR?006c893c8994c54602611b06b0ef627c&amp;f3eb372b4cc00efa20a975129ab2544f1619557787" async></script>
 
-    <script>
-        jQuery(window).bind('load', function() {
-            jQuery('#openJivo').addClass('animate__animated animate__fadeInUpBig');
+    {% if not utils.is_mobile %}
+        <script>
+            jQuery(window).bind('load', function() {
+                jQuery('#buttonOpenJivo').on('click', function() {
+                    jQuery('#openJivo').removeClass('animate__fadeInUpBig');
+                    jQuery('#openJivo').addClass('animate__fadeOut');
+                    jQuery('#openJivo').css('display', 'none');
 
-            jQuery('#buttonOpenJivo').on('click', function() {
-                jQuery('#openJivo').removeClass('animate__fadeInUpBig');
-                jQuery('#openJivo').addClass('animate__fadeOut');
-                jQuery('#openJivo').css('display', 'none');
+                    jQuery('#jvlabelWrap > jdiv').click();
 
-                jQuery('#jvlabelWrap > jdiv').click();
+                    jQuery('#jivo_close_button').on('click', function() {
+                        jQuery('#openJivo').removeClass('animate__fadeOut');
+                        jQuery('#openJivo').addClass('animate__fadeInUpBig');
+                        jQuery('#openJivo').css('display', 'flex');
+                        jQuery("#btnEscondeChat").addClass('hidden');
+                        jQuery("div#openJivo > img, div#openJivo > div").hide();
+                        jQuery("#btnEscondeChat").text('Fale conosco');
+                    });
+                });
 
-                jQuery('#jivo_close_button').on('click', function() {
-                    jQuery('#openJivo').removeClass('animate__fadeOut');
-                    jQuery('#openJivo').addClass('animate__fadeInUpBig');
-                    jQuery('#openJivo').css('display', 'flex');
+                // Mostrar e esconder o svg do jivo chat
+                function statusChat() {
+                    if (!jQuery("#btnEscondeChat").hasClass('hidden')) {
+                        jQuery("div#openJivo > img, div#openJivo > div").show();
+                        jQuery("#btnEscondeChat").text('Esconder');
+                    }
+                    else {
+                        jQuery("div#openJivo > img, div#openJivo > div").hide();
+                        jQuery("#btnEscondeChat").text('Fale conosco');
+                    }
+                }
+
+                jQuery("#btnEscondeChat").on('click', function() {
+                    jQuery(this).toggleClass('hidden');
+
+                    statusChat();
                 });
             });
-        });
-    </script>
+        </script>
+    {% endif %}
 
     {{
             html.script({
@@ -151,14 +205,18 @@
     {% if pages.current == 'home' or pages.current == 'product' or pages.current == 'catalog' %}
         <!-- Splide.js -->
         <script src="{{ asset('js/modules/splide/dist/js/splide.min.js') }}"></script>
+        <!-- <script src="{{ asset('js/modules/waypoints/lib/jquery.waypoints.min.js') }}"></script> -->
+        <!-- <script src="{{ asset('js/modules/waypoints/lib/shortcuts/inview.js') }}"></script> -->
         
         {% if pages.current == 'home' %}
-            <script src="{{ asset('js/modules/waypoints/lib/jquery.waypoints.min.js') }}"></script>
-            <script src="{{ asset('js/modules/waypoints/lib/shortcuts/inview.js') }}"></script>
             <script src="{{ asset('js/modules/local/home/vitrine.js') }}"></script>
             <script src="{{ asset('js/modules/local/home/banners.js') }}"></script>
-        {% elseif pages.current == 'catalog' and category.id == 113 %}
-            <script src="{{ asset('js/modules/local/category/supercoffee.js') }}"></script>
+        {% elseif pages.current == 'catalog' %}
+            {% if category.id == 113 %}
+                <script src="{{ asset('js/modules/local/category/supercoffee.js') }}"></script>
+            {% else %}
+                <script src="{{ asset('js/modules/local/category/marcas.js') }}"></script>
+            {% endif %}
         {% else %}
             <!-- Call lightgallery js -->
             <script src="{{ asset('js/modules/lightgallery/dist/js/lightgallery.min.js') }}"></script>

@@ -1,3 +1,20 @@
+// Menu scroll page
+(function(jQuery){
+    jQuery(document).ready(function () {
+  
+        jQuery(window).scroll(function () {
+            var topScroll = Number(jQuery(window).scrollTop());
+  
+            if (topScroll >= 300) {
+                jQuery("header").addClass('mini');
+            } else {
+                jQuery("header").removeClass('mini');
+            }
+        });
+  
+    });
+})(jQuery);
+
 // Hamburger menu
 let iconeHamburger = jQuery('#svg_hamburger');
 let menuRetratil = jQuery('#header-m');
@@ -173,4 +190,42 @@ function leaveCategoryMenu(element) {
 
         container_subcategories.hide();
     }
+}
+
+// Filter brands from selection
+function filtraMarcas(letra, elem) {
+    let ulMarcas = jQuery("ul#categoriasMenu > li.marcas > div.subLinksMarcas > ul.ul_marcas");
+    let ulFiltro = jQuery("ul#categoriasMenu > li.marcas > div.subLinksMarcas > ul.ul_marcas > ul.filtro");
+    let counter = 0;
+
+    ulFiltro.children('li, span').removeClass('selected');
+    jQuery('div#semMarca').removeClass('show');
+    
+    ulMarcas.children('li').show();
+
+    ulMarcas.children('li').each(function(index) {
+        if (jQuery(this).children('img').attr('alt').charAt(0) !== letra) {
+            jQuery(this).hide();
+        }
+        else {
+            counter++;
+        }
+    });
+
+    jQuery(elem).addClass('selected');
+
+    if (counter == 0) {
+        jQuery('div#semMarca').addClass('show');
+    }
+}
+
+// Clean brands filter (show all brands)
+function limpaFiltro(elem) {
+    let ulMarcas = jQuery("ul#categoriasMenu > li.marcas > div.subLinksMarcas > ul.ul_marcas");
+    let ulFiltro = jQuery("ul#categoriasMenu > li.marcas > div.subLinksMarcas > ul.ul_marcas > ul.filtro");
+
+    ulFiltro.children('li').removeClass('selected');
+    jQuery('div#semMarca').removeClass('show');
+    ulMarcas.children('li').show();
+    jQuery(elem).addClass('selected');
 }

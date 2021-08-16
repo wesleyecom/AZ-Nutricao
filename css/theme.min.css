@@ -7840,15 +7840,11 @@ div[id^="AbaPersonalizada"] table td {
   }
 }
 
-:root {
-  --menu-background: #fff;
-}
-
 header {
   position: relative;
   width: 100%;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 
 header div.baixo form.barra_busca div.suggestion {
@@ -7871,10 +7867,14 @@ header div.baixo form.barra_busca div.suggestion {
           justify-content: flex-start;
   background-color: #fff;
   overflow: hidden;
+  border: 1px solid #6d6d6d;
+  border-top: 0;
+  overflow: auto;
+  z-index: 10000000 !important;
 }
 
 header div.baixo form.barra_busca div.suggestion.is-hidden {
-  display: none;
+  display: none !important;
 }
 
 header div.baixo form.barra_busca div.suggestion div.suggestion-words, header div.baixo form.barra_busca div.suggestion div.suggestion-products {
@@ -7990,13 +7990,38 @@ header div.baixo form.barra_busca div.suggestion div.suggestion-products div.sug
   margin-top: 5px;
 }
 
+header div.baixo form.barra_busca button {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+header div.baixo form.barra_busca button svg {
+  position: relative;
+  width: 14px;
+  fill: #535353;
+  margin-top: 5px;
+}
+
+header.mini {
+  position: fixed;
+  top: 0;
+  height: 75px;
+  -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.22);
+          box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.22);
+  z-index: 100000;
+}
+
 footer {
   position: relative;
   width: 100%;
   height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 30px;
+  padding: 2.2vw;
   background-color: #4C5A64;
 }
 
@@ -8072,6 +8097,10 @@ footer div.cima div.coluna a.whatsapp {
 
 footer div.cima div.coluna a.whatsapp svg {
   width: 20px;
+}
+
+footer div.cima div.coluna a:hover {
+  text-decoration: underline;
 }
 
 footer div.cima div.coluna span {
@@ -8562,7 +8591,6 @@ div.cart button.finalizar {
   border-radius: 0;
   border: 0;
   background-color: #58aa0c;
-  color: #fff;
   font-family: Nunito;
   text-transform: uppercase;
   font-weight: 800;
@@ -8570,6 +8598,10 @@ div.cart button.finalizar {
   transition: 0.3s ease-in-out;
   cursor: pointer;
   display: none;
+}
+
+div.cart button.finalizar a {
+  color: #fff;
 }
 
 div.cart button.finalizar:hover {
@@ -9433,6 +9465,10 @@ section#secao_produto div.cima div.ct_comprar button.btn_add_carrinho:disabled {
   pointer-events: none;
 }
 
+section#secao_produto div.cima div.ct_galeria_produto div#thumbnail_galeria_produto div.splide__track ul.splide__list li.splide__slide {
+  background-size: contain !important;
+}
+
 section#secao_produto div.descricao_produto {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -9451,6 +9487,11 @@ section#secao_produto div.descricao_produto h2 {
   line-height: 28px !important;
   display: block !important;
   margin-bottom: 12px !important;
+}
+
+section#secao_produto div.descricao_produto h3 {
+  font-size: 1.5em;
+  color: #393939;
 }
 
 section#secao_produto div.descricao_produto p {
@@ -9520,6 +9561,32 @@ section#secao_produto div.descricao_produto ul.icone li:before {
   background: url("../img/svg/checkmark-green.svg");
   background-size: contain;
   content: "";
+}
+
+section#secao_produto div.descricao_produto ul.caracteristicas {
+  list-style: none !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section#secao_produto div.descricao_produto ul.caracteristicas li {
+  position: relative;
+  width: auto;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px 12px;
+  background-color: #373737 !important;
+  border-radius: 30px;
+  color: #fff;
+  font-family: Nunito !important;
+  font-weight: 800;
+  font-size: 1.2em;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 section#secao_produto div.descricao_produto table {

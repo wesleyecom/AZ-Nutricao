@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="{{ asset('css/catalog-d.css') }}" media="(min-width: 1024px)">
 
     <div class="header_catalog">
+        {% element 'snippets/breadcrumb' %}
+        
         <h2>
             {{ category.name }}
         </h2>
@@ -11,6 +13,85 @@
 
     {% if products|length > 0 %}
         {% element 'snippets/paginate' %}
+
+        {% if category.children and category.parent == 103 %}
+            <link rel="stylesheet" href="{{ asset('css/catalog_marcas.css') }}">
+
+            <div class="filtros">
+                <div class="marcas">
+                    <div class="pai" data-marca="{{ category.id }}">
+                        {% set nameMarca = category.name | replace({ 'á':'a', 'é':'e', 'í':'i', 'ó':'o', 'ú':'u' }) | lower %}
+                        <img src="{{ asset('img/catalog/marcas/'~nameMarca~'/'~nameMarca~'.png') }}" alt="{{ marca.name }}">
+                        
+                        <div class="divisor"></div>
+                    </div>
+
+                    <div class="splide slideMarcas">
+                        <div class="splide__arrows">
+                            <button class="splide__arrow splide__arrow--prev">
+                                <svg width="13" height="23" viewBox="0 0 13 23" fill="none">
+                                    <path d="M11 21.5L1.50508 12.0051C1.22613 11.7261 1.22613 11.2739 1.50508 10.9949L11 1.5" stroke="#383838" stroke-width="2.14286" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                
+                            <button class="splide__arrow splide__arrow--next">
+                                <svg width="13" height="23" viewBox="0 0 13 23" fill="none">
+                                    <path d="M2 1.5L11.4949 10.9949C11.7739 11.2739 11.7739 11.7261 11.4949 12.0051L2 21.5" stroke="#383838" stroke-width="2.14286" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="splide__track">
+                            <ul class="splide__list" id="ulMarcas">
+                                {% for child in category.children %}
+                                    {% set nameChild = child.name | replace({ 'á':'a', 'é':'e', 'í':'i', 'ó':'o', 'ú':'u', ' ':'_' }) | lower %}
+
+                                    <li class="splide__slide" data-marca="{{ child.name }}">
+                                        <img src="{{ asset('img/catalog/marcas/'~nameMarca~'/child/'~nameChild~'.png') }}" alt="{{ child.name }}">
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        {% elseif category.id == 17 %}
+            <link rel="stylesheet" href="{{ asset('css/catalog_nutren.css') }}">
+
+            <div class="filtros">
+                <div class="marcas">
+                    <ul id="marcas">
+                        <li class="selected" data-marca="nutren">
+                            <img src="{{ asset('img/catalog/marcas/nutren/nutren.png') }}" alt="">
+                        </li>
+
+                        <div class="divisor"></div>
+
+                        <li data-marca="nutren beauty">
+                            <img src="{{ asset('img/catalog/marcas/nutren/beauty.png') }}" alt="">
+                        </li>
+
+                        <li data-marca="nutren senior">
+                            <img src="{{ asset('img/catalog/marcas/nutren/senior.png') }}" alt="">
+                        </li>
+
+                        <li data-marca="nutren active">
+                            <img src="{{ asset('img/catalog/marcas/nutren/active.png') }}" alt="">
+                        </li>
+
+                        <li data-marca="nutren kids">
+                            <img src="{{ asset('img/catalog/marcas/nutren/kids.png') }}" alt="">
+                        </li>
+
+                        <li data-marca="nutren just protein">
+                            <img src="{{ asset('img/catalog/marcas/nutren/just_protein.png') }}" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
 
         <div class="catalog_products">
             <div class="ct_showcase_products" itemscope itemtype="https://schema.org/SomeProducts">
@@ -21,8 +102,6 @@
                 </ul>
             </div>
         </div>
-
-        {% element 'snippets/paginate' %}
     {% else %}
         <div class="empty">
             <h2>
@@ -44,8 +123,10 @@
             </svg>
         </div>
     {% endif %}
+
+<!-- Supercofee Page -->
 {% else %}
-<link rel="stylesheet" href="{{ asset('css/supercoffee.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/supercoffee.css') }}">
     <link rel="stylesheet" href="{{ asset('css/supercoffee-m.css') }}" media="(max-width: 768px)">
     <link rel="stylesheet" href="{{ asset('css/supercoffee-d.css') }}" media="(min-width: 769px)">
 
@@ -56,7 +137,7 @@
             <p>
                 Escolha o <strong>SuperCoffee</strong> que mais
                 combina com a sua rotina e prepare-se para viver
-                a sua melhor versÃ£o. 
+                a sua melhor versão. 
             </p>
         </div>
 

@@ -314,7 +314,6 @@ div.cart button.finalizar {
   border-radius: 0;
   border: 0;
   background-color: #58aa0c;
-  color: #fff;
   font-family: Nunito;
   text-transform: uppercase;
   font-weight: 800;
@@ -322,6 +321,10 @@ div.cart button.finalizar {
   transition: 0.3s ease-in-out;
   cursor: pointer;
   display: none;
+}
+
+div.cart button.finalizar a {
+  color: #fff;
 }
 
 div.cart button.finalizar:hover {

@@ -1,76 +1,64 @@
 function chamaVitrine(item_id) {
-    new Splide( item_id, {
-        type   : 'loop',
+    var splide = new Splide( item_id, {
+        type   : 'slide',
         arrows : true,
         autoplay: false,
         interval: 2500,
         lazyLoad: 'nearby',
         perPage: 5,
         pagination: false,
-
-        gap: 11,
-
         padding: {
-            right: '2rem',
-            left: '2rem'
+            left : '8px',
+            right: '8px',
         },
+        lazyLoad: 'nearby',
+
+        gap: '3em',
 
         breakpoints: {
             '1023': {
                 type: 'loop',
                 perPage: 3,
-                arrows : false,
-
-                padding: {
-                    right: '2rem',
-                    left: '2px'
-                },
             },
 
             '550': {
                 perPage: 2,
-                arrows : false,
                 pagination: true,
-
-                gap: 8,
-
+                gap: '15px',
                 padding: {
-                    right: '1.5rem',
-                    left: '2px'
+                    left : '8px',
+                    right: '25px',
                 },
             },
 
             '360': {
                 perPage: 1,
-                arrows : false,
-
-                gap: 15,
-
-                padding: {
-                    right: '5rem',
-                    left: '2px'
-                },
             },
         }
     } ).mount();
 
-    console.log(item_id + ' carregada.');
+    var vitrine = jQuery(item_id);
+    var isMobile = jQuery('#isMobile').data('isMobile');
+
+    splide.on( 'moved', function () {
+        if ( splide.index > 0 ) {
+            if (splide.index >= 5) {
+                vitrine.children('div.splide__arrows').children('button.splide__arrow--next').css("display", "none");
+            }
+            else {
+                vitrine.children('div.splide__arrows').children('button.splide__arrow--next').css("display", "block");
+            }
+
+            jQuery(splide.Components.Elements.arrows.prev).css("display", "block");
+            vitrine.children('div.splide__arrows').children('button.splide__arrow--prev').css("display", "block");
+        }
+        else {
+            vitrine.children('div.splide__arrows').children('button.splide__arrow--prev').css("display", "none");
+            vitrine.children('div.splide__arrows').children('button.splide__arrow--next').css("display", "block");
+        }
+    } );
 }
 
 jQuery('.vitrine').each(function(index) {
-    criaWaypoint(this);
+    chamaVitrine('#'+jQuery(this).children('.ct_vitrine').attr('id'));
 });
-
-function criaWaypoint(elemento) {
-    var wp = new Waypoint({
-        element: jQuery(elemento)[0],
-        handler: function() {
-            var elementoLocal = jQuery(this)[0].element;
-
-            chamaVitrine('#'+jQuery(elementoLocal).children('.ct_vitrine').attr('id'));
-            jQuery(elemento).children('div.ct_vitrine').addClass('shown');
-            wp.destroy();
-        },
-        offset: '180%'
-    })  
-};

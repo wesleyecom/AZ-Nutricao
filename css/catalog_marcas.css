@@ -1,0 +1,189 @@
+div.filtros {
+  position: relative;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 0 4px 0px #00000030;
+          box-shadow: 0 0 4px 0px #00000030;
+}
+
+div.filtros div.marcas {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 28px 2.9vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+}
+
+div.filtros div.marcas div.pai {
+  position: relative;
+  width: 130px;
+  height: 85px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
+}
+
+div.filtros div.marcas div.pai:after {
+  position: absolute;
+  bottom: -8px;
+  display: block;
+  content: '';
+  border-bottom: solid 1px #a0a4a5;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  height: 80%;
+  width: 50%;
+}
+
+div.filtros div.marcas div.pai.selected:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  width: 80%;
+  border-color: #bbb;
+}
+
+div.filtros div.marcas div.pai:not(.selected) {
+  cursor: pointer;
+}
+
+div.filtros div.marcas div.pai:not(.selected):hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+div.filtros div.marcas div.pai img {
+  width: 100px;
+  -webkit-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
+}
+
+div.filtros div.marcas div.pai div.divisor {
+  position: absolute;
+  width: 1px;
+  height: 85px;
+  background-color: #e3e3e3;
+  margin-left: 150%;
+}
+
+div.filtros div.marcas div.slideMarcas {
+  position: relative;
+  margin-left: 8%;
+  width: 80%;
+}
+
+div.filtros div.marcas div.slideMarcas li {
+  width: 130px;
+  height: 85px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+
+div.filtros div.marcas div.slideMarcas li img {
+  width: 100px;
+  -webkit-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-height: 100%;
+}
+
+div.filtros div.marcas div.slideMarcas li:not(.selected) {
+  cursor: pointer;
+  -webkit-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
+}
+
+div.filtros div.marcas div.slideMarcas li:not(.selected):hover {
+  background-color: #eee;
+}
+
+div.filtros div.marcas div.slideMarcas li:not(.selected):hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media (max-width: 1150px) {
+  div.filtros div.marcas {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  div.filtros div.marcas div.pai div.divisor {
+    display: none;
+  }
+  div.filtros div.marcas div.slideMarcas {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  div.filtros div.marcas div.pai {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  div.filtros div.marcas div.pai::after {
+    left: 12%;
+  }
+}
+
+@media (max-width: 768px) {
+  div.filtros div.marcas div.pai {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  div.filtros div.marcas div.pai::after {
+    left: unset;
+  }
+  div.filtros div.marcas div.slideMarcas {
+    width: 90%;
+    padding-bottom: 15px;
+  }
+  div.filtros div.marcas div.slideMarcas div.splide__arrows {
+    display: none;
+  }
+  div.filtros div.marcas div.slideMarcas ul.splide__pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    bottom: -22%;
+  }
+  div.filtros div.marcas div.slideMarcas ul.splide__pagination li {
+    width: 15px;
+    height: 15px;
+  }
+}

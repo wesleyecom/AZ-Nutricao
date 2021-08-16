@@ -1,0 +1,176 @@
+div.filtros {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 0 4px 0px #00000030;
+
+    div.marcas {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 28px 2.9vw;
+        box-sizing: border-box;
+        background-color: #fff;
+
+        div.pai {
+            position: relative;
+            width: 130px;
+            height: 85px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: 0.1s all ease-in-out;
+            
+            &:after {
+                position: absolute;
+                bottom: -8px;
+
+                display:block;
+                content: '';
+                border-bottom: solid 1px #a0a4a5;  
+                transform: scaleX(0);  
+                transition: transform 250ms ease-in-out;
+
+      
+                height: 80%;
+                width: 50%;
+            }
+
+            &.selected {
+                &:after {
+                    transform: scaleX(1);
+                    width: 80%;
+                    border-color: #bbb;
+                }
+            }
+
+            &:not(.selected) {
+                cursor: pointer;
+
+                &:hover:after {
+                    transform: scaleX(1);
+                }
+            }
+
+            img {
+                width: 100px;
+                transition: 0.1s all ease-in-out;
+            }
+
+            div.divisor {
+                position: absolute;
+                width: 1px;
+                height: 85px;
+                background-color: #e3e3e3;
+
+                margin-left: 150%;
+            }
+        }
+        
+        div.slideMarcas {
+            position: relative;
+            margin-left: 8%;
+            width: 80%;
+
+            li {
+                width: 130px;
+                height: 85px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;
+                border: 1px solid transparent;
+
+                img {
+                    width: 100px;
+                    transition: 0.1s all ease-in-out;
+                    object-fit: contain;
+                    max-height: 100%;
+                }
+
+                &:not(.selected) {
+                    cursor: pointer;
+                    transition: 0.1s all ease-in-out;
+                    
+                    &:hover {
+                        background-color: #eee;
+
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1150px) {
+    div.filtros {
+        div.marcas {
+            justify-content: space-around;
+
+            div.pai {
+                div.divisor {
+                    display: none;
+                }
+            }
+
+            div.slideMarcas {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    div.filtros {
+        div.marcas {
+            div.pai {
+                justify-content: flex-start;
+
+                &::after {
+                    left: 12%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    div.filtros {
+        div.marcas {
+            div.pai {
+                justify-content: center;
+
+                &::after {
+                    left: unset;
+                }
+            }
+
+            div.slideMarcas {
+                width: 90%;
+                padding-bottom: 15px;
+                
+                div.splide__arrows {
+                    display: none;
+                }
+
+                ul.splide__pagination {
+                    display: flex;
+                    bottom: -22%;
+
+                    li {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

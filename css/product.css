@@ -234,6 +234,10 @@ section#secao_produto div.cima div.ct_comprar button.btn_add_carrinho:disabled {
   pointer-events: none;
 }
 
+section#secao_produto div.cima div.ct_galeria_produto div#thumbnail_galeria_produto div.splide__track ul.splide__list li.splide__slide {
+  background-size: contain !important;
+}
+
 section#secao_produto div.descricao_produto {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -252,6 +256,11 @@ section#secao_produto div.descricao_produto h2 {
   line-height: 28px !important;
   display: block !important;
   margin-bottom: 12px !important;
+}
+
+section#secao_produto div.descricao_produto h3 {
+  font-size: 1.5em;
+  color: #393939;
 }
 
 section#secao_produto div.descricao_produto p {
@@ -287,6 +296,7 @@ section#secao_produto div.descricao_produto p.image_text img {
 
 section#secao_produto div.descricao_produto ul {
   list-style: disc !important;
+  padding-left: 40px;
 }
 
 section#secao_produto div.descricao_produto ul li {
@@ -301,6 +311,7 @@ section#secao_produto div.descricao_produto ul li p {
 
 section#secao_produto div.descricao_produto ul.icone {
   list-style: none !important;
+  padding-left: inherit;
 }
 
 section#secao_produto div.descricao_produto ul.icone li {
@@ -321,6 +332,32 @@ section#secao_produto div.descricao_produto ul.icone li:before {
   background: url("../img/svg/checkmark-green.svg");
   background-size: contain;
   content: "";
+}
+
+section#secao_produto div.descricao_produto ul.caracteristicas {
+  list-style: none !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section#secao_produto div.descricao_produto ul.caracteristicas li {
+  position: relative;
+  width: auto;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px 12px;
+  background-color: #373737 !important;
+  border-radius: 30px;
+  color: #fff;
+  font-family: Nunito !important;
+  font-weight: 800;
+  font-size: 1.2em;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 section#secao_produto div.descricao_produto table {

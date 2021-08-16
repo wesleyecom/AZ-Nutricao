@@ -1,4 +1,4 @@
-// Gerar galeia ao carregar a página
+// Gerar galeia ao carregar a pï¿½gina
 function carregaGaleria() {
     lightGallery(document.getElementById('ul-lightgallery'));
 }
@@ -14,6 +14,7 @@ var thumbnails = new Splide( '#thumbnail_galeria_produto', {
     rewind     : true,
     cover      : true,
     pagination : false,
+    arrows: false,
     focus       : 'center',
     isNavigation: true,
     breakpoints: {
@@ -61,7 +62,7 @@ var galeriaProduto = new Splide( '#galeria_produto', {
 galeriaProduto.sync( thumbnails ).mount();
 
 
-// Atualizar galeria conforme seleção de variação de produto
+// Atualizar galeria conforme seleï¿½ï¿½o de variaï¿½ï¿½o de produto
 var idProduto = jQuery('#secao_produto').attr('data-product-id');
 
 function trocaGaleria(variacao, galeria, thumbnail) {

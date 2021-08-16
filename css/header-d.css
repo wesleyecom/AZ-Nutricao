@@ -2,20 +2,25 @@ header {
   height: 186px;
 }
 
-header div#header-m {
-  display: none;
-}
-
 header h1#logo-d {
   position: absolute;
   top: 42px;
   left: 8vw;
   margin: 0;
+  display: block;
   z-index: 1;
 }
 
 header h1#logo-d a svg {
   position: relative;
+}
+
+header h1#logo-d a svg.logotipo {
+  display: block;
+}
+
+header h1#logo-d a svg.logo_slogan {
+  display: none;
 }
 
 header div.baixo {
@@ -38,6 +43,28 @@ header div.baixo {
 
 header div.baixo h1, header div.baixo svg#svg_hamburger {
   display: none;
+}
+
+header div.baixo #svg_hamburger {
+  cursor: pointer;
+}
+
+header div.baixo #svg_hamburger #cima {
+  -webkit-transition: 0.2s all ease-in;
+  transition: 0.2s all ease-in;
+  -webkit-animation: growUp 1s;
+          animation: growUp 1s;
+}
+
+header div.baixo #svg_hamburger #baixo {
+  -webkit-transition: 0.2s all ease-in;
+  transition: 0.2s all ease-in;
+  -webkit-animation: growDown 1s;
+          animation: growDown 1s;
+}
+
+header div.baixo #svg_hamburger:hover #baixo {
+  width: 31px;
 }
 
 header div.baixo form.barra_busca {
@@ -89,17 +116,7 @@ header div.baixo form.barra_busca input::placeholder {
 }
 
 header div.baixo form.barra_busca button {
-  position: absolute;
-  top: 0;
   right: 0;
-  width: 50px;
-  height: 100%;
-  color: #3b3b3b;
-  font-family: 'Nunito';
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  outline: none;
 }
 
 header div.baixo form.barra_busca div.suggestion {
@@ -111,10 +128,6 @@ header div.baixo form.barra_busca div.suggestion {
   top: 45px;
   border-radius: 0 0 5px 5px;
   z-index: 1;
-}
-
-header div.baixo form.barra_busca svg {
-  display: none;
 }
 
 header div.baixo div.action {
@@ -231,9 +244,9 @@ header div.baixo ul#categoriasMenu {
       -ms-flex-order: 3;
           order: 3;
   position: absolute;
-  left: 7.8vw;
+  left: 7.5vw;
   bottom: 0;
-  width: 82%;
+  width: 88%;
   height: 35%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,7 +281,7 @@ header div.baixo ul#categoriasMenu li.parent, header div.baixo ul#categoriasMenu
 }
 
 header div.baixo ul#categoriasMenu li.parent a.parentLink, header div.baixo ul#categoriasMenu li.noChild a.parentLink {
-  color: #383838;
+  color: #575757;
   font-family: 'Nunito';
   font-size: 1.6em;
   font-weight: 900;
@@ -329,7 +342,103 @@ header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas {
   -ms-grid-columns: (minmax(80px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   grid-gap: 8px;
-  padding: 30px 28px 30px 30px;
+  padding: 60px 28px 30px 30px;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas ul.filtro {
+  top: 12px;
+  width: 100%;
+  height: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-bottom: 1px solid #d5d5d5;
+  border-radius: 0;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas ul.filtro span {
+  position: relative;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Nunito;
+  font-weight: 900;
+  color: #848484;
+  margin-right: 8px;
+  -webkit-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas ul.filtro span.divisor {
+  height: 21px;
+  width: 1px;
+  background-color: #d5d5d5;
+  margin: 0 15px;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas ul.filtro span.divisor:hover {
+  color: #848484;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas ul.filtro li {
+  width: 20px;
+  height: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 0;
+  font-family: Nunito;
+  font-weight: 900;
+  color: #848484;
+  border: 0 !important;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas ul.filtro li.marcaPai {
+  width: auto;
+  text-transform: uppercase;
+  margin-right: 35px;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas ul.filtro li.marcaPai a {
+  position: relative;
+  height: auto;
+  width: auto;
+  color: #898989;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas ul.filtro li.marcaPai a:hover {
+  color: #1a1a1a;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas ul.filtro span:hover, header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas ul.filtro li:hover {
+  border: 0;
+  color: #1a1a1a;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas ul.filtro span.selected, header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas ul.filtro li.selected {
+  color: #000;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas li {
@@ -348,6 +457,9 @@ header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas li 
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas li a {
@@ -362,7 +474,7 @@ header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas li 
 
 header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas li img {
   position: relative;
-  width: 100%;
+  width: 90%;
   font-family: Nunito;
   font-weight: 900;
   text-transform: uppercase;
@@ -372,6 +484,28 @@ header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas li 
 
 header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas li:hover {
   border: 1px solid #bfbfbf;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas div#semMarca {
+  display: none;
+  width: 300px;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas div#semMarca span {
+  display: block;
+  font-family: 'Nunito';
+  font-size: 1.5em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #a3a3a3;
+  margin: 0;
+  padding: 0;
+  margin-left: 15px;
+  margin-top: 17px;
+}
+
+header div.baixo ul#categoriasMenu li.parent div.subLinksMarcas ul.ul_marcas div#semMarca.show {
+  display: block;
 }
 
 header div.baixo ul#categoriasMenu li.parent div.subLinks {
@@ -535,6 +669,309 @@ header div.baixo ul#categoriasMenu li.parent div.subLinks.selected ul.ul_subLink
 header div.baixo ul#categoriasMenu li.parent:hover > div.subLinks, header div.baixo ul#categoriasMenu li.parent:hover > div.subLinksMarcas {
   opacity: 1;
   z-index: 100;
+}
+
+header.mini svg#svg_hamburger {
+  display: block !important;
+  height: 15px;
+  cursor: pointer;
+}
+
+header.mini ul#categoriasMenu {
+  display: none !important;
+}
+
+header.mini h1#logo-d {
+  position: relative;
+  top: inherit;
+  left: inherit;
+  margin-top: -5px;
+}
+
+header.mini h1#logo-d a svg.logotipo {
+  display: none;
+}
+
+header.mini h1#logo-d a svg.logo_slogan {
+  display: block;
+}
+
+header.mini div.baixo {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+header.mini div.baixo div.action {
+  width: 22%;
+  margin-top: 0;
+}
+
+header.mini div.baixo div.action div.conta {
+  width: 80%;
+}
+
+header.mini div.baixo div.action div.carrinho {
+  width: auto;
+}
+
+header.mini div.baixo form.barra_busca {
+  width: 38%;
+  height: 42px;
+  margin-top: 0;
+}
+
+header.mini div.baixo form.barra_busca input[type=text] {
+  border-color: #8e8e8e;
+}
+
+header .header-m {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000ab;
+  opacity: 0;
+  -webkit-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
+  pointer-events: none;
+  z-index: -1;
+}
+
+header .header-m.open {
+  z-index: 100;
+  opacity: 1;
+  pointer-events: all;
+}
+
+header .header-m.open > div.ct_header-m {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+header .header-m div.ct_header-m {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 22vw;
+  height: 100vh;
+  background-color: #fff;
+  -webkit-transform: translateX(calc(-50vw - 45px));
+          transform: translateX(calc(-50vw - 45px));
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  z-index: 10;
+}
+
+header .header-m div.ct_header-m button#toggle_menu-m {
+  position: absolute;
+  top: 0;
+  right: -45px;
+  width: 45px;
+  height: 45px;
+  background-color: #2b2b2b;
+  border: 0;
+  border-radius: 0 0 4px 0;
+  font-family: 'Nunito';
+  font-weight: 900;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+header .header-m div.ct_header-m button#toggle_menu-m:hover {
+  background-color: #000000;
+}
+
+header .header-m div.ct_header-m div.conta {
+  position: absolute;
+  right: 0;
+  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 30px;
+}
+
+header .header-m div.ct_header-m div.conta a {
+  color: #404040;
+  font-family: 'Nunito';
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+header .header-m div.ct_header-m div.conta div.divisor {
+  position: relative;
+  width: 2px;
+  height: 15px;
+  background-color: #9d9d9d;
+}
+
+header .header-m div.ct_header-m ul.categorias {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  margin-top: 85px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: auto;
+}
+
+header .header-m div.ct_header-m ul.categorias li {
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 6%;
+  border-bottom: 1px solid #ddd;
+}
+
+header .header-m div.ct_header-m ul.categorias li:first-child {
+  border-top: 1px solid #ddd;
+}
+
+header .header-m div.ct_header-m ul.categorias li a {
+  position: relative;
+  width: calc(100% - 43px);
+  min-height: 43px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #666;
+  font-family: 'Nunito';
+  font-weight: 700;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+header .header-m div.ct_header-m ul.categorias li button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: 0;
+  width: 43px;
+  height: 43px;
+  font-family: "Nunito";
+  color: #1e1e1e;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
+}
+
+header .header-m div.ct_header-m ul.categorias li button.open {
+  background-color: transparent;
+}
+
+header .header-m div.ct_header-m ul.categorias li div.children {
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 10000;
+}
+
+header .header-m div.ct_header-m ul.categorias li div.children div.ct_child {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+header .header-m div.ct_header-m ul.categorias li div.children div.ct_child a.link_child {
+  width: 100%;
+  min-height: 43px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 15px;
+}
+
+header .header-m div.ct_header-m ul.categorias li div.children div.ct_child button {
+  background-color: transparent;
+}
+
+header .header-m div.ct_header-m ul.categorias li div.children div.ct_child button.open {
+  background-color: transparent;
+}
+
+header .header-m div.ct_header-m ul.categorias li div.children div.ct_child div.children_child {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: transparent;
+}
+
+header .header-m div.ct_header-m ul.categorias li div.children div.ct_child div.children_child a {
+  width: 100%;
+  min-height: 58px;
+  font-size: 1.3em;
+  border-bottom: 1px solid #ddd;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 15px;
+  -webkit-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
+}
+
+header .header-m div.ct_header-m ul.categorias::-webkit-scrollbar {
+  width: 3px;
+}
+
+header .header-m div.ct_header-m ul.categorias::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  background: transparent;
+}
+
+header .header-m div.ct_header-m ul.categorias::-webkit-scrollbar-thumb {
+  background: #a1bf83;
+  border-radius: 15px;
 }
 
 @media (max-width: 1200px) {

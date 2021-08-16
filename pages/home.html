@@ -4,35 +4,43 @@
 
 {% element 'snippets/hero' %}
 
-<div class="aviso_desconto">
-    <span>
-        <strong>
-            3% de desconto
-        </strong>
-
-        em 1x no cartão de crédito, ou
-
-        <strong>
-            5% de desconto
-        </strong>
-        
-        à vista no dinheiro ou PIX
-    </span>
-</div>
-
 {% element 'snippets/banner_info' %}
 
 {% element 'snippets/categorias' %}
 
 <div class="vitrine">
-    <h3>Destaques</h3>
+    <div class="header_vitrine">
+        <h3>Destaques</h3>
 
-    <div class="splide ct_vitrine" id="vitrine_destaques">
+        <a href="{{ links.home }}destaques" class="tituloVitrine">
+            Ver todos
+
+            <svg width="15" height="8" viewBox="0 0 15 8" fill="none">
+                <path d="M1.00012 3.5C0.72398 3.5 0.500122 3.72386 0.500122 4C0.500122 4.27614 0.72398 4.5 1.00012 4.5V3.5ZM14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM1.00012 4.5H14V3.5H1.00012V4.5Z" fill="#606060"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="splide ct_vitrine" id="vitrine_destaques" data-slide-index="0">
         {% set products = Products({
-            'limit': 8,
+            'limit': 10,
             'order': {'quantity_sold': 'desc'},
             'categories': [1]
         }) %}
+
+        <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev arrow__vitrine">
+                <svg width="13" height="23" viewBox="0 0 13 23" fill="none">
+                    <path d="M11 21.5L1.50508 12.0051C1.22613 11.7261 1.22613 11.2739 1.50508 10.9949L11 1.5" stroke="#383838" stroke-width="2.14286" stroke-linecap="round"/>
+                </svg>
+            </button>
+
+            <button class="splide__arrow splide__arrow--next arrow__vitrine">
+                <svg width="13" height="23" viewBox="0 0 13 23" fill="none">
+                    <path d="M2 1.5L11.4949 10.9949C11.7739 11.2739 11.7739 11.7261 11.4949 12.0051L2 21.5" stroke="#383838" stroke-width="2.14286" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
         
         <div class="splide__track">
             <ul class="splide__list">
@@ -44,30 +52,132 @@
     </div>
 </div>
 
-<div class="banner banner_nestle">
-    {% set category = Categories({id: '1'}) %}
-    <a href="{{ category.link }}"></a>
+{% element 'snippets/linhas' %}
 
+<div class="header_home">
+    <h3>Nestl�</h3>
+
+    <a href="{{ links.home }}nestle" class="tituloVitrine">
+        Ver todos
+
+        <svg width="15" height="8" viewBox="0 0 15 8" fill="none">
+            <path d="M1.00012 3.5C0.72398 3.5 0.500122 3.72386 0.500122 4C0.500122 4.27614 0.72398 4.5 1.00012 4.5V3.5ZM14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM1.00012 4.5H14V3.5H1.00012V4.5Z" fill="#606060"/>
+        </svg>
+    </a>
+</div>
+
+<div class="banner banner_nestle">
     <div class="ct_banner">
         <picture>
-            <source class="lazy" data-srcset="{{ asset('img/banner/banner_nestle_1-xl.png') }}" alt="Slide 1" media="(min-width: 1024px)">
-            <source class="lazy" data-srcset="{{ asset('img/banner/nestle_health_science_1-lg.png') }}" alt="Slide 1" media="(min-width: 769px)">
-            <source class="lazy" data-srcset="{{ asset('img/banner/nestle_health_science_1-md.png') }}" alt="Slide 1" media="(min-width: 426px)">
-            <img class="lazy" data-src="{{ asset('img/banner/banner_nestle_1-sm.png') }}" alt="Slide 1">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/nestle/banner_nestle_1_1440x500.jpg') }}" alt="Slide 1" media="(min-width: 1024px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/nestle/banner_nestle_1_1024x500.jpg') }}" alt="Slide 1" media="(min-width: 601px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/nestle/banner_nestle_2_600x500.jpg') }}" alt="Slide 1" media="(min-width: 426px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/nestle/banner_nestle_1_425x550.jpg') }}" alt="Slide 1" media="(max-width: 425px)">
+            <img class="lazy" data-src="{{ asset('img/banner/home/nestle/banner_nestle_1_425x550.jpg') }}" alt="Slide 1">
         </picture>
+
+        <a href="/nestle" class="cta_banner">
+            <span>
+                Confira
+            </span>
+            
+            <svg width="20" height="13" viewBox="0 0 15 8" fill="none">
+                <path d="M1.00012 3.5C0.72398 3.5 0.500122 3.72386 0.500122 4C0.500122 4.27614 0.72398 4.5 1.00012 4.5V3.5ZM14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM1.00012 4.5H14V3.5H1.00012V4.5Z" fill="#ffffff"></path>
+            </svg>
+        </a>
     </div>
 </div>
 
 <div class="vitrine">
-    <h3>Nestlé</h3>
-
     <div class="splide ct_vitrine" id="vitrine_nestle">
         {% set products = Products({
-            'limit': 8,
+            'limit': 10,
             'order': {'quantity_sold': 'desc'},
             'categories': [1]
         }) %}
         
+        <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev arrow__vitrine">
+                <svg width="13" height="23" viewBox="0 0 13 23" fill="none">
+                    <path d="M11 21.5L1.50508 12.0051C1.22613 11.7261 1.22613 11.2739 1.50508 10.9949L11 1.5" stroke="#383838" stroke-width="2.14286" stroke-linecap="round"/>
+                </svg>
+            </button>
+
+            <button class="splide__arrow splide__arrow--next arrow__vitrine">
+                <svg width="13" height="23" viewBox="0 0 13 23" fill="none">
+                    <path d="M2 1.5L11.4949 10.9949C11.7739 11.2739 11.7739 11.7261 11.4949 12.0051L2 21.5" stroke="#383838" stroke-width="2.14286" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for product in products %}
+                    {% element 'snippets/product_card' {"product": product} %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="header_home">
+    <h3>Danone</h3>
+
+    <a href="{{ links.home }}danone" class="tituloVitrine">
+        Ver todos
+
+        <svg width="15" height="8" viewBox="0 0 15 8" fill="none">
+            <path d="M1.00012 3.5C0.72398 3.5 0.500122 3.72386 0.500122 4C0.500122 4.27614 0.72398 4.5 1.00012 4.5V3.5ZM14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM1.00012 4.5H14V3.5H1.00012V4.5Z" fill="#606060"/>
+        </svg>
+    </a>
+</div>
+
+<div class="banner banner_danone">
+    <a href="https://nutrimedmix.commercesuite.com.br/loja/produto.php?loja=773127&IdProd=53&iniSession=1&608341a09646c"></a>
+
+    <div class="ct_banner">
+        <picture>
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/danone/banner_danone_1_1440x500.jpg') }}" alt="Slide 1" media="(min-width: 1024px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/danone/banner_danone_1_1024x500.jpg') }}" alt="Slide 1" media="(min-width: 601px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/danone/banner_danone_1_600x500.jpg') }}" alt="Slide 1" media="(min-width: 426px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/danone/banner_danone_1_425x550.jpg') }}" alt="Slide 1" media="(max-width: 425px)">
+            <img class="lazy" data-src="{{ asset('img/banner/home/danone/banner_danone_1_425x550.jpg') }}" alt="Slide 1">
+        </picture>
+
+        <a href="/danone" class="cta_banner">
+            <span>
+                Confira
+            </span>
+            
+            <svg width="20" height="13" viewBox="0 0 15 8" fill="none">
+                <path d="M1.00012 3.5C0.72398 3.5 0.500122 3.72386 0.500122 4C0.500122 4.27614 0.72398 4.5 1.00012 4.5V3.5ZM14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM1.00012 4.5H14V3.5H1.00012V4.5Z" fill="#ffffff"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+
+<div class="vitrine">
+    <div class="splide ct_vitrine" id="vitrine_danone">
+        {% set products = Products({
+            'limit': 10,
+            'order': {'quantity_sold': 'desc'},
+            'categories': [61]
+        }) %}
+        
+        <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev arrow__vitrine">
+                <svg width="13" height="23" viewBox="0 0 13 23" fill="none">
+                    <path d="M11 21.5L1.50508 12.0051C1.22613 11.7261 1.22613 11.2739 1.50508 10.9949L11 1.5" stroke="#383838" stroke-width="2.14286" stroke-linecap="round"/>
+                </svg>
+            </button>
+
+            <button class="splide__arrow splide__arrow--next arrow__vitrine">
+                <svg width="13" height="23" viewBox="0 0 13 23" fill="none">
+                    <path d="M2 1.5L11.4949 10.9949C11.7739 11.2739 11.7739 11.7261 11.4949 12.0051L2 21.5" stroke="#383838" stroke-width="2.14286" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
         <div class="splide__track">
             <ul class="splide__list">
                 {% for product in products %}
@@ -79,48 +189,83 @@
 </div>
 
 <div class="banner banner_thickenup">
-    <a href="https://nutrimedmix.commercesuite.com.br/loja/produto.php?loja=773127&IdProd=53&iniSession=1&608341a09646c"></a>
-
     <div class="ct_banner">
         <picture>
-            <source class="lazy" data-srcset="{{ asset('img/banner/banner_thickenup_1-xl.png') }}" alt="Slide 1" media="(min-width: 1024px)">
-            <source class="lazy" data-srcset="{{ asset('img/banner/thickenup-lg.png') }}" alt="Slide 1" media="(min-width: 769px)">
-            <source class="lazy" data-srcset="{{ asset('img/banner/thickenup-md.png') }}" alt="Slide 1" media="(min-width: 426px)">
-            <img class="lazy" data-src="{{ asset('img/banner/banner_thickenup_1-sm.png') }}" alt="Slide 1">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/nestle/thickenup_clear/banner_thickenup_clear_1_1440x500.jpg') }}" alt="Slide 1" media="(min-width: 1024px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/nestle/thickenup_clear/banner_thickenup_clear_1_1024x500.jpg') }}" alt="Slide 1" media="(min-width: 601px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/nestle/thickenup_clear/banner_thickenup_clear_1_600x500.jpg') }}" alt="Slide 1" media="(min-width: 426px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/nestle/thickenup_clear/banner_thickenup_clear_1_425x550.jpg') }}" alt="Slide 1" media="(max-width: 425px)">
+            <img class="lazy" data-src="{{ asset('img/banner/home/nestle/thickenup_clear/banner_thickenup_clear_1_425x550.jpg') }}" alt="Slide 1">
         </picture>
+
+        <a href="/thickenup" class="cta_banner">
+            <span>
+                Confira
+            </span>
+            
+            <svg width="20" height="13" viewBox="0 0 15 8" fill="none">
+                <path d="M1.00012 3.5C0.72398 3.5 0.500122 3.72386 0.500122 4C0.500122 4.27614 0.72398 4.5 1.00012 4.5V3.5ZM14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM1.00012 4.5H14V3.5H1.00012V4.5Z" fill="#ffffff"></path>
+            </svg>
+        </a>
     </div>
 </div>
 
-<div class="vitrine">
-    <h3>Danone</h3>
-
-    <div class="splide ct_vitrine" id="vitrine_danone">
-        {% set products = Products({
-            'limit': 8,
-            'order': {'quantity_sold': 'desc'},
-            'categories': [61]
-        }) %}
-        
-        <div class="splide__track">
-            <ul class="splide__list">
-                {% for product in products %}
-                    {% element 'snippets/product_card' {"product": product} %}
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div class="vitrine">
+<div class="header_home">
     <h3>Prodiet</h3>
 
+    <a href="{{ links.home }}prodiet" class="tituloVitrine">
+        Ver todos
+
+        <svg width="15" height="8" viewBox="0 0 15 8" fill="none">
+            <path d="M1.00012 3.5C0.72398 3.5 0.500122 3.72386 0.500122 4C0.500122 4.27614 0.72398 4.5 1.00012 4.5V3.5ZM14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM1.00012 4.5H14V3.5H1.00012V4.5Z" fill="#606060"/>
+        </svg>
+    </a>
+</div>
+
+<div class="banner banner_prodiet">
+    <div class="ct_banner">
+        <picture>
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/prodiet/banner_prodiet_2_1440x500.jpg') }}" alt="Slide 1" media="(min-width: 1024px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/prodiet/banner_prodiet_2_1024x500.jpg') }}" alt="Slide 1" media="(min-width: 601px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/prodiet/banner_prodiet_3_600x500.jpg') }}" alt="Slide 1" media="(min-width: 426px)">
+            <source class="lazy" data-srcset="{{ asset('img/banner/home/prodiet/banner_prodiet_2_425x550.jpg') }}" alt="Slide 1" media="(max-width: 425px)">
+            <img class="lazy" data-src="{{ asset('img/banner/home/prodiet/banner_prodiet_2_425x550.jpg') }}" alt="Slide 1">
+        </picture>
+
+        <a href="/prodiet" class="cta_banner">
+            <span>
+                Confira
+            </span>
+            
+            <svg width="20" height="13" viewBox="0 0 15 8" fill="none">
+                <path d="M1.00012 3.5C0.72398 3.5 0.500122 3.72386 0.500122 4C0.500122 4.27614 0.72398 4.5 1.00012 4.5V3.5ZM14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM1.00012 4.5H14V3.5H1.00012V4.5Z" fill="#ffffff"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+
+<div class="vitrine">
     <div class="splide ct_vitrine" id="vitrine_prodiet">
         {% set products = Products({
-            'limit': 8,
+            'limit': 10,
             'order': {'quantity_sold': 'desc'},
             'categories': [25]
         }) %}
         
+        <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev arrow__vitrine">
+                <svg width="13" height="23" viewBox="0 0 13 23" fill="none">
+                    <path d="M11 21.5L1.50508 12.0051C1.22613 11.7261 1.22613 11.2739 1.50508 10.9949L11 1.5" stroke="#383838" stroke-width="2.14286" stroke-linecap="round"/>
+                </svg>
+            </button>
+
+            <button class="splide__arrow splide__arrow--next arrow__vitrine">
+                <svg width="13" height="23" viewBox="0 0 13 23" fill="none">
+                    <path d="M2 1.5L11.4949 10.9949C11.7739 11.2739 11.7739 11.7261 11.4949 12.0051L2 21.5" stroke="#383838" stroke-width="2.14286" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
         <div class="splide__track">
             <ul class="splide__list">
                 {% for product in products %}

@@ -1,3 +1,14 @@
+<script>
+    // Mostrar telefone escondido no banner info
+    function showPhone(paragrafo) {
+        let botao = jQuery(paragrafo);
+        let telefone = botao.prev();
+
+        botao.css({'margin-top':'6px'});
+        telefone.css('visibility', 'visible');
+    }
+</script>
+
 <div class="banner_info splide" id="banner_info">
     <div class="splide__track">
         <ul class="splide__list">
@@ -40,11 +51,11 @@
 
                     <span>
                         <p>
-                            At√© 6x sem juros
+                            AtÈ 6x sem juros
                         </p>
 
                         <p>
-                            no cart√£o de cr√©tido
+                            no cart„o de crÈtido
                         </p>
                     </span>
                 </div>
@@ -63,7 +74,15 @@
                         </p>
 
                         <p>
-                            (xx)xxxxx-xxxx
+                            (19) 3236-2277
+                        </p>
+
+                        <p id="phone_dois_banner_info">(19) 99725-2277</p>
+
+                        <p id="ver_mais_banner_info" onclick="showPhone(this)">
+                            ver mais
+
+                            <svg width="15" height="8" viewBox="0 0 15 8" fill="none"><path d="M1.00012 3.5C0.72398 3.5 0.500122 3.72386 0.500122 4C0.500122 4.27614 0.72398 4.5 1.00012 4.5V3.5ZM14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM1.00012 4.5H14V3.5H1.00012V4.5Z" fill="#606060"></path></svg>
                         </p>
                     </span>
                 </div>
@@ -88,7 +107,7 @@
                         </p>
 
                         <p>
-                            das 08 √†s 18h
+                            das 08 ‡s 18h
                         </p>
                     </span>
                 </div>

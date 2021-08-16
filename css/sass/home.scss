@@ -1,31 +1,225 @@
 section.hero {
     position: relative;
     width: 100%;
+    height: auto;
     overflow: hidden;
 
-    div.texto_hero {
-        display: none;
+    picture {
+        img {
+            width: 100%;
+        }
     }
-}
 
-div.aviso_desconto {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: -22px;
-    
-    span {
+    div#slide_hero {
+        div.splide__arrows {
+            button {
+                &.splide__arrow--prev {
+                    left: 2em;
+                    transform: rotate(180deg);
+                }
+
+                &.splide__arrow--next {
+                    right: 2em;
+                }
+            }
+        }
+
+        div.splide__track {
+            ul.splide__list {
+                li.splide__slide {
+                    &.hero_prodiet {
+                        div.texto {
+                            position: absolute;
+                            top: 0;
+                            left: 45.5%;
+
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+
+                            font-size: calc(1em - 12%);
+                            font-family: Nunito;
+
+                            z-index: 1;
+
+                            h3 {
+                                color: #00367B;
+                                font-size: 5em;
+                                font-weight: 900;
+                                letter-spacing: -3px;
+
+                                margin: 0;
+                                margin-left: -5px;
+                            }
+
+                            span {
+                                display: block;
+
+                                &:nth-child(2) {
+                                    color: #ECB616;
+                                    text-transform: uppercase;
+                                    font-size: 2.5em;
+                                    font-weight: 900;
+
+                                    width: calc(65% + 5vw);
+                                    margin-top: 1.5%;
+                                }
+
+                                &:nth-child(3) {
+                                    color: #535353;
+                                    font-size: 2.5em;
+
+                                    width: 62%;
+                                    margin-top: 2%;
+                                }
+                            }
+
+                            a {
+                                position: relative;
+                                margin-top: 5%;
+                            }
+                        }
+                    }
+
+                    &.hero_covid {
+                        div.texto {
+                            position: absolute;
+                            top: 18%;
+                            left: 8%;
+                            display: flex;
+                            flex-direction: column;
+
+                            font-size: calc(1em + 1vw);
+
+                            span {
+                                &:nth-child(1) {
+                                    color: #090b60;
+                                    font-weight: 600;
+                                    text-transform: uppercase;
+                                    font-family: nunito;
+                                }
+
+                                &:nth-child(2) {
+                                    color: #090b60;
+                                    font-weight: 800;
+                                    text-transform: uppercase;
+                                    font-family: nunito;
+                                    font-size: 1.5em;
+                                }
+                            }
+
+                            h3 {
+                                color: #fff;
+                                font-family: Nunito;
+                                text-transform: uppercase;
+                                font-weight: 900;
+                                font-size: 1.5em;
+                                margin: 0;
+                                margin-top: 5px;
+                            }
+
+                            a.cta_banner {
+                                position: relative;
+                                margin-top: 38%;
+
+                                span {
+                                    color: #fff;
+                                    font-weight: 800;
+                                }
+                            }
+                        }
+                    }
+
+                    &.hero_body_protein {
+                        div.texto {
+                            position: absolute;
+                            top: 20%;
+                            right: 0;
+                            font-family: Poppins;
+                            text-transform: uppercase;
+                            font-size: calc(1vw + 55%);
+                            width: 49.5%;
+                            box-sizing: border-box;
+                            padding-right: 8%;
+
+                            display: flex;
+                            flex-direction: column;
+
+                            h3 {
+                                color: #fff;
+                                font-size: 2em;
+                                font-weight: 900;
+                                letter-spacing: -1pt;
+                                margin: 0;
+                                margin-top: 3%;
+                            }
+
+                            span {
+                                &:nth-child(2) {
+                                    font-weight: 800;
+                                    font-size: 2em;
+                                    color: #06003E;
+                                    margin-top: -2%;
+                                    letter-spacing: -1pt;
+                                }
+
+                                &:nth-child(3) {
+                                    color: #fff;
+                                    font-weight: 500;
+                                    margin-top: 6%;
+                                }
+
+                                &:nth-child(4) {
+                                    color: #06003E;
+                                    font-weight: 800;
+                                    margin-top: -1%;
+                                }
+                            }
+
+                            a.cta_banner {
+                                bottom: -40%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        content: "";
+        -webkit-box-shadow: inset 0px 6px 15px -7px #00000059;
+        box-shadow: inset 0px 6px 15px -7px #00000059;
+        z-index: 10;
+    }
+
+    div.aviso_desconto {
         position: relative;
-        background-color: #fff;
-        box-sizing: border-box;
-        padding: 15px;
-        font-family: "Nunito";
-        font-weight: 800;
-        font-size: 1.5em;
-        line-height: 20px;
-        text-align: center;
-        border-radius: 5px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: -2px;
+        
+        span {
+            position: relative;
+            width: 100%;
+            background-color: #fff;
+            box-sizing: border-box;
+            padding: 15px;
+            font-family: "Nunito";
+            font-weight: 800;
+            font-size: 1.5em;
+            line-height: 20px;
+            text-align: center;
+
+            box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.11);
+        }
     }
 }
 
@@ -39,6 +233,7 @@ div.banner_info {
             li.item {
                 display: flex;
                 justify-content: center;
+                align-items: flex-start;
 
                 div.ct_item {
                     display: flex;
@@ -72,126 +267,248 @@ div.banner_info {
             }
         }
     }
+
+    #phone_dois_banner_info {
+        margin-top: 6px;
+        visibility: hidden;
+        transition: 0.3s all ease-in-out;
+        pointer-events: all;
+    }
+
+    #ver_mais_banner_info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: all;
+
+        margin-top: -20px;
+        margin-left: -10px;
+
+        transition: 0.3s all ease-in-out;
+
+        cursor: pointer;
+        
+        svg {
+            position: absolute;
+            margin-right: -80px;
+
+            width: 15px;
+
+            transition: 0.3s all ease-in-out;
+        }
+
+        &:hover {
+            svg {
+                margin-right: -90px;
+            }
+        }
+    }
 }
 
-div.secao_categorias {
-    height: 220px;
-    margin-top: 15px;
+div.ct_secao_categorias {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 5vw;
 
-    div.splide__track {
-        ul.splide__list {
-            li.categoria {
-                height: 180px;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: space-around;
-                margin-right: 15px;
-                border-radius: 5px;
-                overflow: hidden;
-
-                &:before {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    content: "";
-                    background: linear-gradient(90deg, #7ab52d 0%, #568e0c 100%);
-                    background-position: right;
-                    transition: 0.3s ease-in-out;
-                }
-
-                a {
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 1;
-                }
-                
-                div.cima, div.baixo {
-                    position: relative;
-                    width: 100%;
-                    height: 50%;
-                    box-sizing: border-box;
-                    padding: 0 8%;
-
-                    font-family: 'Nunito';
-                    font-size: 2rem;
-
-                    span {
-                        color: #fff;
-                    }
-                }
-
-                div.cima {
-                    position: relative;
-                    width: 65%;
+    div.secao_categorias {
+        height: 220px;
+        margin-top: 15px;
+    
+        div.splide__track {
+            ul.splide__list {
+                li.categoria {
+                    height: 180px;
                     display: flex;
-                    align-items: center;
-
-                    span {
-                        font-weight: 900;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    margin-right: 15px;
+                    border-radius: 5px;
+                    overflow: hidden;
+    
+                    &:before {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        content: "";
+                        transition: 0.3s ease-in-out;
                     }
-                }
-
-                div.baixo {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-
-                    button {
-                        font-family: 'Nunito';
-                        font-weight: 500;
-                        font-size: .68em;
-                        text-transform: uppercase;
-                        border: 0;
-                        background-color: #064a06;
+    
+                    a {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                    }
+                    
+                    div.cima, div.baixo {
+                        position: relative;
+                        width: 100%;
+                        height: 50%;
                         box-sizing: border-box;
-                        padding: 8px;
-                        border-radius: 3px;
+                        padding: 0 8%;
+    
+                        font-family: 'Nunito';
+                        font-size: 2rem;
+    
+                        span {
+                            color: #fff;
+                        }
                     }
-                }
-
-                &.dieta_enteral {
-                    &:before {
-                        background: linear-gradient(90deg, #f29e3b 0%, #e06700 100%);
-                    }
-
-                    img {
-                        max-width: 190px;
+    
+                    div.cima {
+                        position: relative;
                         width: 65%;
-                        margin-right: -35px;
+                        display: flex;
+                        align-items: center;
+    
+                        span {
+                            font-weight: 900;
+                        }
+                    }
+    
+                    div.baixo {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+    
+                        button {
+                            font-family: 'Nunito';
+                            font-weight: 500;
+                            font-size: .68em;
+                            text-transform: uppercase;
+                            border: 0;
+                            background-color: #064a06;
+                            box-sizing: border-box;
+                            padding: 8px;
+                            border-radius: 3px;
+                        }
+
+                        img {
+                            transition: 0.2s all ease-in;
+                        }
+                    }
+    
+                    &.dieta_enteral {
+                        &:before {
+                            background: linear-gradient(90deg, #f29e3b 0%, #e06700 100%);
+                        }
+    
+                        img {
+                            max-width: 190px;
+                            width: 65%;
+                            margin-right: -35px;
+                        }
+                    }
+    
+                    &.suplemento_alimentar {
+                        &:before {
+                            background: linear-gradient(90deg, #299eb9 0%, #318296 100%);
+    
+                        }
+    
+                        img {
+                            max-width: 228px;
+                            width: 72%;
+                            margin-right: -65px;
+                        }
+                    }
+    
+                    &.infantil {
+                        &:before {
+                            background: linear-gradient(90deg, #e18252 0%, #e74737 100%);
+                        }
+    
+                        img {
+                            max-width: 190px;
+                            width: 65%;
+                            margin-right: -35px;
+                        }
+                    }
+
+                    &:hover {
+                        &:before {
+                            -webkit-animation: animate_bg_dieta_enteral 18s ease infinite!important;
+                                -moz-animation: animate_bg_dieta_enteral 18s ease infinite!important;
+                                    -o-animation: animate_bg_dieta_enteral 18s ease infinite!important;
+                                        animation: animate_bg_dieta_enteral 18s ease infinite!important;
+                        }
+                        
+                        div.baixo {
+                            span {
+                                text-decoration: underline;
+                            }
+
+                            img {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+
+                    @-webkit-keyframes animate_bg_dieta_enteral {
+                        0%{background-position:0% 51%!important}
+                        50%{background-position:100% 50%!important}
+                        100%{background-position:0% 51%!important}
+                    }
+                    @-moz-keyframes animate_bg_dieta_enteral {
+                        0%{background-position:0% 51%!important}
+                        50%{background-position:100% 50%!important}
+                        100%{background-position:0% 51%!important}
+                    }
+                    @-o-keyframes animate_bg_dieta_enteral {
+                        0%{background-position:0% 51%!important}
+                        50%{background-position:100% 50%!important}
+                        100%{background-position:0% 51%!important}
+                    }
+                    @keyframes animate_bg_dieta_enteral {
+                        0%{background-position:0% 51%!important}
+                        50%{background-position:100% 50%!important}
+                        100%{background-position:0% 51%!important}
                     }
                 }
+            }
+        }
+    }
+}
 
-                &.suplemento_alimentar {
-                    &:before {
-                        background: linear-gradient(90deg, #299eb9 0%, #318296 100%);
+div.header_home {
+    position: relative;
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 2.5vw;
 
-                    }
+    font-family: Nunito;
 
-                    img {
-                        max-width: 228px;
-                        width: 72%;
-                        margin-right: -65px;
-                    }
-                }
+    h3 {
+        font-weight: 900;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
 
-                &.infantil {
-                    &:before {
-                        background: linear-gradient(90deg, #e18252 0%, #e74737 100%);
-                    }
+    a {
+        display: inherit;
+        color: #606060;
+        font-family: Nunito;
+        font-weight: 500;
+        font-size: 1.5em;
 
-                    img {
-                        max-width: 190px;
-                        width: 65%;
-                        margin-right: -35px;
-                    }
-                }
+        svg {
+            margin-left: 5px;
+            transition: 0.3s all ease-in-out;
+        }
+
+        &:hover {
+            text-decoration: underline;
+
+            svg {
+                margin-left: 15px;
             }
         }
     }
@@ -205,19 +522,56 @@ div.vitrine {
     box-sizing: border-box;
     padding-left: 15px;
 
-    h3 {
-        position: relative;
-        width: 100%;
-        font-family: 'Nunito';
-        font-weight: 900;
-        font-size: 1.5em;
-        text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+
+    div.header_vitrine {
+        display: table;
+
+        h3 {
+            position: relative;
+            width: auto;
+            font-family: 'Nunito';
+            font-weight: 900;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            margin-left: 8px;
+            margin-bottom: 5px;
+    
+            order: 1;
+        }
+    
+        a.tituloVitrine {
+            display: inherit;
+            margin-left: 8px;
+            color: #606060;
+            font-family: Nunito;
+            font-weight: 500;
+            font-size: 1.5em;
+    
+            order: 2;
+
+            svg {
+                margin-left: 5px;
+                transition: 0.3s all ease-in-out;
+            }
+    
+            &:hover {
+                text-decoration: underline;
+
+                svg {
+                    margin-left: 15px;
+                }
+            }
+        }   
     }
 
     .ct_vitrine {
         position: relative;
         height: 96%;
         margin-top: 30px;
+
+        order: 3;
 
         div.splide__track {
             padding-top: 8px;
@@ -233,25 +587,16 @@ div.banner {
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-    padding: 0 18px;
-    margin: 100px 0;
-
-    a {
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1;
-    }
+    padding: 0 5vw;
+    margin: 30px 0 0 0;
 
     div.ct_banner {
+        position: relative;
         padding: 0;
         width: 100%;
-        max-width: 1200px;
-        height: auto;
+        max-width: 1440px;
         border-radius: 5px;
+        height: auto;
         overflow: hidden;
 
         img {
@@ -259,26 +604,87 @@ div.banner {
             width: 100%;
             object-fit: cover;
             max-height: 525px;
+            border-radius: 5px;
         }
     }
 
     &.banner_nestle {
         div.ct_banner {
-                background: linear-gradient(180deg, #0072B2, #98F5CD);
+            a {
+                bottom: 14%;
+                right: 8%;
+            }
+        }
+    }
 
-            img {
-                margin-bottom: -4px;
+    &.banner_danone {
+        div.ct_banner {
+            a {
+                bottom: 10%;
+                left: 6.5%;
             }
         }
     }
 
     &.banner_thickenup {
+        margin-bottom: 100px;
+
         div.ct_banner {
-            background: linear-gradient(180deg, #2a76b2, #10abd2);
-            
-            img {
-                margin-bottom: -4px;
+            a {
+                bottom: 15%;
+                right: 5%;
             }
         }
+    }
+
+    &.banner_prodiet {
+        div.ct_banner {
+            a {
+                bottom: 18%;
+                left: 5%;
+            }
+        }
+    }
+}
+
+a.cta_banner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 48px;
+    background-color: #414141;
+    border-radius: 4px;
+    transition: 0.3s all ease-in-out;
+
+    span {
+        color: #fff;
+        font-family: Nunito;
+        font-size: 12pt;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-right: 32px;
+    }
+
+    svg {
+        position: absolute;
+        right: 28px;
+        margin-top: -2px;
+        transition: 0.3s all ease-in-out;
+    }
+
+    &:hover {
+        background-color: #474747;
+
+        svg {
+            right: 20px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    div.ct_secao_categorias {
+        padding: 0 2.5vw;
     }
 }

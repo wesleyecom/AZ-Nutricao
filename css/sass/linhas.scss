@@ -1,0 +1,179 @@
+div.ct_secao_linhas {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 5vw;
+
+    margin-top: 130px;
+    margin-bottom: 30px;
+
+    div.secao_linhas {
+        height: 220px;
+        margin-top: 15px;
+    
+        div.splide__track {
+            ul.splide__list {
+                li.linha {
+                    height: 180px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    margin-right: 15px;
+                    border-radius: 5px;
+                    overflow: hidden;
+
+                    background-size: cover;
+
+                    a {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        left: 0;
+                        top: 0;
+            
+                        z-index: 1;
+                    }
+
+                    div.texto {
+                        position: absolute;
+                        top: 15%;
+                        left: 8%;
+                        width: 50%;
+                        
+                        box-sizing: border-box;
+            
+                        display: flex;
+                        flex-direction: column;
+                        text-transform: uppercase;
+                        font-family: Nunito;
+            
+                        span {
+                            color: #fff;
+            
+                            &:nth-child(1) {
+                                font-weight: 600;
+                                font-size: 1.3em;
+                            }
+            
+                            &:nth-child(2) {
+                                font-weight: 900;
+                                font-size: 2em;
+                            }
+                        }
+            
+                        svg {
+                            margin-top: 15px;
+                            transition: 0.3s all ease-in-out;
+                        }
+                    }
+
+                    &.linha_danone {
+                        background-image: url("../img/banner/home/linhas/bg_banner_linhas_danone_2.jpg");
+                    }
+            
+                    &.linha_nestle {
+                        background-image: url("../img/banner/home/linhas/bg_banner_linhas_nestle_2.jpg");
+                    }
+            
+                    &.linha_prodiet {
+                        background-image: url("../img/banner/home/linhas/bg_banner_linhas_prodiet_2.jpg");
+                    }
+
+                    img {
+                        position: absolute;
+                        right: 5%;
+                        bottom: -25%;
+                        width: 60%;
+            
+                        transition: 0.3s all ease-in-out;
+                    }
+            
+                    &:hover {
+                        div.texto {
+                            span:nth-child(2) {
+                                text-decoration: underline;
+                            }
+            
+                            svg {
+                                margin-left: 15px;
+                            }
+                        }
+            
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    div.ct_secao_linhas  {
+        padding: 0 2.5vw;
+
+        div.secao_linhas {
+            div.splide__track {
+                ul.splide__list {
+                    li.linha {
+                        img {
+                            width: 52%;
+                        }
+                    } 
+                }  
+            }
+        }
+    }                    
+}
+
+@media (min-width: 631px) and (max-width: 768px) {
+    div.ct_secao_linhas  {
+        div.secao_linhas {
+            div.splide__track {
+                ul.splide__list {
+                    li.linha {
+                        img {
+                            width: 60%;
+                            bottom: -21%;
+                        }
+                    } 
+                }  
+            }
+        }
+    }                    
+}
+
+@media (max-width: 630px) {
+    div.ct_secao_linhas  {
+        div.secao_linhas {
+            div.splide__track {
+                ul.splide__list {
+                    li.linha {
+                        img {
+                            width: 40%;
+                            bottom: -21%;
+                        }
+                    } 
+                }  
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    div.ct_secao_linhas  {
+        div.secao_linhas {
+            div.splide__track {
+                ul.splide__list {
+                    li.linha {
+                        img {
+                            width: 58%;
+                            bottom: -21%;
+                        }
+                    } 
+                }  
+            }
+        }
+    }
+}

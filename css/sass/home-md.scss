@@ -1,126 +1,43 @@
 section.hero {
-    height: 500px;
+    div#slide_hero {
+        div#slide_hero-track {
+            ul#slide_hero-list {
+                li {
+                    &:nth-child(1) {
+                        a.heroButton {
+                            top: 73%;
+                            left: 45.6%;
+                        }
+                    }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-image: url("../img/banner/bg_hero_lg.jpg");
-
-    div.texto_hero {
-        position: relative;
-        display: block;
-
-        width: 35%;
-        font-family: Nunito;
-        font-size: 2em;
-        text-transform: uppercase;
-        margin-left: 100px;
-
-        h2 {
-            font-weight: 900;
-            margin: 0;
-        }
-
-        p {
-            line-height: 32px;
-            margin-top: 5px;
-        }
-
-        div.preco {
-            color: #333;
-            font-size: .8em;
-            text-transform: none;
-            margin-top: 30px;
-
-            div.cima {
-                span {
-                    text-decoration: line-through;
-                }
-            }
-
-            div.baixo {
-                span {
-                    font-size: 2em;
-                    font-weight: 900;
-                    margin-right: 5px;
+                    &:nth-child(2) {
+                        a.heroButton {
+                            top: 73%;
+                            left: 5.1%;
+                        }
+                    }
                 }
             }
         }
-
-        a {
-            position: relative;
-            width: 200px;
-
-            display: flex;
-            justify-content: center;
-
-            color: #fff;
-            font-size: .9em;
-            font-weight: 800;
-            
-            background-color: #333;
-            box-sizing: border-box;
-            padding: 12px 15px;
-            border-radius: 5px;
-
-            margin-top: 18px;
-
-            transition: 0.3s all ease-in-out;
-
-            &:hover {
-                background-color: #151515;
-            }
-        }
-    }
-}
-
-div.aviso_desconto {
-    span {
-        width: 55%;
     }
 }
 
 div.banner_info {
     box-sizing: border-box;
-    padding: 0 10vw;
+    padding: 0 8vw;
+}
+
+div.header_home {
+    padding: 0 5vw;
 }
 
 div.vitrine {
     position: relative;
     width: 100%;
     height: 450px;
-    margin: 30px 0;
+    margin: 80px 0;
     box-sizing: border-box;
-    padding: 0 4vw;
-
-    .ct_vitrine {
-        &:before {
-            position: absolute;
-            width: 20px;
-            height: 91%;
-            background: linear-gradient(90deg, #0000001a, transparent);
-            top: 0;
-            left: 0;
-            z-index: 1;
-            content: "";
-        }
-
-        &:after {
-            position: absolute;
-            width: 20px;
-            height: 91%;
-            background: linear-gradient(-90deg, #0000001a, transparent);
-            top: 0;
-            right: 0;
-            z-index: 1;
-            content: "";
-        }
-
-        button.splide__arrow--next {
-            right: .8em;
-        }
-    }
+    padding: 0 4.5vw;
 }
 
 div.banner {

@@ -2,21 +2,21 @@
 // Checar mobile
 var isMobile = jQuery('#isMobile').data('isMobile');
 
-// Lógica dos botões dos cards de produtos  ( | comprar | + | - | )
+// Lï¿½gica dos botï¿½es dos cards de produtos  ( | comprar | + | - | )
 let btn_subtrair  = jQuery('.btn_minus');
 let btn_somar     = jQuery('.btn_plus');
 
-btn_subtrair.on('click', function(e) {
-    if (parseInt(jQuery(this).siblings('input').val()) > 1) {
-        let val = parseInt(jQuery(this).siblings('input').val());
-        jQuery(this).siblings('input').val(val-1);
+function logicaSubtrair(botao) {
+    if (parseInt(jQuery(botao).siblings('input').val()) > 1) {
+        let val = parseInt(jQuery(botao).siblings('input').val());
+        jQuery(botao).siblings('input').val(val-1);
     }
-});
+}
 
-btn_somar.on('click', function(e) {
-    let val = parseInt(jQuery(this).siblings('input').val());
-    jQuery(this).siblings('input').val(val+1);
-});
+function logicaSomar(botao) {
+    let val = parseInt(jQuery(botao).siblings('input').val());
+    jQuery(botao).siblings('input').val(val+1);
+}
 
 // Deletar um produto do carrinho de compras
 function deleteProduct(productId, preco, qtd, variantId) {
@@ -73,7 +73,7 @@ function deleteProduct(productId, preco, qtd, variantId) {
     });
 }
 
-// Pegar informações do carrinho de compras
+// Pegar informaï¿½ï¿½es do carrinho de compras
 function syncCart() {
     var dataSession = jQuery("html").attr("data-session");
 
@@ -289,7 +289,7 @@ jQuery('button#limparCarrinho').on('click', function() {
     `);
 });
 
-// Variações de produtos (card produto)
+// Variaï¿½ï¿½es de produtos (card produto)
 function mostraVariacao(button) {
     var ul = jQuery(button).parent().parent().children("ul#variacoes_card_produto");
     var a  = jQuery(button).parent().parent().children("a");

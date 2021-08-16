@@ -7,7 +7,3 @@ div.catalog_products div.ct_showcase_products ul {
       -ms-flex-pack: center;
           justify-content: center;
 }
-
-div.catalog_products div.ct_showcase_products ul li {
-  margin-right: 2vw;
-}

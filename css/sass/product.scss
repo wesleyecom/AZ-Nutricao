@@ -193,6 +193,18 @@ section#secao_produto {
                 }
             }
         }
+
+        div.ct_galeria_produto {
+            div#thumbnail_galeria_produto {
+                div.splide__track {
+                    ul.splide__list {
+                        li.splide__slide {
+                            background-size: contain !important;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     div.descricao_produto {
@@ -211,6 +223,11 @@ section#secao_produto {
             line-height: 28px!important;
             display: block!important;
             margin-bottom: 12px!important;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #393939;
         }
 
         p {
@@ -244,6 +261,7 @@ section#secao_produto {
 
         ul {
             list-style: disc!important;
+            padding-left: 40px;
 
             li {
                 font-size: 1.5em;
@@ -257,6 +275,7 @@ section#secao_produto {
 
             &.icone {
                 list-style: none!important;
+                padding-left: inherit;
 
                 li {
                     position: relative;
@@ -276,6 +295,31 @@ section#secao_produto {
                         background-size: contain;
                         content: "";
                     }
+                }
+            }
+
+            &.caracteristicas {
+                list-style: none!important;
+                display: flex;
+                flex-wrap: wrap;
+
+                li {
+                    position: relative;
+                    width: auto;
+                    display: block;
+                    box-sizing: border-box;
+                    padding: 5px 12px;
+                    
+                    background-color: #373737 !important;
+                    border-radius: 30px;
+                    
+                    color: #fff;
+                    font-family: Nunito !important;
+                    font-weight: 800;
+                    font-size: 1.2em;
+
+                    margin-right: 10px;
+                    margin-bottom: 10px;
                 }
             }
         }

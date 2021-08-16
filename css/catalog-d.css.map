@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,GAAG,AAAA,eAAe,CAAC;EACf,MAAM,EAAE,GAAG;CACd;;AAED,AAEQ,GAFL,AAAA,iBAAiB,CAChB,GAAG,AAAA,qBAAqB,CACpB,EAAE,CAAC;EACC,eAAe,EAAE,MAAM;CAO1B",
+    "sources": [
+        "sass/catalog-d.scss"
+    ],
+    "names": [],
+    "file": "catalog-d.css"
+}

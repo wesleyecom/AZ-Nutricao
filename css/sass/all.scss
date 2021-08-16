@@ -17,6 +17,8 @@ html {
     font-size: 10px!important;
 }
 
+
+
 body, .application, .site-main {
     position: relative;
     width: 100%;
@@ -68,10 +70,63 @@ div#openJivo {
     justify-content: center;
     right: 25px;
     bottom: 15px;
-    z-index: 10000000000;
+    z-index: 1000000000;
+
+    button#btnEscondeChat {
+        position: absolute;
+        border: 0;
+        background-color: #171717;
+        color: #fff;
+        font-family: Nunito;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-align: end;
+        width: 145px;
+        height: 29px;
+        margin: 29px 60px 0 0;
+        box-sizing: border-box;
+        padding-right: 30px;
+
+        overflow: hidden;
+        border-radius: 7px 7px 0 0;
+
+        &:before {
+            position: absolute;
+            left: 0;
+            width: 30px;
+            height: 100%;
+            content: '-';
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: #252525;
+
+            &:before {
+                background-color: #171717;
+            }
+        }
+
+        &.hidden {
+            bottom: -15px;
+            margin: 0;
+            width: 188px;
+
+            &:before {
+                content: "+";
+            }
+        }
+    }
 
     img {
         position: relative;
+        pointer-events: none;
+        display: none;
     }
 
     div {
@@ -83,6 +138,8 @@ div#openJivo {
         padding: 0 15px;
         display: flex;
         flex-direction: column;
+
+        display: none;
 
         a {
             display: flex;
@@ -132,11 +189,12 @@ div#openJivo {
 
 jdiv#jvlabelWrap {
     bottom: -50px!important;
+    display: none!important;
     transition: 0.2s all ease-in-out;
 }
 
-#openJivo {
-    opacity: 0;
+jdiv.__jivoMobileButton {
+    // display: none!important;
 }
 
 #isMobile {
@@ -216,7 +274,10 @@ li.card_produto {
     border-radius: 5px;
     box-shadow: 0 0 4px 0px #00000030;
     overflow: hidden;
-    transition: 0.3s all ease-in-out;
+
+    transition: 0.1s all ease-in-out;
+
+    position: relative;
 
     ul#variacoes_card_produto {
         position: absolute;
@@ -316,7 +377,9 @@ li.card_produto {
             img {
                 position: relative;
                 height: 100%;
-                object-fit: contain;                                
+                object-fit: contain;
+                
+                transition: 0.1s all ease-in-out;
             }
         }
 
@@ -332,7 +395,7 @@ li.card_produto {
 
             span.nome_produto {
                 position: relative;
-                height: 32%;
+                height: 50%;
                 overflow: hidden;
 
                 color: #273033;
@@ -340,7 +403,10 @@ li.card_produto {
                 font-weight: 900;
                 font-size: 1.5em;
                 line-height: 20px;
-                
+
+                display: block;
+
+                transition: 1s all ease-in-out;
             }
 
             span.preco_produto {
@@ -437,6 +503,97 @@ li.card_produto {
 
         &.hide {
             opacity: 0;
+        }
+    }
+
+    &:hover {
+        a {
+            div.foto_produto {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+div.tags {
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 50px 3vw;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
+    font-family: Nunito;
+
+    h3 {
+        position: relative;
+
+        font-size: 2em;
+        font-weight: 800;       
+        margin: 0;
+
+        &:after {
+            position: relative;
+            width: 100%;
+            height: 1px;
+            background-color: #ddd;
+            content: '';
+            display: block;
+            margin-top: 34px;
+        }
+    }
+
+    div.taglinks {
+        margin-top: 30px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        div.coluna {
+            display: table;
+
+            position: relative;
+            width: 25%;
+
+            a {
+                font-size: 1.5em;
+                font-weight: 600;
+                color: #6f808c;
+                text-transform: capitalize;
+                display: inherit;
+                margin: 10px 0;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    li.card_produto {
+        div.add_carrinho {
+            button.btn_add_carrinho {
+                font-size: 1.1em;
+            }
+        }
+    }
+
+    div.tags {
+        div.taglinks {
+            flex-wrap: wrap;
+
+            div.coluna {
+                width: 40%;
+                padding-left: 1.5vw;
+                margin-top: -10px;
+            }
         }
     }
 }
