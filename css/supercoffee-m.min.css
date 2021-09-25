@@ -1,0 +1,38 @@
+div.hero {
+  height: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+  background-image: url("../img/bg_supercoffee.jpg");
+  overflow: hidden; }
+  div.hero div.texto {
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 20px; }
+    div.hero div.texto h2 {
+      position: relative;
+      width: 80%;
+      font-size: 2.5em; }
+    div.hero div.texto p {
+      width: 80%;
+      font-size: 1.8em;
+      line-height: 1.5em; }
+  div.hero div#supercoffee {
+    margin-top: 30px; }
+    div.hero div#supercoffee div.splide__track ul.splide__list {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      div.hero div#supercoffee div.splide__track ul.splide__list li {
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
+        div.hero div#supercoffee div.splide__track ul.splide__list li div.card {
+          width: 80%;
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
+          justify-content: flex-start; }
+          div.hero div#supercoffee div.splide__track ul.splide__list li div.card img {
+            height: 200px; }

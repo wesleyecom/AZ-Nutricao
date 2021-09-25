@@ -1,39 +1,70 @@
-div#vitrine-catalogo {
-    display: none;
+div {
+	&#vitrine-catalogo {
+	  display: none;
+	}
+  
+	&.busca_avancada {
+	  position: relative;
+	  width: 100%;
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+	  padding: 50px;
+	  display: -webkit-box;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -webkit-box-orient: vertical;
+	  -webkit-box-direction: normal;
+	  -ms-flex-direction: column;
+	  flex-direction: column;
+	  -webkit-box-align: center;
+	  -ms-flex-align: center;
+	  align-items: center;
+	  -webkit-box-pack: center;
+	  -ms-flex-pack: center;
+	  justify-content: center;
+	  background-color: #3b4955;
+	  color: #fff;
+	  font-family: 'Nunito';
+  
+	  h1 {
+		font-size: 1.8em;
+		font-weight: 800;
+		line-height: 1.5em;
+		text-transform: uppercase;
+		text-align: center;
+		position: relative;
+		box-sizing: border-box;
+		width: 30%;
+	  }
+  
+	  a {
+		color: #fff;
+		font-size: 1.8em;
+		font-weight: 800;
+		text-transform: uppercase;
+		display: block;
+		padding: 15px 10%;
+		border: 1px solid #fff;
+		border-radius: 50px;
+		margin-top: 30px;
+		transition: 0.2s all ease-in-out;
+
+		&:hover {
+			background-color: #fff;
+			color: #3b4955;
+		}
+	  }
+	}
 }
 
-div.busca_avancada {
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #3e7112;
-    color: #fff;
-    font-family: 'Nunito';
+@media (max-width: 1024px) {
+	div.busca_avancada {
+		h1 {
+			width: 80%;
+		}
 
-    h1 {
-        font-size: 1.5em;
-        font-weight: 800;
-        text-transform: uppercase;
-        text-align: center;
-        position: relative;
-        box-sizing: border-box;
-        width: 30%;
-    }
-
-    a {
-        color: #fff;
-        font-size: 1.8em;
-        font-weight: 800;
-        text-transform: uppercase;
-        display: block;
-        padding: 15px 10%;
-        border: 1px solid #fff;
-        border-radius: 50px;
-        margin-top: 30px;
-    }
+		a {
+			padding: 15px 30%;
+		}
+	}
 }

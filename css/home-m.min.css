@@ -1,0 +1,317 @@
+section.hero {
+  position: relative;
+  overflow: hidden; }
+  section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto {
+    left: 55% !important;
+    font-size: calc(1em - 18%) !important; }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto span:nth-child(2) {
+      width: calc(65% + 15vw); }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto span:nth-child(3) {
+      width: 80%; }
+  section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_body_protein div.texto {
+    width: 44.5%;
+    font-size: calc(2vw - 4%);
+    padding-right: 4%; }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_body_protein div.texto a.cta_banner {
+      bottom: calc(3vw - 55%); }
+
+div.banner_info {
+  position: relative;
+  width: 100%;
+  margin: 30px 0 60px 0; }
+  div.banner_info div.splide__track ul.splide__list li.item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    div.banner_info div.splide__track ul.splide__list li.item div.ct_item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      div.banner_info div.splide__track ul.splide__list li.item div.ct_item img {
+        width: 70px; }
+      div.banner_info div.splide__track ul.splide__list li.item div.ct_item span {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 1.5em; }
+        div.banner_info div.splide__track ul.splide__list li.item div.ct_item span p {
+          font-family: 'Nunito Sans'; }
+          div.banner_info div.splide__track ul.splide__list li.item div.ct_item span p:first-child {
+            font-weight: 900;
+            margin-bottom: 4px; }
+
+div.secao_categorias {
+  height: 220px;
+  margin-top: 15px; }
+  div.secao_categorias div.splide__track ul.splide__list li.categoria {
+    height: 180px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin-right: 15px;
+    border-radius: 5px;
+    overflow: hidden; }
+    div.secao_categorias div.splide__track ul.splide__list li.categoria:before {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      content: "";
+      background: -webkit-gradient(linear, left top, right top, from(#7ab52d), to(#568e0c));
+      background: linear-gradient(90deg, #7ab52d 0%, #568e0c 100%);
+      background-position: right;
+      -webkit-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out; }
+    div.secao_categorias div.splide__track ul.splide__list li.categoria a {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; }
+    div.secao_categorias div.splide__track ul.splide__list li.categoria div.cima, div.secao_categorias div.splide__track ul.splide__list li.categoria div.baixo {
+      position: relative;
+      width: 100%;
+      height: 50%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 0 8%;
+      font-family: 'Nunito Sans';
+      font-size: 2rem; }
+    div.secao_categorias div.splide__track ul.splide__list li.categoria div.cima span, div.secao_categorias div.splide__track ul.splide__list li.categoria div.baixo span {
+      color: #fff; }
+    div.secao_categorias div.splide__track ul.splide__list li.categoria div.cima {
+      position: relative;
+      width: 65%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      div.secao_categorias div.splide__track ul.splide__list li.categoria div.cima span {
+        font-weight: 900; }
+    div.secao_categorias div.splide__track ul.splide__list li.categoria div.baixo {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      div.secao_categorias div.splide__track ul.splide__list li.categoria div.baixo button {
+        font-family: 'Nunito Sans';
+        font-weight: 500;
+        font-size: .68em;
+        text-transform: uppercase;
+        border: 0;
+        background-color: #064a06;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 8px;
+        border-radius: 3px; }
+    div.secao_categorias div.splide__track ul.splide__list li.categoria.dieta_enteral:before {
+      background: -webkit-gradient(linear, left top, right top, from(#f29e3b), to(#e06700));
+      background: linear-gradient(90deg, #f29e3b 0%, #e06700 100%); }
+    div.secao_categorias div.splide__track ul.splide__list li.categoria.dieta_enteral img {
+      max-width: 190px;
+      width: 65%;
+      margin-right: -35px; }
+    div.secao_categorias div.splide__track ul.splide__list li.categoria.suplemento_alimentar:before {
+      background: -webkit-gradient(linear, left top, right top, from(#299eb9), to(#318296));
+      background: linear-gradient(90deg, #299eb9 0%, #318296 100%); }
+    div.secao_categorias div.splide__track ul.splide__list li.categoria.suplemento_alimentar img {
+      max-width: 228px;
+      width: 72%;
+      margin-right: -65px; }
+    div.secao_categorias div.splide__track ul.splide__list li.categoria.infantil:before {
+      background: -webkit-gradient(linear, left top, right top, from(#e18252), to(#e74737));
+      background: linear-gradient(90deg, #e18252 0%, #e74737 100%); }
+    div.secao_categorias div.splide__track ul.splide__list li.categoria.infantil img {
+      max-width: 190px;
+      width: 65%;
+      margin-right: -35px; }
+
+div.vitrine {
+  position: relative;
+  width: 100%;
+  margin: 30px 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 15px; }
+  div.vitrine h3 {
+    position: relative;
+    width: 100%;
+    font-family: 'Nunito Sans';
+    font-weight: 900;
+    font-size: 1.5em;
+    text-transform: uppercase; }
+  div.vitrine .ct_vitrine {
+    position: relative;
+    height: 96%;
+    padding-bottom: 45px; }
+    div.vitrine .ct_vitrine div.splide__track {
+      padding-top: 8px;
+      padding-bottom: 8px; }
+    div.vitrine .ct_vitrine div.splide__arrows {
+      display: none; }
+
+div.banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 2.5vw;
+  margin: 30px 0; }
+  div.banner div.ct_banner {
+    padding: 0;
+    height: auto;
+    border-radius: 5px;
+    overflow: hidden; }
+    div.banner div.ct_banner img {
+      position: relative;
+      width: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+
+@media (min-width: 601px) and (max-width: 1023px) {
+  div.banner.banner_nestle div.ct_banner a {
+    bottom: 15%;
+    right: 4.5%; }
+  div.banner.banner_danone div.ct_banner a {
+    bottom: 8.5%;
+    left: 6.5%; }
+  div.banner.banner_thickenup div.ct_banner a {
+    bottom: 22%; }
+  div.banner.banner_prodiet div.ct_banner a {
+    left: 4.8%; } }
+
+@media (max-width: 800px) {
+  section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li:nth-child(1) div.texto {
+    left: 52% !important;
+    font-size: calc(1em - 35%) !important; } }
+
+@media (min-width: 426px) and (max-width: 600px) {
+  section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto {
+    left: 5% !important;
+    top: 9%;
+    display: block; }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto span:nth-child(2) {
+      width: calc(65% + 25vw); }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto span:nth-child(3) {
+      width: 100%; }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto a.cta_banner {
+      width: 32%; }
+      section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto a.cta_banner span {
+        font-size: calc(1em + 1.5vw); }
+      section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto a.cta_banner svg {
+        right: 4vw; }
+  section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_covid div.texto {
+    top: 10%;
+    font-size: calc(1em + 1.5vw); }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_covid div.texto a {
+      position: relative;
+      margin-top: 38vw;
+      width: 75%; }
+  section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_body_protein div.texto {
+    width: 90%;
+    height: 100%;
+    top: 3%;
+    font-size: calc(1.3vw + 55%); }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_body_protein div.texto a.cta_banner {
+      bottom: 8%; }
+  div.banner.banner_nestle div.ct_banner a {
+    bottom: 54%;
+    right: 7.5%; }
+  div.banner.banner_danone div.ct_banner a {
+    bottom: 5.5%;
+    left: 4%; }
+  div.banner.banner_thickenup div.ct_banner a {
+    bottom: unset;
+    right: unset;
+    left: 8.5%;
+    top: 39%;
+    width: 32%; }
+  div.banner.banner_prodiet div.ct_banner a {
+    bottom: 42%;
+    width: 28%;
+    left: 7.5%; } }
+
+@media (max-width: 425px) {
+  section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto {
+    display: block;
+    top: 5%;
+    left: 7% !important;
+    font-size: calc(1em - 8%) !important; }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto span:nth-child(2) {
+      width: 90%;
+      margin-top: 4%; }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto span:nth-child(3) {
+      width: 90%;
+      margin-top: 7%; }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_prodiet div.texto a.cta_banner {
+      margin-top: 10%; }
+  section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_covid div.texto {
+    top: 5%;
+    font-size: calc(1em + 2.5vw); }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_covid div.texto a.cta_banner {
+      position: relative;
+      margin-top: 30%; }
+  section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_body_protein div.texto {
+    width: 92%;
+    top: 8%;
+    font-size: 4vw; }
+    section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li.hero_body_protein div.texto a.cta_banner {
+      bottom: -60%; }
+  div.banner.banner_nestle div.ct_banner a {
+    bottom: unset;
+    top: 38%;
+    right: 6.5%; }
+  div.banner.banner_danone div.ct_banner a {
+    left: unset;
+    right: 5%;
+    bottom: 6%; }
+  div.banner.banner_thickenup div.ct_banner a {
+    bottom: unset;
+    right: unset;
+    top: 34%;
+    left: 11.5%; }
+  div.banner.banner_prodiet div.ct_banner a {
+    bottom: unset;
+    left: 8.5%;
+    top: 40%; } }
+
+@media (max-width: 500px) {
+  div.banner div.ct_banner a {
+    width: 35%;
+    height: calc(48px - 1.5vw); }
+    div.banner div.ct_banner a span {
+      font-size: calc(1em + 0.8vw); }
+    div.banner div.ct_banner a svg {
+      right: 5vw; } }

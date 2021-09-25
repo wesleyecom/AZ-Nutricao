@@ -1,9 +1,0 @@
-div.header_catalog {
-  height: 8vw;
-}
-
-div.catalog_products div.ct_showcase_products ul {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}

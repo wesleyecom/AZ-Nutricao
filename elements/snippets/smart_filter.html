@@ -1,0 +1,48 @@
+<aside class="filter">
+    <form class="filter__form" method="get">
+        <input type="hidden" name="loja" value="{{ store.id }}">
+        {% if search.word %}
+        <input name="palavra_busca" type="hidden" value="{{ search.word }}">
+        {% endif %}
+
+        {% if category.id %}
+        <input type="hidden" name="categoria" value="{{ category.id }}">
+        {% endif %}
+
+        {% if filter_options.prices %}
+        <section class="filter__block filter__block--prices">
+            <h4 class="filter__title">Preço</h4>
+            <ul class="filter__list">
+                {% for price in filter_options.prices.buckets %}
+                {% set price_applied = false %}
+
+                <li class="filter__item">
+                    {% for price_apply in filtered_options.price %}
+                    {% set price_applied = price.from and price.to in price_apply ? true : false %}
+                    {% endfor %}
+
+                    <input id="{{ price.from }}-{{ price.to }}" class="filter__input filter__input--price"
+                        type="checkbox" name="prices[]" value="{{ price.from }},{{ price.to }}"
+                        {{ price_applied ? 'checked' }}>
+                    <label class="filter__label" for="{{ price.from }}-{{ price.to }}">
+                        <span class="filter__name filter__name--price">
+                            {% if loop.index == 1 %}
+                            Até {{ settings.currency }} {{ price.to|currency }}
+                            {% elseif loop.index == filter_options.prices.buckets|length  %}
+                            Acima de {{ settings.currency }} {{ price.from|currency }}
+                            {% else %}
+                            De {{ settings.currency }} {{ price.from|currency }} à {{ settings.currency }}
+                            {{ price.to|currency }}
+                            {% endif %}
+                        </span>
+                    </label>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+
+        <button type="submit" class="filter__button">{{ Translation('filtrar') }}</button>
+    </form>
+</aside>

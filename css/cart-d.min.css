@@ -1,0 +1,6 @@
+div.cart {
+  width: 30%;
+  right: -32%; }
+
+div.cart.open {
+  right: 0; }

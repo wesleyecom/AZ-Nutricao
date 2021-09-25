@@ -28,7 +28,7 @@ jQuery(document).ready(function() {
 
 ul_marcas = jQuery('ul#ulMarcas');
 
-// Fun��o para renderizar varia��es de produtos
+// Função para renderizar variações de produtos
 function achaVariacao(idProduto, button) {
     // Encontrar e renderizar varia��es do produto
     var ul = jQuery(button).parent().parent().children("ul#variacoes_card_produto");
@@ -46,7 +46,7 @@ function achaVariacao(idProduto, button) {
         // console.log(produto);
         ul.html("");
 
-        ul.append("<strong>Escolha uma varia��o</strong>");
+        ul.append("<strong>Escolha uma varia&ccedil;&atilde;o</strong>");
 
         jQuery(produto.Product.Variant).each(function(el) {
             var variantId = this.id;
@@ -55,7 +55,6 @@ function achaVariacao(idProduto, button) {
                 method: "GET",
                 url: "/web_api/variants/" + variantId
             }).done(function( variacao, textStatus, jqXHR ) {
-                // console.log(variacao);
 
                 ul.append(`
                     <li id="${variacao.Variant.id}" onclick="addCart(${idProduto}, ${produto.Product.price}, 1, ${variacao.Variant.id})">${variacao.Variant.Sku[0].value}</li>
@@ -63,7 +62,7 @@ function achaVariacao(idProduto, button) {
     
             }).fail(function( jqXHR, status, errorThrown ){
                 var response = jQuery.parseJSON( jqXHR.responseText );
-                console.log(response);
+                // console.log(response);
             });
         });
 
@@ -78,186 +77,94 @@ function achaVariacao(idProduto, button) {
     });
 }
 
-function filtraProdutos(dataMarca, pai) {
+function filtraProdutos(dataMarca) {
     let marca = dataMarca;
 
     let params = {};
 
-    if (pai == 0) {
-        params["query"] = marca;
-        params["limit"] = "80";
+    params["query"] = marca;
+    params["limit"] = "80";
 
-        jQuery.ajax({
-            // Search API
-            method: "GET",
-            url: "/web_api/search/",
-            data: params
-        }).done(function( response, textStatus, jqXHR ) {
-            console.log(response);
-    
-            let produtos = jQuery('div.catalog_products > div.ct_showcase_products > ul');
-    
-            produtos.html("");
-    
-            jQuery(response.Products).each(function() {
-                console.log(this);
-                
-                let urlProduto = this.Product.url.https;
-                let nomeProduto = this.Product.name;
-                let precoProduto = this.Product.price.replace(".", ",");
-    
-                if(this.Product.has_variation == "1") {
-                    produtos.append(`
-                        <li class="card_produto">
-                            <ul id="variacoes_card_produto">
-                            </ul>
+    jQuery.ajax({
+        // Search API
+        method: "GET",
+        url: "/web_api/search/",
+        data: params
+    }).done(function( response, textStatus, jqXHR ) {
+        // console.log(response);
+
+        let produtos = jQuery('div#showcase_products > ul');
+
+        produtos.html("");
+
+        jQuery(response.Products).each(function() {
+            // console.log(this);
+            
+            let urlProduto = this.Product.url.https;
+            let nomeProduto = this.Product.name;
+            let precoProduto = this.Product.price.replace(".", ",");
+
+            if(this.Product.has_variation == "1") {
+                produtos.append(`
+                    <li class="card_produto">
+                        <ul id="variacoes_card_produto">
+                        </ul>
+                        
+                        <a id="link_card_produto" href="${urlProduto}">
+                            <div class="foto_produto">
+                                <img src="https://images.tcdn.com.br/files/773127/themes/67/img/load.gif?c26b25a104ccbd6c740041eea842332e1626374517" data-srcset="${this.Product.ProductImage[0].https}" alt="Foto produto" class="lazy" srcset="${this.Product.ProductImage[0].https}">
+                            </div>
                             
-                            <a id="link_card_produto" href="${urlProduto}">
-                                <div class="foto_produto">
-                                    <img src="https://images.tcdn.com.br/files/773127/themes/67/img/load.gif?c26b25a104ccbd6c740041eea842332e1626374517" data-srcset="${this.Product.ProductImage[0].https}" alt="Foto produto" class="lazy" srcset="${this.Product.ProductImage[0].https}">
-                                </div>
+                            <div class="info_produto">
+                                <span class="nome_produto">${nomeProduto}</span>
                                 
-                                <div class="info_produto">
-                                    <span class="nome_produto">${nomeProduto}</span>
-                                    
-                                    <span class="preco_produto">R$ ${precoProduto}</span>
-                                </div>
-                            </a>
-                
-                            <div id="btn_add_carrinho" class="add_carrinho">
-                                <div class="qtd">
-                                    <button class="btn_minus" onClick="logicaSubtrair(this)">-</button>
-                                    <input type="text" value="1" minlength="1">
-                                    <button class="btn_plus" onClick="logicaSomar(this)">+</button>
-                                </div>
-                                <button class="btn_add_carrinho" onclick="achaVariacao(${this.Product.id}, this)">Adicionar ao carrinho</button>
+                                <span class="preco_produto">R$ ${precoProduto}</span>
                             </div>
-                        </li>
-                    `);
-                }
-                else {
-                    produtos.append(`
-                        <li class="card_produto">
-                            <a id="link_card_produto" href="${urlProduto}">
-                                <div class="foto_produto">
-                                    <img src="https://images.tcdn.com.br/files/773127/themes/67/img/load.gif?c26b25a104ccbd6c740041eea842332e1626374517" data-srcset="${this.Product.ProductImage[0].https}" alt="Foto produto" class="lazy" srcset="${this.Product.ProductImage[0].https}">
-                                </div>
-                                
-                                <div class="info_produto">
-                                    <span class="nome_produto">${nomeProduto}</span>
-                                    
-                                    <span class="preco_produto">R$ ${precoProduto}</span>
-                                </div>
-                            </a>
-                
-                            <div id="btn_add_carrinho" class="add_carrinho">
-                                <div class="qtd">
-                                    <button class="btn_minus" onClick="logicaSubtrair(this)">-</button>
-                                    <input type="text" value="1" minlength="1">
-                                    <button class="btn_plus" onClick="logicaSomar(this)">+</button>
-                                </div>
-                                <button class="btn_add_carrinho"  onclick="addCart(${this.Product.id}, ${this.Product.price}, jQuery(this).siblings('div.qtd').children('input').val(), '')">Adicionar ao carrinho</button>
+                        </a>
+            
+                        <div id="btn_add_carrinho" class="add_carrinho">
+                            <div class="qtd">
+                                <button class="btn_minus" onClick="logicaSubtrair(this)">-</button>
+                                <input type="text" value="1" minlength="1">
+                                <button class="btn_plus" onClick="logicaSomar(this)">+</button>
                             </div>
-                        </li>
-                    `);
-                }
-            })
-    
-        }).fail(function( jqXHR, status, errorThrown ){
-            var response = $.parseJSON( jqXHR.responseText );
-            console.log(response);
-        });
-    }
-    else {
-        params["category_id"] = marca;
-        params["order"] = {'id': 'asc'},
-
-        
-        jQuery.ajax({
-            // Search API
-            // method: "GET",
-            // url: "/web_api/products/",
-            // data: params
-
-            // Products API
-            method: "GET",
-            url: "/web_api/products/"+marca
-        }).done(function( response, textStatus, jqXHR ) {
-            console.log(response);
-
-            let produtos = jQuery('div.catalog_products > div.ct_showcase_products > ul');
-    
-            produtos.html("");
-    
-            jQuery(response.Products).each(function() {
-                console.log(this)
-                
-                if (this.Product.id != "51") {
-                    if(this.Product.has_variation == "1") {
-    
-                        produtos.append(`
-                            <li class="card_produto">
-                                <ul id="variacoes_card_produto">
-                                </ul>
+                            <button class="btn_add_carrinho" onclick="achaVariacao(${this.Product.id}, this)">Adicionar ao carrinho</button>
+                        </div>
+                    </li>
+                `);
+            }
+            else {
+                produtos.append(`
+                    <li class="card_produto">
+                        <a id="link_card_produto" href="${urlProduto}">
+                            <div class="foto_produto">
+                                <img src="https://images.tcdn.com.br/files/773127/themes/67/img/load.gif?c26b25a104ccbd6c740041eea842332e1626374517" data-srcset="${this.Product.ProductImage[0].https}" alt="Foto produto" class="lazy" srcset="${this.Product.ProductImage[0].https}">
+                            </div>
+                            
+                            <div class="info_produto">
+                                <span class="nome_produto">${nomeProduto}</span>
                                 
-                                <a id="link_card_produto" href="${this.Product.url.https}">
-                                    <div class="foto_produto">
-                                        <img src="https://images.tcdn.com.br/files/773127/themes/67/img/load.gif?c26b25a104ccbd6c740041eea842332e1626374517" data-srcset="${this.Product.ProductImage[0].https}" alt="Foto produto" class="lazy" srcset="${this.Product.ProductImage[0].https}">
-                                    </div>
-                                    
-                                    <div class="info_produto">
-                                        <span class="nome_produto">${this.Product.name}</span>
-                                        
-                                        <span class="preco_produto">R$ ${this.Product.price}</span>
-                                    </div>
-                                </a>
-                    
-                                <div id="btn_add_carrinho" class="add_carrinho">
-                                    <div class="qtd">
-                                        <button class="btn_minus" onClick="logicaSubtrair(this)">-</button>
-                                        <input type="text" value="1" minlength="1">
-                                        <button class="btn_plus" onClick="logicaSomar(this)">+</button>
-                                    </div>
-                                    <button class="btn_add_carrinho" onclick="achaVariacao(${this.Product.id}, this)">Adicionar ao carrinho</button>
-                                </div>
-                            </li>
-                        `);
-                    }
-                    else {
-                        produtos.append(`
-                            <li class="card_produto">
-                                <a id="link_card_produto" href="${this.Product.url.https}">
-                                    <div class="foto_produto">
-                                        <img src="https://images.tcdn.com.br/files/773127/themes/67/img/load.gif?c26b25a104ccbd6c740041eea842332e1626374517" data-srcset="${this.Product.ProductImage[0].https}" alt="Foto produto" class="lazy" srcset="${this.Product.ProductImage[0].https}">
-                                    </div>
-                                    
-                                    <div class="info_produto">
-                                        <span class="nome_produto">${this.Product.name}</span>
-                                        
-                                        <span class="preco_produto">R$ ${this.Product.price}</span>
-                                    </div>
-                                </a>
-                    
-                                <div id="btn_add_carrinho" class="add_carrinho">
-                                    <div class="qtd">
-                                        <button class="btn_minus" onClick="logicaSubtrair(this)">-</button>
-                                        <input type="text" value="1" minlength="1">
-                                        <button class="btn_plus" onClick="logicaSomar(this)">+</button>
-                                    </div>
-                                    <button class="btn_add_carrinho"  onclick="addCart(${this.Product.id}, ${this.Product.price}, jQuery(this).siblings('div.qtd').children('input').val(), '')">Adicionar ao carrinho</button>
-                                </div>
-                            </li>
-                        `);
-                    }
-                }
-            });
+                                <span class="preco_produto">R$ ${precoProduto}</span>
+                            </div>
+                        </a>
+            
+                        <div id="btn_add_carrinho" class="add_carrinho">
+                            <div class="qtd">
+                                <button class="btn_minus" onClick="logicaSubtrair(this)">-</button>
+                                <input type="text" value="1" minlength="1">
+                                <button class="btn_plus" onClick="logicaSomar(this)">+</button>
+                            </div>
+                            <button class="btn_add_carrinho"  onclick="addCart(${this.Product.id}, ${this.Product.price}, jQuery(this).siblings('div.qtd').children('input').val(), '')">Adicionar ao carrinho</button>
+                        </div>
+                    </li>
+                `);
+            }
+        })
 
-
-        }).fail(function( jqXHR, status, errorThrown ){
-            var response = $.parseJSON( jqXHR.responseText );
-            console.log(response);
-        });
-    }
+    }).fail(function( jqXHR, status, errorThrown ){
+        var response = $.parseJSON( jqXHR.responseText );
+        console.log(response);
+    });
 }
 
 ul_marcas.children('li').on('click', function() {
@@ -265,11 +172,6 @@ ul_marcas.children('li').on('click', function() {
         ul_marcas.children('li.selected').removeClass('selected');
         jQuery(this).addClass('selected');
 
-        filtraProdutos(jQuery(this).data('marca'), 0);
+        filtraProdutos(jQuery(this).data('marca'));
     }
-});
-
-// impar filtro (selecionar marca pai - todos os produtos da marca)
-jQuery('div.pai').on('click', function() {
-    filtraProdutos(jQuery(this).data('marca'), 1);
 });

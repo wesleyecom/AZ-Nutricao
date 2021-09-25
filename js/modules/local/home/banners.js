@@ -9,6 +9,7 @@ new Splide( '#slide_hero', {
 
     breakpoints: {
         '769': {
+            type   : 'loop',
             arrows : false,
         },
     }
@@ -19,7 +20,7 @@ new Splide( '#banner_info', {
     arrows : false,
     pagination: false,
     lazyLoad: 'nearby',
-    perPage: 4,
+    perPage: 5,
     // autoplay: true,
     interval: 2500,
 
@@ -57,10 +58,12 @@ new Splide( '#secao_categorias', {
 
     breakpoints: {
         '1023': {
+            type   : 'loop',
             perPage: 2,
         },
 
         '630': {
+            type   : 'loop',
             perPage: 1,
             pagination: true,
         }
@@ -80,10 +83,12 @@ new Splide( '#secao_linhas', {
 
     breakpoints: {
         '1023': {
+            type   : 'loop',
             perPage: 2,
         },
 
         '630': {
+            type   : 'loop',
             perPage: 1,
             pagination: true,
         }

@@ -1,0 +1,46 @@
+.new-smart-filter {
+  background: #fff;
+  padding: 10%;
+  border: 1px solid #e2e2e2;
+  margin-top: 30px; }
+  .new-smart-filter .filter__block {
+    margin: 10% 0; }
+    .new-smart-filter .filter__block--properties {
+      overflow: auto;
+      max-height: 385px; }
+      .new-smart-filter .filter__block--properties::-webkit-scrollbar {
+        background: transparent;
+        width: 10px; }
+      .new-smart-filter .filter__block--properties::-webkit-scrollbar-thumb {
+        background-color: #ccc; }
+  .new-smart-filter .filter__title {
+    font-size: 1.5rem;
+    padding: 5% 0; }
+  .new-smart-filter .filter__list {
+    font-size: 1.3rem; }
+  .new-smart-filter .filter__label {
+    padding-left: 5%; }
+  .new-smart-filter .filter__text--count {
+    font-size: 1rem;
+    color: #a2a2a2;
+    padding: 5px; }
+  .new-smart-filter .filter__button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    font-size: 1.7rem;
+    background-color: #525252;
+    color: #fff; }
+  .new-smart-filter .filter__name img {
+    border-radius: 19px;
+    margin: 5px 0; }
+  .new-smart-filter .open-filters {
+    color: #000;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    overflow: hidden;
+    padding-bottom: 0;
+    font-family: "Roboto",sans-serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 2.4rem; }

@@ -1,109 +1,17 @@
-.suggestion {
-    background: #fff;
-    border: 1px solid #ebebeb;
-    box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
-    display: block;
-    left: 0;
-    max-width: none;
-    min-width: 0;
-    padding: 0;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    
-    @media (max-width: $sm){
-        display: block;
-        left: 50%;
-        transform: translateX(-50vw);
-        width: 100vw;
-    }
-    
-    &.is-hidden{
-        display: none;
-    }
-}
-
-.suggestion-title{
-    background: none !important;
-    border-bottom: 1px solid #ebebeb;
-    color: #010101;
-    display: block;
-    margin: 0 0 10px;
-    padding-bottom: 10px;
-    text-indent: 0;
-    text-transform: uppercase;
-    @include typo(1.6rem, 400, $font, 1.7rem);
-}
-
-.suggestion-words {
-    padding: 15px;
-    width: 100%;
-    
-    span {
-        border: none;
-        color: #5a5a5a;
-        display: block;
-        margin: 0 0 10px;
-        @include typo(1.5rem, 400, $font, 1.5rem);
-        
-        &:hover{
-            cursor: pointer;
-        }
-    }
-}
-
-
-.suggestion-products {
-    background-color: #fff;
-    padding: 15px;
-    width: 100%;
-    
-    @media (max-width: $sm){
-        width: 100%;
-    }
-    
-    a {
-        display: flex;
-        align-items: center;
-        padding: 15px 0;
-        
-        &:hover{
-            background: #f7f7f7;
-            text-decoration: none;
-        }
-    }
-    
-    span{
-        color: #5a5a5a;
-        display: block;
-        @include typo(1.5rem, 400, $font, 1.5rem);
-    }
-    
-    .suggestion-img {
-        background: #fff;
-        border: 1px solid #ebebeb;
-        height: 90px;
-        margin: 0 15px 0 0;
-        overflow: hidden;
-        text-align: center;
-        width: 90px;
-        
-        img{
-            border: 1px solid #ebebeb;
-            max-height: 90px;
-        }
-    }
-    
-    .suggestion-product{
-        margin: 0;
-    }
-    
-    .idp{
-        display: none;
-    }
-}
-
-.suggestion-desc{
-    flex: 1;
-    overflow: hidden;
+/* Error: Undefined variable.
+ *    ,
+ * 14 |     @media (max-width: $sm){
+ *    |                        ^^^
+ *    '
+ *   css/sass/suggestion.scss 14:24  root stylesheet */
+ body {
+	&::before {
+		font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+		white-space: pre;
+		display: block;
+		padding: 1em;
+		margin-bottom: 1em;
+		border-bottom: 2px solid black;
+		content: "Error: Undefined variable.\a    \2577 \a 14 \2502      @media (max-width: $sm){\a    \2502                         ^^^\a    \2575 \a   css/sass/suggestion.scss 14:24  root stylesheet";
+	}
 }

@@ -1,19 +1,53 @@
+// current page
+// var page = jQuery('#page').data('page');
+
 // Menu scroll page
 (function(jQuery){
     jQuery(document).ready(function () {
-  
         jQuery(window).scroll(function () {
             var topScroll = Number(jQuery(window).scrollTop());
   
             if (topScroll >= 300) {
                 jQuery("header").addClass('mini');
+                
+                if (jQuery(window).width() >= 1024) {
+                    jQuery("header > .baixo > .barra_busca").removeClass('mini');
+                    jQuery("#contato_header").css("display", "none");
+                }
+
             } else {
                 jQuery("header").removeClass('mini');
+
+                if (jQuery(window).width() >= 1024) {
+                    jQuery("header > .baixo > .barra_busca").addClass('mini');
+                    jQuery("#contato_header").css("display", "flex");
+                }
             }
         });
   
     });
 })(jQuery);
+
+// Searchbar
+jQuery("#barra_busca").on('focus', function() {
+    if (!jQuery("header").hasClass('mini')) {
+        if (jQuery(window).width() >= 1024) {
+            jQuery("#contato_header").fadeOut();
+            jQuery("#form_busca").css("width", "38%");
+            jQuery("#form_busca").css("border-color", "#404040");
+        }
+    }
+});
+
+jQuery("#barra_busca").focusout(function(){
+    if (!jQuery("header").hasClass('mini')) {
+        if (jQuery(window).width() >= 1024) {
+            jQuery("#contato_header").fadeIn();
+            jQuery("#form_busca").css("width", "16.5%");
+            jQuery("#form_busca").css("border-color", "#cecece");
+        }
+    }
+});
 
 // Hamburger menu
 let iconeHamburger = jQuery('#svg_hamburger');

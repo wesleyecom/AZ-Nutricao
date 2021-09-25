@@ -1,19 +1,15 @@
 <h1>
-    <img alt="Logo AZ NutriÁ„o" title="Logo AZ NutriÁ„o" src="./logo_az.svg" />
+    <img alt="Logo AZ Nutri√ß√£o" title="Logo AZ Nutri√ß√£o" src="./logo_az.svg" />
 </h1>
 
-# AZ NutriÁ„o
+# AZ Nutri√ß√£o
 
-<h4>?? Projeto em construÁ„o... ??</h4>
+<h4>ü§ñ Projeto em constru√ß√£o... ü§ñ</h4>
 
 <br/>
 
 <p>
-Projeto de desenvolvimento de um sistema de e-commerce para a empresa AZ NutriÁ„o.
-</p>
-
-<p>
-O projeto usa a plataforma de Tray Commerce, seguindo suas normas de desenvolvimento. Desse modo, as tecnologias utilizadas s„o:
+Projeto de desenvolvimento de um sistema de e-commerce para a empresa AZ Nutri√ß√£o, utilizando a plataforma da Tray Commerce. Desse modo, as tecnologias utilizadas s√£o:
 </p>
 
 <ul>
@@ -24,6 +20,9 @@ O projeto usa a plataforma de Tray Commerce, seguindo suas normas de desenvolvim
         <strong>SASS, jQuery e a API da Tray para o frontend</strong>
     </li>
 </ul>
+
+## Link do projeto online
+<a href="www.aznutricao.com.br">www.aznutricao.com.br</a>
 
 <h1 align="center">
     <img alt="Home Page" title="Home Page" src="./home_1.gif" />
@@ -36,25 +35,56 @@ O projeto usa a plataforma de Tray Commerce, seguindo suas normas de desenvolvim
 - [x] Adicionar produto ao carrinho
 - [x] Remover produto do carrinho
 - [] Calcular frete
-- [x] Selecionar variaÁ„o de produto na p·gina do produto
-- [x] Selecionar variaÁ„o de produto no card do produto
-- [x] Adicionar/remover variaÁ„o de produtoao carrinho
+- [x] Selecionar varia√ß√£o de produto na p√°gina do produto
+- [x] Selecionar varia√ß√£o de produto no card do produto
+- [x] Adicionar/remover varia√ß√£o de produtoao carrinho
 - [x] Abrir galeria do produto (zoom da foto do produto)
-- [x] Menu interativo (categorias e subcateorias naveg·veis)
-- [x] Menu minimizado ao rolar a p·gina
+- [x] Menu interativo (categorias e subcateorias naveg√°veis)
+- [x] Menu minimizado ao rolar a p√°gina
 - [x] Chat
-- [x] C·lculo do valor total do carrinho em tempo real
+- [x] C√°lculo do valor total do carrinho em tempo real
 - [x] Deletar produto do carrinho via gesto no mobile (arrastar para o lado para deletar)
 - [x] Vitrines de produtos na home
-- [x] Filtros de produtos nas p·ginas de categorias (mudam de acordo com a categorias selecionada)
+- [x] Filtros de produtos nas p√°ginas de categorias (mudam de acordo com a categorias selecionada)
 
-### Requisitos n„o funcionais
+### Requisitos n√£o funcionais
 - [x] <a href="#">Os elementos da interface devem ser componentizados</a>
-- [x] O projeto deve seguir as pr·ticas da documentaÁ„o da plataforma Tray Commerc, disponÌvel em <a href= "#">DocumentaÁ„o Tray</a>
-- [] Todos os componentes de interface e p·ginas do sistema devem ser responsivos
+- [x] O projeto deve seguir as pr√°ticas da documenta√ß√£o da plataforma Tray Commerc, dispon√≠vel em <a href= "#">Documenta√ß√£o Tray</a>
+- [] Todos os componentes de interface e p√°ginas do sistema devem ser responsivos
 - [x] O projeto deve ser desenvolvido seguindo as regras do Mobile First
-- [] Todas as imagens utilizadas devem ter tamanho e peso otimizados para dispositivos e rede mÛveis
+- [] Todas as imagens utilizadas devem ter tamanho e peso otimizados para dispositivos e rede m√≥veis
 - [] Todos os arquivos CSS e JS devem ser minificados
 - [] O projeto bater pelo menos 80 pontos de desempenho no Google Audit
 - [] Seguir as regras de desenvolvimento da Google para desempenho e SEO
 
+<br/><br/>
+
+## Principais p√°ginas desenvolvidas at√© o momento
+
+<br/><br/>
+
+### Home
+<h1 align="center">
+    <img alt="Home Page" title="Home Page" src="./home_2.gif" />
+</h1>
+
+<br/><br/>
+
+### Catalog
+<h1 align="center">
+    <img alt="Catalog Page" title="Catalog Page" src="./catalog_1.gif" />
+</h1>
+
+<br/><br/>
+
+### Product
+<h1 align="center">
+    <img alt="Product Page" title="Product Page" src="./product_1.gif" />
+</h1>
+
+<br/><br/>
+
+## Exemplo de responsividade na Home
+<h1 align="center">
+    <img alt="Home responsiveness" title="Home responsiveness" src="./home_3.gif" />
+</h1>

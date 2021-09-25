@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="{{ asset('css/cart.css') }}">
-<link rel="stylesheet" href="{{ asset('css/cart-d.css') }}" media="(min-width: 769px)">
-<link rel="stylesheet" href="{{ asset('css/cart-m.css') }}" media="(max-width: 768px)">
+<link media="print" onload="this.onload=null;this.removeAttribute('media');" rel="stylesheet" href="{{ asset('css/cart.min.css') }}">
+<link media="print" onload="this.onload=null;this.setAttribute('media', '(min-width: 769px)');" rel="stylesheet" href="{{ asset('css/cart-d.min.css') }}">
+<link media="print" onload="this.onload=null;this.setAttribute('media', '(max-width: 768px)');" rel="stylesheet" href="{{ asset('css/cart-m.min.css') }}">
 
 <div class="cart" id="carrinhoRetratil">
     <div class="header_cart">

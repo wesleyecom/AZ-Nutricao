@@ -1,9 +1,7 @@
 div.cart {
-    width: 30%;
-
-    right: -32%;
-
-    &.open {
-        right: 0;
-    }
+	width: 30%;
+	right: -32%;
+}
+div.cart.open {
+	right: 0;
 }

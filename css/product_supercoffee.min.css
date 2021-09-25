@@ -1,0 +1,373 @@
+@font-face {
+  font-family: MuseoSansRounded;
+  src: url("./fonts/MuseoSansRounded/museosansrounded-webfont.woff2"); }
+
+@font-face {
+  font-family: Nexa-Light;
+  src: url("./fonts/Nexa/nexa_light-webfont.woff2"); }
+
+@font-face {
+  font-family: Nexa-Bold;
+  src: url("./fonts/Nexa/nexa_bold-webfont.woff2"); }
+
+section#secao_produto {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  background-color: #31261D; }
+  section#secao_produto div.ct_comprar {
+    grid-area: comprar;
+    grid-area: comprar;
+    position: relative;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    section#secao_produto div.ct_comprar span.preco_produto {
+      color: #E5BC9C;
+      font-family: Nunito;
+      font-weight: 900;
+      font-size: 2.5em; }
+    section#secao_produto div.ct_comprar span.parcelamento_produto {
+      font-family: Nunito;
+      font-weight: 500;
+      font-size: 1.5em;
+      color: #E5BC9C;
+      margin-top: -15px; }
+      section#secao_produto div.ct_comprar span.parcelamento_produto span, section#secao_produto div.ct_comprar span.parcelamento_produto strong {
+        color: #E5BC9C; }
+    section#secao_produto div.ct_comprar span.formas_pagamento_produto {
+      font-family: Nunito;
+      font-weight: 500;
+      font-size: 1.5em;
+      color: #FFF;
+      margin-top: 5px; }
+    section#secao_produto div.ct_comprar span.tamanho {
+      color: #fff;
+      font-family: Nunito;
+      font-weight: 800;
+      font-size: 1.5em;
+      display: block;
+      margin: 20px 0 0 0; }
+    section#secao_produto div.ct_comprar div.qtd {
+      position: relative;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin: 25px 0; }
+      section#secao_produto div.ct_comprar div.qtd button {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        color: #fff;
+        font-family: Poppins;
+        font-weight: 500;
+        font-size: 2.5em;
+        cursor: pointer; }
+      section#secao_produto div.ct_comprar div.qtd input {
+        position: relative;
+        width: 54%;
+        background: transparent;
+        border: 0;
+        text-align: center;
+        color: #fff;
+        font-family: Nunito;
+        font-weight: 600;
+        font-size: 2em; }
+    section#secao_produto div.ct_comprar span.passo1 {
+      display: block;
+      margin-bottom: 25px; }
+      section#secao_produto div.ct_comprar span.passo1 div.varTit {
+        color: #fff;
+        font-family: Nunito;
+        font-weight: 700;
+        font-size: 1.8em;
+        display: block;
+        margin-bottom: 5px; }
+      section#secao_produto div.ct_comprar span.passo1 select {
+        position: relative;
+        width: 100%;
+        background: transparent;
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-repeat: repeat;
+        background-image: none;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        color: #fff;
+        font-family: Nunito;
+        font-weight: 900;
+        font-size: 2em;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 8px 0 8px 8px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        background-repeat: no-repeat;
+        background-position-x: 98%;
+        background-position-y: 8px;
+        cursor: pointer; }
+    section#secao_produto div.ct_comprar button.btn_add_carrinho {
+      position: relative;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 18px 0;
+      width: 100%;
+      border: 0;
+      border-radius: 5px;
+      font-family: Nunito;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: #2DB53E;
+      cursor: pointer;
+      -webkit-transition: 0.3s all ease-in-out;
+      transition: 0.3s all ease-in-out; }
+      section#secao_produto div.ct_comprar button.btn_add_carrinho:hover {
+        background-color: #148022; }
+  section#secao_produto div.container_titulo_produto {
+    grid-area: titulo; }
+    section#secao_produto div.container_titulo_produto h2.titulo_produto {
+      margin-top: 40px;
+      font-family: MuseoSansRounded;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 2.5em; }
+    section#secao_produto div.container_titulo_produto div.avaliacao_produto {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      section#secao_produto div.container_titulo_produto div.avaliacao_produto span.ranking {
+        border-right: 1px solid #fff;
+        margin-right: 5px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding-right: 5px; }
+        section#secao_produto div.container_titulo_produto div.avaliacao_produto span.ranking svg {
+          margin-right: 3px; }
+      section#secao_produto div.container_titulo_produto div.avaliacao_produto div.ranking {
+        color: #fff;
+        font-family: Nexa-Light;
+        font-size: 1.3em; }
+        section#secao_produto div.container_titulo_produto div.avaliacao_produto div.ranking strong {
+          font-family: Nexa-Bold; }
+  section#secao_produto div.info_produto {
+    grid-area: sobre;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 1.5em; }
+    section#secao_produto div.info_produto p, section#secao_produto div.info_produto span, section#secao_produto div.info_produto h2, section#secao_produto div.info_produto blockquote {
+      color: #fff; }
+    section#secao_produto div.info_produto p {
+      font-family: Nexa-Light;
+      font-size: 1.1em;
+      line-height: 1.5em; }
+    section#secao_produto div.info_produto h2 {
+      font-family: MuseoSansRounded;
+      font-weight: 500;
+      letter-spacing: 2px; }
+    section#secao_produto div.info_produto ul li {
+      position: relative;
+      font-family: Nexa-Light;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding-left: 15px; }
+      section#secao_produto div.info_produto ul li:before {
+        content: "";
+        position: relative;
+        display: block;
+        top: 9px;
+        left: -15px;
+        width: 5px;
+        height: 5px;
+        background-color: #fff;
+        border-radius: 5px; }
+    section#secao_produto div.info_produto blockquote {
+      position: relative;
+      display: inline-block;
+      margin: 0 15px 15px 0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 5px 12px;
+      width: -webkit-max-content;
+      width: -moz-max-content;
+      width: max-content;
+      background-color: #CFA889;
+      border-radius: 30px; }
+      section#secao_produto div.info_produto blockquote p {
+        font-family: Nexa-Bold;
+        font-size: .9em; }
+    section#secao_produto div.info_produto div.ct_avaliacoes_produto {
+      position: relative;
+      width: 100%; }
+      section#secao_produto div.info_produto div.ct_avaliacoes_produto h3 {
+        color: #fff;
+        font-family: MuseoSansRounded;
+        font-size: 1.5em;
+        font-weight: 500;
+        letter-spacing: 2px; }
+      section#secao_produto div.info_produto div.ct_avaliacoes_produto div.ct_nota_produto {
+        position: relative;
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        section#secao_produto div.info_produto div.ct_avaliacoes_produto div.ct_nota_produto span.nota_produto {
+          position: relative;
+          display: block;
+          width: 40%;
+          font-family: Nexa-Light;
+          font-size: 5em; }
+        section#secao_produto div.info_produto div.ct_avaliacoes_produto div.ct_nota_produto div.ct_stars {
+          position: relative;
+          width: auto;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          font-family: Nexa-Bold; }
+          section#secao_produto div.info_produto div.ct_avaliacoes_produto div.ct_nota_produto div.ct_stars span.ranking {
+            margin-top: 8px;
+            margin-bottom: 12px; }
+            section#secao_produto div.info_produto div.ct_avaliacoes_produto div.ct_nota_produto div.ct_stars span.ranking svg {
+              margin-right: 4px; }
+      section#secao_produto div.info_produto div.ct_avaliacoes_produto h2 {
+        font-family: Nexa-Bold;
+        font-size: 1.3em; }
+      section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente {
+        position: relative;
+        width: 100%;
+        margin-bottom: 45px; }
+        section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente a {
+          position: relative;
+          display: block;
+          width: 100%;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          padding: 21px 0;
+          text-align: center;
+          border-radius: 5px;
+          background-color: #CFA889;
+          color: #000;
+          font-family: Nexa-Bold;
+          text-transform: uppercase; }
+        section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments label {
+          color: #ffffff;
+          font-family: Nunito;
+          font-weight: 600;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -ms-flex-line-pack: start;
+          align-content: flex-start; }
+          section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments label input {
+            margin-top: 5px;
+            background-color: #fff;
+            border: 1px solid #c1c1c1;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 8px;
+            border-radius: 3px; }
+            section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments label input#email_coment {
+              opacity: 0.7;
+              background-color: #e1e1e1; }
+          section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments label:nth-child(6) {
+            display: none; }
+          section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments label textarea {
+            border-radius: 3px;
+            border: 1px solid #c1c1c1;
+            font-family: "Nunito";
+            color: #4f4f4f; }
+        section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments h5 {
+          font-family: Nunito;
+          color: #ffffff;
+          font-size: 1.2em;
+          font-weight: 800; }
+        section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments div.rateBlock {
+          margin-top: -15px; }
+          section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments div.rateBlock ul.stars {
+            position: relative !important;
+            display: -webkit-box !important;
+            display: -ms-flexbox !important;
+            display: flex !important;
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important; }
+            section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments div.rateBlock ul.stars li.starn {
+              background: url(../img/stars-new.png) no-repeat center top;
+              width: 45px;
+              height: 38px;
+              cursor: pointer;
+              -webkit-transition: 0.3s all ease-in-out;
+              transition: 0.3s all ease-in-out; }
+              section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments div.rateBlock ul.stars li.starn:before {
+                display: none; }
+              section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments div.rateBlock ul.stars li.starn.star-on {
+                cursor: pointer;
+                background: url(../img/stars-new.png) no-repeat center bottom;
+                margin-top: -3px; }
+              section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments div.rateBlock ul.stars li.starn.nota {
+                position: absolute;
+                bottom: -25px; }
+        section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments img#bt-submit-comments {
+          visibility: hidden;
+          display: none; }
+        section#secao_produto div.info_produto div.ct_avaliacoes_produto div#comentario_cliente form#form-comments button.btn_enviar_comentario {
+          margin-top: 50px; }
+      section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios {
+        background-color: #fff;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 15px 5px 15px 15px;
+        border-radius: 5px;
+        margin-bottom: 25px; }
+        section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios span.reviewer h3 {
+          color: #282828;
+          font-family: Nexa-Bold;
+          font-size: 1em; }
+        section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios div.ranking {
+          font-family: Nexa-Bold;
+          color: #282828; }
+          section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios div.ranking span.rating {
+            display: block;
+            max-width: 100px;
+            height: 15px;
+            background: url("../img/png/ranking.png");
+            margin-bottom: 15px; }
+            section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios div.ranking span.rating.star1 {
+              background-position-x: -80px; }
+            section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios div.ranking span.rating.star2 {
+              background-position-x: -60px; }
+            section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios div.ranking span.rating.star3 {
+              background-position-x: -40px; }
+            section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios div.ranking span.rating.star4 {
+              background-position-x: -20px; }
+        section#secao_produto div.info_produto div.ct_avaliacoes_produto div.hreview-comentarios p span.description {
+          color: #000; }

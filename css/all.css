@@ -13,6 +13,21 @@
   src: url("./fonts/Nexa/Nexa_Bold.otf");
 }
 
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("./fonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url("./fonts/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: Poppins-Black;
+  src: url("./fonts/Poppins/Poppins-Black.ttf");
+}
+
 html {
   font-size: 10px !important;
 }

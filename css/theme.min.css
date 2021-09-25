@@ -8120,6 +8120,15 @@ footer div.cima div.coluna.col_pagamento div.bandeiras svg {
   margin-right: 5px;
 }
 
+footer div.cima div.coluna.social ul li a {
+  width: 30px;
+  height: 30px;
+}
+
+footer div.cima div.coluna.social ul li a svg {
+  border-radius: 5px;
+}
+
 footer div.baixo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9527,6 +9536,7 @@ section#secao_produto div.descricao_produto p.image_text img {
 
 section#secao_produto div.descricao_produto ul {
   list-style: disc !important;
+  padding-left: 40px;
 }
 
 section#secao_produto div.descricao_produto ul li {
@@ -9541,6 +9551,7 @@ section#secao_produto div.descricao_produto ul li p {
 
 section#secao_produto div.descricao_produto ul.icone {
   list-style: none !important;
+  padding-left: inherit;
 }
 
 section#secao_produto div.descricao_produto ul.icone li {
@@ -9570,6 +9581,7 @@ section#secao_produto div.descricao_produto ul.caracteristicas {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-left: 0;
 }
 
 section#secao_produto div.descricao_produto ul.caracteristicas li {

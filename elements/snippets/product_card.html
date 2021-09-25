@@ -12,7 +12,7 @@
     <a id="link_card_produto" href="{{ product.link }}">
         <div class="foto_produto">
             {% set images = product.images %}
-            <img src="{{ asset('img/load.gif') }}" data-srcset="{{ images[0].full }}" alt="Foto produto" class="lazy">
+            <img src="https://images.tcdn.com.br/files/773127/themes/87/img/load.gif?ce857b78120f59d4765a5e3eb97efd581632339277" data-srcset="{{ images[0].large }}" alt="Foto produto" class="lazyload">
         </div>
 
         <div class="info_produto">

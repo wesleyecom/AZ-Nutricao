@@ -8,8 +8,8 @@ header {
 
     h1#logo-m {
         a {
-            svg {
-                width: 85px;
+            svg, img {
+                width: 50px;
 
                 &.logotipo {
                     display: block;
@@ -127,7 +127,7 @@ header {
         form.barra_busca {
             order: 4;
             position: relative;
-            width: 100%;
+            width: 100%!important;
 
             display: flex;
             flex-direction: column;
@@ -173,6 +173,10 @@ header {
         ul#categoriasMenu {
             display: none;
         }
+        
+        div#contato_header {
+			display: none!important;
+		}
     }
 
     &.mini {
@@ -185,16 +189,14 @@ header {
                 margin-top: 8px;
 
                 a {
-                    svg {
-                        width: auto;
-
+                    svg, img {
                         &.logotipo {
                             display: none;
                         }
 
                         &.logo_slogan {
                             display: block;
-                            width: 85%;
+                            width: 100%;
                         }
                     }
                 }

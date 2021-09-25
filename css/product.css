@@ -341,6 +341,7 @@ section#secao_produto div.descricao_produto ul.caracteristicas {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-left: 0;
 }
 
 section#secao_produto div.descricao_produto ul.caracteristicas li {

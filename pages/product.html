@@ -1,13 +1,22 @@
+<link rel="stylesheet" href="{{ asset('js/modules/lightgallery/dist/css/lightgallery.min.css') }}">
+
+<!-- Splide.js -->
+<script src="{{ asset('js/modules/splide/dist/js/splide.min.js') }}"></script>
+
+<!-- Call lightgallery js -->
+<script src="{{ asset('js/modules/lightgallery/dist/js/lightgallery.min.js') }}"></script>
+
 {% if product.category_id == 113 %}
-<link rel="stylesheet" href="{{ asset('css/product_supercoffee.css') }}">
-<link rel="stylesheet" href="{{ asset('css/product_supercoffee-m.css') }}" media="(max-width: 768px)">
-<link rel="stylesheet" href="{{ asset('css/product_supercoffee-d.css') }}" media="(min-width: 769px)">
+<link rel="stylesheet" href="{{ asset('css/product_supercoffee.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/product_supercoffee-d.min.css') }}" media="(min-width: 769px)">
+<link rel="stylesheet" href="{{ asset('css/product_supercoffee-m.min.css') }}" media="(max-width: 768px)">
 
     {% if not utils.is_mobile %}
         <div class="submenu">
             <h2>{{ product.name }}</h2>
 
             <button class="comprar_agora animate__animated animate__heartBeat">
+                <a href="{{ links.cart_add ~ product.id }}"></a>
                 Comprar agora
             </button>
         </div>
@@ -45,9 +54,9 @@
                 {{ product.payment }}
             </span>
     
-            <span class="formas_pagamento_produto">
+            <!-- <span class="formas_pagamento_produto">
                 <strong>R$ {{ product.price|currency }}</strong> no boleto bancário ou pix.
-            </span>
+            </span> -->
 
             <span class="tamanho">
                 {{ product.additional_message }}
@@ -114,10 +123,12 @@
             {% endif %}
         </div>
     </section>
+
+    <script src="{{ asset('js/modules/local/product_page/galeriaSuperCoffee.js') }}"></script>
 {% else %}
-    <link rel="stylesheet" href="{{ asset('css/product.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/product-m.css') }}" media="(max-width: 1023px)">
-    <link rel="stylesheet" href="{{ asset('css/product-d.css') }}" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="{{ asset('css/product.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/product-m.min.css') }}" media="(max-width: 1023px)">
+    <link rel="stylesheet" href="{{ asset('css/product-d.min.css') }}" media="(min-width: 1024px)">
 
     <section id="secao_produto" itemscope itemtype="http://schema.org/Product">
         {% if not utils.is_mobile %}
@@ -151,6 +162,36 @@
                         </ul>
                     </div>
                 </div>
+
+                {% for subcategoria in product.related_categories %}
+                    {% if subcategoria == 51 %}
+                        {% if product.has_variation %}
+                            <button onClick="chama_tabela(jQuery('select#variation_first_select').val())" id="botao_tabela_nutricional">Tabela nutricional</button>
+                        
+                            <div id="modal_tabela_nutricional"> 
+                                <span class="close">&times;</span>
+
+                                <div id="fotos_variacoes">
+                                    {% for sku in product.variants %}
+                                        {% for type in sku %}
+                                            {% for value in type %}
+                                                <img id="foto_tabela_nutricional_{{ value.id }}" src="{{ asset('img/produtos/Tabelas/tabela_'~product.id~'_variant_'~value.id~'.jpg') }}">
+                                            {% endfor %}
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% else %}
+                            <button onClick="chama_tabela(null)" id="botao_tabela_nutricional">Tabela nutricional</button>
+                        
+                            <div id="modal_tabela_nutricional"> 
+                                <span class="close">&times;</span>
+                                
+                                <img id="foto_tabela_nutricional" src="{{ asset('img/produtos/Tabelas/tabela_'~product.id~'.jpg') }}">
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
             </div>
         
             <div class="info_produto">
@@ -176,30 +217,53 @@
             </div>
 
             <div class="ct_comprar">
-                <span class="preco_produto">
-                    R$ {{ product.price|currency }}
-                </span>
-        
-                <span class="parcelamento_produto">
-                    {{ product.payment }}
-                </span>
-        
-                <span class="formas_pagamento_produto">
-                    <strong>R$ {{ product.price|currency }}</strong> no boleto bancário ou pix.
-                </span>
+                <div class="content_ct_comprar">
+                    <span class="preco_produto">
+                        R$ {{ product.price|currency }}
+                    </span>
+            
+                    <span class="parcelamento_produto">
+                        {{ product.payment }}
+                    </span>
+            
+                    <!-- <span class="formas_pagamento_produto">
+                        <strong>R$ {{ product.price|currency }}</strong> no boleto bancário ou pix.
+                    </span> -->
+    
+                    <div class="qtd">
+                        <button class="btn_minus">-</button>
+                        <input type="text" value="1" minlength="1">
+                        <button class="btn_plus">+</button>
+                    </div>
 
-                <div class="qtd">
-                    <button class="btn_minus">-</button>
-                    <input type="text" value="1" minlength="1">
-                    <button class="btn_plus">+</button>
+                    <button class="comprar">
+                        <a href="{{ links.cart_add ~ product.id }}"></a>
+                        Comprar agora
+                    </button>
+            
+                    {% if product.has_variation %}
+                        {{ productHelper.variants() }}
+                        <button class="btn_add_carrinho" onclick="addCart({{ product.id }}, {{ product.price }}, jQuery(this).siblings('div.qtd').children('input').val(), jQuery('select#variation_first_select').val())">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M11.0278 6.74608L11.0371 6.73678L11.0459 6.72701C11.2465 6.50407 11.356 6.23122 11.356 5.928C11.356 5.61013 11.2279 5.33202 10.9982 5.12082C10.7825 4.90978 10.5098 4.8019 10.2097 4.8019H7.0541V1.66649C7.0541 1.36423 6.95352 1.0812 6.73523 0.85787C6.52403 0.628085 6.2459 0.5 5.928 0.5C5.6101 0.5 5.33197 0.628085 5.12077 0.857869C4.90248 1.0812 4.8019 1.36422 4.8019 1.66649V4.8019H1.6463C1.34308 4.8019 1.07022 4.91139 0.847288 5.11203L0.837515 5.12082L0.828217 5.13012C0.611046 5.34729 0.5 5.62353 0.5 5.928C0.5 6.23122 0.609482 6.50407 0.810124 6.72701L0.827728 6.74657L0.847288 6.76417C1.07022 6.96481 1.34308 7.0743 1.6463 7.0743H4.8019V10.2097C4.8019 10.5129 4.91138 10.7858 5.11203 11.0087L5.12082 11.0185L5.13012 11.0278C5.34729 11.245 5.62353 11.356 5.928 11.356C6.23247 11.356 6.50871 11.245 6.72588 11.0278C6.95065 10.803 7.0541 10.5163 7.0541 10.2097V7.0743H10.2097C10.5163 7.0743 10.803 6.97084 11.0278 6.74608Z" fill="#5E5E5E" stroke="#5E5E5E"/>
+                            </svg>
+
+                            <span>Adicionar ao carrinho</span>
+                        </button>
+                    {% else %}
+                        <button class="btn_add_carrinho" onclick="addCart({{ product.id }}, {{ product.price }}, jQuery(this).siblings('div.qtd').children('input').val(), '')">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M11.0278 6.74608L11.0371 6.73678L11.0459 6.72701C11.2465 6.50407 11.356 6.23122 11.356 5.928C11.356 5.61013 11.2279 5.33202 10.9982 5.12082C10.7825 4.90978 10.5098 4.8019 10.2097 4.8019H7.0541V1.66649C7.0541 1.36423 6.95352 1.0812 6.73523 0.85787C6.52403 0.628085 6.2459 0.5 5.928 0.5C5.6101 0.5 5.33197 0.628085 5.12077 0.857869C4.90248 1.0812 4.8019 1.36422 4.8019 1.66649V4.8019H1.6463C1.34308 4.8019 1.07022 4.91139 0.847288 5.11203L0.837515 5.12082L0.828217 5.13012C0.611046 5.34729 0.5 5.62353 0.5 5.928C0.5 6.23122 0.609482 6.50407 0.810124 6.72701L0.827728 6.74657L0.847288 6.76417C1.07022 6.96481 1.34308 7.0743 1.6463 7.0743H4.8019V10.2097C4.8019 10.5129 4.91138 10.7858 5.11203 11.0087L5.12082 11.0185L5.13012 11.0278C5.34729 11.245 5.62353 11.356 5.928 11.356C6.23247 11.356 6.50871 11.245 6.72588 11.0278C6.95065 10.803 7.0541 10.5163 7.0541 10.2097V7.0743H10.2097C10.5163 7.0743 10.803 6.97084 11.0278 6.74608Z" fill="#5E5E5E"/>
+                            </svg>
+
+                            <span>Adicionar ao carrinho</span>
+                        </button>
+                    {% endif %}
                 </div>
-        
-                {% if product.has_variation %}
-                    {{ productHelper.variants() }}
-                    <button class="btn_add_carrinho" onclick="addCart({{ product.id }}, {{ product.price }}, jQuery(this).siblings('div.qtd').children('input').val(), jQuery('select#variation_first_select').val())">Adicionar ao carrinho</button>
-                {% else %}
-                    <button class="btn_add_carrinho" onclick="addCart({{ product.id }}, {{ product.price }}, jQuery(this).siblings('div.qtd').children('input').val(), '')">Adicionar ao carrinho</button>
-                {% endif %}
+
+                <div class="ct_frete">
+                    {{ productHelper.shipping() }}
+                </div>
             </div>
         </div>
 
@@ -239,4 +303,14 @@
             </div>
         {% endif %}
     </section>
+
+    <script src="{{ asset('js/modules/local/product_page/galeriaProduto.js') }}"></script>
 {% endif %}
+
+{% element 'snippets/modal' %}
+
+<!-- Bootstrap modal -->
+<link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap-modal.min.css') }}">
+        
+<script src="{{ asset('js/modules/local/product_page/variants_logic.js') }}"></script>
+<script src="{{ asset('js/modules/local/product_page/avaliation.js') }}"></script>

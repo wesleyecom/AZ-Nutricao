@@ -11,69 +11,72 @@
     
     {{ tray.meta }}
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/all.css') }}">
-    <link rel="stylesheet" href="{{ asset('js/modules/splide/dist/css/splide.min.css') }}">
+    <style>
+        #loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #fff;
+            z-index: 100000000000000000000000000000000000;
+        }
 
-    {% if pages.current == 'product' %}
-        <link rel="stylesheet" href="{{ asset('js/modules/lightgallery/dist/css/lightgallery.min.css') }}">
-    {% elseif pages.current == 'register' %}
-        <link rel="stylesheet" href="{{ asset('css/register.css') }}">
-    {% elseif pages.current == 'login' %}
-        <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+        #loader svg, #loader img {
+            opacity: 0;
+            animation-name: glow;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+    </style>
 
-    {% elseif pages.current == 'central_rastrear' %}
-        <link rel="stylesheet" href="{{ asset('css/tabela_rastreio.css') }}">
-    {% endif %}
+    <link rel="stylesheet" href="{{ asset('css/fix.min.css') }}">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link media="print" onload="this.onload=null;this.removeAttribute('media');" rel="preconnect" href="https://fonts.googleapis.com">
+    <link media="print" onload="this.onload=null;this.removeAttribute('media');" rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link media="print" onload="this.onload=null;this.removeAttribute('media');" rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+    <link media="print" onload="this.onload=null;this.removeAttribute('media');" rel="stylesheet" href="{{ asset('js/modules/splide/dist/css/splide.min.css') }}">
 
     {{ tray.analytics }}
 
     {{ googleTagManager.header(pages.current, tagManagerData) }}
 
     <!-- jQuery -->
-    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/jquery.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/jquery.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510"></script>
 </head>
-<body>
+<body style="position: relative; width: 100%; background-color: #ececec; margin: 0; padding: 0; box-sizing: border-box;">
     {{ googleTagManager.top(pages.current, tagManagerData) }}
 
-    {% if pages.current != 'login' %}
-        {% element 'snippets/tray_login' %}
-    {% endif %}
+    <div id="loader">
+        <img class="logotipo" src="https://aznutricao.s3.sa-east-1.amazonaws.com/WEBP/logomarca_loader.webp" alt="logo">
+    </div>
+    
+    <script src="{{asset('js/modules/local/app.js')}}"></script>
+
+    {% element 'snippets/tray_login' %}
 
     <!-- Check if is mobile -->
     <div id="isMobile" data-is-mobile="{{ utils.is_mobile ? 'true' : 'false' }}"></div>
 
-    <!-- JivoChat SVG -->
-    {% if not utils.is_mobile %}
-    <div id="openJivo">
-        <button id="btnEscondeChat" class="hidden">Fale conosco</button>
+    <!-- Check what page is -->
+    <div id="currentPage" data-current-page="{{ pages.current }}"></div>
 
-        <img src="{{ asset('img/home/atendente_jivochat.svg') }}" alt="Atendente MedMix">
-
-        <div>
-            <a href="https://api.whatsapp.com/send?phone=19997252277&text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20comprar%20no%20site." 
-               target="_blank">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.4982 14.3821C17.1996 14.2334 15.7317 13.5146 15.458 13.4154C15.1843 13.3162 14.9852 13.2666 14.7862 13.564C14.5871 13.8615 14.0149 14.5309 13.8407 14.7293C13.6666 14.9275 13.4924 14.9524 13.1939 14.8036C12.8952 14.6548 11.9331 14.3411 10.7927 13.3286C9.90501 12.5407 9.30579 11.5677 9.1316 11.2701C8.95747 10.9727 9.11309 10.8119 9.26258 10.6637C9.39689 10.5305 9.56116 10.3166 9.71042 10.1431C9.85974 9.96957 9.90948 9.84554 10.009 9.64739C10.1085 9.449 10.0588 9.27548 9.98414 9.12676C9.90948 8.97804 9.31232 7.51531 9.06353 6.92027C8.82116 6.34096 8.575 6.41943 8.39171 6.41019C8.21775 6.40158 8.01847 6.39975 7.81947 6.39975C7.62042 6.39975 7.29691 6.47411 7.02326 6.77155C6.74955 7.0691 5.9782 7.788 5.9782 9.25061C5.9782 10.7133 7.04813 12.1262 7.19744 12.3246C7.34671 12.5229 9.30286 15.5243 12.2981 16.8115C13.0105 17.1177 13.5667 17.3006 14.0003 17.4374C14.7156 17.6637 15.3665 17.6318 15.8809 17.5553C16.4546 17.4699 17.6475 16.8364 17.8963 16.1423C18.1451 15.4481 18.1451 14.8532 18.0704 14.7293C17.9958 14.6053 17.7968 14.5309 17.4982 14.3821ZM12.0502 21.7852H12.0462C10.264 21.7846 8.51593 21.3081 6.99094 20.4074L6.6283 20.1932L2.86915 21.1746L3.87249 17.527L3.63637 17.153C2.64213 15.5792 2.11705 13.7603 2.1178 11.8925C2.11997 6.44252 6.57559 2.00856 12.0541 2.00856C14.707 2.00947 17.2008 3.03904 19.0761 4.90743C20.9513 6.77577 21.9834 9.25934 21.9824 11.9005C21.9802 17.3509 17.5246 21.7852 12.0502 21.7852ZM20.5033 3.48771C18.2472 1.23976 15.2468 0.00125453 12.0501 0C5.46349 0 0.102793 5.33466 0.100157 11.8917C0.0992976 13.9878 0.649531 16.0337 1.69528 17.8374L0 24L6.33476 22.3462C8.08018 23.2936 10.0453 23.7931 12.0453 23.7937H12.0502H12.0503C18.6362 23.7937 23.9974 18.4585 24 11.9013C24.0012 8.7236 22.7594 5.73559 20.5033 3.48771Z" fill="#fff"></path></svg>
-                
-                <span>WhatsApp</span>
-            </a>
-
-            <a id="buttonOpenJivo">
-                <svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.928345 12.4533V2.78232C0.928345 1.91531 1.63119 1.21247 2.4982 1.21247H21.3609C22.2279 1.21247 22.9308 1.91531 22.9308 2.78232V12.4533C22.9308 13.3203 22.228 14.0232 21.3609 14.0232H19.0922C18.5019 14.0232 17.9615 14.3543 17.6935 14.8802L16.9641 16.3112C16.9416 16.3554 16.9259 16.4028 16.9176 16.4518C16.8288 16.9741 16.0896 17.0042 15.9588 16.4907L15.4997 14.6893C15.3998 14.2974 15.0469 14.0232 14.6425 14.0232H2.4982C1.63119 14.0232 0.928345 13.3203 0.928345 12.4533Z" stroke="white" stroke-width="1.56985"/>
-                    <ellipse cx="7.16789" cy="7.55631" rx="1.31358" ry="1.28868" fill="white"/>
-                    <ellipse cx="11.7654" cy="7.55631" rx="1.31358" ry="1.28868" fill="white"/>
-                    <ellipse cx="16.363" cy="7.55631" rx="1.31358" ry="1.28868" fill="white"/>
-                </svg>
-
-                <span>Chat</span>
-            </a>
-        </div>
-    </div>
-    {% endif %}
+    <script async>
+        if (page() == 'register') {
+            jQuery('head').append(`<link rel="stylesheet" href="${window.css}/register.css">`);
+        }
+        else if (page() == 'login') {
+            jQuery('head').append(`<link rel="stylesheet" href="${window.css}/login.css">`);
+        }
+        else if (page() == 'central_rastrear') {
+            jQuery('head').append(`<link rel="stylesheet" href="${window.css}/tabela_rastreio.css"">`);
+        }
+    </script>
 
     <div class="application">
         {% element 'header' %}
@@ -81,20 +84,26 @@
         {% element 'snippets/cart' %}
 
         <main class="site-main">
-            <section class="page-content">
+            <section id="pageContent" class="page-content" style="padding: 0;">
+                <script async>
+                    if (page() == 'search') {
+                        jQuery('#isMobile').before(`<div id="searchWord" data-search-word="{{ search.word }}"></div>`);
+                        let searchWord = jQuery('#searchWord').data('searchWord');
+
+                        if (searchWord == "") {
+                            jQuery('head').append(`<link rel="stylesheet" href="${window.css}/busca_avancada.min.css"">`);
+                            jQuery('#pageContent').append(`
+                                <div class="busca_avancada">
+                                    <h1>Desculpe, não foram encontrados resultados para a sua busca.</h1>
+
+                                    <a href="{{ links.home }}">Voltar</a>
+                                </div>
+                            `);
+                        }
+                    }
+                </script>
+                
                 {{ content_for_layout }}
-
-                {% if pages.current == 'search' %}
-                    {% if not search.word %}
-                        <link rel="stylesheet" href="{{ asset('css/busca_avancada.css') }}">
-
-                        <div class="busca_avancada">
-                            <h1>Desculpe, nï¿½o foram encontrados resultados para a sua busca.</h1>
-
-                            <a href="{{ links.home }}">Voltar</a>
-                        </div>
-                    {% endif %}
-                {% endif %}
             </section>
         </main>
 
@@ -118,28 +127,43 @@
                     {% endif %}
                 {% endfor %}
                 </div>
-
             </div>
         </div>
 
         {% element 'footer' %}
     </div>
 
-    {{ googleTagManager.bottom(pages.current, tagManagerData) }}
+    <div id="openJivo"></div>
 
-    <!-- Tray scripts -->
-    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/vue.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
-    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/document-register-element.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
-    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/trayLogin.umd.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
-    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/cookie.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
-    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/partner.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
-    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/autocomplete.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
-    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/cache_control.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
-    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/bootstrap.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
-    <script type="text/javascript" src="//images.tcdn.com.br/static_inst/integracao/v2/jivochat.js?store=773127&amp;widget_id=WDKcfrHatR?006c893c8994c54602611b06b0ef627c&amp;f3eb372b4cc00efa20a975129ab2544f1619557787" async></script>
+    <!-- JivoChat SVG -->
+    <script async>
+        if (isMobile() == false) {
+            jQuery('#openJivo').append(`
+                <button id="btnEscondeChat" class="hidden">Fale conosco</button>
 
-    {% if not utils.is_mobile %}
-        <script>
+                <img src="{{ asset('img/home/atendente_jivochat.svg') }}" alt="Atendente MedMix">
+
+                <div>
+                    <a href="https://api.whatsapp.com/send?phone=19997252277&text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20comprar%20no%20site." 
+                    target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.4982 14.3821C17.1996 14.2334 15.7317 13.5146 15.458 13.4154C15.1843 13.3162 14.9852 13.2666 14.7862 13.564C14.5871 13.8615 14.0149 14.5309 13.8407 14.7293C13.6666 14.9275 13.4924 14.9524 13.1939 14.8036C12.8952 14.6548 11.9331 14.3411 10.7927 13.3286C9.90501 12.5407 9.30579 11.5677 9.1316 11.2701C8.95747 10.9727 9.11309 10.8119 9.26258 10.6637C9.39689 10.5305 9.56116 10.3166 9.71042 10.1431C9.85974 9.96957 9.90948 9.84554 10.009 9.64739C10.1085 9.449 10.0588 9.27548 9.98414 9.12676C9.90948 8.97804 9.31232 7.51531 9.06353 6.92027C8.82116 6.34096 8.575 6.41943 8.39171 6.41019C8.21775 6.40158 8.01847 6.39975 7.81947 6.39975C7.62042 6.39975 7.29691 6.47411 7.02326 6.77155C6.74955 7.0691 5.9782 7.788 5.9782 9.25061C5.9782 10.7133 7.04813 12.1262 7.19744 12.3246C7.34671 12.5229 9.30286 15.5243 12.2981 16.8115C13.0105 17.1177 13.5667 17.3006 14.0003 17.4374C14.7156 17.6637 15.3665 17.6318 15.8809 17.5553C16.4546 17.4699 17.6475 16.8364 17.8963 16.1423C18.1451 15.4481 18.1451 14.8532 18.0704 14.7293C17.9958 14.6053 17.7968 14.5309 17.4982 14.3821ZM12.0502 21.7852H12.0462C10.264 21.7846 8.51593 21.3081 6.99094 20.4074L6.6283 20.1932L2.86915 21.1746L3.87249 17.527L3.63637 17.153C2.64213 15.5792 2.11705 13.7603 2.1178 11.8925C2.11997 6.44252 6.57559 2.00856 12.0541 2.00856C14.707 2.00947 17.2008 3.03904 19.0761 4.90743C20.9513 6.77577 21.9834 9.25934 21.9824 11.9005C21.9802 17.3509 17.5246 21.7852 12.0502 21.7852ZM20.5033 3.48771C18.2472 1.23976 15.2468 0.00125453 12.0501 0C5.46349 0 0.102793 5.33466 0.100157 11.8917C0.0992976 13.9878 0.649531 16.0337 1.69528 17.8374L0 24L6.33476 22.3462C8.08018 23.2936 10.0453 23.7931 12.0453 23.7937H12.0502H12.0503C18.6362 23.7937 23.9974 18.4585 24 11.9013C24.0012 8.7236 22.7594 5.73559 20.5033 3.48771Z" fill="#fff"></path></svg>
+                        
+                        <span>WhatsApp</span>
+                    </a>
+
+                    <a id="buttonOpenJivo">
+                        <svg width="24" height="19" viewBox="0 0 24 19" fill="none">
+                            <path d="M0.928345 12.4533V2.78232C0.928345 1.91531 1.63119 1.21247 2.4982 1.21247H21.3609C22.2279 1.21247 22.9308 1.91531 22.9308 2.78232V12.4533C22.9308 13.3203 22.228 14.0232 21.3609 14.0232H19.0922C18.5019 14.0232 17.9615 14.3543 17.6935 14.8802L16.9641 16.3112C16.9416 16.3554 16.9259 16.4028 16.9176 16.4518C16.8288 16.9741 16.0896 17.0042 15.9588 16.4907L15.4997 14.6893C15.3998 14.2974 15.0469 14.0232 14.6425 14.0232H2.4982C1.63119 14.0232 0.928345 13.3203 0.928345 12.4533Z" stroke="white" stroke-width="1.56985"/>
+                            <ellipse cx="7.16789" cy="7.55631" rx="1.31358" ry="1.28868" fill="white"/>
+                            <ellipse cx="11.7654" cy="7.55631" rx="1.31358" ry="1.28868" fill="white"/>
+                            <ellipse cx="16.363" cy="7.55631" rx="1.31358" ry="1.28868" fill="white"/>
+                        </svg>
+
+                        <span>Chat</span>
+                    </a>
+                </div>
+            `);
+
             jQuery(window).bind('load', function() {
                 jQuery('#buttonOpenJivo').on('click', function() {
                     jQuery('#openJivo').removeClass('animate__fadeInUpBig');
@@ -176,60 +200,39 @@
                     statusChat();
                 });
             });
-        </script>
-    {% endif %}
+        }
+    </script>
 
-    {{
-            html.script({
-                '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
-                '1' : tray.paths.js ~ 'init.js?' ~ utils.assets_version
-            })
-    }}
+    {{ googleTagManager.bottom(pages.current, tagManagerData) }}
+
+    <!-- Tray scripts -->
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/cookie.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/partner.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/autocomplete.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/cache_control.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/dist/bootstrap.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" ></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/static_inst/integracao/v2/jivochat.js?store=773127&amp;widget_id=WDKcfrHatR?006c893c8994c54602611b06b0ef627c&amp;f3eb372b4cc00efa20a975129ab2544f1619557787" async></script>
+
+    <script type="text/javascript" src="https://images.tcdn.com.br/commerce/assets/store/js/dist/application-2.0.min.js?df040cf28c09f56cec8a7362079ec8f41632420822"></script>
+    <script type="text/javascript" src="https://images.tcdn.com.br/commerce/assets/store/js/init.js?df040cf28c09f56cec8a7362079ec8f41632420822"></script>
+
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/vue.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" async></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/document-register-element.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" async></script>
+    <script type="text/javascript" src="//images.tcdn.com.br/commerce/assets/store/js/vendors/tray-login/trayLogin.umd.min.js?b6f219a5ca365aed26d6409ce09ed9961617976510" async></script>
 
     {% element 'snippets/pageview' %}
     {{ store.chat }}
 
-    <script src="{{ asset('js/modules/local/menu/menu.js') }}"></script>
+    <div id="insertScript"></div>
     
-    <!-- Lazy Load -->
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
-
-    <!-- Swiped JS -->
-    <script src="{{ asset('js/modules/swiped/dist/swiped.min.js') }}"></script>
-    <script src="{{ asset('js/modules/local/carrinho/carrinho.js') }}"></script>
+    <script async src="{{ asset('js/modules/local/menu/menu.js') }}"></script>
+    <script async src="https://images.tcdn.com.br/files/773127/themes/87/js/modules/local/lazysizes.min.js"></script>
+    <script async src="https://images.tcdn.com.br/files/773127/themes/87/js/modules/swiped/dist/swiped.min.js"></script>
+    <script async src="https://images.tcdn.com.br/files/773127/themes/87/js/modules/local/carrinho/carrinho.js"></script>
 
     <script>
-        var lazyLoadInstance = new LazyLoad();
+        // var lazyLoadInstance = new LazyLoad();
     </script>
-
-    {% if pages.current == 'home' or pages.current == 'product' or pages.current == 'catalog' %}
-        <!-- Splide.js -->
-        <script src="{{ asset('js/modules/splide/dist/js/splide.min.js') }}"></script>
-        <!-- <script src="{{ asset('js/modules/waypoints/lib/jquery.waypoints.min.js') }}"></script> -->
-        <!-- <script src="{{ asset('js/modules/waypoints/lib/shortcuts/inview.js') }}"></script> -->
-        
-        {% if pages.current == 'home' %}
-            <script src="{{ asset('js/modules/local/home/vitrine.js') }}"></script>
-            <script src="{{ asset('js/modules/local/home/banners.js') }}"></script>
-        {% elseif pages.current == 'catalog' %}
-            {% if category.id == 113 %}
-                <script src="{{ asset('js/modules/local/category/supercoffee.js') }}"></script>
-            {% else %}
-                <script src="{{ asset('js/modules/local/category/marcas.js') }}"></script>
-            {% endif %}
-        {% else %}
-            <!-- Call lightgallery js -->
-            <script src="{{ asset('js/modules/lightgallery/dist/js/lightgallery.min.js') }}"></script>
-            <script src="{{ asset('js/modules/local/product_page/variants_logic.js') }}"></script>
-            <script src="{{ asset('js/modules/local/product_page/avaliation.js') }}"></script>
-
-            {% if product.category_id == 113 %}
-                <script src="{{ asset('js/modules/local/product_page/galeriaSuperCoffee.js') }}"></script>
-            {% else %}
-                <script src="{{ asset('js/modules/local/product_page/galeriaProduto.js') }}"></script>
-            {% endif %}
-        {% endif %}
-    {% endif %}
 </body>
 </html>
 {% endspaceless %}

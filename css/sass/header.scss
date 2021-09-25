@@ -1,152 +1,169 @@
 header {
-    position: relative;
-    width: 100%;
+	position: relative;
+	width: 100%;
+	-webkit-transition: 0.3s all ease-in-out;
+	transition: 0.3s all ease-in-out;
 
-    transition: 0.3s all ease-in-out;
+	div.baixo {
+		form.barra_busca {
+			div.suggestion {
+				position: absolute;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				padding: 15px;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center;
+				-webkit-box-pack: start;
+				-ms-flex-pack: start;
+				justify-content: flex-start;
+				background-color: #fff;
+				overflow: hidden;
+				border: 1px solid #6d6d6d;
+				border-top: 0;
+				overflow: auto;
+				z-index: 10000000 !important;
+				div.suggestion-words {
+					position: relative;
+					width: 100%;
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+					-ms-flex-direction: column;
+					flex-direction: column;
+					.suggestion-title {
+						color: #333333;
+						font-family: 'Nunito';
+						font-size: 1.8em;
+						font-weight: 900;
+						margin-bottom: 5px;
+					}
+					span {
+						position: relative;
+						width: 100%;
+						-webkit-box-sizing: border-box;
+						box-sizing: border-box;
+						padding: 10px 0;
+						color: #333333;
+						font-family: 'Nunito';
+						font-size: 1.5em;
+						font-weight: 600;
+						text-transform: capitalize;
+						border-bottom: 1px solid #b1b1b1;
+					}
+				}
+				div.suggestion-products {
+					position: relative;
+					width: 100%;
+					margin-top: 15px;
+					.suggestion-title {
+						color: #333333;
+						font-family: 'Nunito';
+						font-size: 1.8em;
+						font-weight: 900;
+						margin-bottom: 5px;
+					}
+					div.suggestion-product {
+						position: relative;
+						width: 100%;
+						margin-top: 10px;
+						border-radius: 5px;
+						background-color: #e2e2e2;
+						a {
+							position: relative;
+							width: 100%;
+							display: -webkit-box;
+							display: -ms-flexbox;
+							display: flex;
+							div.suggestion-img {
+								position: relative;
+								width: 80px;
+								height: 80px;
+								display: -webkit-box;
+								display: -ms-flexbox;
+								display: flex;
+								-webkit-box-align: center;
+								-ms-flex-align: center;
+								align-items: center;
+								-webkit-box-pack: center;
+								-ms-flex-pack: center;
+								justify-content: center;
+								-webkit-box-sizing: border-box;
+								box-sizing: border-box;
+								padding: 5px;
+								img {
+									position: relative;
+									height: 100%;
+									-o-object-fit: contain;
+									object-fit: contain;
+									border-radius: 8px;
+								}
+							}
+							div.suggestion-desc {
+								position: relative;
+								width: 100%;
+								display: -webkit-box;
+								display: -ms-flexbox;
+								display: flex;
+								-webkit-box-orient: vertical;
+								-webkit-box-direction: normal;
+								-ms-flex-direction: column;
+								flex-direction: column;
+								-webkit-box-sizing: border-box;
+								box-sizing: border-box;
+								padding: 15px;
+								span {
+									font-family: 'Nunito';
+								}
+								span.titlep {
+									font-size: 1.2em;
+									font-weight: 800;
+								}
+								span.idp {
+									font-size: 1.2em;
+									font-weight: 600;
+									margin-top: 5px;
+								}
+							}
+						}
+					}
+				}
+			}
+			div.suggestion.is-hidden {
+				display: none !important;
+			}
+			button {
+				position: absolute;
+				width: 50px;
+				height: 100%;
+				border: 0;
+				padding: 0;
+				background: transparent;
+				svg {
+					position: relative;
+					width: 14px;
+					fill: #535353;
+					margin-top: 5px;
+				}
+			}
+		}
+	}
+}
 
-    div.baixo {
-        form.barra_busca {
-            div.suggestion {
-                position: absolute;
-                box-sizing: border-box;
-                padding: 15px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                background-color: #fff;
-                overflow: hidden;
-
-                border: 1px solid #6d6d6d;
-                border-top: 0;
-
-                overflow: auto;
-
-                z-index: 10000000!important;
-
-                
-                &.is-hidden {
-                    display: none!important;
-                }
-
-                div.suggestion-words, div.suggestion-products {
-                    position: relative;
-                    width: 100%;
-
-                    .suggestion-title {
-                        color: #333333;
-                        font-family: 'Nunito';
-                        font-size: 1.8em;
-                        font-weight: 900;
-                        margin-bottom: 5px;
-                    }
-                }
-
-                div.suggestion-words {
-                    display: flex;
-                    flex-direction: column;
-
-                    span {
-                        position: relative;
-                        width: 100%;
-                        box-sizing: border-box;
-                        padding: 10px 0;
-                        color: #333333;
-                        font-family: 'Nunito';
-                        font-size: 1.5em;
-                        font-weight: 600;
-                        text-transform: capitalize;
-                        border-bottom: 1px solid #b1b1b1;
-                    }
-                }
-
-                div.suggestion-products {
-                    margin-top: 15px;
-
-                    div.suggestion-product {
-                        position: relative;
-                        width: 100%;
-                        margin-top: 10px;
-                        border-radius: 5px;
-                        background-color: #e2e2e2;
-
-                        a {
-                            position: relative;
-                            width: 100%;
-                            display: flex;
-
-                            div.suggestion-img {
-                                position: relative;
-                                width: 80px;
-                                height: 80px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                box-sizing: border-box;
-                                padding: 5px;
-
-                                img {
-                                    position: relative;
-                                    height: 100%;
-                                    object-fit: contain;
-                                    border-radius: 8px;
-                                }
-                            }
-
-                            div.suggestion-desc {
-                                position: relative;
-                                width: 100%;
-                                display: flex;
-                                flex-direction: column;
-                                box-sizing: border-box;
-                                padding: 15px;
-
-                                span {
-                                    font-family: 'Nunito';
-
-                                    &.titlep {
-                                        font-size: 1.2em;
-                                        font-weight: 800;
-                                    }
-
-                                    &.idp {
-                                        font-size: 1.2em;
-                                        font-weight: 600;
-                                        margin-top: 5px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            button {
-                position: absolute;
-                width: 50px;
-                height: 100%;
-                border: 0;
-                padding: 0;
-                background: transparent;
-
-                svg {
-                    position: relative;
-                    width: 14px;
-                    fill: #535353;
-                    margin-top: 5px;
-                }
-            }
-        }
-    }
-
-    &.mini {
-        position: fixed;
-        top: 0;
-
-        height: 75px;
-
-        box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.22);
-
-        z-index: 100000;
-    }
+header.mini {
+	position: fixed;
+	top: 0;
+	height: 75px;
+	-webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.22);
+	box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.22);
+	z-index: 100000;
 }

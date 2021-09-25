@@ -1,155 +1,175 @@
+@font-face {
+	font-family: MuseoSansRounded;
+	src: url("./fonts/MuseoSansRounded/museosansrounded-webfont.woff2");
+}
+
+@font-face {
+	font-family: Nexa-Light;
+	src: url("./fonts/Nexa/nexa_light-webfont.woff2");
+}
+
+@font-face {
+	font-family: Nexa-Bold;
+	src: url("./fonts/Nexa/nexa_bold-webfont.woff2");
+}
+
 div.hero {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    background-size: cover;
-    background-position: center;
-
-    div.texto {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-
-        h2 {
-            color: #fff;
-            font-family: MuseoSansRounded;
-            text-transform: uppercase;
-        }
-
-        p {
-            color: #fff;
-            font-family: Nexa-Light;
-
-            strong {
-                font-family: Nexa-Bold;
-            }
-        }
-    }
-
-    div#supercoffee {
-        position: relative;
-        width: 100%;
-        height: auto;
-
-        transition: 0.3s all ease-in-out;
-
-        div.splide__track {
-            position: relative;
-            width: 100%;
-            height: 100%;
-
-            ul.splide__list {
-                position: relative;
-                width: 100%;
-                height: 100%;
-
-                li {
-                    position: relative;
-                    width: 100%;
-                    height: 375px;
-                    display: flex;
-                    align-items: center;
-
-                    div.card {
-                        position: relative;
-                        height: auto;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-
-                        transition: 0.3s all ease-in-out;
-
-                        img {
-                            transition: 0.3s all ease-in-out;
-                        }
-
-                        a {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            z-index: 1;
-                        }
-
-                        h3 {
-                            font-family: MuseoSansRounded;
-                            font-size: 2.5em;
-                            color: #fff;
-                            text-transform: uppercase;
-                
-                            span {
-                                text-transform: uppercase;
-                                color: #000;
-                            }
-
-                            &.ic {
-                                text-align: center;
-                                display: flex;
-                                flex-direction: column;
-                                
-                                span {
-                                    font-size: .8em;
-                                }
-                            }
-                        }
-                
-                        button {
-                            position: relative;
-                            width: 50px;
-                            height: 50px;
-                            box-sizing: border-box;
-                            padding: 15px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 50px;
-                            background-color: #D4A657;
-                            color: #000;
-                            font-family: MuseoSansRounded;
-                            font-size: 2em;
-                            border: 0;
-                            outline: 0;
-                            overflow: hidden;
-                            cursor: pointer;
-                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-
-
-                            transition: 0.3s all ease-in-out;
-
-                            z-index: 10;
-
-                            &:hover {
-                                background-color: #a88039;
-                            }
-                            
-                        }
-                    }
-                }
-            }
-        }
-
-        ul.splide__pagination {
-            bottom: -5px;
-
-            li {
-                margin-right: 15px;
-
-                button {
-                    width: 50px;
-                    height: 3px;
-                    border-radius: 2px;
-                    background-color: #000;
-
-                    &.is-active {
-                        background-color: #fff;
-                    }
-                }
-            }
-        }
-    }
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	background-size: cover;
+	background-position: center;
+	box-sizing: border-box;
+	padding: 0 30px;
+	div.texto {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		h2 {
+			color: #fff;
+			font-family: MuseoSansRounded;
+			text-transform: uppercase;
+		}
+		p {
+			color: #fff;
+			font-family: Nexa-Light;
+			strong {
+				font-family: Nexa-Bold;
+			}
+		}
+	}
+	div#supercoffee {
+		position: relative;
+		width: 100%;
+		height: auto;
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+		transition: .3s all ease-in-out;
+		div.splide__track {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			ul.splide__list {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				li {
+					position: relative;
+					width: 100%;
+					height: auto;
+					display: flex;
+					align-items: center;
+					div.card {
+						position: relative;
+						height: 100%;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: space-between;
+						padding: 15px 0;
+						transition: .3s all ease-in-out;
+						div.tamanho {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							color: #000;
+							font-family: Nexa-Bold;
+							font-size: 1.2em;
+							background-color: #fbbb36;
+							box-sizing: border-box;
+							padding: 5px 15px;
+							border-radius: 33px;
+							margin-bottom: 20px;
+						}
+						img {
+							transition: .3s all ease-in-out;
+						}
+						a {
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							z-index: 1;
+						}
+						h3 {
+							font-family: MuseoSansRounded;
+							font-size: 2.5em;
+							color: #fff;
+							text-transform: uppercase;
+							margin-bottom: 0;
+							span {
+								text-transform: uppercase;
+								color: #000;
+							}
+						}
+						h3.ic {
+							text-align: center;
+							display: flex;
+							flex-direction: column;
+							span {
+								font-size: .8em;
+							}
+						}
+						span.preco {
+							color: #000;
+							font-family: MuseoSansRounded;
+							text-transform: uppercase;
+							font-size: 2em;
+						}
+						button {
+							position: relative;
+							// width: 50px;
+							height: 40px;
+							box-sizing: border-box;
+							padding: 0 25px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							border-radius: 50px;
+							background-color: #d4a657;
+							color: #240f02;
+							font-family: MuseoSansRounded;
+							font-size: 1.5em;
+							text-transform: uppercase;
+							border: 0;
+							outline: 0;
+							overflow: hidden;
+							cursor: pointer;
+							-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+							transition: .3s all ease-in-out;
+							margin-bottom: 2px;
+							z-index: 10;
+							&:hover {
+								background-color: #a88039;
+							}
+						}
+						&:hover {
+							img {
+								transform: scale(.9);
+							}
+						}
+					}
+				}
+			}
+		}
+		ul.splide__pagination {
+			bottom: -5px;
+			li {
+				margin-right: 15px;
+				button {
+					width: 50px;
+					height: 3px;
+					border-radius: 2px;
+					background-color: #000;
+				}
+				button.is-active {
+					background-color: #fff;
+				}
+			}
+		}
+	}
 }

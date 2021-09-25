@@ -1,6 +1,6 @@
-<form class="barra_busca" role="form" action="{{ links.search }}" method="get" data-search="suggestion">
+<form id="form_busca" class="barra_busca mini" role="form" action="{{ links.search }}" method="get" data-search="suggestion">
     <input type="hidden" name="loja" value="{{ store.id }}">
-    <input type="text" placeholder="O que você procura?" data-input="suggestion" name="palavra_busca" tabindex="1" data-tray-tst="busca_palavra" required>
+    <input id="barra_busca" type="text" placeholder="O que você procura?" data-input="suggestion" name="palavra_busca" tabindex="1" data-tray-tst="busca_palavra" required>
 
     <button type="submit" tabindex="2" data-tray-tst="botao_buscar">
         <svg version="1.1" x="0px" y="0px"

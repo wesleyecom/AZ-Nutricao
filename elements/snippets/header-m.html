@@ -15,7 +15,7 @@
 
             <div class="divisor"></div>
 
-            <a href="{{ links.register }}" class="tray-hide" data-logged-user="false">
+            <a href="https://www.aznutricao.com.br/cadastro" class="tray-hide" data-logged-user="false">
                 Cadastro
             </a>
 
@@ -25,45 +25,6 @@
         </div>
 
         <ul class="categorias" id="categorias_header-m">
-            {% for category in categories %}
-            {% if category.children %}
-            <li class="father">
-                <a href="{{ category.link }}">{{ category.name }}</a>
-                
-                <button>
-                    +
-                </button>
-
-                <div class="children">
-                    {% for child in category.children %}
-                        {% if child.children %}
-                            <div class="ct_child">
-                                <a href="{{ child.link }}" class="link_child">{{ child.name }}</a>
-
-                                <button>
-                                    +
-                                </button>
-
-                                <div class="children_child">
-                                    {% for child_children in child.children %}
-                                        <a href="{{ child_children.link }}" class="link_child_children">{{ child_children.name }}</a>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        {% else %}
-                            <div class="ct_child">
-                                <a href="{{ child.link }}" class="link_child">{{ child.name }}</a>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </li>
-            {% else %}
-            <li>
-                <a href="{{ category.link }}">{{ category.name }}</a>
-            {% endif %}
-            </li>
-            {% endfor %}
         </ul>
     </div>
 </div>

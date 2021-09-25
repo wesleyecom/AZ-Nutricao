@@ -1,49 +1,48 @@
 div.hero {
-    height: auto;
-    box-sizing: border-box;
-    padding-bottom: 30px;
-    
-    background-image: url("../img/bg_supercoffee.jpg");
-    overflow: hidden;
-
-    div.texto {
-        width: 100%;
-    
-        align-items: center;
-        margin-top: 20px;
-
-        h2 {
-            position: relative;
-            width: 80%;
-            font-size: 2.5em;
-        }
-
-        p {
-            width: 80%;
-            
-            font-size: 1.8em;
-            line-height: 1.5em;
-        }
-    }
-
-    div#supercoffee {
-        margin-top: 30px;
-
-        div.splide__track {
-            ul.splide__list {
-                align-items: center;
-
-                li {
-                    div.card {
-                        width: 80%;
-                        justify-content: flex-start;
-                
-                        img {
-                            height: 200px;
-                        }
-                    }
-                }
-            }
-        }
-    }
+	height: auto;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-bottom: 30px;
+	background-image: url("../img/bg_supercoffee.jpg");
+	overflow: hidden;
+	div.texto {
+		width: 100%;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		margin-top: 20px;
+		h2 {
+			position: relative;
+			width: 80%;
+			font-size: 2.5em;
+		}
+		p {
+			width: 80%;
+			font-size: 1.8em;
+			line-height: 1.5em;
+		}
+	}
+	div#supercoffee {
+		margin-top: 30px;
+		div.splide__track {
+			ul.splide__list {
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center;
+				li {
+					justify-content: center;
+					
+					div.card {
+						width: 80%;
+						-webkit-box-pack: start;
+						-ms-flex-pack: start;
+						justify-content: flex-start;
+						img {
+							height: 200px;
+						}
+					}
+				}
+			}
+		}
+	}
 }

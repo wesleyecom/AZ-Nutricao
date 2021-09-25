@@ -1,0 +1,14 @@
+.page-extra .board_htm p img {
+  height: auto; }
+
+.page-extra #banner_title {
+  display: none; }
+
+.page-extra .page-content {
+  font-size: 1.4rem; }
+  .page-extra .page-content > * {
+    background: #fff;
+    padding: 30px; }
+
+.page-extra .Seguro {
+  display: none; }

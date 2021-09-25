@@ -103,6 +103,15 @@ footer div.cima div.coluna.col_pagamento div.bandeiras svg {
   margin-right: 5px;
 }
 
+footer div.cima div.coluna.social ul li a {
+  width: 30px;
+  height: 30px;
+}
+
+footer div.cima div.coluna.social ul li a svg {
+  border-radius: 5px;
+}
+
 footer div.baixo {
   display: -webkit-box;
   display: -ms-flexbox;

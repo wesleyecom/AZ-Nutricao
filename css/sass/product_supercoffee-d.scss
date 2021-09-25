@@ -1,121 +1,144 @@
-div.submenu {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding: 0 50px 0 17vw;
-    background-color: #E5BC9C;
+div {
+	&.submenu {
+	  position: relative;
+	  width: 100%;
+	  display: -webkit-box;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -webkit-box-align: center;
+	  -ms-flex-align: center;
+	  align-items: center;
+	  -webkit-box-pack: justify;
+	  -ms-flex-pack: justify;
+	  justify-content: space-between;
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+	  padding: 0 50px 0 5.5vw;
+	  background-color: #E5BC9C;
+  
+	  h2 {
+		color: #2D1F00;
+		font-family: MuseoSansRounded;
+		font-size: 2em;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	  }
+  
+	  button.comprar_agora {
+		position: relative;
+		border: 0;
+		padding: 15px 30px;
+		background-color: #2D1F00;
+		color: #fff;
+		font-family: MuseoSansRounded;
+		text-transform: uppercase;
+		border-radius: 5px;
+		font-size: 1.2em;
+		-webkit-box-shadow: 0 0 10px 3px #9170578a;
+		box-shadow: 0 0 10px 3px #9170578a;
+		cursor: pointer;
+		-webkit-transition: 0.2s all ease-in;
+		transition: 0.2s all ease-in;
 
-    h2 {
-        color: #2D1F00;
-        font-family: MuseoSansRounded;
-        font-size: 2em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    button.comprar_agora {
-        position: relative;
-        border: 0;
-        padding: 15px 30px;
-        background-color: #2D1F00;
-        color: #fff;
-        font-family: MuseoSansRounded;
-        text-transform: uppercase;
-        border-radius: 5px;
-        font-size: 1.2em;
-        box-shadow: 0 0 10px 3px #9170578a;
-        cursor: pointer;
-
-        transition: 0.2s all ease-in;
-    }
-}
-
-div.breadcrumb {
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 50px 0 0 5.6vw;
-
-    background-color: #31261D;
-
-    span {
-        color: #fff;
-        font-family: Nunito;
-        font-weight: 800;
-        font-size: 1.5em;
-
-        margin-right: 15px;
-
-        a {
-            color: #fff;
-        }
-
-        &:last-child {
-            color: #E5BC9C;
-        }
-    }
-}
-
-@media (max-width: 1023px) {
-    div.submenu {
-        padding: 0 50px;
-    }
-}
-
-section#secao_produto {
-    grid-template-columns: 58% auto;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-                        "galeria  comprar"
-                        "titulo   titulo"
-                        "sobre    sobre";
-
-    box-sizing: border-box;
-    padding: 30px 5vw;
-
-    div#galeria_supercoffee {
-        display: none;
-    }
-
-    div#galeria_supercoffee-d {
-        grid-area: galeria;
-        position: relative;
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-
-        div.foto_produto-d {
-            position: relative;
-            width: 25%;
-            box-sizing: border-box;
-            padding: 10px;
-
-            &:first-child {
-                width: 100%;
-
-                img {
-                    position: relative;
-                    width: 100%;
-                }
-            }
-
-            img {
-                width: 100%
-            }
-        }
-    }
-
-    div.ct_comprar {
-        padding: 20px 7vw;
-    }
-
-    div.info_produto {
-        width: 50%;
-
-        padding: 30px 0;
-    }
-}
+		a {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	  }
+	}
+  
+	&.breadcrumb {
+	  position: relative;
+	  width: 100%;
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+	  padding: 50px 0 0 5.6vw;
+	  background-color: #31261D;
+  
+	  span {
+		color: #fff;
+		font-family: Nunito;
+		font-weight: 800;
+		font-size: 1.5em;
+		margin-right: 15px;
+  
+		a {
+		  color: #fff;
+		}
+  
+		&:last-child {
+		  color: #E5BC9C;
+		}
+	  }
+	}
+  }
+  
+  @media (max-width: 1023px) {
+	div.submenu {
+	  padding: 0 50px;
+	}
+  }
+  
+  section#secao_produto {
+	-ms-grid-columns: 58% auto;
+	grid-template-columns: 58% auto;
+	-ms-grid-rows: auto auto auto;
+	grid-template-rows: auto auto auto;
+	grid-template-areas: "galeria  comprar" "titulo   titulo" "sobre    sobre";
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 30px 5vw;
+  
+	div {
+	  &#galeria_supercoffee {
+		display: none;
+	  }
+  
+	  &#galeria_supercoffee-d {
+		-ms-grid-row: 1;
+		-ms-grid-column: 1;
+		grid-area: galeria;
+		position: relative;
+		width: 100%;
+		height: auto;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+  
+		div.foto_produto-d {
+		  position: relative;
+		  width: 25%;
+		  -webkit-box-sizing: border-box;
+		  box-sizing: border-box;
+		  padding: 10px;
+  
+		  &:first-child {
+			width: 100%;
+  
+			img {
+			  position: relative;
+			  width: 100%;
+			}
+		  }
+  
+		  img {
+			width: 100%;
+		  }
+		}
+	  }
+  
+	  &.ct_comprar {
+		padding: 20px 7vw;
+	  }
+  
+	  &.info_produto {
+		width: 50%;
+		padding: 30px 0;
+	  }
+	}
+  }

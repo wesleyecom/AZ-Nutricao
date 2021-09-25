@@ -1,9 +1,9 @@
 div.cart {
-    width: 100%;
-
-    transform: translateX(100%);
-
-    &.open {
-        transform: translateX(0);
-    }
+	width: 100%;
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+}
+div.cart.open {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
 }

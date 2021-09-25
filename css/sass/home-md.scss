@@ -1,49 +1,37 @@
-section.hero {
-    div#slide_hero {
-        div#slide_hero-track {
-            ul#slide_hero-list {
-                li {
-                    &:nth-child(1) {
-                        a.heroButton {
-                            top: 73%;
-                            left: 45.6%;
-                        }
-                    }
-
-                    &:nth-child(2) {
-                        a.heroButton {
-                            top: 73%;
-                            left: 5.1%;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-div.banner_info {
-    box-sizing: border-box;
-    padding: 0 8vw;
-}
-
-div.header_home {
-    padding: 0 5vw;
-}
-
-div.vitrine {
-    position: relative;
-    width: 100%;
-    height: 450px;
-    margin: 80px 0;
-    box-sizing: border-box;
-    padding: 0 4.5vw;
-}
-
-div.banner {
-    div.ct_banner {
-        img {
-            max-height: 400px;
-        }
-    }
-}
+section.hero div#slide_hero div#slide_hero-track ul#slide_hero-list li {
+	&:nth-child(1) a.heroButton {
+	  top: 73%;
+	  left: 45.6%;
+	}
+  
+	&:nth-child(2) a.heroButton {
+	  top: 73%;
+	  left: 5.1%;
+	}
+  }
+  
+  div {
+	&.banner_info {
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+	  padding: 0 8vw;
+	}
+  
+	&.header_home {
+	  padding: 0 5vw;
+	}
+  
+	&.vitrine {
+	  position: relative;
+	  width: 100%;
+	  height: 450px;
+	  margin: 80px 0;
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+	  padding: 0 4.5vw;
+	}
+  
+	&.banner div.ct_banner img {
+	  max-height: 400px;
+	}
+  }

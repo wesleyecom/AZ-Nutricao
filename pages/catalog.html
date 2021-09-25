@@ -1,7 +1,19 @@
+<!-- Splide.js -->
+<script src="{{ asset('js/modules/splide/dist/js/splide.min.js') }}"></script>
+
+<script>
+    // Botão próxima página
+    function nextPage(element) {
+        jQuery(element).prev()[0].childNodes[0].click();
+    }
+</script>
+
+<script src="{{ asset('js/modules/local/category/filtros.js') }}"></script>
+
 {% if category.id != 113 %}
-    <link rel="stylesheet" href="{{ asset('css/catalog.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/catalog-m.css') }}" media="(max-width: 1023px)">
-    <link rel="stylesheet" href="{{ asset('css/catalog-d.css') }}" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="{{ asset('css/catalog.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/catalog-m.min.css') }}" media="(max-width: 1023px)">
+    <link rel="stylesheet" href="{{ asset('css/catalog-d.min.css') }}" media="(min-width: 1024px)">
 
     <div class="header_catalog">
         {% element 'snippets/breadcrumb' %}
@@ -13,13 +25,13 @@
 
     {% if products|length > 0 %}
         {% element 'snippets/paginate' %}
+        <link rel="stylesheet" href="{{ asset('css/catalog_marcas.min.css') }}">
 
         {% if category.children and category.parent == 103 %}
-            <link rel="stylesheet" href="{{ asset('css/catalog_marcas.css') }}">
-
             <div class="filtros">
                 <div class="marcas">
-                    <div class="pai" data-marca="{{ category.id }}">
+                    <div class="pai">
+                        <a href="{{ category.link }}"></a>
                         {% set nameMarca = category.name | replace({ 'á':'a', 'é':'e', 'í':'i', 'ó':'o', 'ú':'u' }) | lower %}
                         <img src="{{ asset('img/catalog/marcas/'~nameMarca~'/'~nameMarca~'.png') }}" alt="{{ marca.name }}">
                         
@@ -56,50 +68,143 @@
                 </div>
             </div>
 
+            <script async src="{{ asset('js/modules/local/category/marcas.js') }}"></script>
 
         {% elseif category.id == 17 %}
-            <link rel="stylesheet" href="{{ asset('css/catalog_nutren.css') }}">
-
             <div class="filtros">
                 <div class="marcas">
-                    <ul id="marcas">
-                        <li class="selected" data-marca="nutren">
-                            <img src="{{ asset('img/catalog/marcas/nutren/nutren.png') }}" alt="">
-                        </li>
+                    {% set nameMarca = category.name | replace({ 'á':'a', 'é':'e', 'í':'i', 'ó':'o', 'ú':'u' }) | lower %}
 
+                    <div class="pai" data-marca="{{ nameMarca }}">
+                        <img src="{{ asset('img/catalog/marcas/nutren/nutren.png') }}" alt="Nutren">
+                        
                         <div class="divisor"></div>
+                    </div>
 
-                        <li data-marca="nutren beauty">
-                            <img src="{{ asset('img/catalog/marcas/nutren/beauty.png') }}" alt="">
-                        </li>
+                    <div class="splide slideMarcas">
+                        <div class="splide__arrows">
+                            <button class="splide__arrow splide__arrow--prev">
+                                <svg width="13" height="23" viewBox="0 0 13 23" fill="none">
+                                    <path d="M11 21.5L1.50508 12.0051C1.22613 11.7261 1.22613 11.2739 1.50508 10.9949L11 1.5" stroke="#383838" stroke-width="2.14286" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                
+                            <button class="splide__arrow splide__arrow--next">
+                                <svg width="13" height="23" viewBox="0 0 13 23" fill="none">
+                                    <path d="M2 1.5L11.4949 10.9949C11.7739 11.2739 11.7739 11.7261 11.4949 12.0051L2 21.5" stroke="#383838" stroke-width="2.14286" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
 
-                        <li data-marca="nutren senior">
-                            <img src="{{ asset('img/catalog/marcas/nutren/senior.png') }}" alt="">
-                        </li>
+                        <div class="splide__track">
+                            <ul class="splide__list" id="ulMarcas">
+                                <li class="splide__slide" data-marca="nutren beauty">
+                                    <img src="{{ asset('img/catalog/marcas/nutren/beauty.png') }}" alt="nutren beauty">
+                                </li>
 
-                        <li data-marca="nutren active">
-                            <img src="{{ asset('img/catalog/marcas/nutren/active.png') }}" alt="">
-                        </li>
+                                <li class="splide__slide" data-marca="nutren senior">
+                                    <img src="{{ asset('img/catalog/marcas/nutren/senior.png') }}" alt="nutren senior">
+                                </li>
 
-                        <li data-marca="nutren kids">
-                            <img src="{{ asset('img/catalog/marcas/nutren/kids.png') }}" alt="">
-                        </li>
+                                <li class="splide__slide" data-marca="nutren active">
+                                    <img src="{{ asset('img/catalog/marcas/nutren/active.png') }}" alt="nutren active">
+                                </li>
 
-                        <li data-marca="nutren just protein">
-                            <img src="{{ asset('img/catalog/marcas/nutren/just_protein.png') }}" alt="">
-                        </li>
-                    </ul>
+                                <li class="splide__slide" data-marca="nutren kids">
+                                    <img src="{{ asset('img/catalog/marcas/nutren/kids.png') }}" alt="nutren kids">
+                                </li>
+
+                                <li class="splide__slide" data-marca="nutren just protein">
+                                    <img src="{{ asset('img/catalog/marcas/nutren/just_protein.png') }}" alt="nutren just protein">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <script async src="{{ asset('js/modules/local/category/marcas.js') }}"></script>
         {% endif %}
 
-        <div class="catalog_products">
-            <div class="ct_showcase_products" itemscope itemtype="https://schema.org/SomeProducts">
-                <ul itemscope itemtype="https://schema.org/SomeProducts">
-                    {% for product in products %}
-                        {% element 'snippets/product_card' {"product": product} %}
+        <div class="catalog_products" id="catalog_products">
+            {% element('snippets/smart_filter') %}
+            
+            <div id="container_produtos">
+                {% if not paginate.hasPrev %}
+                    {% set kits = Products({
+                        'limit': 50,
+                        'categories': category.id,
+                    }) %}
+
+                    {% set n_kits = 0 %}
+
+                    {% for kit in kits if kit.model == 'kit' %}
+                        {% set n_kits = loop.index %}
                     {% endfor %}
-                </ul>
+
+                    {% if n_kits != 0 %}
+                        <div class="ct_kits">
+                            <div class="selector_kits">
+                                <button id="select_products" class="selected">
+                                    Varejo
+                                </button>
+
+                                <button id="select_kits">
+                                    Atacado
+                                </button>
+                            </div>
+
+                            <div class="ct_showcase_products hidden" id="showcase_kits" itemscope itemtype="https://schema.org/SomeProducts">
+                                <ul itemscope itemtype="https://schema.org/SomeProducts">
+                                    {% for kit in kits if kit.model == 'kit' %}
+                                        {% element 'snippets/product_card' {"product": kit} %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+
+                <div class="ct_showcase_products" id="showcase_products" itemscope itemtype="https://schema.org/SomeProducts">
+                    <ul itemscope itemtype="https://schema.org/SomeProducts">
+                        {% if not utils.is_mobile %}
+                            {% for product in products %}
+                                {% element 'snippets/product_card' {"product": product} %}
+    
+                                {% if loop.index is divisible by(15) %}
+                                    {% if paginate.hasNext %}
+                                        <div class="next_page">
+                                            {{ paginate.next('>', {'id': 'next_page'}) }}
+    
+                                            <svg width="100" height="100" viewBox="0 0 369 370" fill="none" id="proximaPagina" onClick="nextPage(this)">
+                                                <g filter="url(#filter0_d)">
+                                                <rect x="37" y="27" width="295" height="295" rx="147.5" fill="#F5F5F5"/>
+                                                </g>
+                                                <path id="seta_svg_proxima_pagina" d="M168.697 119.188L218.714 169.205C220.184 170.675 220.184 173.057 218.714 174.527L168.697 224.545" stroke="#939393" stroke-width="11.2883" stroke-linecap="round"/>
+                                                <defs>
+                                                <filter id="filter0_d" x="0.125" y="0.660714" width="368.75" height="368.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                                <feMorphology radius="5.26786" operator="dilate" in="SourceAlpha" result="effect1_dropShadow"/>
+                                                <feOffset dy="10.5357"/>
+                                                <feGaussianBlur stdDeviation="15.8036"/>
+                                                <feColorMatrix type="matrix" values="0 0 0 0 0.154167 0 0 0 0 0.154167 0 0 0 0 0.154167 0 0 0 0.1 0"/>
+                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                                                </filter>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            {% for product in products if product.model != 'kit' %}
+                                {% element 'snippets/product_card' {"product": product} %}
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
         </div>
     {% else %}
@@ -124,11 +229,13 @@
         </div>
     {% endif %}
 
+    <script async src="{{ asset('js/modules/local/category/kits.js') }}"></script>
+
 <!-- Supercofee Page -->
 {% else %}
-    <link rel="stylesheet" href="{{ asset('css/supercoffee.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/supercoffee-m.css') }}" media="(max-width: 768px)">
-    <link rel="stylesheet" href="{{ asset('css/supercoffee-d.css') }}" media="(min-width: 769px)">
+    <link rel="stylesheet" href="{{ asset('css/supercoffee.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/supercoffee-m.min.css') }}" media="(max-width: 768px)">
+    <link rel="stylesheet" href="{{ asset('css/supercoffee-d.min.css') }}" media="(min-width: 769px)">
 
     <div class="hero">
         <div class="texto">
@@ -154,23 +261,39 @@
                             <div class="card">
                                 <a href="{{ product.link }}"></a>
                                 {% set images = product.images %}
-                                <img src="{{ images[0].full }}" alt="Supercoffee 2.0">
+                                <img src="{{ images[0].full }}" alt="Superscoffee 2.0">
                                 
                                 {% if product.id == 83 %}
-                                    <h3><span>SuperCoffee</span> 2.0</h3>
+                                    <h3 class="ic">
+                                        2.0
+                                    </h3>
                                 {% elseif product.id == 85 %}
-                                    <h3 class="ic"><span>SuperCoffee Impossible</span> Chocolate</h3>
+                                    <h3 class="ic">
+                                        Chocolate
+                                    </h3>
                                 {% elseif product.id == 87 %}
-                                    <h3 class="ic"><span>SuperCoffee</span> Economic Size</h3>
+                                    <h3 class="ic">
+                                        Tamanho Econômico
+                                    </h3>
                                 {% elseif product.id == 89 %}
-                                    <h3 class="ic"><span>SuperCoffee</span> Impossible Chocolate Economic Size</h3>
+                                    <h3 class="ic">
+                                        Chocolate Econômico
+                                    </h3>
+                                {% elseif product.id == 409 %}
+                                    <h3 class="ic">
+                                        Baunilha
+                                    </h3>
                                 {% endif %}
+
+                                <span class="preco">
+                                    R$ {{ product.price|currency }}
+                                </span>
 
                                 <div class="tamanho">
                                     {{ product.additional_message }}
                                 </div>
                 
-                                <button onclick="addCart({{ product.id }}, {{ product.price }}, 1, '')">+</button>
+                                <button onClick="addCart({{ product.id }}, {{ product.price }}, 1, '')">comprar</button>
                             </div>
                         </li>
                     {% endfor %}
@@ -178,4 +301,6 @@
             </div>
         </div>
     </div>
+
+    <script src="{{ asset('js/modules/local/category/supercoffee.js') }}"></script>
 {% endif %}

@@ -1,0 +1,229 @@
+<link rel="stylesheet" href="{{ asset('css/header.css') }}">
+<link rel="stylesheet" href="{{ asset('css/header-d.min.css') }}" media="(min-width: 1025px)">
+<link rel="stylesheet" href="{{ asset('css/header-m.min.css') }}" media="(max-width: 1024px)">
+
+<header>
+    {% element 'snippets/header-m' %}
+
+    <div class="baixo">
+        {% element 'snippets/icone_hamburger_header' %}
+
+        {% element 'snippets/logo_header' %}
+
+        {% if not utils.is_mobile %}
+            {% element 'snippets/contato_header' %}
+        {% endif %}
+
+        <div class="action">
+            <div class="conta">
+                <svg version="1.1" id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 487.027 487.027"
+                    xml:space="preserve"
+                    style="enable-background:new 0 0 487.027 487.027;"
+                    id="svg_usuario"
+                >
+                    <g>
+                        <path d="M381.82,268.685l-69.877-20.832c-18.57,22.091-41.975,37.324-68.429,37.324s-49.859-15.233-68.431-37.324l-69.876,20.832
+                            c-13.551,4.043-22.841,16.5-22.841,30.646v26.547c0,88.996,72.153,161.148,161.148,161.148s161.148-72.153,161.148-161.148v-26.547
+                            C404.662,285.185,395.372,272.728,381.82,268.685z"/>
+                        <path d="M140.379,184.076c6.209,7.82,14.115,12.527,21.669,12.386c17.054,39.115,47.122,72.701,81.465,72.701
+                            c34.344,0,64.411-33.586,81.465-72.701c7.554,0.141,15.459-4.565,21.668-12.386c3.285-4.128,6.132-9.032,8.102-14.693
+                            c3.691-10.595,3.635-21.097,0.727-29.159c-2.284-6.318-6.288-11.174-11.902-13.145c-0.915,0.297-1.829,0.625-2.822,0.704
+                            c-0.306,0.023-0.61,0.031-0.916,0.031c-1.821,0-3.51-0.555-5.098-1.321c-3.019-1.462-5.474-4.027-6.475-7.39
+                            c-0.242-0.805-6.358-19.807-42.484-19.807c-3.472,0-7.147,0.18-11.018,0.532c0,0-3.778,0.336-9.602,0.336
+                            c-19.269,0-45.222-3.331-59.431-19.174c-3.003-3.354-5.317-7.108-6.92-11.198c-13.356,8.484-32.562,24.515-39.951,49.702
+                            c-0.938,3.183-3.16,5.583-5.913,7.061c-1.712,0.923-3.581,1.564-5.606,1.564c-0.469,0-0.938-0.023-1.415-0.086
+                            c-0.97-0.117-1.838-0.493-2.721-0.829c-5.474,2.033-9.399,6.795-11.651,13.02c-2.909,8.062-2.964,18.564,0.727,29.159
+                            C134.249,175.043,137.095,179.947,140.379,184.076z"/>
+                        <path d="M208.348,51.157c-3.651,33.343,38.254,36.995,56.811,36.995c5.208,0,8.578-0.289,8.578-0.289
+                            c4.277-0.399,8.289-0.579,12.043-0.579c46.987,0,54.072,28.675,54.072,28.675l2.91-21.59c6.123-45.378-25.446-87.221-70.753-93.798
+                            C269.366,0.188,266.714,0,264.079,0c-15.139,0-29.746,6.225-40.256,17.438l-0.798,0.853c-6.952-3.175-14.373-4.739-21.762-4.739
+                            c-10.634,0-21.199,3.237-30.185,9.571c-17.101,12.05-26.821,32.029-25.765,52.916l2.017,40.068
+                            C160.992,69.564,208.348,51.157,208.348,51.157z"/>
+                    </g>
+                </svg>
+
+                <div class="links_conta">
+                    <a href="#" class="tray-hide" data-logged-user="false" id="login-button-d">
+                        Login
+                    </a>
+
+                    <a href="{{ links.account }}" class="tray-hide" data-logged-user="true">
+                        Minha conta
+                    </a>
+
+                    <div class="divisor"></div>
+
+                    <a href="{{ links.register }}" class="tray-hide" data-logged-user="false">
+                        Cadastro
+                    </a>
+
+                    <a href="{{ links.logout }}" class="tray-hide" data-logged-user="true">
+                        Sair
+                    </a>
+                </div>
+            </div>
+
+            <div class="carrinho" onclick="syncCart()">
+                <span data-cart="amount" class="counter_cart" id="counter_cart"></span>
+
+                <svg class="cart" width="30" height="26" viewBox="0 0 30 26" fill="none">
+                    <path d="M9.67096 17.3334H25.4593C25.8503 17.3334 26.1932 17.077 26.2991 16.7046L29.7948 4.57118C29.8699 4.3096 29.8185 4.02861 29.653 3.81127C29.4874 3.59461 29.2297 3.46664 28.9548 3.46664H7.65352L7.02883 0.678883C6.94008 0.28189 6.58506 0 6.17543 0H0.873882C0.390971 0 0 0.38774 0 0.86666C0 1.3458 0.390971 1.73332 0.873882 1.73332H5.47405L8.62981 15.8165C7.70131 16.2169 7.04931 17.1335 7.04931 18.2001C7.04931 19.6337 8.22541 20.8001 9.67096 20.8001H25.4593C25.9425 20.8001 26.3332 20.4125 26.3332 19.9334C26.3332 19.4545 25.9425 19.0667 25.4593 19.0667H9.67096C9.18964 19.0667 8.79708 18.6783 8.79708 18.2001C8.79708 17.7218 9.18964 17.3334 9.67096 17.3334Z" fill="#383838"/>
+                    <path d="M8.79736 23.4C8.79736 24.8339 9.97346 26 11.4192 26C12.8647 26 14.0408 24.8339 14.0408 23.4C14.0408 21.9664 12.8647 20.8 11.4192 20.8C9.97346 20.8 8.79736 21.9664 8.79736 23.4Z" fill="#383838"/>
+                    <path d="M21.0898 23.4C21.0898 24.8339 22.2659 26 23.7115 26C25.1573 26 26.3331 24.8339 26.3331 23.4C26.3331 21.9664 25.1573 20.8 23.7115 20.8C22.2659 20.8 21.0898 21.9664 21.0898 23.4Z" fill="#383838"/>
+                </svg>
+            </div>
+        </div>
+
+        {% element 'snippets/busca_header' %}
+
+        {% if not utils.is_mobile %}
+            <ul id="categoriasMenu">
+                {% set categories = Categories() %}
+                {% set liMmarcas = Categories( { "id": 103 } ) %}
+                {% set marcas = liMmarcas.children %}
+                
+                <li class="parent marcas">
+                    <a href="{{ liMmarcas.link }}" class="parentLink">
+                        {{ liMmarcas.name }}
+                    </a>
+
+                    <svg version="1.1" 
+                                x="0px"
+                                y="0px"
+                                width="12px"
+                                height="12px"
+                                viewBox="0 0 451.847 451.847"
+                                style="enable-background:new 0 0 451.847 451.847;"
+                                xml:space="preserve"
+                                fill="#383838"
+                            >
+                                <g>
+                                    <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+                                        c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
+                                        c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
+                                </g>
+                    </svg>
+
+                    <div class="subLinksMarcas container_marcas">
+                        <ul class="ul_marcas">
+                            <ul class="filtro">
+                                <span class="selected" onClick="limpaFiltro(this)">
+                                    Todas
+                                </span>
+
+                                {% for letter in 'A'..'Z' %}
+                                    <li onClick="filtraMarcas('{{ letter }}', this)">{{ letter }}</li>
+                                {% endfor %}
+
+                                <span class="divisor"></span>
+                                
+                                <li class="marcaPai">
+                                    <a href="{{ links.home }}danone">
+                                        Danone
+                                    </a>
+                                </li>
+
+                                <li class="marcaPai">
+                                    <a href="{{ links.home }}nestle">
+                                        Nestlé
+                                    </a>
+                                </li>
+
+                                <li class="marcaPai">
+                                    <a href="{{ links.home }}prodiet">
+                                        Prodiet
+                                    </a>
+                                </li>
+
+                                <li class="marcaPai">
+                                    <a href="{{ links.home }}equaliv">
+                                        Equaliv
+                                    </a>
+                                </li>
+                            </ul>
+
+                            {% set arrayMarcas = [] %}
+                            
+                            {% for marca in marcas %}
+                                {% for submarca in marca.children %}
+                                    {% set arrayMarcas = arrayMarcas|merge([submarca]) %}
+                                {% endfor %}
+                            {% endfor %}
+
+                            {% for marca in arrayMarcas|sort %}
+                                <li>
+                                    <a href="{{ marca.link }}"></a>
+                                    <img src="{{ asset('img/marcas/logo/header/'~marca.name~'.jpg') }}" alt="{{ marca.name }}">
+                                </li>
+                            {% endfor %}
+
+                            <div id="semMarca">
+                                <span>Nenhuma marca encontrada</span>
+                            </div>
+                        </ul>
+                    </div>
+                </li>
+
+                {% for category in categories if category.id != 103 and category.id != 49 and category.id != 51 and category.id != 163 and category.id != 199 %}
+                    {% set children = category.children %}
+                    
+                    <li class="parent">
+
+                    {% if children %}
+                        <a href="{{ category.link }}" class="parentLink">
+                            {{ category.name }}
+                        </a>
+
+                        <svg version="1.1" 
+                            x="0px"
+                            y="0px"
+                            width="12px"
+                            height="12px"
+                            viewBox="0 0 451.847 451.847"
+                            style="enable-background:new 0 0 451.847 451.847;"
+                            xml:space="preserve"
+                            fill="#383838"
+                        >
+                                    <g>
+                                        <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+                                            c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
+                                            c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
+                                    </g>
+                        </svg>
+
+                        <div class="subLinks" onmouseleave="leaveCategoryMenu(this)">
+                            <ul class="ul_subLinks">
+                                {% for child in children %}
+                                    <li class="child">
+                                        <a href="{{ child.link }}" class="childLink">
+                                            {{ child.name }}
+                                        </a>
+
+                                        {% set subChildren = child.children %}
+
+                                        {% if subChildren %}
+                                            <span class="categoria_{{ child.id }} closed" onclick="subcategoriesMenu(this)">
+                                                +
+                                            </span>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+
+                                <div class="subCategoryContainer">
+                                </div>
+                            </ul>
+                        </div>
+                    {% else %}
+                        <a href="{{ category.link }}" class="parentLink">
+                            {{ category.name }}
+                        </a>
+                    {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</header>

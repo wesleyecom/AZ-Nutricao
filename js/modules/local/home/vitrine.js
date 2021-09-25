@@ -22,6 +22,7 @@ function chamaVitrine(item_id) {
             },
 
             '550': {
+                type   : 'loop',
                 perPage: 2,
                 pagination: true,
                 gap: '15px',
@@ -32,6 +33,7 @@ function chamaVitrine(item_id) {
             },
 
             '360': {
+                type   : 'loop',
                 perPage: 1,
             },
         }

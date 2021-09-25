@@ -1,0 +1,104 @@
+div.ct_secao_linhas {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 5vw;
+  margin-top: 130px;
+  margin-bottom: 30px; }
+  div.ct_secao_linhas div.secao_linhas {
+    height: 220px;
+    margin-top: 15px; }
+    div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha {
+      height: 180px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      margin-right: 15px;
+      border-radius: 5px;
+      overflow: hidden;
+      background-size: cover; }
+      div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1; }
+      div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha div.texto {
+        position: absolute;
+        top: 15%;
+        left: 8%;
+        width: 50%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        text-transform: uppercase;
+        font-family: Nunito; }
+        div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha div.texto span {
+          color: #fff; }
+          div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha div.texto span:nth-child(1) {
+            font-weight: 600;
+            font-size: 1.3em; }
+          div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha div.texto span:nth-child(2) {
+            font-weight: 900;
+            font-size: 2em; }
+        div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha div.texto svg {
+          margin-top: 15px;
+          -webkit-transition: 0.3s all ease-in-out;
+          transition: 0.3s all ease-in-out; }
+      div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha.linha_danone {
+        background-image: url("https://aznutricao.s3.sa-east-1.amazonaws.com/WEBP/bg_banner_linhas_danone_2.webp"); }
+      div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha.linha_nestle {
+        background-image: url("https://aznutricao.s3.sa-east-1.amazonaws.com/WEBP/bg_banner_linhas_nestle_2.webp"); }
+      div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha.linha_prodiet {
+        background-image: url("https://aznutricao.s3.sa-east-1.amazonaws.com/WEBP/bg_banner_linhas_prodiet_2.webp"); }
+      div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha img {
+        position: absolute;
+        right: 5%;
+        bottom: -25%;
+        width: 60%;
+        -webkit-transition: 0.3s all ease-in-out;
+        transition: 0.3s all ease-in-out; }
+      div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha:hover div.texto span:nth-child(2) {
+        text-decoration: underline; }
+      div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha:hover div.texto svg {
+        margin-left: 15px; }
+      div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha:hover img {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1); }
+
+@media (max-width: 1024px) {
+  div.ct_secao_linhas {
+    padding: 0 2.5vw; }
+    div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha img {
+      width: 52%; } }
+
+@media (min-width: 631px) and (max-width: 768px) {
+  div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha img {
+    width: 60%;
+    bottom: -21%; } }
+
+@media (max-width: 630px) {
+  div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha img {
+    width: 40%;
+    bottom: -21%; } }
+
+@media (max-width: 400px) {
+  div.ct_secao_linhas div.secao_linhas div.splide__track ul.splide__list li.linha img {
+    width: 58%;
+    bottom: -21%; } }
